@@ -12,3 +12,4 @@
  *	 <datatype> name;
  **/
 
+int max_uplock_aspd;

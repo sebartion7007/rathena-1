@@ -11521,6 +11521,7 @@ void battle_adjust_conf()
 {
 	battle_config.monster_max_aspd = 2000 - battle_config.monster_max_aspd * 10;
 	battle_config.max_aspd = 2000 - battle_config.max_aspd * 10;
+	battle_config.max_uplock_aspd = 2000 - battle_config.max_uplock_aspd * 10;
 	battle_config.max_third_aspd = 2000 - battle_config.max_third_aspd * 10;
 	battle_config.max_summoner_aspd = 2000 - battle_config.max_summoner_aspd * 10;
 	battle_config.max_extended_aspd = 2000 - battle_config.max_extended_aspd * 10;

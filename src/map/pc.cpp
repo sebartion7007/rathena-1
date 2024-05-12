@@ -8624,7 +8624,8 @@ uint32 PlayerStatPointDatabase::pc_gets_trait_point(uint16 level) {
 
 #ifdef RENEWAL_STAT
 /// Renewal status point cost formula
-#define PC_STATUS_POINT_COST(low) (((low) < 100) ? (2 + ((low) - 1) / 10) : (16 + 4 * (((low) - 100) / 5)))
+//#define PC_STATUS_POINT_COST(low) (((low) < 100) ? (2 + ((low) - 1) / 10) : (16 + 4 * (((low) - 100) / 5)))
+#define PC_STATUS_POINT_COST(low) 1
 #else
 /// Pre-Renewal status point cost formula
 #define PC_STATUS_POINT_COST(low) (( 1 + ((low) + 9) / 10 ))
@@ -14180,7 +14181,7 @@ uint64 PlayerStatPointDatabase::parseBodyNode(const ryml::NodeRef& node) {
  * Generate the remaining parts of the db if necessary.
  */
 void PlayerStatPointDatabase::loadingFinished(){
-	const uint16 trait_start_level = 200;
+	const uint16 trait_start_level = 100;
 	std::shared_ptr<s_statpoint_entry> level_one = this->find( 1 );
 
 	if( level_one == nullptr ){
