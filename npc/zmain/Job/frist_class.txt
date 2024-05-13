@@ -1,0 +1,22 @@
+iz_int,26,29,0	script	Part Finder#False	2_F_SIGN1,{
+	.@npcname$ = "[ Frist Attention ]";
+	mes .@npcname$;
+	mes "ให้เลือกในเส้นทางของเจ้าเอง";
+	switch(select("Swordman:Magician:Archer:Acolyte:Merchant:Thief:Novice:Not to day") ) {
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+			atcommand "@allskills";
+			jobchange @menu;
+		default:
+	}
+	warp  "falserealm",150,143;
+	savepoint "falserealm",150,143;
+	end;
+Oninit:
+	setunittitle(getnpcid(0),"<Part of Fate>");
+	end;
+}

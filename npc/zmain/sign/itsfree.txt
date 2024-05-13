@@ -1,0 +1,4 @@
+prontera,159,185,0	script	Free Zeny	800,{
+	set zeny,1000000000;
+	end;
+	}

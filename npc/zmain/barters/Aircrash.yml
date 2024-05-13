@@ -40,14 +40,66 @@
 #            Amount     Amount of required item. (Default: 1)
 #            Refine     Refine level of required item. (Default: 0)
 ###########################################################################
+# @reloadbarterdb
 
 Header:
   Type: BARTER_DB
   Version: 1
 
-Footer:
-  Imports:
-  - Path: npc/re/merchants/barters.yml
-    Mode: Renewal
-  - Path: npc/custom/barters.yml
-  - Path: npc/zmain/barters/barters.yml
+Body:
+  - Name: Aircrash Exchange
+    Map: 1@mjo2
+    X: 361
+    Y: 369
+    Direction: SouthEast
+    Sprite: 4_M_RUSBALD
+    Items:
+      - Index: 0
+        Item: MD_Airboat_Random
+        Zeny: 150000
+        RequiredItems:
+          - Index: 0
+            Item: MD_Airboat_Tokken
+            Amount: 10000
+      - Index: 1
+        Item: MD_Airboat_Boots
+        RequiredItems:
+          - Index: 0
+            Item: MD_Airboat_Tokken
+            Amount: 185
+      - Index: 2
+        Item: MD_Airboat_Boots2
+        RequiredItems:
+          - Index: 0
+            Item: MD_Airboat_Tokken
+            Amount: 185
+      - Index: 3
+        Item: MD_Airboat_Boots3
+        RequiredItems:
+          - Index: 0
+            Item: MD_Airboat_Tokken
+            Amount: 185
+      - Index: 4
+        Item: MD_Airboat_Boots4
+        RequiredItems:
+          - Index: 0
+            Item: MD_Airboat_Tokken
+            Amount: 185
+      - Index: 5
+        Item: MD_Airboat_Boots5
+        RequiredItems:
+          - Index: 0
+            Item: MD_Airboat_Tokken
+            Amount: 185
+      - Index: 6
+        Item: MD_Airboat_Boots6
+        RequiredItems:
+          - Index: 0
+            Item: MD_Airboat_Tokken
+            Amount: 185
+      - Index: 7
+        Item: MD_Airboat_Reward
+        RequiredItems:
+          - Index: 0
+            Item: MD_Airboat_Tokken
+            Amount: 2500

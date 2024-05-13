@@ -1,0 +1,79 @@
+-	shop	Metal Weapon	800,no,13322:1000,1296:1000,1398:1000,1493:1000,1588:1000,2018:1000,13079:1000,13125:1000,16023:1000,18116:1000,21005:1000,26111:1000,100125:1000;
+-	shop	Paradise 1	800,no,24687:1000,24688:1000,24689:1000,24690:1000,24691:1000,24692:1000,400137:1000,400138:1000,450183:1000,450184:1000,470067:1000,470068:1000,480103:1000,480104:1000,490122:1000,490123:1000,490124:1000,490125:1000,500032:1000,510035:1000,520010:1000,550032:1000,550033:1000,590025:1000,700036:1000,800004:1000
+-	shop	Booster Armor	800,no,100043:1000,100046:1000,100047:1000,100048:1000,100049:1000
+-	shop	Booster Weapon	800,no,100340:1000,500015:1000,500016:1000,500042:1000,500043:1000,510017:1000,510018:1000,530005:1000,540009:1000,540039:1000,540040:1000,550010:1000,550011:1000,550050:1000,550051:1000,550052:1000,550053:1000,550079:1000,560006:1000,560007:1000,570010:1000,570024:1000,580010:1000,580024:1000,590008:1000,590009:1000,590010:1000,600012:1000,610013:1000,610028:1000,620003:1000,630008:1000,640009:1000,640010:1000,650017:1000,650018:1000,700014:1000,700015:1000,700016:1000,700017:1000,800008:1000,830007:1000
+-	shop	TicketSeller	800,no,25820:10000,100125:50000,1000006:200000,100043:300000,1000253:200000,100340:500000
+-	shop	ep17free	800,no,25723:100000,25669:100000,100341:300000,450147:100000,450148:100000,470054:100000,470055:100000,480062:100000,480063:100000,490072:100000,490073:100000,490074:100000,490075:100000
+//prontera,160,175,3	shop	Awakened Eden 1	800,no,28443:1000,28444:1000,28445:1000,28446:1000,28447:1000,28448:1000,28449:1000,28450:1000,28451:1000,28452:1000
+//prontera,160,172,3	shop	Awakened Eden 2	800,no,28453:1000,28454:1000,28455:1000,28456:1000,28457:1000,28458:1000,28459:1000,28460:1000,28461:1000,28462:1000
+//prontera,150,185,3	shop	Cheated Item(Now)	10390,no,35001:1000,35002:1000,35003:1000
+
+prontera,149,194,3	script	Newbie_Shop	10390,{
+menu	"Ticket Seller",TicketSeller,
+		"Metal Weapon",Metal,
+		"Paradise Frist Class",Paradise1,
+		"Booster Armor",BoosterAM,
+		"Booster Weapon",BoosterWEP,
+		"EP 17 Clear Reward",Clear17,
+		"Close",-;
+		end;
+TicketSeller:
+	callshop "TicketSeller",1;
+	end;
+Metal:
+	callshop "MetalNewbie";
+	end;
+Paradise1:
+	callshop "Paradise 1",1;
+	end;
+BoosterAM:
+	callshop "BoosterArmorTC";
+	end;
+BoosterWEP:
+	callshop "BoosterWeaponTC";
+	end;
+Clear17:
+	if(ep17_2_main < 36) {mes "เธอยังไม่ผ่านเควสเลยนะ"; end;}
+	menu	"ร้านค้า",S17_Shop,
+			"ออฟชั่น",S17_Enchant,
+			"ออก",-;
+			end;
+	S17_Shop:
+		callshop "ep17free",1;
+		end;
+	S17_Enchant:
+		mes "เลือกส่วนที่จะออฟชั่น";
+		menu 
+			"Illusion Armor",EN_Illu_Armor,
+			"Illusion Engine",EN_Illu_Engine,
+			"Illusion Leg",EN_Illu_Leg,
+			"Illusion Accessery L",EN_Illu_Acc_L,
+			"Illusion Accessery R",EN_Illu_Acc_R,
+			"Close",-;
+			end;
+			EN_Illu_Armor:
+				item_enchant(34);
+				end;
+			EN_Illu_Engine:
+				item_enchant(39);
+				end;
+			EN_Illu_Leg:
+				item_enchant(40);
+				end;
+			EN_Illu_Acc_L:
+				item_enchant(43);
+				end;
+			EN_Illu_Acc_R:
+				item_enchant(42);
+				end;
+			
+end;
+}
+
+/*
+prontera,144,187,3	script	testenui	800,{
+	item_enchant(39); Table[39]:AddTargetItem("E_Illusion_Engine_A") <<< Index is Position of Table ex. this is 39
+	end;
+}
+*/
+//@reloadnpc npc/zmain/newbie/metal_weapon.txt

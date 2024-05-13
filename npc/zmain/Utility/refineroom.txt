@@ -1,0 +1,7 @@
+falserealm,165,161,3	script	Refine Roomer	4_F_EINWOMAN,{
+	warp "prt_in",60,73;
+	end;
+Oninit:
+	setunittitle(getnpcid(0), "<Refine Room>");
+	end;
+}

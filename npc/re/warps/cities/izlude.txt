@@ -54,7 +54,7 @@ izlude_c,52,172,0	warp	iz04_c	2,2,izlude_in,74,161
 izlude_d,52,172,0	warp	iz04_d	2,2,izlude_in,74,161
 
 //= iz_int(Intro) & int_land(Secluded Island) ================
-iz_int,27,30,0	warp	#room_out	1,1,iz_int,51,30
+//iz_int,27,30,0	warp	#room_out	1,1,iz_int,51,30
 iz_int01,27,30,0	warp	#room_out01	1,1,iz_int01,51,30
 iz_int02,27,30,0	warp	#room_out02	1,1,iz_int02,51,30
 iz_int03,27,30,0	warp	#room_out03	1,1,iz_int03,51,30

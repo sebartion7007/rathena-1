@@ -40,14 +40,44 @@
 #            Amount     Amount of required item. (Default: 1)
 #            Refine     Refine level of required item. (Default: 0)
 ###########################################################################
+# @reloadbarterdb
 
 Header:
   Type: BARTER_DB
   Version: 1
 
-Footer:
-  Imports:
-  - Path: npc/re/merchants/barters.yml
-    Mode: Renewal
-  - Path: npc/custom/barters.yml
-  - Path: npc/zmain/barters/barters.yml
+Body:
+  - Name: Thanos Helmet
+    Map: dali02
+    X: 53
+    Y: 128
+    Sprite: 4_MACHINE_DEVICE
+    Items:
+      - Index: 0
+        Item: Thanos_Helm_1
+        Zeny: 13000000
+        RequiredItems:
+          - Index: 0
+            Item: Gray_Shard
+            Amount: 350
+      - Index: 1
+        Item: Thanos_Helm_2
+        Zeny: 13000000
+        RequiredItems:
+          - Index: 0
+            Item: Gray_Shard
+            Amount: 350
+      - Index: 2
+        Item: Thanos_Helm_3
+        Zeny: 13000000
+        RequiredItems:
+          - Index: 0
+            Item: Gray_Shard
+            Amount: 350
+      - Index: 3
+        Item: Thanos_Helm_4
+        Zeny: 13000000
+        RequiredItems:
+          - Index: 0
+            Item: Gray_Shard
+            Amount: 350

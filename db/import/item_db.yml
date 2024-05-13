@@ -545,3 +545,15 @@ Header:
 #    Gender: Female
 #  - Id: 5735
 #    Gender: Female
+
+Body:
+  - Id: 35001
+    AegisName: A_Center_Potion
+    Name: Awakeing Concentration Potion
+    Type: Usable
+    Buy: 15000
+    Weight: 100
+    Flags:
+      BuyingStore: true
+    Script: |
+      sc_start SC_ASPDPOTION0,1800000,14;

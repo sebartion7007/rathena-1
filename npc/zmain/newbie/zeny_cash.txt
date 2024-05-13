@@ -1,0 +1,14 @@
+prontera,169,186,3	script	Zeny to Cash	815,{
+	mes "Zeny "+callfunc("F_InsertComma",.zeny)+" = 1 Cash.";
+	.@number = zeny/.zeny;
+	if (zeny > .zeny) mes "Input Number Max "+.@number;
+	else end;
+	input .@exchange;
+	if(.@number < .@exchange) { mes "Not Enough Zeny"; end;}
+	zeny -= .@exchange*.zeny;
+	#CASHPOINTS += .@exchange;
+	end;
+Oninit:
+	.zeny = 3000;
+	end;
+}

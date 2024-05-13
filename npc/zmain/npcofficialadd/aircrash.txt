@@ -1,0 +1,28 @@
+// Mapflag
+1@mjo2	mapflag	nosave
+1@mjo2	mapflag	nomemo
+1@mjo2	mapflag	nowarp
+
+//==================================================
+// Aircrash custom spawn
+//==================================================
+1@mjo2	monster	--ja--	20886,45
+1@mjo2	monster	--ja--	20887,45
+1@mjo2	monster	--ja--	20888,45
+1@mjo2	monster	--ja--	20889,45
+1@mjo2	monster	--ja--	20890,45
+1@mjo2,204,367,10,10	boss_monster	--ja--	20891,1,10800000,600000,0
+
+
+1@mjo2,362,383,0	warp	AIRCRASH_ESCAPE	2,2,dali02,128,83
+
+dali02,137,86,4	script	Air Crash Portal#Goto_Dun	617,{
+	if(Baselevel < 215) {
+		mes "Baselevel Require 215";
+		end;
+	}
+	mes "Ready ?";
+	if(select("Yes","No") == 2 ) end;
+	warp "1@mjo2",362,378;
+	end;
+}

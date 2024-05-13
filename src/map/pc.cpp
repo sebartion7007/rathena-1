@@ -8647,7 +8647,7 @@ uint32 PlayerStatPointDatabase::pc_gets_trait_point(uint16 level) {
 #ifdef RENEWAL_STAT
 /// Renewal status point cost formula
 //#define PC_STATUS_POINT_COST(low) (((low) < 100) ? (2 + ((low) - 1) / 10) : (16 + 4 * (((low) - 100) / 5)))
-#define PC_STATUS_POINT_COST(low) 1
+#define PC_STATUS_POINT_COST(low) ((low) < 169 ? 1 : 23 + 4 * (((low) - 170) / 5))
 #else
 /// Pre-Renewal status point cost formula
 #define PC_STATUS_POINT_COST(low) (( 1 + ((low) + 9) / 10 ))

@@ -1095,7 +1095,7 @@ Body:
                 Rate: 9000
                 Price: 250000
                 Material: HD_Oridecon
-1                DowngradeAmount: 1
+                DowngradeAmount: 1
               - Type: Enriched
                 Rate: 10000
                 Price: 25000
@@ -1113,7 +1113,7 @@ Body:
                 Rate: 9000
                 Price: 250000
                 Material: HD_Oridecon
-1                DowngradeAmount: 1
+                DowngradeAmount: 1
               - Type: Enriched
                 Rate: 10000
                 Price: 25000

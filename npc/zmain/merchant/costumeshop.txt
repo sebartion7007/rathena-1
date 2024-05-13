@@ -1,0 +1,7 @@
+falserealm,134,161,5	script	Costume Manage	671,{
+	Warp "malangdo",119,148;
+	end;
+Oninit:
+	setunittitle(getnpcid(0), "<Shopping Costume>");
+	end;
+}
