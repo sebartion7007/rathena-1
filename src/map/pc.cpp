@@ -3654,6 +3654,28 @@ void pc_bonus(map_session_data *sd,int type,int val)
 	status = &sd->base_status;
 
 	switch(type){
+		// Custom Part
+		case SP_SUPPLEMENTARY:
+			if (sd->state.lr_flag != 2)
+				sd->bonus.supplementary += val;
+			break;
+		case SP_CAPDAMAGE_RATE:
+			if (sd->state.lr_flag != 2)
+				sd->bonus.capdamage_rate += val;
+			break;
+		case SP_CAPDAMAGE_VAL:
+			if (sd->state.lr_flag != 2)
+				sd->bonus.capdamage_val += val;
+			break;
+		case SP_CAPDAMAGE_NM_CHANCE:
+			if (sd->state.lr_flag != 2)
+				sd->bonus.capdamage_nm_chance += val;
+			break;
+		case SP_CAPDAMAGE_SK_CHANCE:
+			if (sd->state.lr_flag != 2)
+				sd->bonus.capdamage_sk_chance += val;
+			break;
+		//End Custom part
 		case SP_STR:
 		case SP_AGI:
 		case SP_VIT:
@@ -10023,6 +10045,11 @@ int64 pc_readparam(map_session_data* sd,int64 type)
 	nullpo_ret(sd);
 
 	switch(type) {
+		case SP_SUPPLEMENTARY:   val = sd->bonus.supplementary; break;
+		case SP_CAPDAMAGE_RATE:   val = sd->bonus.capdamage_rate; break;
+		case SP_CAPDAMAGE_VAL:   val = sd->bonus.capdamage_val; break;
+		case SP_CAPDAMAGE_NM_CHANCE:   val = sd->bonus.capdamage_nm_chance; break;
+		case SP_CAPDAMAGE_SK_CHANCE:   val = sd->bonus.capdamage_sk_chance; break;
 		case SP_SKILLPOINT:      val = sd->status.skill_point; break;
 		case SP_STATUSPOINT:     val = sd->status.status_point; break;
 		case SP_TRAITPOINT:      val = sd->status.trait_point; break;

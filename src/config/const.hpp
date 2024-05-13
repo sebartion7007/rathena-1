@@ -83,7 +83,7 @@ const t_exp MAX_LEVEL_JOB_EXP = 999999999;
 
 /* ATCMD_FUNC(mobinfo) HIT and FLEE calculations */
 #ifdef RENEWAL
-	#define MOB_FLEE(mob) ( ( mob->lv * 10 ) + mob->status.ag  + 100 )
+	#define MOB_FLEE(mob) ( ( mob->lv * 10 ) + mob->status.agi  + 100 )
 	#define MOB_HIT(mob)  ( ( mob->lv * 10 ) + mob->status.dex + 175 )
 #else
 	#define MOB_FLEE(mob) ( mob->lv + mob->status.agi )

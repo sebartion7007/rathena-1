@@ -673,6 +673,12 @@ public:
 		uint8 absorb_dmg_maxhp2;
 		short critical_rangeatk;
 		short weapon_atk_rate, weapon_matk_rate;
+
+		int capdamage_rate;
+		int capdamage_val;
+		int capdamage_nm_chance;
+		int capdamage_sk_chance;
+		int supplementary;
 	} bonus;
 	// zeroed vars end here.
 

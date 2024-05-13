@@ -2009,6 +2009,26 @@ int64 battle_calc_damage(struct block_list *src,struct block_list *bl,struct Dam
 			return 0;
 	}
 
+	int maxcap = battle_config.capdamage;
+	if (tsd && tsd->bonus.capdamage_val > 0)
+		maxcap += tsd->bonus.capdamage_val;
+	if (tsd && tsd->bonus.capdamage_rate > 0)
+		maxcap += (tsd->bonus.capdamage_rate * maxcap) / 100;
+	if ((tsd && tsd->bonus.capdamage_nm_chance > 0) || (tsd && tsd->bonus.capdamage_sk_chance > 0)) {
+		if (damage < maxcap)
+			if (skill_id > 0) {
+				if (rand() % 10000 < tsd->bonus.capdamage_sk_chance)
+					damage = maxcap;
+			}
+			else {
+				if (rand() % 10000 < tsd->bonus.capdamage_nm_chance)
+					damage = maxcap;
+			}
+	}
+	damage = cap_value(damage, INT_MIN, maxcap);
+
+	if (tsd && tsd->bonus.supplementary) damage += tsd->bonus.supplementary;
+
 	return damage;
 }
 

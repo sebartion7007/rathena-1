@@ -11,3 +11,4 @@
  *	 { "name", &battle_config.<variable name>, <default value>, <minimum value>, <maximum value> },
  **/
 	{ "max_uplock_aspd",					&battle_config.max_uplock_aspd,					190,	100,	199,			},
+	{ "capdamage",                		    &battle_config.capdamage,         	            60720,	100000,	INT_MAX,		},

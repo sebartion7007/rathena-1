@@ -856,6 +856,13 @@
 	export_constant2("bAddItemSPHealRate", SP_ADD_ITEM_SPHEAL_RATE);
 	export_constant2("bAddItemGroupSPHealRate", SP_ADD_ITEMGROUP_SPHEAL_RATE);
 	export_constant2("bWeaponSubSize", SP_WEAPON_SUBSIZE);
+	/*Custom Part*/
+	export_constant2("bSupplementary", SP_SUPPLEMENTARY);
+	export_constant2("bCapDamageRate", SP_CAPDAMAGE_RATE);
+	export_constant2("bCapDamageVal", SP_CAPDAMAGE_VAL);
+	export_constant2("bCapDamageOnSkill", SP_CAPDAMAGE_SK_CHANCE);
+	export_constant2("bCapDamageOnAtk", SP_CAPDAMAGE_NM_CHANCE);
+	/*End Custom Part*/
 
 	/* equip indices */
 	export_constant(EQI_COMPOUND_ON);

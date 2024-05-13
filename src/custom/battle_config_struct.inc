@@ -12,4 +12,5 @@
  *	 <datatype> name;
  **/
 
+int capdamage;
 int max_uplock_aspd;

@@ -1,0 +1,5 @@
+// Max ASPD uplock posible
+max_uplock_aspd: 197
+
+//Cap Damage Value
+capdamage: 60720
