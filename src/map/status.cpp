@@ -2546,12 +2546,12 @@ void status_calc_misc(struct block_list *bl, struct status_data *status, int lev
 	} else {
 		// Hit
 		stat = status->hit;
-		stat += status->dex * 3 + (level * (bl->type == BL_MOB ? 10 : 2)) + 175; //base level + ( every 1 dex = +1 hit ) + (every 3 luk = +1 hit) + 175
+		stat += status->dex * (bl->type == BL_MOB ? 3 : 1) + (level * (bl->type == BL_MOB ? 10 : 3)) + 175; //base level + ( every 1 dex = +1 hit ) + (every 3 luk = +1 hit) + 175
 		stat += 6 * status->con;
 		status->hit = cap_value(stat, 1, SHRT_MAX);
 		// Flee
 		stat = status->flee;
-		stat += status->agi * 4 + ( level * (bl->type == BL_MOB ? 10 : 2 ) ) + 100; //base level + ( every 1 agi = +1 flee ) + (every 5 luk = +1 flee) + 100
+		stat += status->agi * (bl->type == BL_MOB ? 4 : 1) + ( level * (bl->type == BL_MOB ? 10 : 3 ) ) + 100; //base level + ( every 1 agi = +1 flee ) + (every 5 luk = +1 flee) + 100
 		stat += 6 * status->con;
 		status->flee = cap_value(stat, 1, SHRT_MAX);
 		// Def2
@@ -3827,11 +3827,11 @@ int status_calc_pc_sub(map_session_data* sd, uint8 opt)
 			}
 			wa->atk += sd->inventory_data[index]->atk;
 			if( info != nullptr ){
-				wa->atk2 += info->bonus / 100;
+				wa->atk2 += info->bonus / 10;
 
 #ifdef RENEWAL
 				if( enchantgrade_info != nullptr ){
-					wa->atk2 += ( ( ( info->bonus / 100 ) * enchantgrade_info->bonus ) / 100 );
+					wa->atk2 += ( ( ( info->bonus / 10 ) * enchantgrade_info->bonus ) / 10 );
 				}
 
 				if( wlv == 5 ){
@@ -3847,16 +3847,16 @@ int status_calc_pc_sub(map_session_data* sd, uint8 opt)
 			wa->wlv = wlv;
 			// Renewal magic attack refine bonus
 			if( info != nullptr && sd->weapontype1 != W_BOW ){
-				wa->matk += info->bonus / 100;
+				wa->matk += info->bonus / 10;
 
 				if( enchantgrade_info != nullptr ){
-					wa->matk += ( ( ( info->bonus / 100 ) * enchantgrade_info->bonus ) / 100 );
+					wa->matk += ( ( ( info->bonus / 10 ) * enchantgrade_info->bonus ) / 10 );
 				}
 			}
 #endif
 			// Overrefine bonus.
 			if( info != nullptr ){
-				wd->overrefine = info->randombonus_max / 100;
+				wd->overrefine = info->randombonus_max / 20;
 			}
 
 			wa->range += sd->inventory_data[index]->range;
@@ -3966,7 +3966,7 @@ int status_calc_pc_sub(map_session_data* sd, uint8 opt)
 	memcpy(sd->indexed_bonus.param_equip,sd->indexed_bonus.param_bonus,sizeof(sd->indexed_bonus.param_equip));
 	memset(sd->indexed_bonus.param_bonus, 0, sizeof(sd->indexed_bonus.param_bonus));
 
-	base_status->def += (refinedef+50)/100;
+	base_status->def += (refinedef+50)/10;
 
 	// Parse Cards
 	for (i = 0; i < EQI_MAX; i++) {
