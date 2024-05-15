@@ -5094,7 +5094,7 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 	map_session_data *sd = nullptr;
 	struct status_data *tstatus;
 	status_change *sc, *tsc;
-
+	struct status_data *status = status_get_status_data(src);
 	if (skill_id > 0 && !skill_lv) return 0;
 
 	nullpo_retr(1, src);
@@ -5771,6 +5771,10 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 				case SJ_PROMINENCEKICK: // Trigger the 2nd hit. (100% fire damage.)
 					skill_attack(skill_get_type(skill_id), src, src, bl, skill_id, skill_lv, tick, sflag|8|SD_ANIMATION);
 					break;
+				case MG_FIREBALL:
+					if(sd && ( (status->luk / 10) > rand()%100 ) )
+						skill_attack(skill_get_type(skill_id), src, src, bl, skill_id, skill_lv, tick, flag|SD_ANIMATION);
+					break;
 			}
 		} else {
 			int starget = BL_CHAR|BL_SKILL, splash_size = skill_get_splash(skill_id, skill_lv);
@@ -5996,7 +6000,6 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 		else
 			skill_attack(skill_get_type(skill_id), src, src, bl, skill_id, skill_lv, tick, flag);
 		break;
-
 #ifdef RENEWAL
 	case KN_BOWLINGBASH:
 		if (flag & 1) {
@@ -8334,7 +8337,7 @@ int skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, ui
 			return 1;
 		}
 		// Official chance is 70% + 3%*skill_lv + srcBaseLevel% - tarBaseLevel%
-		if(!(i = sc_start(src, bl, type, skill_id == SM_SELFPROVOKE ? 100 : (70 + 3 * skill_lv + status_get_lv(src) - status_get_lv(bl)), skill_lv, skill_get_time(skill_id, skill_lv))))
+		if(!(i = sc_start(src, bl, type, skill_id == SM_SELFPROVOKE ? 100 : (70 + 10 * skill_lv + status_get_lv(src) - status_get_lv(bl)), skill_lv, skill_get_time(skill_id, skill_lv))))
 		{
 			if( sd )
 				clif_skill_fail( *sd, skill_id );
