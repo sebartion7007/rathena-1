@@ -4149,6 +4149,14 @@ int status_calc_pc_sub(map_session_data* sd, uint8 opt)
 		base_status->int_ += skill;
 	if (pc_checkskill(sd, SU_POWEROFLAND) > 0)
 		base_status->int_ += 20;
+	if(pc_checkskill(sd, NV_FIRSTAID) > 0 ) {
+		base_status->str += 10;
+		base_status->agi += 10;
+		base_status->vit += 10;
+		base_status->int_+= 10;
+		base_status->dex += 10;
+		base_status->luk += 10;
+	}
 
 	// Bonuses from cards and equipment as well as base stat, remember to avoid overflows.
 	i = base_status->str + sd->status.str + sd->indexed_bonus.param_bonus[PARAM_STR] + sd->indexed_bonus.param_equip[PARAM_STR];
