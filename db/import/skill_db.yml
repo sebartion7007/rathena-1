@@ -1917,7 +1917,7 @@ Body:
   - Id: 36
     Name: MC_INCCARRY
     Description: Enlarge Weight Limit
-    MaxLevel: 10
+    MaxLevel: 15
   - Id: 37
     Name: MC_DISCOUNT
     Description: Discount
@@ -1929,7 +1929,7 @@ Body:
   - Id: 39
     Name: MC_PUSHCART
     Description: Pushcart
-    MaxLevel: 10
+    MaxLevel: 15
     Range: 1
   - Id: 40
     Name: MC_IDENTIFY
@@ -1963,7 +1963,7 @@ Body:
   - Id: 42
     Name: MC_MAMMONITE
     Description: Mammonite
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
     TargetType: Attack
     Flags:
@@ -1999,6 +1999,16 @@ Body:
           Amount: 900
         - Level: 10
           Amount: 1000
+        - Level: 11
+          Amount: 800
+        - Level: 12
+          Amount: 600
+        - Level: 13
+          Amount: 400
+        - Level: 14
+          Amount: 200
+        - Level: 15
+          Amount: 0
   - Id: 43
     Name: AC_OWL
     Description: Owl's Eye

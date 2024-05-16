@@ -8112,7 +8112,10 @@ static unsigned short status_calc_speed(struct block_list *bl, status_change *sc
 
 	// GetSpeed()
 	if( sd && pc_iscarton(sd) )
-		speed += speed * (50 - 5 * pc_checkskill(sd,MC_PUSHCART)) / 100;
+		if( pc_checkskill(sd,MC_PUSHCART) <= 10 )
+			speed += speed * (50 - 5 * pc_checkskill(sd,MC_PUSHCART)) / 100;
+		else
+			speed -= speed * (pc_checkskill(sd,MC_PUSHCART) - 10 ) / 100;
 	if( sc->getSCE(SC_PARALYSE) && sc->getSCE(SC_PARALYSE)->val3 == 1 )
 		speed += speed * 50 / 100;
 	if( speed_rate != 100 )

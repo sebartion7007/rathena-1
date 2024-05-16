@@ -4592,7 +4592,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			else skillratio += (skill_lv < 15 ? 400 : 500);
 			break;
 		case MC_MAMMONITE:
-			skillratio += 50 * skill_lv;
+			skillratio += 50 * skill_lv + (skill_lv > 10 ? skill_lv - 10 : 0) * 50;
 			break;
 		case HT_POWER:
 			skillratio += -50 + 8 * sstatus->str;

@@ -236,7 +236,7 @@ Body:
       Novice: true
     Tree:
       - Name: MC_INCCARRY
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: MC_DISCOUNT
         MaxLevel: 10
         Requires:
@@ -248,7 +248,7 @@ Body:
           - Name: MC_DISCOUNT
             Level: 3
       - Name: MC_PUSHCART
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: MC_INCCARRY
             Level: 5
@@ -260,7 +260,7 @@ Body:
           - Name: MC_PUSHCART
             Level: 3
       - Name: MC_MAMMONITE
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: MC_CARTREVOLUTION
         MaxLevel: 1
       - Name: MC_CHANGECART

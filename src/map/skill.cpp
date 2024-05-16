@@ -5136,6 +5136,11 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 	case SM_BASH:
 	case MS_BASH:
 	case MC_MAMMONITE:
+		skill_attack(BF_WEAPON,src,src,bl,skill_id,skill_lv,tick,flag);
+		if(sd && (skill_lv >= 15) )
+			if( (status->luk / 10) > rand()%100  )
+				skill_attack(skill_get_type(skill_id), src, src, bl, skill_id, skill_lv, tick, flag|SD_ANIMATION);
+		break;
 	case TF_DOUBLE:
 	case AC_DOUBLE:
 	case MA_DOUBLE:
@@ -5773,8 +5778,10 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 					skill_attack(skill_get_type(skill_id), src, src, bl, skill_id, skill_lv, tick, sflag|8|SD_ANIMATION);
 					break;
 				case MG_FIREBALL:
-					if(sd && ( (status->luk / 10) > rand()%100 ) )
-						skill_attack(skill_get_type(skill_id), src, src, bl, skill_id, skill_lv, tick, flag|SD_ANIMATION);
+					if(sd && (skill_lv >= 15) )
+						if( (status->luk / 10) > rand()%100  )
+						skill_attack(skill_get_type(skill_id), src, src, bl, skill_id, skill_lv, tick, sflag|8|SD_ANIMATION);
+						//skill_attack(skill_get_type(skill_id), src, src, bl, skill_id, skill_lv, tick, flag|SD_ANIMATION);
 					break;
 			}
 		} else {
