@@ -2,4 +2,4 @@
 max_uplock_aspd: 197
 
 //Cap Damage Value
-capdamage: 60720
+capdamage: 100001
