@@ -2012,7 +2012,7 @@ Body:
   - Id: 43
     Name: AC_OWL
     Description: Owl's Eye
-    MaxLevel: 10
+    MaxLevel: 15
   - Id: 44
     Name: AC_VULTURE
     Description: Vulture's Eye
@@ -2020,7 +2020,7 @@ Body:
   - Id: 45
     Name: AC_CONCENTRATION
     Description: Improve Concentration
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
     TargetType: Self
     DamageFlags:
@@ -2050,6 +2050,16 @@ Body:
         Time: 220000
       - Level: 10
         Time: 240000
+      - Level: 11
+        Time: 300000
+      - Level: 12
+        Time: 360000
+      - Level: 13
+        Time: 420000
+      - Level: 14
+        Time: 480000
+      - Level: 15
+        Time: 540000
     Requires:
       SpCost:
         - Level: 1
@@ -2072,18 +2082,58 @@ Body:
           Amount: 65
         - Level: 10
           Amount: 70
+        - Level: 11
+          Amount: 80
+        - Level: 12
+          Amount: 90
+        - Level: 13
+          Amount: 100
+        - Level: 14
+          Amount: 110
+        - Level: 15
+          Amount: 120
     Status: Concentrate
   - Id: 46
     Name: AC_DOUBLE
-    Description: Double Strafe
-    MaxLevel: 10
+    Description: Multi Strafe
+    MaxLevel: 15
     Type: Weapon
     TargetType: Attack
     Flags:
       AlterRangeVulture: true
     Range: -9
     Hit: Multi_Hit
-    HitCount: 2
+    HitCount:
+      - Level: 1
+        Count: 2
+      - Level: 2
+        Count: 2
+      - Level: 3
+        Count: 2
+      - Level: 4
+        Count: 2
+      - Level: 5
+        Count: 2
+      - Level: 6
+        Count: 2
+      - Level: 7
+        Count: 2
+      - Level: 8
+        Count: 2
+      - Level: 9
+        Count: 2
+      - Level: 10
+        Count: 2
+      - Level: 11
+        Count: 2
+      - Level: 12
+        Count: 2
+      - Level: 13
+        Count: 2
+      - Level: 14
+        Count: 2
+      - Level: 15
+        Count: 3
     Element: Weapon
     CopyFlags:
       Skill:
@@ -2092,7 +2142,37 @@ Body:
     AfterCastActDelay: 100
     Duration1: 100
     Requires:
-      SpCost: 12
+      SpCost:
+        - Level: 1
+          Amount: 12
+        - Level: 2
+          Amount: 12
+        - Level: 3
+          Amount: 12
+        - Level: 4
+          Amount: 12
+        - Level: 5
+          Amount: 12
+        - Level: 6
+          Amount: 12
+        - Level: 7
+          Amount: 12
+        - Level: 8
+          Amount: 12
+        - Level: 9
+          Amount: 12
+        - Level: 10
+          Amount: 12
+        - Level: 11
+          Amount: 24
+        - Level: 12
+          Amount: 36
+        - Level: 13
+          Amount: 48
+        - Level: 14
+          Amount: 60
+        - Level: 15
+          Amount: 60
       Weapon:
         Bow: true
       Ammo:
@@ -2152,7 +2232,7 @@ Body:
   - Id: 48
     Name: TF_DOUBLE
     Description: Double Attack
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
     DamageFlags:
       Critical: true
@@ -2168,7 +2248,7 @@ Body:
   - Id: 50
     Name: TF_STEAL
     Description: Steal
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
     TargetType: Attack
     DamageFlags:
@@ -2220,7 +2300,7 @@ Body:
   - Id: 52
     Name: TF_POISON
     Description: Envenom
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
     TargetType: Attack
     Range: -2

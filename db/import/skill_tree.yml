@@ -144,19 +144,19 @@ Body:
       Novice: true
     Tree:
       - Name: AC_OWL
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: AC_VULTURE
         MaxLevel: 10
         Requires:
           - Name: AC_OWL
             Level: 3
       - Name: AC_CONCENTRATION
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: AC_VULTURE
             Level: 1
       - Name: AC_DOUBLE
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: AC_SHOWER
         MaxLevel: 10
         Requires:
@@ -195,7 +195,7 @@ Body:
           - Name: AL_TELEPORT
             Level: 2
       - Name: AL_HEAL
-        MaxLevel: 15
+        MaxLevel: 10
       - Name: AL_INCAGI
         MaxLevel: 15
         Requires:
@@ -279,18 +279,18 @@ Body:
       Novice: true
     Tree:
       - Name: TF_DOUBLE
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: TF_MISS
         MaxLevel: 10
       - Name: TF_STEAL
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: TF_HIDING
         MaxLevel: 10
         Requires:
           - Name: TF_STEAL
             Level: 5
       - Name: TF_POISON
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: TF_DETOXIFY
         MaxLevel: 1
         Requires:

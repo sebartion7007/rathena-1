@@ -3153,6 +3153,7 @@ static bool is_attack_hitting(struct Damage* wd, struct block_list *src, struct 
 	status_change *sc = status_get_sc(src);
 	status_change *tsc = status_get_sc(target);
 	map_session_data *sd = BL_CAST(BL_PC, src);
+	map_session_data *tsd = BL_CAST(BL_PC, target);
 	std::bitset<NK_MAX> nk = battle_skill_get_damage_properties(skill_id, wd->miscflag);
 	short flee, hitrate;
 
@@ -3204,7 +3205,9 @@ static bool is_attack_hitting(struct Damage* wd, struct block_list *src, struct 
 
 	if(sd && is_skill_using_arrow(src, skill_id))
 		hitrate += sd->bonus.arrow_hit;
-
+	if(tsd)
+		if(rnd()%100 < pc_checkskill(tsd,TF_MISS))
+			return false;
 #ifdef RENEWAL
 	if (sd) //in Renewal hit bonus from Vultures Eye is not anymore shown in status window
 		hitrate += pc_checkskill(sd,AC_VULTURE);
@@ -3305,8 +3308,8 @@ static bool is_attack_hitting(struct Damage* wd, struct block_list *src, struct 
 				}
 				break;
 		}
-	} else if (sd && wd->type&DMG_MULTI_HIT && wd->div_ == 2) // +1 hit per level of Double Attack on a successful double attack (making sure other multi attack skills do not trigger this) [helvetica]
-		hitrate += pc_checkskill(sd,TF_DOUBLE);
+	}/* else if (sd && wd->type&DMG_MULTI_HIT && wd->div_ == 2) // +1 hit per level of Double Attack on a successful double attack (making sure other multi attack skills do not trigger this) [helvetica]
+		hitrate += pc_checkskill(sd,TF_DOUBLE); */
 
 	if (sd) {
 		int skill = 0;
@@ -3815,7 +3818,7 @@ static void battle_calc_element_damage(struct Damage* wd, struct block_list *src
 		// Skill-specific bonuses
 		switch(skill_id) {
 			case TF_POISON:
-				ATK_ADD(wd->damage, wd->damage2, 15 * skill_lv);
+				ATK_ADD(wd->damage, wd->damage2, skill_lv <= 10 ? 15 * skill : 150 * (skill_lv - 10 ) );
 				// Envenom applies the attribute table to the base damage and then again to the final damage
 				wd->damage = battle_attr_fix(src, target, wd->damage, right_element, tstatus->def_ele, tstatus->ele_lv, 1);
 				break;
@@ -4378,18 +4381,24 @@ static void battle_calc_multi_attack(struct Damage* wd, struct block_list *src,s
 			|| ( sd->bonus.double_rate > 0 && sd->weapontype1 != W_FIST ) // Will fail bare-handed
 			|| ( sc && sc->getSCE(SC_KAGEMUSYA) && sd->weapontype1 != W_FIST )) // Will fail bare-handed
 		{	//Success chance is not added, the higher one is used [Skotlex]
-			int max_rate = 0;
+			int max_double_rate = 0;
+			int max_triple_rate = 0;
 
 			if (sc && sc->getSCE(SC_KAGEMUSYA))
-				max_rate = sc->getSCE(SC_KAGEMUSYA)->val1 * 10; // Same rate as even levels of TF_DOUBLE
-			else
+				max_double_rate = sc->getSCE(SC_KAGEMUSYA)->val1 * 10; // Same rate as even levels of TF_DOUBLE
+			else {
 #ifdef RENEWAL
-				max_rate = max(7 * skill_lv, sd->bonus.double_rate);
+				max_double_rate = max(5 + skill_lv * 3, sd->bonus.double_rate);
+				max_triple_rate = (skill_lv < 15 ? skill_lv * 25 / 100 : 40 );
 #else
-				max_rate = max(5 * skill_lv, sd->bonus.double_rate);
+				max_double_rate = max(5 * skill_lv, sd->bonus.double_rate);
 #endif
-
-			if( rnd()%100 < max_rate ) {
+			}
+			if( rnd()%100 < max_triple_rate ) {
+				wd->div_ = 3;
+				wd->type = DMG_MULTI_HIT;
+			}
+			else if( rnd()%100 < max_double_rate ) {
 				wd->div_ = skill_get_num(TF_DOUBLE,skill_lv?skill_lv:1);
 				wd->type = DMG_MULTI_HIT;
 			}
