@@ -3095,7 +3095,7 @@ static int status_get_hpbonus(struct block_list *bl, enum e_status_bonus type) {
 				bonus += sc->getSCE(SC_GLASTHEIM_HPSP)->val1;
 #ifdef RENEWAL
 			if (sc->getSCE(SC_ANGELUS))
-				bonus += sc->getSCE(SC_ANGELUS)->val1 * 50;
+				bonus += sc->getSCE(SC_ANGELUS)->val1 * 50 + (sc->getSCE(SC_ANGELUS)->val1 > 10 ? sc->getSCE(SC_ANGELUS)->val1 * 50 : 0 );
 #endif
 		}
 	} else if (type == STATUS_BONUS_RATE) {
@@ -6460,7 +6460,7 @@ static unsigned short status_calc_str(struct block_list *bl, status_change *sc, 
 		str += sc->getSCE(SC_NEN)->val1;
 	if(sc->getSCE(SC_BLESSING)) {
 		if(sc->getSCE(SC_BLESSING)->val2)
-			str += sc->getSCE(SC_BLESSING)->val2;
+			str += sc->getSCE(SC_BLESSING)->val2 + (sc->getSCE(SC_BLESSING)->val2 > 10 ? (sc->getSCE(SC_BLESSING)->val2 - 10) : 0 );
 		else
 			str -= str / 2;
 	}
@@ -6538,7 +6538,7 @@ static unsigned short status_calc_agi(struct block_list *bl, status_change *sc, 
 	if(sc->getSCE(SC_TRUESIGHT))
 		agi += 5;
 	if(sc->getSCE(SC_INCREASEAGI))
-		agi += sc->getSCE(SC_INCREASEAGI)->val2;
+		agi += sc->getSCE(SC_INCREASEAGI)->val2 + (sc->getSCE(SC_INCREASEAGI)->val2 > 10 ? (sc->getSCE(SC_INCREASEAGI)->val2 - 10 ) * 2 : 0);
 	if(sc->getSCE(SC_INCREASING))
 		agi += 4; // Added based on skill updates [Reddozen]
 	if(sc->getSCE(SC_DECREASEAGI))
@@ -6701,7 +6701,7 @@ static unsigned short status_calc_int(struct block_list *bl, status_change *sc, 
 		int_ += 5;
 	if(sc->getSCE(SC_BLESSING)) {
 		if (sc->getSCE(SC_BLESSING)->val2)
-			int_ += sc->getSCE(SC_BLESSING)->val2;
+			int_ += sc->getSCE(SC_BLESSING)->val2 + (sc->getSCE(SC_BLESSING)->val2 > 10 ? (sc->getSCE(SC_BLESSING)->val2 - 10) : 0 );
 		else
 			int_ -= int_ / 2;
 	}
@@ -6795,7 +6795,7 @@ static unsigned short status_calc_dex(struct block_list *bl, status_change *sc, 
 		dex -= sc->getSCE(SC_QUAGMIRE)->val2;
 	if(sc->getSCE(SC_BLESSING)) {
 		if (sc->getSCE(SC_BLESSING)->val2)
-			dex += sc->getSCE(SC_BLESSING)->val2;
+			dex += sc->getSCE(SC_BLESSING)->val2 + (sc->getSCE(SC_BLESSING)->val2 > 10 ? (sc->getSCE(SC_BLESSING)->val2 - 10) : 0 );
 		else
 			dex -= dex / 2;
 	}
@@ -8055,7 +8055,7 @@ static unsigned short status_calc_speed(struct block_list *bl, status_change *sc
 		if (sc->getSCE(SC_AGIUP))
 			val = max(val, sc->getSCE(SC_AGIUP)->val1);
 		if( sc->getSCE(SC_INCREASEAGI) )
-			val = max( val, 25 );
+			val = max( val, (sc->getSCE(SC_INCREASEAGI)->val2 > 10 ? 30 : 25 ) );
 		if( sc->getSCE(SC_WINDWALK) )
 			val = max( val, 2 * sc->getSCE(SC_WINDWALK)->val1 );
 		if( sc->getSCE(SC_CARTBOOST) )
@@ -8256,7 +8256,7 @@ static short status_calc_aspd(struct block_list *bl, status_change *sc, bool fix
 		if (sc->getSCE(SC_WIND_INSIGNIA) && sc->getSCE(SC_WIND_INSIGNIA)->val1 == 2)
 			bonus += 10;
 		if (sc->getSCE(SC_INCREASEAGI))
-			bonus += sc->getSCE(SC_INCREASEAGI)->val1;
+			bonus += sc->getSCE(SC_INCREASEAGI)->val1 + (sc->getSCE(SC_INCREASEAGI)->val1 > 10 ? sc->getSCE(SC_INCREASEAGI)->val1 : 0);
 		if (sc->getSCE(SC_NIBELUNGEN) && sc->getSCE(SC_NIBELUNGEN)->val2 == RINGNBL_ASPDRATE)
 			bonus += 20;
 		if (sc->getSCE(SC_STARSTANCE))
@@ -11350,8 +11350,11 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 			val3 = 5*val1; // SP cost
 			break;
 		case SC_BLESSING:
-			if (bl->type == BL_PC || (!undead_flag && status->race != RC_DEMON))
+			if (bl->type == BL_PC || (!undead_flag && status->race != RC_DEMON)) {
 				val2 = val1;
+				if(val1 > 10) val3 = val1 - 10;
+				else val3 = 0;
+			}
 			else
 				val2 = 0; // 0 -> Half stat.
 			break;
@@ -11403,7 +11406,7 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 			sc_start(src, bl, SC_ENDURE, 100, 1, tick); // Level 1 Endure effect
 			break;
 		case SC_ANGELUS:
-			val2 = 5*val1; // def increase
+			val2 = 5*val1 + (val1 > 10 ? (val1-10) * 5: 0); // def increase
 			break;
 		case SC_IMPOSITIO:
 			val2 = 5*val1; // WATK/MATK increase

@@ -2026,9 +2026,19 @@ int64 battle_calc_damage(struct block_list *src,struct block_list *bl,struct Dam
 			}
 	}
 	damage = cap_value(damage, INT_MIN, maxcap);
-
+	
+	//SC effects from caster side.
+	status_change* scs = status_get_sc(src);
+	//ShowDebug("Debug Test \n");
+	if (scs && scs->count) {
+		if (scs->getSCE(SC_BLESSING)) {
+			damage += scs->getSCE(SC_BLESSING)->val3*200;
+		}
+	}
+	
 	if (tsd && tsd->bonus.supplementary) damage += tsd->bonus.supplementary;
 
+	damage = cap_value(damage, INT_MIN, INT_MAX);
 	return damage;
 }
 
@@ -2259,7 +2269,7 @@ int64 battle_addmastery(map_session_data *sd,struct block_list *target,int64 dmg
 	if((skill = pc_checkskill(sd,AL_DEMONBANE)) > 0 &&
 		target->type == BL_MOB && //This bonus doesn't work against players.
 		(battle_check_undead(status->race,status->def_ele) || status->race == RC_DEMON) )
-		damage += (skill*(int)(3+(sd->status.base_level+1)*0.05));	// submitted by orn
+		damage += (skill*(int)(30+(sd->status.base_level+1)*0.05));	// submitted by orn
 	if( (skill = pc_checkskill(sd, RA_RANGERMAIN)) > 0 && (status->race == RC_BRUTE || status->race == RC_PLAYER_DORAM || status->race == RC_PLANT || status->race == RC_FISH) )
 		damage += (skill * 5);
 	if( (skill = pc_checkskill(sd,NC_RESEARCHFE)) > 0 && (status->def_ele == ELE_FIRE || status->def_ele == ELE_EARTH) )
@@ -6629,7 +6639,7 @@ static void battle_calc_defense_reduction(struct Damage* wd, struct block_list *
 #endif
 		if (src->type == BL_MOB && (battle_check_undead(sstatus->race, sstatus->def_ele) || sstatus->race == RC_DEMON) && //This bonus already doesn't work vs players
 			(skill = pc_checkskill(tsd, AL_DP)) > 0)
-			vit_def += (int)(((float)tsd->status.base_level / 25.0 + 3.0) * skill + 0.5);
+			vit_def += (int)(((float)tsd->status.base_level / 25.0 + 10.0) * skill + 0.5);
 		if( src->type == BL_MOB && (skill=pc_checkskill(tsd,RA_RANGERMAIN))>0 &&
 			(sstatus->race == RC_BRUTE || sstatus->race == RC_PLAYER_DORAM || sstatus->race == RC_FISH || sstatus->race == RC_PLANT) )
 			vit_def += skill*5;
@@ -7975,6 +7985,9 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 						break;
 					case AL_RUWACH:
 						skillratio += 45;
+						break;
+					case AL_CRUCIS:
+						skillratio += -100 + skill_lv * 20;
 						break;
 					case WZ_FROSTNOVA:
 						skillratio += -100 + (100 + skill_lv * 10) * 2 / 3;

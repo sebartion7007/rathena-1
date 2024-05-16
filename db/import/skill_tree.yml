@@ -195,9 +195,9 @@ Body:
           - Name: AL_TELEPORT
             Level: 2
       - Name: AL_HEAL
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: AL_INCAGI
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: AL_HEAL
             Level: 3
@@ -209,17 +209,18 @@ Body:
       - Name: AL_HOLYWATER
         MaxLevel: 1
       - Name: AL_CRUCIS
-        MaxLevel: 10
+        MaxLevel: 5
+        JobLevel: 44
         Requires:
           - Name: AL_DEMONBANE
             Level: 3
       - Name: AL_ANGELUS
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: AL_DP
             Level: 3
       - Name: AL_BLESSING
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: AL_DP
             Level: 5
@@ -1642,7 +1643,8 @@ Body:
       - Name: AL_HOLYWATER
         MaxLevel: 1
       - Name: AL_CRUCIS
-        MaxLevel: 10
+        MaxLevel: 5
+        JobLevel: 44
         Requires:
           - Name: AL_DEMONBANE
             Level: 3
@@ -2874,7 +2876,8 @@ Body:
       - Name: AL_HOLYWATER
         MaxLevel: 1
       - Name: AL_CRUCIS
-        MaxLevel: 10
+        MaxLevel: 5
+        JobLevel: 44
         Requires:
           - Name: AL_DEMONBANE
             Level: 3

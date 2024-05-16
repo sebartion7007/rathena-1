@@ -1504,7 +1504,7 @@ Body:
   - Id: 28
     Name: AL_HEAL
     Description: Heal
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Magic
     TargetType: Support
     DamageFlags:
@@ -1547,7 +1547,7 @@ Body:
   - Id: 29
     Name: AL_INCAGI
     Description: Increase AGI
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Magic
     TargetType: Support
     DamageFlags:
@@ -1579,6 +1579,16 @@ Body:
         Time: 220000
       - Level: 10
         Time: 240000
+      - Level: 11
+        Time: 300000
+      - Level: 12
+        Time: 360000
+      - Level: 13
+        Time: 420000
+      - Level: 14
+        Time: 480000
+      - Level: 15
+        Time: 540000
     FixedCastTime: 200
     Requires:
       HpCost: 15
@@ -1603,6 +1613,16 @@ Body:
           Amount: 42
         - Level: 10
           Amount: 45
+        - Level: 11
+          Amount: 60
+        - Level: 12
+          Amount: 75
+        - Level: 13
+          Amount: 90
+        - Level: 14
+          Amount: 105
+        - Level: 15
+          Amount: 120
     Status: IncreaseAgi
   - Id: 30
     Name: AL_DECAGI
@@ -1685,7 +1705,7 @@ Body:
   - Id: 32
     Name: AL_CRUCIS
     Description: Signum Crucis
-    MaxLevel: 10
+    MaxLevel: 5
     Type: Magic
     TargetType: Self
     DamageFlags:
@@ -1693,18 +1713,39 @@ Body:
       Splash: true
     Hit: Single
     HitCount: 1
-    SplashArea: 15
+    Element: Holy
+    SplashArea:
+      - Level: 1
+        Area: 3
+      - Level: 2
+        Area: 5
+      - Level: 3
+        Area: 7
+      - Level: 4
+        Area: 9
+      - Level: 5
+        Area: 11
     CastCancel: true
     CastTime: 350
     AfterCastActDelay: 2000
     FixedCastTime: 150
     Requires:
-      SpCost: 35
+      SpCost:
+        - Level: 1
+          Amount: 35
+        - Level: 2
+          Amount: 46
+        - Level: 3
+          Amount: 57
+        - Level: 4
+          Amount: 68
+        - Level: 5
+          Amount: 79
     Status: SignumCrucis
   - Id: 33
     Name: AL_ANGELUS
     Description: Angelus
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Magic
     TargetType: Self
     DamageFlags:
@@ -1737,6 +1778,16 @@ Body:
         Time: 270000
       - Level: 10
         Time: 300000
+      - Level: 11
+        Time: 300000
+      - Level: 12
+        Time: 300000
+      - Level: 13
+        Time: 300000
+      - Level: 14
+        Time: 300000
+      - Level: 15
+        Time: 300000
     FixedCastTime: 150
     Requires:
       SpCost:
@@ -1760,11 +1811,21 @@ Body:
           Amount: 47
         - Level: 10
           Amount: 50
+        - Level: 11
+          Amount: 60
+        - Level: 12
+          Amount: 70
+        - Level: 13
+          Amount: 80
+        - Level: 14
+          Amount: 90
+        - Level: 15
+          Amount: 100
     Status: Angelus
   - Id: 34
     Name: AL_BLESSING
     Description: Blessing
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Magic
     TargetType: Support
     DamageFlags:
@@ -1794,6 +1855,16 @@ Body:
         Time: 220000
       - Level: 10
         Time: 240000
+      - Level: 11
+        Time: 300000
+      - Level: 12
+        Time: 360000
+      - Level: 13
+        Time: 420000
+      - Level: 14
+        Time: 480000
+      - Level: 15
+        Time: 540000
     Requires:
       SpCost:
         - Level: 1
@@ -1816,6 +1887,16 @@ Body:
           Amount: 60
         - Level: 10
           Amount: 64
+        - Level: 11
+          Amount: 79
+        - Level: 12
+          Amount: 94
+        - Level: 13
+          Amount: 109
+        - Level: 14
+          Amount: 124
+        - Level: 15
+          Amount: 139
     Status: Blessing
   - Id: 35
     Name: AL_CURE
