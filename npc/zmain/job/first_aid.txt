@@ -1,0 +1,33 @@
+falserealm,162,128,1	script	Practical Nurse#skillaid	4_F_NURSE,{
+	if(getskilllv("NV_FIRSTAID") ) {
+		mes "[ Nurse ]";
+		mes "ปฐมพยาบาลเบื้องต้นได้เฉพาะตัวเองนะ";
+		end;
+	}
+	if(@calmdown && @calmdown < gettimetick(2)) {
+		mes "[ Nurse ]";
+		mes "ดีมาก ก่อนจะทำอะไรต้องใจเย็นๆก่อนนะ ";
+		mes "เรียบร้อยแล้ว <3";
+		skill "NV_FIRSTAID",1,SKILL_PERM;
+		end;
+	}
+	if(!@calmdown) {
+		mes "[ Nurse ]";
+		mes "เราจะสอนการปฐมพยาบาลเบื้องต้นให้เธอนะ";
+		mes "เธออยากเรียนกับเราไหม ?";
+		if(select("เราอยากเรียนกับเธอ:เราอยากทำอย่างอื่นนอกจากเรียน") == 2 ) {
+			mes "งั้นหรอ ไว้คราวหน้านะ";
+			end;
+		}
+		next;
+	}
+		mes "[ Nurse ]";
+	if(@calmdown >= gettimetick(2)) mes "เธอยังใจร้อนอยู่เลย";
+		mes "ขั้นแรกเธอต้องใจเย็นๆ ลองใจเย็นๆซักพักก่อนนะ";
+		@calmdown = gettimetick(2) + 30;
+		end;
+
+Oninit:
+	setunittitle(getnpcid(0),"<First Aid>");
+	end;
+}
