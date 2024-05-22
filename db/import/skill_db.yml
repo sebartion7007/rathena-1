@@ -2313,7 +2313,37 @@ Body:
         Reproduce: true
     Duration2: 18000
     Requires:
-      SpCost: 12
+      SpCost:
+        - Level: 1
+          Amount: 4
+        - Level: 2
+          Amount: 8
+        - Level: 3
+          Amount: 12
+        - Level: 4
+          Amount: 16
+        - Level: 5
+          Amount: 20
+        - Level: 6
+          Amount: 24
+        - Level: 7
+          Amount: 28
+        - Level: 8
+          Amount: 32
+        - Level: 9
+          Amount: 36
+        - Level: 10
+          Amount: 40
+        - Level: 11
+          Amount: 44
+        - Level: 12
+          Amount: 48
+        - Level: 13
+          Amount: 52
+        - Level: 14
+          Amount: 56
+        - Level: 15
+          Amount: 60
     Status: Poison
   - Id: 53
     Name: TF_DETOXIFY

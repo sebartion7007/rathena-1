@@ -2269,7 +2269,10 @@ int64 battle_addmastery(map_session_data *sd,struct block_list *target,int64 dmg
 	if((skill = pc_checkskill(sd,AL_DEMONBANE)) > 0 &&
 		target->type == BL_MOB && //This bonus doesn't work against players.
 		(battle_check_undead(status->race,status->def_ele) || status->race == RC_DEMON) )
-		damage += (skill*(int)(30+(sd->status.base_level+1)*0.05));	// submitted by orn
+		damage += (skill*(int)(100+(sd->status.base_level+1)*0.05));	// submitted by orn
+	if((skill = pc_checkskill(sd,AL_DEMONBANE)) > 0 &&
+		target->type == BL_MOB )
+		damage += (skill*(int)(100+(sd->status.base_level+1)*0.05));	// submitted by orn
 	if( (skill = pc_checkskill(sd, RA_RANGERMAIN)) > 0 && (status->race == RC_BRUTE || status->race == RC_PLAYER_DORAM || status->race == RC_PLANT || status->race == RC_FISH) )
 		damage += (skill * 5);
 	if( (skill = pc_checkskill(sd,NC_RESEARCHFE)) > 0 && (status->def_ele == ELE_FIRE || status->def_ele == ELE_EARTH) )
@@ -3159,6 +3162,9 @@ static bool is_attack_hitting(struct Damage* wd, struct block_list *src, struct 
 
 	if (!first_call)
 		return (wd->dmg_lv != ATK_FLEE);
+	if(tsd)
+		if(rnd()%100 < pc_checkskill(tsd,TF_MISS))
+			return false;
 	if (is_attack_critical(wd, src, target, skill_id, skill_lv, false))
 		return true;
 	else if(sd && sd->bonus.perfect_hit > 0 && rnd()%100 < sd->bonus.perfect_hit)
@@ -3205,9 +3211,7 @@ static bool is_attack_hitting(struct Damage* wd, struct block_list *src, struct 
 
 	if(sd && is_skill_using_arrow(src, skill_id))
 		hitrate += sd->bonus.arrow_hit;
-	if(tsd)
-		if(rnd()%100 < pc_checkskill(tsd,TF_MISS))
-			return false;
+
 #ifdef RENEWAL
 	if (sd) //in Renewal hit bonus from Vultures Eye is not anymore shown in status window
 		hitrate += pc_checkskill(sd,AC_VULTURE);
@@ -3818,7 +3822,7 @@ static void battle_calc_element_damage(struct Damage* wd, struct block_list *src
 		// Skill-specific bonuses
 		switch(skill_id) {
 			case TF_POISON:
-				ATK_ADD(wd->damage, wd->damage2, skill_lv <= 10 ? 15 * skill : 150 * (skill_lv - 10 ) );
+				ATK_ADD(wd->damage, wd->damage2, skill_lv * 200 );
 				// Envenom applies the attribute table to the base damage and then again to the final damage
 				wd->damage = battle_attr_fix(src, target, wd->damage, right_element, tstatus->def_ele, tstatus->ele_lv, 1);
 				break;
@@ -6648,7 +6652,7 @@ static void battle_calc_defense_reduction(struct Damage* wd, struct block_list *
 #endif
 		if (src->type == BL_MOB && (battle_check_undead(sstatus->race, sstatus->def_ele) || sstatus->race == RC_DEMON) && //This bonus already doesn't work vs players
 			(skill = pc_checkskill(tsd, AL_DP)) > 0)
-			vit_def += (int)(((float)tsd->status.base_level / 25.0 + 10.0) * skill + 0.5);
+			vit_def += (int)(((float)tsd->status.base_level / 25.0 + 30.0) * skill + 0.5);
 		if( src->type == BL_MOB && (skill=pc_checkskill(tsd,RA_RANGERMAIN))>0 &&
 			(sstatus->race == RC_BRUTE || sstatus->race == RC_PLAYER_DORAM || sstatus->race == RC_FISH || sstatus->race == RC_PLANT) )
 			vit_def += skill*5;
@@ -7861,7 +7865,7 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 			case PR_BENEDICTIO:
 			case PR_SANCTUARY:
 			case AB_HIGHNESSHEAL:
-				ad.damage = skill_calc_heal(src, target, skill_id, skill_lv, false);
+				ad.damage = skill_calc_heal(src, target, skill_id, skill_lv, false) * 3 / 2;
 				break;
 			case PR_ASPERSIO:
 				ad.damage = 40;
@@ -7942,7 +7946,7 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 
 				switch(skill_id) {
 					case MG_NAPALMBEAT:
-						skillratio += -30 + 10 * skill_lv;
+						skillratio +=  45 * skill_lv;
 						break;
 					case MG_FIREBALL:
 #ifdef RENEWAL
@@ -7954,6 +7958,7 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 #endif
 						break;
 					case MG_SOULSTRIKE:
+							skillratio += 5 * skill_lv;
 						if (battle_check_undead(tstatus->race,tstatus->def_ele))
 							skillratio += 5 * skill_lv;
 						break;
@@ -7963,7 +7968,7 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 					case MG_FIREBOLT:
 					case MG_COLDBOLT:
 					case MG_LIGHTNINGBOLT:
-						skillratio += skill_lv;
+						skillratio += 2 * skill_lv;
 						if (sc) {
 							if ((skill_id == MG_FIREBOLT && sc->getSCE(SC_FLAMETECHNIC_OPTION)) ||
 								(skill_id == MG_COLDBOLT && sc->getSCE(SC_COLD_FORCE_OPTION)) ||
@@ -7981,7 +7986,7 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 					case MG_THUNDERSTORM:
 						// in Renewal Thunder Storm boost is 100% (in pre-re, 80%)
 #ifndef RENEWAL
-						skillratio += 20;
+						skillratio += 10 * skill_lv;
 #endif
 						break;
 					case MG_FROSTDIVER:
