@@ -48,3 +48,4 @@ Header:
 Footer:
   Imports:
   - Path: npc/zmain/barters/newbie.yml
+  - Path: npc/zmain/barters/Helphead.yml
