@@ -4715,7 +4715,7 @@ Body:
   - Id: 116
     Name: HT_LANDMINE
     Description: Land Mine
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Misc
     TargetType: Ground
     DamageFlags:
@@ -4747,10 +4747,20 @@ Body:
         Time: 80000
       - Level: 5
         Time: 40000
+      - Level: 6
+        Time: 50000
+      - Level: 7
+        Time: 60000
+      - Level: 8
+        Time: 70000
+      - Level: 9
+        Time: 80000
+      - Level: 10
+        Time: 40000
     Duration2: 4500
     FixedCastTime: 300
     Requires:
-      SpCost: 10
+      SpCost: 60
       ItemCost:
         - Item: Booby_Trap
           Amount: 1
@@ -5016,12 +5026,11 @@ Body:
   - Id: 122
     Name: HT_BLASTMINE
     Description: Blast Mine
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Misc
     TargetType: Ground
     DamageFlags:
       Splash: true
-      SplashSplit: true
       IgnoreFlee: true
       IgnoreDefCard: true
     Flags:
@@ -5051,9 +5060,19 @@ Body:
         Time: 10000
       - Level: 5
         Time: 5000
+      - Level: 6
+        Time: 10000
+      - Level: 7
+        Time: 15000
+      - Level: 8
+        Time: 20000
+      - Level: 9
+        Time: 25000
+      - Level: 1
+        Time: 30000
     FixedCastTime: 300
     Requires:
-      SpCost: 10
+      SpCost: 60
       ItemCost:
         - Item: Booby_Trap
           Amount: 1
@@ -5069,12 +5088,11 @@ Body:
   - Id: 123
     Name: HT_CLAYMORETRAP
     Description: Claymore Trap
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Misc
     TargetType: Ground
     DamageFlags:
       Splash: true
-      SplashSplit: true
       IgnoreFlee: true
       IgnoreDefCard: true
     Flags:
@@ -5105,6 +5123,16 @@ Body:
         Time: 80000
       - Level: 5
         Time: 100000
+      - Level: 6
+        Time: 120000
+      - Level: 7
+        Time: 140000
+      - Level: 8
+        Time: 160000
+      - Level: 9
+        Time: 180000
+      - Level: 10
+        Time: 200000
     FixedCastTime: 300
     Requires:
       SpCost: 15
@@ -5166,17 +5194,17 @@ Body:
   - Id: 126
     Name: HT_BEASTBANE
     Description: Beast Bane
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
   - Id: 127
     Name: HT_FALCON
     Description: Falconry Mastery
-    MaxLevel: 1
+    MaxLevel: 5
     Type: Misc
   - Id: 128
     Name: HT_STEELCROW
     Description: Steel Crow
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Misc
   - Id: 129
     Name: HT_BLITZBEAT
@@ -5282,7 +5310,7 @@ Body:
   - Id: 134
     Name: AS_KATAR
     Description: Katar Mastery
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
   - Id: 135
     Name: AS_CLOAKING
@@ -5325,7 +5353,7 @@ Body:
   - Id: 136
     Name: AS_SONICBLOW
     Description: Sonic Blow
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
     TargetType: Attack
     Range: 1
@@ -5358,6 +5386,16 @@ Body:
           Amount: 32
         - Level: 10
           Amount: 34
+        - Level: 11
+          Amount: 44
+        - Level: 12
+          Amount: 54
+        - Level: 13
+          Amount: 64
+        - Level: 14
+          Amount: 74
+        - Level: 15
+          Amount: 84
       Weapon:
         Katar: true
     Status: Stun
@@ -5556,7 +5594,7 @@ Body:
   - Id: 141
     Name: AS_SPLASHER
     Description: Venom Splasher
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
     TargetType: Attack
     DamageFlags:
@@ -5595,28 +5633,48 @@ Body:
         Time: 3000
       - Level: 10
         Time: 2000
+      - Level: 11
+        Time: 1500
+      - Level: 12
+        Time: 1000
+      - Level: 13
+        Time: 500
+      - Level: 14
+        Time: 100
+      - Level: 15
+        Time: 5000
     Duration2: 18000
     Cooldown:
       - Level: 1
-        Time: 7500
+        Time: 200
       - Level: 2
-        Time: 8000
+        Time: 400
       - Level: 3
-        Time: 8500
+        Time: 600
       - Level: 4
-        Time: 9000
+        Time: 800
       - Level: 5
-        Time: 9500
+        Time: 1000
       - Level: 6
-        Time: 10000
+        Time: 1200
       - Level: 7
-        Time: 10500
+        Time: 1400
       - Level: 8
-        Time: 11000
+        Time: 1600
       - Level: 9
-        Time: 11500
+        Time: 1800
       - Level: 10
         Time: 2000
+      - Level: 11
+        Time: 2200
+      - Level: 12
+        Time: 2400
+      - Level: 13
+        Time: 2600
+      - Level: 14
+        Time: 2800
+      - Level: 15
+        Time: 3000
     FixedCastTime: 500
     Requires:
       SpCost:
@@ -5640,6 +5698,16 @@ Body:
           Amount: 28
         - Level: 10
           Amount: 30
+        - Level: 11
+          Amount: 30
+        - Level: 12
+          Amount: 30
+        - Level: 13
+          Amount: 30
+        - Level: 14
+          Amount: 30
+        - Level: 15
+          Amount: 120
     Status: Splasher
   - Id: 142
     Name: NV_FIRSTAID

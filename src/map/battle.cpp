@@ -2281,7 +2281,7 @@ int64 battle_addmastery(map_session_data *sd,struct block_list *target,int64 dmg
 	damage += (15 * pc_checkskill(sd, NC_MADOLICENCE)); // Attack bonus is granted even without the Madogear
 
 	if((skill = pc_checkskill(sd,HT_BEASTBANE)) > 0 && (status->race == RC_INSECT || status->race == RC_BRUTE || status->race == RC_PLAYER_DORAM) ) {
-		damage += (skill * 4);
+		damage += (skill * 200);
 		if (sd->sc.getSCE(SC_SPIRIT) && sd->sc.getSCE(SC_SPIRIT)->val2 == SL_HUNTER)
 			damage += sd->status.str;
 	}
@@ -2373,7 +2373,7 @@ int64 battle_addmastery(map_session_data *sd,struct block_list *target,int64 dmg
 			break;
 		case W_KATAR:
 			if((skill = pc_checkskill(sd,AS_KATAR)) > 0)
-				damage += (skill * 3);
+				damage += (skill * 100);
 			break;
 	}
 
@@ -4682,7 +4682,9 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 		case AS_SONICBLOW:
 #ifdef RENEWAL
 			skillratio += 100 + 100 * skill_lv;
-			if (tstatus->hp < (tstatus->max_hp / 2))
+			if (tstatus->hp > (tstatus->max_hp * 95 / 100))
+				skillratio += skillratio;
+			else if (tstatus->hp < (tstatus->max_hp / 2))
 				skillratio += skillratio / 2;
 #else
 			skillratio += 200 + 50 * skill_lv;
@@ -4924,7 +4926,9 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			break;
 		case AS_SPLASHER:
 #ifdef RENEWAL
-			skillratio += -100 + 400 + 100 * skill_lv;
+			if(skill_lv < 15)
+				skillratio += -100 + 400 + 100 * skill_lv;
+			else skillratio += 300 * skill_lv;
 #else
 			skillratio += 400 + 50 * skill_lv;
 #endif
@@ -9057,7 +9061,7 @@ struct Damage battle_calc_misc_attack(struct block_list *src,struct block_list *
 		case MA_LANDMINE:
 		case HT_BLASTMINE:
 		case HT_CLAYMORETRAP:
-			md.damage = (int64)(skill_lv * sstatus->dex * (3.0 + (float)status_get_lv(src) / 100.0) * (1.0 + (float)sstatus->int_ / 35.0));
+			md.damage = (int64)(skill_lv * sstatus->dex * (3.0 + (float)status_get_lv(src) / 100.0) * (1.0 + (float)sstatus->int_ / 35.0)) * 2 / 3;
 			md.damage += md.damage * (rnd()%20 - 10) / 100;
 			md.damage += (sd ? pc_checkskill(sd,RA_RESEARCHTRAP) * 40 : 0);
 			break;
@@ -9082,7 +9086,7 @@ struct Damage battle_calc_misc_attack(struct block_list *src,struct block_list *
 				if(!sd || !(skill = pc_checkskill(sd,HT_STEELCROW)))
 					skill = 0;
 #ifdef RENEWAL
-				md.damage = (sstatus->dex / 10 + sstatus->agi / 2 + skill * 3 + 40) * 2;
+				md.damage = (sstatus->dex / 5 + sstatus->agi + skill * 100 + 40) * max(2,pc_checkskill(sd,HT_FALCON) - 1 );
 				RE_LVL_MDMOD(100);
 #else
 				md.damage = (sstatus->dex / 10 + sstatus->int_ / 2 + skill * 3 + 40) * 2;

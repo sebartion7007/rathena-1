@@ -671,7 +671,7 @@ Body:
       - Name: HT_SKIDTRAP
         MaxLevel: 5
       - Name: HT_LANDMINE
-        MaxLevel: 5
+        MaxLevel: 10
       - Name: HT_ANKLESNARE
         MaxLevel: 5
         Requires:
@@ -698,21 +698,21 @@ Body:
           - Name: HT_FLASHER
             Level: 1
       - Name: HT_BLASTMINE
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: HT_LANDMINE
-            Level: 1
+            Level: 5
           - Name: HT_SANDMAN
             Level: 1
           - Name: HT_FREEZINGTRAP
             Level: 1
       - Name: HT_CLAYMORETRAP
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: HT_SHOCKWAVE
             Level: 1
           - Name: HT_BLASTMINE
-            Level: 1
+            Level: 5
       - Name: HT_REMOVETRAP
         MaxLevel: 1
         Requires:
@@ -726,19 +726,19 @@ Body:
           - Name: HT_REMOVETRAP
             Level: 1
       - Name: HT_BEASTBANE
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: HT_FALCON
-        MaxLevel: 1
+        MaxLevel: 5
         Requires:
           - Name: HT_BEASTBANE
             Level: 1
       - Name: HT_STEELCROW
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: HT_BLITZBEAT
             Level: 5
       - Name: HT_BLITZBEAT
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: HT_FALCON
             Level: 1
@@ -776,14 +776,14 @@ Body:
           - Name: AS_RIGHT
             Level: 2
       - Name: AS_KATAR
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: AS_CLOAKING
         MaxLevel: 10
         Requires:
           - Name: TF_HIDING
             Level: 2
       - Name: AS_SONICBLOW
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: AS_KATAR
             Level: 4
@@ -810,7 +810,7 @@ Body:
           - Name: AS_ENCHANTPOISON
             Level: 5
       - Name: AS_SPLASHER
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: AS_POISONREACT
             Level: 5

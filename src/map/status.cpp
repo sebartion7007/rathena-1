@@ -6079,11 +6079,14 @@ void status_calc_bl_main(struct block_list *bl, std::bitset<SCB_MAX> flag)
 			amotion = 10 * (200 - amotion);
 
 			amotion += sd->bonus.aspd_add;
+			if( (sd && pc_checkskill(sd,AS_KATAR) >= 15) || (sd && pc_checkskill(sd, HT_FALCON) >= 5) )
+				amotion -= 10;
 #endif
 			amotion = status_calc_fix_aspd(bl, sc, amotion);
 			status->amotion = cap_value(amotion,pc_maxaspd(sd),2000);
-			
 			short max_aspd = pc_maxaspd(sd);
+			if ( (sd && pc_checkskill(sd,AS_KATAR) >= 15) || (sd && pc_checkskill(sd, HT_FALCON) >= 5) )
+				max_aspd -= 10;
 			if (sd && sd->bonus.aspd_add) {
 				max_aspd += sd->bonus.aspd_add;
 				max_aspd = cap_value(max_aspd, battle_config.max_uplock_aspd, 2000);
