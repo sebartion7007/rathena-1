@@ -3119,7 +3119,7 @@ Body:
     AegisName: N_Blue_Potion
     Name: Blue Potion
     Type: Healing
-    Weight: 50
+    Weight: 1
     Trade:
       NoDrop: true
       NoTrade: true
