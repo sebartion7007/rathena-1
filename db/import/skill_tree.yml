@@ -738,7 +738,7 @@ Body:
           - Name: HT_BLITZBEAT
             Level: 5
       - Name: HT_BLITZBEAT
-        MaxLevel: 10
+        MaxLevel: 5
         Requires:
           - Name: HT_FALCON
             Level: 1
