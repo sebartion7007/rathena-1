@@ -5036,9 +5036,9 @@ void MobDatabase::loadingFinished() {
 		data.level = mob->lv;
 		memcpy(&data.status, &mob->status, sizeof(status_data));
 		status_calc_misc(&data.bl, &mob->status, mob->lv);
-
+		double levelcalculate = mob->lv;
 		// Now that we know if it is a MVP or not, apply battle_config modifiers [Skotlex]
-		double maxhp = (double)mob->status.max_hp;
+		double maxhp = (double)mob->status.max_hp *( 1 + ( levelcalculate > 50 ? levelcalculate / 100 : 0) );
 
 		if (mob->get_bosstype() == BOSSTYPE_MVP) { // MVP
 			if (battle_config.mvp_hp_rate != 100)

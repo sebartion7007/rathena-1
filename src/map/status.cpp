@@ -2434,7 +2434,7 @@ unsigned short status_base_atk_min(struct block_list *bl, const struct status_da
 		case BL_MOB:
 		case BL_MER:
 		case BL_ELEM:
-			return status->rhw.atk * 80 / 100 + level * 13;
+			return status->rhw.atk * 8 / 10 * ( 1 + ( level / 40 ) );
 		case BL_HOM:
 			return (status_get_homstr(bl) + status_get_homdex(bl)) / 5;
 		default:
@@ -2453,7 +2453,7 @@ unsigned short status_base_atk_max(struct block_list *bl, const struct status_da
 		case BL_MOB:
 		case BL_MER:
 		case BL_ELEM:
-			return status->rhw.atk * 120 / 100 + level * 13 ;
+			return status->rhw.atk * 120 / 100 * ( 1 + ( level / 35 ) ) ;
 		case BL_HOM:
 			return (status_get_homluk(bl) + status_get_homstr(bl) + status_get_homdex(bl)) / 3;
 		default:
@@ -2559,7 +2559,7 @@ void status_calc_misc(struct block_list *bl, struct status_data *status, int lev
 			stat = (int)(status->vit + ((float)level / 10) + ((float)status->vit / 5));
 		else {
 			stat = status->def2;
-			stat += (int)((float)level * 2 ) + (bl->type == BL_PC ? ((float)status->agi * 2 ) : 0); //base level + (every 2 vit = +1 def) + (every 5 agi = +1 def)
+			stat += (int)((float)level * 2 ) + (bl->type == BL_PC ? ((float)status->agi * 2 ) : 0) + (bl->type == BL_MOB ? (float)level * 2 ) : 0); //base level + (every 2 vit = +1 def) + (every 5 agi = +1 def)
 		}
 		status->def2 = cap_value(stat, 0, SHRT_MAX);
 		// Mdef2
@@ -6085,7 +6085,10 @@ void status_calc_bl_main(struct block_list *bl, std::bitset<SCB_MAX> flag)
 			amotion = status_calc_fix_aspd(bl, sc, amotion);
 			status->amotion = cap_value(amotion,pc_maxaspd(sd),2000);
 			short max_aspd = pc_maxaspd(sd);
-			if ( (sd && pc_checkskill(sd,AS_KATAR) >= 15) || (sd && pc_checkskill(sd, HT_FALCON) >= 5) )
+			if ( 
+				(sd && pc_checkskill(sd,AS_KATAR) >= 15) || (sd && pc_checkskill(sd, HT_FALCON) >= 5) 
+				
+			)
 				max_aspd -= 10;
 			if (sd && sd->bonus.aspd_add) {
 				max_aspd += sd->bonus.aspd_add;
