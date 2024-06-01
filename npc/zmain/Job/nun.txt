@@ -1,0 +1,26 @@
+falserealm,143,263,5	script	The Nun#Decressdiecount	79,{
+	.@npcname$ = "[ Nurse ]";
+	mes .@npcname$;
+	mes "การสารภาพบาป จำเป็นต้องบริจาคเงินเข้าสู่โบสนะค่ะ";
+	mes "ดิฉัน ได้อ่านหนังสือกรรมแล้ว";
+	mes "ตัวเธอมีอยู่ ^FF0000"+PC_DIE_COUNTER+"^000000 กรรม";
+	mes "อยากสารภาพหรือไม่คะ?";
+	next;
+	if(select("เอาเลย:ยังก่อน") == 2 ) end;
+	if(!PC_DIE_COUNTER) {
+		mes .@npcname$;
+		mes "ตัวเธอ ไม่เหลือกรรมแล้ว";
+		end;
+	}
+	if(zeny < .moneydonate) {
+		mes .@npcname$;
+		mes "ทางเราจำเป็นต้องรับเงินบริจาคก่อน เพราะว่ามันค่อนข้างจำเป็นกับการบูรณะ";
+		end;
+	}
+	zeny -= .moneydonate;
+	PC_DIE_COUNTER--;
+	end;
+Oninit:
+	.moneydonate = 10000;
+	end;
+}
