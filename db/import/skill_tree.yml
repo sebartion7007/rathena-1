@@ -1543,11 +1543,11 @@ Body:
       - Name: SM_RECOVERY
         MaxLevel: 10
       - Name: SM_BASH
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: SM_PROVOKE
         MaxLevel: 10
       - Name: SM_MAGNUM
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: SM_BASH
             Level: 5
@@ -1561,7 +1561,7 @@ Body:
       - Name: MG_SIGHT
         MaxLevel: 1
       - Name: MG_NAPALMBEAT
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: MG_SAFETYWALL
         MaxLevel: 10
         Requires:
@@ -1570,7 +1570,7 @@ Body:
           - Name: MG_SOULSTRIKE
             Level: 5
       - Name: MG_SOULSTRIKE
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: MG_NAPALMBEAT
             Level: 4
@@ -1584,7 +1584,7 @@ Body:
       - Name: MG_STONECURSE
         MaxLevel: 10
       - Name: MG_FIREBALL
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: MG_FIREBOLT
             Level: 4
@@ -1631,7 +1631,7 @@ Body:
       - Name: AL_HEAL
         MaxLevel: 10
       - Name: AL_INCAGI
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: AL_HEAL
             Level: 3
@@ -1649,12 +1649,12 @@ Body:
           - Name: AL_DEMONBANE
             Level: 3
       - Name: AL_ANGELUS
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: AL_DP
             Level: 3
       - Name: AL_BLESSING
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: AL_DP
             Level: 5
@@ -1676,7 +1676,7 @@ Body:
           - Name: MC_DISCOUNT
             Level: 3
       - Name: MC_PUSHCART
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: MC_INCCARRY
             Level: 5
@@ -1688,32 +1688,32 @@ Body:
           - Name: MC_PUSHCART
             Level: 3
       - Name: MC_MAMMONITE
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: AC_OWL
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: AC_VULTURE
         MaxLevel: 10
         Requires:
           - Name: AC_OWL
             Level: 3
       - Name: AC_CONCENTRATION
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: AC_VULTURE
             Level: 1
       - Name: TF_DOUBLE
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: TF_MISS
         MaxLevel: 10
       - Name: TF_STEAL
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: TF_HIDING
         MaxLevel: 10
         Requires:
           - Name: TF_STEAL
             Level: 5
       - Name: TF_POISON
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: TF_DETOXIFY
         MaxLevel: 1
         Requires:
