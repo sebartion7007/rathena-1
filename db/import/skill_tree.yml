@@ -310,9 +310,9 @@ Body:
       Swordman: true
     Tree:
       - Name: KN_SPEARMASTERY
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: KN_PIERCE
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: KN_SPEARMASTERY
             Level: 1
@@ -334,7 +334,7 @@ Body:
           - Name: KN_PIERCE
             Level: 3
       - Name: KN_TWOHANDQUICKEN
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: SM_TWOHAND
             Level: 1
@@ -418,7 +418,7 @@ Body:
           - Name: PR_ASPERSIO
             Level: 5
       - Name: PR_SANCTUARY
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: AL_HEAL
             Level: 1
@@ -432,9 +432,9 @@ Body:
           - Name: AL_ANGELUS
             Level: 2
       - Name: PR_MAGNIFICAT
-        MaxLevel: 5
+        MaxLevel: 10
       - Name: PR_GLORIA
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: PR_KYRIE
             Level: 4
@@ -540,7 +540,7 @@ Body:
           - Name: MG_STONECURSE
             Level: 1
       - Name: WZ_HEAVENDRIVE
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: WZ_EARTHSPIKE
             Level: 3
@@ -617,7 +617,7 @@ Body:
           - Name: BS_HILTBINDING
             Level: 1
       - Name: BS_WEAPONRESEARCH
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: BS_HILTBINDING
             Level: 1
@@ -631,19 +631,19 @@ Body:
       - Name: BS_HAMMERFALL
         MaxLevel: 5
       - Name: BS_ADRENALINE
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: BS_HAMMERFALL
             Level: 2
       - Name: BS_WEAPONPERFECT
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: BS_WEAPONRESEARCH
             Level: 2
           - Name: BS_ADRENALINE
             Level: 2
       - Name: BS_OVERTHRUST
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: BS_ADRENALINE
             Level: 3
@@ -5589,16 +5589,16 @@ Body:
           - Name: PR_IMPOSITIO
             Level: 3
       - Name: PR_SANCTUARY
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: AL_HEAL
             Level: 1
       - Name: PR_STRECOVERY
         MaxLevel: 1
       - Name: PR_MAGNIFICAT
-        MaxLevel: 5
+        MaxLevel: 10
       - Name: PR_GLORIA
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: PR_SANCTUARY
             Level: 7
@@ -5667,7 +5667,7 @@ Body:
           - Name: MG_STONECURSE
             Level: 1
       - Name: WZ_HEAVENDRIVE
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: WZ_EARTHSPIKE
             Level: 3

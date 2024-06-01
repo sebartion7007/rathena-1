@@ -2287,7 +2287,7 @@ int64 battle_addmastery(map_session_data *sd,struct block_list *target,int64 dmg
 #ifdef RENEWAL
 	//Weapon Research bonus applies to all weapons
 	if((skill = pc_checkskill(sd,BS_WEAPONRESEARCH)) > 0)
-		damage += (skill * 2);
+		damage += (skill * 200);
 #endif
 
 	if ((skill = pc_checkskill(sd, NV_BREAKTHROUGH)) > 0)
@@ -2327,9 +2327,9 @@ int64 battle_addmastery(map_session_data *sd,struct block_list *target,int64 dmg
 		case W_2HSPEAR:
 			if((skill = pc_checkskill(sd,KN_SPEARMASTERY)) > 0) {
 				if(!pc_isriding(sd) && !pc_isridingdragon(sd))
-					damage += (skill * 4);
+					damage += (skill * 40);
 				else
-					damage += (skill * 5);
+					damage += (skill * 50);
 				// Increase damage by level of KN_SPEARMASTERY * 10
 				if(pc_checkskill(sd,RK_DRAGONTRAINING) > 0)
 					damage += (skill * 10);
@@ -2345,7 +2345,7 @@ int64 battle_addmastery(map_session_data *sd,struct block_list *target,int64 dmg
 		case W_MACE:
 		case W_2HMACE:
 			if((skill = pc_checkskill(sd,PR_MACEMASTERY)) > 0)
-				damage += (skill * 3);
+				damage += (skill * 30);
 			if((skill = pc_checkskill(sd,NC_TRAININGAXE)) > 0)
 				damage += (skill * 4);
 			break;
@@ -2371,7 +2371,7 @@ int64 battle_addmastery(map_session_data *sd,struct block_list *target,int64 dmg
 			break;
 		case W_KATAR:
 			if((skill = pc_checkskill(sd,AS_KATAR)) > 0)
-				damage += (skill * 100);
+				damage += (skill * 30);
 			break;
 	}
 
@@ -4564,6 +4564,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			skillratio += 200;
 #endif
 		if (!skill_id || skill_id == KN_AUTOCOUNTER) {
+				skillratio += 200;
 			if (sc->getSCE(SC_CRUSHSTRIKE)) {
 				if (sd) { //ATK [{Weapon Level * (Weapon Upgrade Level + 6) * 100} + (Weapon ATK) + (Weapon Weight)]%
 					short index = sd->equip_index[EQI_HAND_R];
@@ -4625,7 +4626,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			skillratio += 50;
 			break;
 		case KN_PIERCE:
-			skillratio += 10 * skill_lv;
+			skillratio += 10 * skill_lv + (skill_lv > 10 ? (skill_lv - 10 ) * 100 : 0);
 			if (sc && sc->getSCE(SC_CHARGINGPIERCE_COUNT) && sc->getSCE(SC_CHARGINGPIERCE_COUNT)->val1 >= 10)
 				skillratio *= 2;
 			break;
@@ -4669,7 +4670,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			break;
 		case KN_BOWLINGBASH:
 		case MS_BOWLINGBASH:
-			skillratio += 40 * skill_lv;
+			skillratio += 100 * skill_lv;
 			break;
 		case AS_GRIMTOOTH:
 			skillratio += 20 * skill_lv;
@@ -7168,6 +7169,7 @@ static struct Damage initialize_weapon_data(struct block_list *src, struct block
 			case KN_PIERCE:
 			case ML_PIERCE:
 				wd.div_= (wd.div_>0?tstatus->size+1:-(tstatus->size+1));
+				if(skill_lv > 10 ) wd.div_++;
 				break;
 
 			case TF_DOUBLE: //For NPC used skill.
@@ -7189,12 +7191,14 @@ static struct Damage initialize_weapon_data(struct block_list *src, struct block
 				break;
 #ifdef RENEWAL
 			case KN_BOWLINGBASH:
+				/*
 				if (sd && sd->status.weapon == W_2HSWORD) {
 					if (wd.miscflag >= 2 && wd.miscflag <= 3)
 						wd.div_ = 3;
 					else if (wd.miscflag >= 4)
 						wd.div_ = 4;
 				}
+				*/
 				break;
 #endif
 			case KN_AUTOCOUNTER:
@@ -8006,18 +8010,20 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 						skillratio += -100 + skill_lv * 20;
 						break;
 					case WZ_FROSTNOVA:
-						skillratio += -100 + (100 + skill_lv * 10) * 2 / 3;
+						skillratio += 100 + skill_lv * 100;
 						break;
 					case WZ_FIREPILLAR:
+						/*
 						if (sd && ad.div_ > 0)
 							ad.div_ *= -1; //For players, damage is divided by number of hits
+						*/
 						skillratio += -60 + 20 * skill_lv; //20% MATK each hit
 						break;
 					case WZ_SIGHTRASHER:
-						skillratio += 20 * skill_lv;
+						skillratio += 200 * skill_lv;
 						break;
 					case WZ_WATERBALL:
-						skillratio += 30 * skill_lv;
+						skillratio += 60 * skill_lv;
 						break;
 					case WZ_STORMGUST:
 #ifdef RENEWAL

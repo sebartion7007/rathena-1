@@ -2409,12 +2409,12 @@ Body:
   - Id: 55
     Name: KN_SPEARMASTERY
     Description: Spear Mastery
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
   - Id: 56
     Name: KN_PIERCE
     Description: Pierce
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
     TargetType: Attack
     Range: -2
@@ -2422,7 +2422,7 @@ Body:
     HitCount: 3
     Element: Weapon
     Requires:
-      SpCost: 7
+      SpCost: 45
       Weapon:
         1hSpear: true
         2hSpear: true
@@ -2500,7 +2500,7 @@ Body:
   - Id: 60
     Name: KN_TWOHANDQUICKEN
     Description: Twohand Quicken
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
     TargetType: Self
     DamageFlags:
@@ -2529,7 +2529,15 @@ Body:
       - Level: 10
         Time: 300000
       - Level: 11
-        Time: 300000
+        Time: 360000
+      - Level: 12
+        Time: 420000
+      - Level: 13
+        Time: 480000
+      - Level: 14
+        Time: 540000
+      - Level: 15
+        Time: 600000
     Requires:
       SpCost:
         - Level: 1
@@ -2552,6 +2560,16 @@ Body:
           Amount: 46
         - Level: 10
           Amount: 50
+        - Level: 11
+          Amount: 60
+        - Level: 12
+          Amount: 70
+        - Level: 13
+          Amount: 80
+        - Level: 14
+          Amount: 90
+        - Level: 15
+          Amount: 10
       Weapon:
         2hSword: true
     Status: TwoHandQuicken
@@ -2616,27 +2634,6 @@ Body:
     HitCount: 2
     Element: Weapon
     SplashArea: 2
-    Knockback:
-      - Level: 1
-        Amount: 1
-      - Level: 2
-        Amount: 1
-      - Level: 3
-        Amount: 2
-      - Level: 4
-        Amount: 2
-      - Level: 5
-        Amount: 3
-      - Level: 6
-        Amount: 3
-      - Level: 7
-        Amount: 4
-      - Level: 8
-        Amount: 4
-      - Level: 9
-        Amount: 5
-      - Level: 10
-        Amount: 5
     CopyFlags:
       Skill:
         Plagiarism: true
@@ -2819,7 +2816,7 @@ Body:
   - Id: 70
     Name: PR_SANCTUARY
     Description: Sanctuary
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Magic
     TargetType: Ground
     DamageFlags:
@@ -2857,6 +2854,16 @@ Body:
         Time: 27900
       - Level: 10
         Time: 30900
+      - Level: 11
+        Time: 30900
+      - Level: 12
+        Time: 30900
+      - Level: 13
+        Time: 30900
+      - Level: 14
+        Time: 30900
+      - Level: 15
+        Time: 30900
     FixedCastTime: 1000
     Requires:
       SpCost:
@@ -2880,6 +2887,16 @@ Body:
           Amount: 39
         - Level: 10
           Amount: 42
+        - Level: 11
+          Amount: 100
+        - Level: 12
+          Amount: 150
+        - Level: 13
+          Amount: 200
+        - Level: 14
+          Amount: 250
+        - Level: 15
+          Amount: 300
       ItemCost:
         - Item: Blue_Gemstone
           Amount: 1
@@ -2887,7 +2904,7 @@ Body:
       Id: Sanctuary
       Layout: -1
       Range: 1
-      Interval: 1000
+      Interval: 500
       Flag:
         NoOverlap: true
         PathCheck: true
@@ -2982,7 +2999,7 @@ Body:
   - Id: 74
     Name: PR_MAGNIFICAT
     Description: Magnificat
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Magic
     TargetType: Self
     DamageFlags:
@@ -3005,6 +3022,16 @@ Body:
         Time: 75000
       - Level: 5
         Time: 90000
+      - Level: 6
+        Time: 105000
+      - Level: 7
+        Time: 120000
+      - Level: 8
+        Time: 135000
+      - Level: 9
+        Time: 150000
+      - Level: 10
+        Time: 180000
     FixedCastTime: 800
     Requires:
       SpCost: 40
@@ -3012,7 +3039,7 @@ Body:
   - Id: 75
     Name: PR_GLORIA
     Description: Gloria
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Magic
     TargetType: Self
     DamageFlags:
@@ -3034,6 +3061,16 @@ Body:
         Time: 25000
       - Level: 5
         Time: 30000
+      - Level: 6
+        Time: 35000
+      - Level: 7
+        Time: 40000
+      - Level: 8
+        Time: 45000
+      - Level: 9
+        Time: 50000
+      - Level: 10
+        Time: 150000
     Requires:
       SpCost: 20
     Status: Gloria
@@ -4207,7 +4244,7 @@ Body:
   - Id: 91
     Name: WZ_HEAVENDRIVE
     Description: Heaven's Drive
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Magic
     TargetType: Ground
     Flags:
@@ -4226,6 +4263,16 @@ Body:
         Count: 4
       - Level: 5
         Count: 5
+      - Level: 6
+        Count: 6
+      - Level: 7
+        Count: 7
+      - Level: 8
+        Count: 8
+      - Level: 9
+        Count: 9
+      - Level: 10
+        Count: 10
     Element: Earth
     CopyFlags:
       Skill:
@@ -4243,6 +4290,16 @@ Body:
         Time: 2560
       - Level: 5
         Time: 1900
+      - Level: 6
+        Time: 1900
+      - Level: 7
+        Time: 1900
+      - Level: 8
+        Time: 1900
+      - Level: 9
+        Time: 1900
+      - Level: 10
+        Time: 1900
     AfterCastActDelay:
       - Level: 1
         Time: 1000
@@ -4253,6 +4310,16 @@ Body:
       - Level: 4
         Time: 1000
       - Level: 5
+        Time: 500
+      - Level: 6
+        Time: 500
+      - Level: 7
+        Time: 500
+      - Level: 8
+        Time: 500
+      - Level: 9
+        Time: 500
+      - Level: 10
         Time: 500
     Duration1: 100
     FixedCastTime:
@@ -4266,6 +4333,16 @@ Body:
         Time: 640
       - Level: 5
         Time: 800
+      - Level: 6
+        Time: 800
+      - Level: 7
+        Time: 800
+      - Level: 8
+        Time: 800
+      - Level: 9
+        Time: 800
+      - Level: 10
+        Time: 800
     Requires:
       SpCost:
         - Level: 1
@@ -4278,6 +4355,16 @@ Body:
           Amount: 40
         - Level: 5
           Amount: 44
+        - Level: 6
+          Amount: 48
+        - Level: 7
+          Amount: 52
+        - Level: 8
+          Amount: 56
+        - Level: 9
+          Amount: 60
+        - Level: 10
+          Amount: 64
     Unit:
       Id: Dummyskill
       Layout: 2
@@ -4428,7 +4515,7 @@ Body:
   - Id: 107
     Name: BS_WEAPONRESEARCH
     Description: Weaponry Research
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
   - Id: 108
     Name: BS_REPAIRWEAPON
@@ -4493,7 +4580,7 @@ Body:
   - Id: 111
     Name: BS_ADRENALINE
     Description: Adrenaline Rush
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Weapon
     TargetType: Self
     DamageFlags:
@@ -4515,6 +4602,16 @@ Body:
         Time: 120000
       - Level: 5
         Time: 150000
+      - Level: 6
+        Time: 150000
+      - Level: 7
+        Time: 180000
+      - Level: 8
+        Time: 210000
+      - Level: 9
+        Time: 240000
+      - Level: 10
+        Time: 300000
     Requires:
       SpCost:
         - Level: 1
@@ -4527,6 +4624,16 @@ Body:
           Amount: 29
         - Level: 5
           Amount: 32
+        - Level: 6
+          Amount: 35
+        - Level: 7
+          Amount: 38
+        - Level: 8
+          Amount: 41
+        - Level: 9
+          Amount: 44
+        - Level: 10
+          Amount: 47
       Weapon:
         1hAxe: true
         2hAxe: true
@@ -4535,7 +4642,7 @@ Body:
   - Id: 112
     Name: BS_WEAPONPERFECT
     Description: Weapon Perfection
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Weapon
     TargetType: Self
     DamageFlags:
@@ -4557,6 +4664,16 @@ Body:
         Time: 40000
       - Level: 5
         Time: 50000
+      - Level: 6
+        Time: 60000
+      - Level: 7
+        Time: 70000
+      - Level: 8
+        Time: 80000
+      - Level: 9
+        Time: 90000
+      - Level: 10
+        Time: 150000
     Requires:
       SpCost:
         - Level: 1
@@ -4569,11 +4686,21 @@ Body:
           Amount: 12
         - Level: 5
           Amount: 10
+        - Level: 6
+          Amount: 10
+        - Level: 7
+          Amount: 10
+        - Level: 8
+          Amount: 10
+        - Level: 9
+          Amount: 10
+        - Level: 10
+          Amount: 10
     Status: WeaponPerfection
   - Id: 113
     Name: BS_OVERTHRUST
     Description: Power-Thrust
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Weapon
     TargetType: Self
     DamageFlags:
@@ -4595,6 +4722,16 @@ Body:
         Time: 80000
       - Level: 5
         Time: 100000
+      - Level: 6
+        Time: 120000
+      - Level: 7
+        Time: 140000
+      - Level: 8
+        Time: 160000
+      - Level: 9
+        Time: 180000
+      - Level: 10
+        Time: 200000
     Requires:
       SpCost:
         - Level: 1
@@ -4606,6 +4743,16 @@ Body:
         - Level: 4
           Amount: 12
         - Level: 5
+          Amount: 10
+        - Level: 6
+          Amount: 10
+        - Level: 7
+          Amount: 10
+        - Level: 8
+          Amount: 10
+        - Level: 9
+          Amount: 10
+        - Level: 10
           Amount: 10
       Weapon:
         Dagger: true
