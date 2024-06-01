@@ -1,0 +1,59 @@
+falserealm,146,143,5	script	Reward CBT Player#cbt_level	4_M_FAIRYANG,{
+OnPCLoginEvent:
+	if( (inarray(.idinreward,getcharid(3) ) >= 0 ) && !#daileawcbt ) {
+		mes "จัดส่งของรางวัล CBT ผ่านทางจดหมายครับ";
+	/*
+	for(.@i = 0; .@i < getarraysize(.itemreward); .@i+=2)
+		getitem .itemreward[.@i],.itemreward[.@i+1];
+	zeny += 1000000;
+	#daileawcbt++;
+	mes "อู้ววววววววว";
+	mes "เสร็จแล้ว เชิญได้";
+	close;
+	*/
+	#daileawcbt++;
+	.@charid = getcharid(0);
+	.@sender$ = "GM Sharky";
+	.@title$ = "Reward CBT Level 91+";
+	.@body$ = "CBT Reward For Level 91+ in CBT times";
+	.@zeny = 1000000;
+	mes .@charid;
+	mes .@sender$;
+	mes .@title$;
+	mes .@body$;
+	setarray .@itemreward,12412,12411,36001;
+	setarray .@itemamount,10,10,10;
+	mail .@charid, .@sender$, .@title$, .@body$, .@zeny, .@itemreward, .@itemamount;
+	dispbottom "Mail run";
+	close;
+	}
+end;
+	
+Oninit:
+	waitingroom "Reward Lv 91+ CBT",0;
+	setarray .idinreward
+,2000000
+,2000009
+,2000019
+,2000021
+,2000023
+,2000026
+,2000028
+,2000035
+,2000036
+,2000040
+,2000044
+,2000045
+,2000062
+,2000030
+,2000053
+,2000056
+,2000057
+,2000058
+,2000060
+,2000063
+,2000070
+,2000067
+,2000042
+,2000052;
+}	
