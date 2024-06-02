@@ -1,4 +1,4 @@
-falserealm,146,143,5	script	Reward CBT Player#cbt_level	4_M_FAIRYANG,{
+-	script	Reward CBT Player#cbt_level	4_M_FAIRYANG,{
 OnPCLoginEvent:
 	if( (inarray(.idinreward,getcharid(3) ) >= 0 ) && !#daileawcbt ) {
 		mes "จัดส่งของรางวัล CBT ผ่านทางจดหมายครับ";

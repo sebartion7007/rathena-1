@@ -41,12 +41,15 @@ malangdo,119,157,4	script	Gachapon#costume	862,{
 		next;
 		if(select("สุ่มได้เลย","ยังก่อน") == 2 ) end;
 	L_Randomagain:
-		if(zeny < .@zenycost) {
-			mes .@npcname$;
-			mes "Zeny ท่านไม่พอแล้ว แวะมาใหม่โอกาสหน้า นะค่าาา!!!";
-			end;
+		if(!countitem(36001) ) {
+			if(zeny < .@zenycost) {
+				mes .@npcname$;
+				mes "Zeny ท่านไม่พอแล้ว แวะมาใหม่โอกาสหน้า นะค่าาา!!!";
+				end;
+			}
+			zeny -= .@zenycost;
 		}
-		zeny -= .@zenycost;
+		else delitem 36001,1;
 		switch(.@arrayuse) {
 			case 1:
 				.@itemId = .costumeIdsMultiPart[rand(getarraysize(.costumeIdsMultiPart))];

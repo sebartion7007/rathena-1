@@ -2261,17 +2261,17 @@ int status_check_visibility(struct block_list *src, struct block_list *target)
 int status_base_amotion_pc(map_session_data* sd, struct status_data* status)
 {
 	std::shared_ptr<s_job_info> job = job_db.find(sd->status.class_);
-
 	if (job == nullptr)
 		return 2000;
-
+	
 	int amotion;
 #ifdef RENEWAL_ASPD
 	int16 skill_lv, val = 0;
 	float temp_aspd = 0;
-
-	int capstasval = 99;
+	
+	int capstasval = 120;
 	int temp_dex = min(status->dex, capstasval), temp_agi = min(status->agi, capstasval);
+	
 	amotion = job->aspd_base[sd->weapontype1]; // Single weapon
 	if (sd->status.shield)
 		amotion += job->aspd_base[MAX_WEAPON_TYPE];
@@ -2359,8 +2359,8 @@ unsigned short status_base_atk(const struct block_list *bl, const struct status_
 #ifdef RENEWAL
 		dstr =
 #endif
-		str = status->dex;
-		dex = status->str * 2;
+		str = status->dex + status->str * 2;
+		dex = status->str;
 	} else {
 #ifdef RENEWAL
 		dstr =
@@ -4468,7 +4468,7 @@ int status_calc_pc_sub(map_session_data* sd, uint8 opt)
 	/// Unlike other stats, ASPD rate modifiers from skills/SCs/items/etc are first all added together, then the final modifier is applied
 
 	// Basic ASPD value
-	i = status_base_amotion_pc(sd,base_status);
+	i = status_base_amotion_pc(sd, base_status);
 	base_status->amotion = cap_value(i,pc_maxaspd(sd),2000);
 
 	// Relative modifiers from passive skills

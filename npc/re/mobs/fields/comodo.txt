@@ -33,7 +33,7 @@ cmd_fild02,0,0	monster	Galapago	1391,40,5000
 cmd_fild02,0,0	monster	Shellfish	1074,27,5000
 cmd_fild02,0,0	monster	Crab	1073,27,5000
 cmd_fild02,0,0	monster	Aster	1266,13,5000
-cmd_fild02,0,0	monster	Mobster	1313,1,5000
+cmd_fild02,0,0	monster	Mobster	1313,5,5000
 
 //==================================================
 // cmd_fild03 - Zenhai Marsh

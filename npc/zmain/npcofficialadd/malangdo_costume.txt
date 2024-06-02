@@ -34,7 +34,9 @@
 
 -	shop	costumeboxing1	-1,no,14629:50000,14681:50000,14695:50000,22826:50000,22868:50000,22905:50000,22953:50000,23001:50000,23058:150000,23086:150000,23174:150000,23299:150000,23524:150000,23629:150000,23682:150000,23770:150000
 -	shop	costumeboxing2	-1,no,9510:300000,100019:300000,100052:300000,100202:300000,100314:300000,100502:300000,100721:300000,100920:300000,101103:1000000,101271:1000000,101416:1000000
--	shop	costumeboxing3	-1,no,7000:2000000
+-	shop	costumeboxing3	-1,no,101675:1500000,101876:1500000,102193:1500000,102332:1500000,102441:1500000,102605:1500000,102820:1500000
+-	shop	costumeboxing4	-1,no,102632:2000000,102633:2000000,102634:2000000
+-	shop	costumeboxing5	-1,no,7000:2000000
 // Costume exchange
 mal_in01,20,124,5	script	Designer Heidam#eventhat	4_CAT_SAILOR5,{
 	if (checkweight(1301,1) == 0) {
@@ -66,7 +68,7 @@ mal_in01,20,124,5	script	Designer Heidam#eventhat	4_CAT_SAILOR5,{
 	next;
 	mes "- Rummaging -";
 	next;
-	select("Box 1 - 19","Box 17 - 26","Event Stone Coin(Cat Coin)");
+	select("Box 1 - 16","Box 17 - 27","Box 18 - 34","Mixed Box","Event Stone Coin(Cat Coin)");
 		callshop "costumeboxing"+@menu,1;
 	next;
 	mes "[Designer Heidam]";

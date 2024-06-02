@@ -31,3 +31,300 @@
 Header:
   Type: ITEM_CASH_DB
   Version: 1
+  
+Body:
+  - Tab: Permanent
+    Items:
+#  ===== LT Evolution =====
+    - Item: Zaha_Doll_Hat
+      Price: 200
+    - Item: Dolor_HatK
+      Price: 200
+    - Item: FurSeal_Fan
+      Price: 200
+    - Item: GoldFish_Hat
+      Price: 200
+    - Item: Imp_Hat
+      Price: 200
+    - Item: Officer_Cap
+      Price: 200
+    - Item: SeeOtter_Fan
+      Price: 200
+    - Item: Smoky_TransformHat
+      Price: 200
+    - Item: King_Tiger_Doll_Hat
+      Price: 200
+    - Item: Whikebain_Ears_K
+      Price: 200
+#  ===== Swordman =====
+#   It's OCP Level 100 equip
+#    - Item: Toy_Ring
+#      Price: 500
+    - Item: Iron_Wrist
+      Price: 60
+    - Item: Ifrit's_Ear
+      Price: 50
+    - Item: Flame_Wing_Ear
+      Price: 30
+#  ===== Merchant =====
+#   It's OCP Level 100 equip
+#    - Item: name
+#      Price: 9999
+    - Item: Fancy_Phantom_Mask
+      Price: 60
+#  ===== Thief =====
+#   It's OCP Level 100 equip
+#    - Item: name
+#      Price: 9999
+    - Item: Samambaia
+      Price: 50
+    - Item: Shadow_Booster
+      Price: 50
+    - Item: Bunny_Egg_Shell
+      Price: 50
+#  ===== Mage =====
+#   It's OCP Level 100 equip
+#    - Item: name
+#      Price: 9999
+    - Item: Blazing_Sun
+      Price: 50
+    - Item: Marin_Crown
+      Price: 50
+    - Item: Radio_Antenna
+      Price: 50
+    - Item: Super_Scell
+      Price: 90
+  - Tab: Limited
+    Items:
+    - Item: Evt_Cos_Coin
+      Price: 25
+    - Item: Nyangvine_Fruit
+      Price: 4
+    - Item: Evt_Cos_Coin
+      Price: 25
+    - Item: Evt_Cos_Coin
+      Price: 25
+    - Item: Evt_Cos_Coin
+      Price: 25
+    - Item: Evt_Cos_Coin
+      Price: 25
+    - Item: Enchant_Stone_Box
+      Price: 10
+    - Item: Enchant_Stone_Box2
+      Price: 10
+    - Item: Enchant_Stone_Box3
+      Price: 10
+    - Item: Enchant_Stone_Box4
+      Price: 10
+    - Item: Enchant_Stone_Box5
+      Price: 10
+    - Item: Enchant_Stone_Box6
+      Price: 10
+    - Item: Enchant_Stone_Box7
+      Price: 10
+    - Item: Enchant_Stone_Box8
+      Price: 10
+    - Item: Enchant_Stone_Box9
+      Price: 30
+    - Item: Enchant_Stone_Box10
+      Price: 30
+    - Item: Enchant_Stone_Box11
+      Price: 30
+    - Item: Enchant_Stone_Box12
+      Price: 30
+    - Item: Enchant_Stone_Box13
+      Price: 30
+    - Item: Enchant_Stone_Box14
+      Price: 30
+    - Item: Enchant_Stone_Box15
+      Price: 30
+    - Item: Enchant_Stone_Box16
+      Price: 30
+    - Item: Enchant_Stone_Box17
+      Price: 50
+    - Item: Enchant_Stone_Box18
+      Price: 50
+    - Item: Enchant_Stone_Box19
+      Price: 50
+    - Item: Enchant_Stone_Box20
+      Price: 50
+    - Item: Enchant_Stone_Box21
+      Price: 50
+    - Item: Enchant_Stone_Box22
+      Price: 50
+    - Item: Enchant_Stone_Box23
+      Price: 50
+    - Item: Enchant_Stone_Box24
+      Price: 50
+    - Item: Enchant_Stone_Box25
+      Price: 90
+    - Item: Enchant_Stone_Box26
+      Price: 90
+    - Item: aegis_101416
+      Price: 100
+    - Item: aegis_101675
+      Price: 100
+    - Item: aegis_101876
+      Price: 100
+    - Item: aegis_102193
+      Price: 100
+    - Item: aegis_102332
+      Price: 100
+    - Item: aegis_102441
+      Price: 100
+    - Item: aegis_102605
+      Price: 100
+    - Item: Enchant_Stone_Box34
+      Price: 100
+    - Item: Cos_EnchantStone_Box1
+      Price: 100
+    - Item: Cos_EnchantStone_Box2
+      Price: 100
+    - Item: Cos_EnchantStone_Box3
+      Price: 100
+  - Tab: Rental
+    Items:
+    - Item: Steel_Flower_Box
+      Price: 100
+    - Item: Critical_Ring_Box
+      Price: 100
+    - Item: Earring_Box
+      Price: 100
+    - Item: Ring_Box
+      Price: 100
+    - Item: Necklace_Box
+      Price: 100
+    - Item: Glove_Box
+      Price: 100
+    - Item: Brooch_Box
+      Price: 100
+    - Item: Rosary_Box
+      Price: 100
+    - Item: Safety_Ring_Box
+      Price: 100
+    - Item: Beholder_Ring_Box
+      Price: 100
+    - Item: Hallow_Ring_Box
+      Price: 100
+    - Item: Clamorous_Ring_Box
+      Price: 100
+    - Item: Chemical_Ring_Box
+      Price: 100
+    - Item: Insecticide_Ring_Box
+      Price: 100
+    - Item: Fisher_Ring_Box
+      Price: 100
+    - Item: Decussate_Ring_Box
+      Price: 100
+    - Item: Bloody_Ring_Box
+      Price: 100
+    - Item: Satanic_Ring_Box
+      Price: 100
+    - Item: Dragoon_Ring_Box
+      Price: 100
+    - Item: Steel_Flower_Box
+      Price: 100
+  - Tab: Consumables
+    Items:
+    - Item: Abrasive
+      Price: 30
+    - Item: STR_Biscuit_Stick
+      Price: 5
+    - Item: VIT_Biscuit_Stick
+      Price: 5
+    - Item: AGI_Biscuit_Stick
+      Price: 5
+    - Item: INT_Biscuit_Stick
+      Price: 5
+    - Item: DEX_Biscuit_Stick
+      Price: 5
+    - Item: LUK_Biscuit_Stick
+      Price: 5
+    - Item: Small_Life_Potion
+      Price: 5
+    - Item: Small_Life_Potion_Box
+      Price: 40
+    - Item: Small_Life_Potion
+      Price: 8
+    - Item: Med_Life_Potion_Box
+      Price: 70
+    - Item: Mysterious_Water
+      Price: 10
+    - Item: M_DEFScroll
+      Price: 2
+    - Item: Small_Mana_Potion
+      Price: 10
+    - Item: Infinity_Drink
+      Price: 10
+    - Item: Tyr's_Blessing
+      Price: 10
+    - Item: Limit_Power_Booster
+      Price: 10
+    - Item: Red_Booster
+      Price: 10
+    - Item: ASPD_Potion
+      Price: 10
+    - Item: Mental_Potion
+      Price: 10
+  - Tab: Hot
+    Items:
+    - Item: Megaphone_
+      Price: 1
+    - Item: Megaphone_Box
+      Price: 5
+    - Item: Token_Of_Siegfried
+      Price: 100
+    - Item: Token_Of_Siegfried_Box
+      Price: 900
+    - Item: Giant_Fly_Wing
+      Price: 1
+    - Item: Giant_Fly_Wing_Box100
+      Price: 95
+    - Item: C_Giant_Fly_1Day_Box
+      Price: 100
+    - Item: C_Wing_Of_Fly_1Day_Box
+      Price: 50
+    - Item: C_Wing_Of_Fly_Box
+      Price: 250
+    - Item: HD_Elu_Box10
+      Price: 200
+    - Item: Enriched_Elunium_Box
+      Price: 500
+    - Item: HD_Ori_Box10
+      Price: 200
+    - Item: Enriched_Oridecon_Box
+      Price: 500
+    - Item: Blacksmith_Blessing
+      Price: 10
+  - Tab: Scrolls
+    Items:
+    - Item: Blessing_10_Scroll
+      Price: 5
+    - Item: Blessing_10_Scroll_Box
+      Price: 50
+    - Item: Inc_Agi_10_Scroll
+      Price: 5
+    - Item: Inc_Agi_10_Scroll_Box
+      Price: 50
+    - Item: Insurance60
+      Price: 10
+    - Item: Insurance60_Package
+      Price: 90
+    - Item: E_All_In_One_Buff
+      Price: 300
+  - Tab: New
+    Items:
+    - Item: CASH_SHARKY_CC_F
+      Price: 10
+    - Item: Battle_Manual100
+      Price: 30
+    - Item: Battle_Manual100_Box
+      Price: 250
+    - Item: Convex_Mirror
+      Price: 10
+    - Item: Convex_Mirror_Box
+      Price: 90
+    - Item: Convex_Mirror_Box30
+      Price: 270
+    - Item: Kafra_Card_Box
+      Price: 270

@@ -154,3 +154,4 @@ Oninit:
 	end;
 }
 falserealm,108,232,6	duplicate(Wise Old Woman#eAcustom)	Wise Old Woman#false	87
+prt_in,55,56,6	duplicate(Wise Old Woman#eAcustom)	Wise Old Woman#pt_in	87

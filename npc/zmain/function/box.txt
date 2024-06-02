@@ -1,0 +1,45 @@
+function	script	F_allow_box	{
+	switch(getarg(0)) {
+	case 1:	// Cbt Event
+		//.@boxid = 34001;
+		setarray .@item,6240,6241,7619,7620,984,985,36001,6898,34001;
+		setarray .@rate,30,30,50,50,100,100,100,150,1000;
+		//setarray .@more1,1,1;
+		break;
+	}
+	if(.@chooseable) {
+		mes "กดแล้วต้องเลือก ถ้าไม่เลือกกล่องจะหายไป +!";
+		mes "กดแล้วต้องเลือก ถ้าไม่เลือกกล่องจะหายไกป +!";
+		mes "กดแล้วต้องเลือก ถ้าไม่เลือกกล่องจะหายไป +!";
+		set .@menu$,"";
+			for(.@i=0; .@i < getarraysize(.@item); .@i++)
+				set .@menu$,.@menu$ + getitemname(.@item[.@i]) + ":";
+			.@this = select(.@menu$) - 1;
+			getitem .@item[.@this],1;
+			if(.@boxid) announce "คุณ [ "+strcharinfo(0)+" ] เลือกรับ "+getitemname(.@item[.@this])+" จากกล่อง "+getitemname(.@boxid),bc_all,0xFFFFFF;
+			end;
+			return;
+	}
+	if(!.@rate) {
+		if(.@more1[0]) {
+			for(.@i=0; .@i < getarraysize(.@item); .@i++)
+			getitem .@item[.@i],.@more1[.@i];
+		}
+		else {
+			.@this = .@item[rand(getarraysize(.@item))];
+			getitem .@this,1;
+		}
+	}
+	else {
+		for(.@i=0; .@i < getarraysize(.@item); .@i++) {
+			.@luck = rand(1000);
+			if(.@luck <= .@rate[.@i] || .@i == getarraysize(.@item) - 1)
+				.@this = .@item[.@i];
+			if(.@this) break;
+		}
+		getitem .@this,1;
+	}
+			
+	if(.@boxid) announce "คุณ [ "+strcharinfo(0)+" ] ได้รับ "+getitemname(.@this)+" จากกล่อง "+getitemname(.@boxid),bc_all,0xFFFFFF;	
+	return;
+}

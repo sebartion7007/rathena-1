@@ -88,6 +88,52 @@ Header:
   Type: ITEM_DB
   Version: 3
 Body:
+  - Id: 34001
+    AegisName: CASH_SHARKY_CC_F
+    Name: Cash Coin
+    Type: Usable
+    Buy: 10
+    Flags:
+      NoConsume: true
+    Script: |
+      .@num = countitem(34001);
+      #KAFRAPOINTS += (10 * .@num);
+      delitem 34001,countitem(34001);
+      dispbottom "Get "+(10 * .@num)+" Points Now Have: "+#KAFRAPOINTS+" Freecash";
+  - Id: 34002
+    AegisName: Sharky_Boss_Box
+    Name: Sharky Boss Box
+    Type: Usable
+    Buy: 10
+    Script: |
+      callfunc("F_allow_box",1);
+  - Id: 34003
+    AegisName: Grape_Box_2
+    Name: Grape Box 2Hr
+    Type: Usable
+    Buy: 10
+    Script: |
+      rentitem 34004,7200;
+  - Id: 34004
+    AegisName: Grape_rent
+    Name: Grape
+    Type: Healing
+    Buy: 200
+    Weight: 20
+    Flags:
+      BuyingStore: true
+      NoConsume: true
+    Trade:
+      Override: 100
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoMail: true
+    Script: |
+      itemheal 0,rand(10,15);
+      specialeffect2 EF_POTION8;
   - Id: 35001
     AegisName: A_Center_Potion
     Name: Awakeing Concentration Potion
@@ -105,3 +151,65 @@ Body:
     Type: Etc
     Buy: 10
     Weight: 100
+  - Id: 35002
+    AegisName: Chili_Red_Potion
+    Name: Chili Red Potion
+    Type: Healing
+    Buy: 1000
+    Weight: 70
+    Script: |
+      itemheal rand(100,300),0;
+      percentheal 1,0;
+      specialeffect2 EF_POTION1;
+  - Id: 35003
+    AegisName: Chili_Orange_Potion
+    Name: Chili Orange Potion
+    Type: Healing
+    Buy: 2500
+    Weight: 100
+    Script: |
+      itemheal rand(200,600),0;
+      percentheal 2,0;
+      specialeffect2 EF_POTION2;
+  - Id: 35004
+    AegisName: Chili_Yellow_Potion
+    Name: Chili Yellow Potion
+    Type: Healing
+    Buy: 7500
+    Weight: 130
+    Script: |
+      itemheal rand(300,900),0;
+      percentheal 3,0;
+      specialeffect2 EF_POTION3;
+  - Id: 35005
+    AegisName: Chili_White_Potion
+    Name: Chili White Potion
+    Type: Healing
+    Buy: 17500
+    Weight: 150
+    Script: |
+      itemheal rand(400,1200),0;
+      percentheal 4,0;
+      specialeffect2 EF_POTION4;
+  - Id: 35006
+    AegisName: Chili_Blue_Potion
+    Name: Chili Blue Potion
+    Type: Healing
+    Buy: 5000
+    Weight: 150
+    Script: |
+      itemheal 0,rand(40,60);
+      percentheal 0,3;
+      specialeffect2 EF_POTION5;
+  - Id: 35007
+    AegisName: Chili_Green_Potion
+    Name: Chili Green Potion
+    Type: Healing
+    Buy: 37500
+    Weight: 70
+    Flags:
+      BuyingStore: true
+    Script: |
+      itemheal rand(500,1500),0;
+      percentheal 5,0;
+      specialeffect2 EF_POTION6;

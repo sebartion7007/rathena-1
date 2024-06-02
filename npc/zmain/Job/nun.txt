@@ -15,10 +15,13 @@ falserealm,143,263,5	script	The Nun#Decressdiecount	79,{
 	if(zeny < .moneydonate) {
 		mes .@npcname$;
 		mes "ทางเราจำเป็นต้องรับเงินบริจาคก่อน เพราะว่ามันค่อนข้างจำเป็นกับการบูรณะ";
+		mes "ขั้นต่ำ 10,000 Zeny ค่ะ";
 		end;
 	}
 	zeny -= .moneydonate;
 	PC_DIE_COUNTER--;
+	mes .@npcname$;
+	mes "ตัวเธอเหลืออยู่ ^FF0000"+PC_DIE_COUNTER+"^000000 กรรม";
 	end;
 Oninit:
 	.moneydonate = 10000;
