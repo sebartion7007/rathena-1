@@ -701,6 +701,20 @@ uint64 EnchantgradeDatabase::parseBodyNode( const ryml::NodeRef& node ){
 				}
 			}
 
+			if( this->nodeExists( gradeNode, "CBonus" ) ){
+				uint16 cbonus;
+
+				if( !this->asUInt16( gradeNode, "CBonus", cbonus ) ){
+					return 0;
+				}
+
+				grade->cbonus = cbonus;
+			}else{
+				if( !gradeExists ){
+					grade->cbonus = 0;
+				}
+			}
+
 			if( this->nodeExists( gradeNode, "AnnounceSuccess" ) ){
 				bool announce;
 
@@ -3809,7 +3823,8 @@ int status_calc_pc_sub(map_session_data* sd, uint8 opt)
 			enchantgrade_info = enchantgrade_db.findCurrentLevelInfo( *sd->inventory_data[index], sd->inventory.u.items_inventory[index] );
 		}
 #endif
-
+		int cap_weapon_refine = 1000000;
+		int cap_armor_refine = 250000;
 		if (sd->inventory_data[index]->type == IT_WEAPON) {
 			int wlv = sd->inventory_data[index]->weapon_level;
 			struct weapon_data *wd;
@@ -3825,6 +3840,10 @@ int status_calc_pc_sub(map_session_data* sd, uint8 opt)
 				wd = &sd->right_weapon;
 				wa = &base_status->rhw;
 			}
+			if (sd->inventory.u.items_inventory[sd->equip_index[EQI_HAND_L]].unique_id == sd->inventory.u.items_inventory[sd->equip_index[EQI_HAND_R]].unique_id) {
+			//if (sd->inventory.u.items_inventory[index].equip == EQP_HAND_L && sd->inventory.u.items_inventory[index].equip == EQP_HAND_R) {
+				cap_weapon_refine *= 2;
+			}			
 			wa->atk += sd->inventory_data[index]->atk;
 			if( info != nullptr ){
 				wa->atk2 += info->bonus / 10;
@@ -3837,7 +3856,16 @@ int status_calc_pc_sub(map_session_data* sd, uint8 opt)
 				if( wlv == 5 ){
 					base_status->patk += sd->inventory.u.items_inventory[index].refine * 2;
 					base_status->smatk += sd->inventory.u.items_inventory[index].refine * 2;
+				}				
+				if( wlv == 5 ){
+					if(sd->inventory.u.items_inventory[index].refine > 10)
+						sd->bonus.capdamage_val += (sd->inventory.u.items_inventory[index].refine-10) * cap_weapon_refine;
+					base_status->patk += sd->inventory.u.items_inventory[index].refine * 2;
+					base_status->smatk += sd->inventory.u.items_inventory[index].refine * 2;
 				}
+				else
+					sd->bonus.capdamage_val += (sd->inventory.u.items_inventory[index].refine * cap_weapon_refine)/100;
+
 #endif
 			}
 #ifdef RENEWAL
@@ -3887,10 +3915,18 @@ int status_calc_pc_sub(map_session_data* sd, uint8 opt)
 				refinedef += info->bonus;
 
 #ifdef RENEWAL
+				if (enchantgrade_info != nullptr) {
+					sd->bonus.capdamage_val += cap_armor_refine * enchantgrade_info->cbonus;
+				}
+
 				if( sd->inventory_data[index]->armor_level == 2 ){
+					if(sd->inventory.u.items_inventory[index].refine > 10)
+						sd->bonus.capdamage_val += (sd->inventory.u.items_inventory[index].refine-10) * cap_armor_refine;
 					base_status->res += sd->inventory.u.items_inventory[index].refine * 2;
 					base_status->mres += sd->inventory.u.items_inventory[index].refine * 2;
 				}
+				else
+					sd->bonus.capdamage_val += (sd->inventory.u.items_inventory[index].refine * cap_armor_refine) / 100;
 #endif
 			}
 
@@ -3966,7 +4002,7 @@ int status_calc_pc_sub(map_session_data* sd, uint8 opt)
 	memcpy(sd->indexed_bonus.param_equip,sd->indexed_bonus.param_bonus,sizeof(sd->indexed_bonus.param_equip));
 	memset(sd->indexed_bonus.param_bonus, 0, sizeof(sd->indexed_bonus.param_bonus));
 
-	base_status->def += (refinedef+50)/10;
+	base_status->def += (refinedef * 2)/5;
 
 	// Parse Cards
 	for (i = 0; i < EQI_MAX; i++) {

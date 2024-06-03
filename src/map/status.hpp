@@ -167,6 +167,7 @@ struct s_enchantgradelevel{
 	e_enchantgrade grade;
 	uint16 chances[MAX_REFINE + 1];
 	uint16 bonus;
+	uint16 cbonus;
 	bool announceSuccess;
 	bool announceFail;
 	struct{
