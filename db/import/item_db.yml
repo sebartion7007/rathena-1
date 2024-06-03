@@ -151,6 +151,85 @@ Body:
     Type: Etc
     Buy: 10
     Weight: 100
+  - Id: 44001
+    AegisName: Orc_Paradox_Card
+    Name: Orc Paradox Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bSkillAtk,"KN_PIERCE",15 + (2 * .@r);
+  - Id: 44002
+    AegisName: Orc_Paradox_Card_2
+    Name: Orc Paradox Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      .@r = getrefine();
+      bonus2 bSkillAtk,"KN_BOWLINGBASH",20 + (2 * .@r);
+  - Id: 44003
+    AegisName: High_Orc_Paradox_Card
+    Name: High Orc Paradox Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus bShortAtkRate,12;
+  - Id: 44004
+    AegisName: Banshee_Paradox_Card
+    Name: Banshee Paradox Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Both_Accessory: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus bUseSPrate,-10;
+      bonus bSPrecovRate,10;
+  - Id: 44005
+    AegisName: Wind_Paradox_Ghost_Card
+    Name: Wind Paradox Ghost Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Both_Accessory: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus bMatkRate,7;
+      bonus bUseSPrate,10;
+      bonus2 bSkillAtk,"WZ_JUPITEL",10;
+      bonus2 bSkillAtk,"WZ_VERMILION",10;
+  - Id: 50001
+    AegisName: Piece_of_forgotten_Dimension
+    Name: Dark Piece
+    Type: Etc
+    Buy: 1000
+    Weight: 10
+    Flags:
+      BuyingStore: true
   - Id: 35002
     AegisName: Chili_Red_Potion
     Name: Chili Red Potion

@@ -1,0 +1,10 @@
+falserealm,171,143,0	script	Teleport System	10081,{
+	if(select("ยังก่อน:ไป") == 1 ) end;
+	warp "falserealm2",150,146;
+	end;
+}
+falserealm2,150,155,0	script	Teleport System#back	10081,{
+	if(select("ยังก่อน:กลับ") == 1 ) end;
+	warp "falserealm",150,146;
+	end;
+}

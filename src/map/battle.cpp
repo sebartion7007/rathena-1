@@ -7871,7 +7871,7 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 //Adds dmg%. 100 = +100% (double) damage. 10 = +10% damage
 #define MATK_ADDRATE(a) { ad.damage += ad.damage * (a) / 100; }
 //Adds an absolute value to damage. 100 = +100 damage
-#define MATK_ADD(a) { ad.damage += a; }
+#define MATK_ADD(a) { ad.damage += a + (a * 33)/100; }
 
 		//Calc base damage according to skill
 		switch (skill_id) {
@@ -8036,7 +8036,7 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 					case WZ_STORMGUST:
 #ifdef RENEWAL
 						skillratio -= 30; // Offset only once
-						skillratio += 50 * skill_lv;
+						skillratio += 250 * skill_lv;
 #else
 						skillratio += 40 * skill_lv;
 #endif
@@ -8121,14 +8121,14 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 #ifdef RENEWAL
 					case WZ_HEAVENDRIVE:
 					case NPC_GROUNDDRIVE:
-						skillratio += 25;
+						skillratio += 55 * skill_lv;
 						break;
 					case WZ_METEOR:
-						skillratio += 25;
+						skillratio += 300 * skill_lv;
 						break;
 					case WZ_VERMILION:
 						if(sd)
-							skillratio += 300 + skill_lv * 100;
+							skillratio += 300 + skill_lv * 250;
 						else
 							skillratio += 20 * skill_lv - 20; //Monsters use old formula
 						break;

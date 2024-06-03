@@ -1,0 +1,5 @@
+jor_dback1,0,0	monster	--ja--	30001,40,5000
+jor_dback1,0,0	monster	--ja--	30002,40,5000
+jor_dback1,0,0	monster	--ja--	30003,40,5000
+jor_dback1,0,0	monster	--ja--	30004,55,5000
+jor_dback1,0,0	monster	--ja--	30005,55,5000

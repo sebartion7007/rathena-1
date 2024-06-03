@@ -1143,3 +1143,223 @@ Header:
 #      - Item: Zombie_Master_Card
 #        Rate: 1
 #        StealProtected: true
+
+Body:
+  - Id: 30005
+    AegisName: WIND_GHOST_PARADOX
+    Name: Wind Ghost Paradox
+    Level: 92
+    Hp: 10097
+    Attack: 1214
+    Attack2: 1229
+    Defense: 64
+    MagicDefense: 51
+    Str: 62
+    Agi: 27
+    Vit: 25
+    Int: 55
+    Dex: 192
+    Luk: 20
+    AttackRange: 8
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Wind
+    ElementLevel: 3
+    WalkSpeed: 150
+    AttackDelay: 676
+    AttackMotion: 504
+    DamageMotion: 504
+    Ai: 04
+    Modes:
+      Detector: true
+    Drops:
+      - Item: Mementos
+        Rate: 1000
+      - Item: Brigan
+        Rate: 1000
+      - Item: Old_White_Cloth
+        Rate: 1000
+      - Item: Piece_of_forgotten_Dimension
+        Rate: 10
+      - Item: Scarlet_Twohand_Sword
+        Rate: 1
+        RandomOptionGroup: Custom_new_crimson
+      - Item: Wind_Paradox_Ghost_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 30004
+    AegisName: BANSHEE_PARADOX
+    Name: Banshee Paradox
+    Level: 91
+    Hp: 10472
+    Attack: 1014
+    Attack2: 1438
+    Defense: 73
+    MagicDefense: 96
+    Str: 97
+    Agi: 71
+    Vit: 55
+    Int: 143
+    Dex: 197
+    Luk: 72
+    AttackRange: 8
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Dark
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 676
+    AttackMotion: 504
+    DamageMotion: 504
+    Ai: 04
+    Drops:
+      - Item: Mementos
+        Rate: 1000
+      - Item: Brigan
+        Rate: 1000
+      - Item: Old_White_Cloth
+        Rate: 1000
+      - Item: Piece_of_forgotten_Dimension
+        Rate: 10
+      - Item: Banshee_Paradox_Card
+        Rate: 1
+        StealProtected: true
+      - Item: Scarlet_Rod
+        Rate: 1
+        RandomOptionGroup: Custom_new_crimson
+  - Id: 30003
+    AegisName: HIGH_ORC_PARADOX
+    Name: High Orc Paradox
+    Level: 93
+    Hp: 19718
+    Attack: 695
+    Attack2: 955
+    Defense: 101
+    MagicDefense: 45
+    Str: 104
+    Agi: 16
+    Vit: 40
+    Int: 31
+    Dex: 161
+    Luk: 20
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Demihuman
+    Element: Fire
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 1500
+    AttackMotion: 500
+    DamageMotion: 1000
+    Ai: 04
+    Modes:
+      Detector: true
+    Drops:
+      - Item: Voucher_Of_Orcish_Hero
+        Rate: 1
+      - Item: Orcish_Voucher
+        Rate: 2000
+      - Item: Ogre_Tooth
+        Rate: 1500
+      - Item: Piece_of_forgotten_Dimension
+        Rate: 10
+      - Item: High_Orc_Paradox_Card
+        Rate: 1
+        StealProtected: true
+      - Item: Scarlet_Twohand_Sword
+        Rate: 1
+        RandomOptionGroup: Custom_new_crimson
+  - Id: 30002
+    AegisName: CHRISTMAS_ORC_PARADOX
+    Name: Christmas Orc Paradox
+    Level: 92
+    Hp: 17047
+    Attack: 492
+    Attack2: 553
+    Defense: 52
+    MagicDefense: 3
+    Str: 101
+    Agi: 43
+    Vit: 64
+    Int: 15
+    Dex: 149
+    Luk: 10
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Earth
+    ElementLevel: 1
+    WalkSpeed: 150
+    AttackDelay: 1000
+    AttackMotion: 500
+    DamageMotion: 1000
+    Ai: 04
+    Drops:
+      - Item: Orcish_Voucher
+        Rate: 2500
+      - Item: Voucher_Of_Orcish_Hero
+        Rate: 1
+      - Item: Ogre_Tooth
+        Rate: 1000
+      - Item: Piece_of_forgotten_Dimension
+        Rate: 10
+      - Item: Orc_Paradox_Card_2
+        Rate: 1
+        StealProtected: true
+      - Item: Scarlet_Twohand_Sword
+        Rate: 1
+        RandomOptionGroup: Custom_new_crimson
+  - Id: 30001
+    AegisName: ORC_WARRIOR_PARADOX
+    Name: Orc Warrior Paradox
+    Level: 91
+    Hp: 16963
+    Attack: 574
+    Attack2: 781
+    Defense: 109
+    MagicDefense: 32
+    Str: 94
+    Agi: 15
+    Vit: 55
+    Int: 15
+    Dex: 124
+    Luk: 43
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    RaceGroups:
+      Orc: true
+      Clocktower: true
+    Element: Earth
+    ElementLevel: 1
+    WalkSpeed: 150
+    AttackDelay: 1000
+    AttackMotion: 500
+    DamageMotion: 1000
+    Ai: 04
+    Drops:
+      - Item: Voucher_Of_Orcish_Hero
+        Rate: 1
+      - Item: Ogre_Tooth
+        Rate: 1000
+      - Item: Orcish_Voucher
+        Rate: 2500
+      - Item: Piece_of_forgotten_Dimension
+        Rate: 10
+      - Item: Orc_Paradox_Card
+        Rate: 1
+        StealProtected: true
+      - Item: Scarlet_Twohand_Axe
+        Rate: 1
+        StealProtected: true
+        RandomOptionGroup: Custom_new_crimson

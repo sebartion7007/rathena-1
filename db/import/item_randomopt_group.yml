@@ -44,3 +44,124 @@
 Header:
   Type: RANDOM_OPTION_GROUP
   Version: 1
+
+Body:
+  - Id: 1601
+    Group: Custom_new_crimson
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: WEAPON_ATTR_NOTHING
+            MinValue: 1
+            MaxValue: 5
+            Chance: 5000
+          - Option: WEAPON_ATTR_WATER
+            MinValue: 1
+            MaxValue: 5
+            Chance: 5000
+          - Option: WEAPON_ATTR_GROUND
+            MinValue: 1
+            MaxValue: 5
+            Chance: 5000
+          - Option: WEAPON_ATTR_FIRE
+            MinValue: 1
+            MaxValue: 5
+            Chance: 5000
+          - Option: WEAPON_ATTR_WIND
+            MinValue: 1
+            MaxValue: 5
+            Chance: 5000
+          - Option: WEAPON_ATTR_POISON
+            MinValue: 1
+            MaxValue: 5
+            Chance: 5000
+          - Option: WEAPON_ATTR_SAINT
+            MinValue: 1
+            MaxValue: 5
+            Chance: 5000
+          - Option: WEAPON_ATTR_DARKNESS
+            MinValue: 1
+            MaxValue: 5
+            Chance: 5000
+          - Option: WEAPON_ATTR_TELEKINESIS
+            MinValue: 1
+            MaxValue: 5
+            Chance: 5000
+          - Option: WEAPON_ATTR_UNDEAD
+            MinValue: 1
+            MaxValue: 5
+            Chance: 5000
+    MaxRandom: 2 # These are listed but the group only has 1 slot max
+    Random:
+      - Option: VAR_STRAMOUNT
+        MinValue: 1
+        MaxValue: 10
+        Chance: 5000
+      - Option: VAR_AGIAMOUNT
+        MinValue: 1
+        MaxValue: 10
+        Chance: 5000
+      - Option: VAR_VITAMOUNT
+        MinValue: 1
+        MaxValue: 10
+        Chance: 5000
+      - Option: VAR_INTAMOUNT
+        MinValue: 1
+        MaxValue: 10
+        Chance: 5000
+      - Option: VAR_DEXAMOUNT
+        MinValue: 1
+        MaxValue: 10
+        Chance: 5000
+      - Option: VAR_LUKAMOUNT
+        MinValue: 1
+        MaxValue: 10
+        Chance: 5000
+      - Option: VAR_MAXHPAMOUNT
+        MinValue: 100
+        MaxValue: 500
+        Chance: 5000
+      - Option: VAR_MAXSPAMOUNT
+        MinValue: 10
+        MaxValue: 100
+        Chance: 5000
+      - Option: VAR_HPACCELERATION
+        MinValue: 1
+        MaxValue: 10
+        Chance: 5000
+      - Option: VAR_SPACCELERATION
+        MinValue: 1
+        MaxValue: 10
+        Chance: 5000
+      - Option: VAR_ATKPERCENT
+        MinValue: 1
+        MaxValue: 5
+        Chance: 1000
+      - Option: DEC_SP_CONSUMPTION
+        MinValue: 1
+        MaxValue: 5
+        Chance: 1000
+      - Option: DEC_SPELL_DELAY_TIME
+        MinValue: 1
+        MaxValue: 5
+        Chance: 1000
+      - Option: DEC_SPELL_CAST_TIME
+        MinValue: 1
+        MaxValue: 5
+        Chance: 1000
+      - Option: DAMAGE_CRI_TARGET
+        MinValue: 1
+        MaxValue: 5
+        Chance: 1000
+      - Option: RANGE_ATTACK_DAMAGE_TARGET
+        MinValue: 1
+        MaxValue: 5
+        Chance: 1000
+      - Option: MELEE_ATTACK_DAMAGE_TARGET
+        MinValue: 1
+        MaxValue: 5
+        Chance: 1000
+      - Option: ADDEXPPERCENT_KILLRACE_ALL
+        MinValue: 1
+        MaxValue: 10
+        Chance: 1000

@@ -8,6 +8,7 @@
 // mapname<tab>index <- specifies index for this map
 // mapname <- map will use index of previous map +1
 // Note that map index 0 is special and reserved for "error" status. 
+//======================================================================================
 
 alb_ship 1
 alb2trea
@@ -1267,3 +1268,13 @@ mbase_in
 falserealm
 falserealm2
 thinkter
+//======================================================================================
+// Clonemap
+jor_ite01
+jor_ite02
+jor_dback1
+jor_dback2
+jor_dback3
+jor_dback4
+jor_dback5
+jor_dback6
