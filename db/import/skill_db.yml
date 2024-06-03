@@ -199,15 +199,15 @@ Body:
         - Level: 10
           Amount: 15
         - Level: 11
-          Amount: 50
+          Amount: 15
         - Level: 12
-          Amount: 50
+          Amount: 15
         - Level: 13
-          Amount: 50
+          Amount: 15
         - Level: 14
-          Amount: 50
+          Amount: 15
         - Level: 15
-          Amount: 90
+          Amount: 15
       Weapon:
         Fist: true
         Dagger: true
@@ -2142,37 +2142,7 @@ Body:
     AfterCastActDelay: 100
     Duration1: 100
     Requires:
-      SpCost:
-        - Level: 1
-          Amount: 12
-        - Level: 2
-          Amount: 12
-        - Level: 3
-          Amount: 12
-        - Level: 4
-          Amount: 12
-        - Level: 5
-          Amount: 12
-        - Level: 6
-          Amount: 12
-        - Level: 7
-          Amount: 12
-        - Level: 8
-          Amount: 12
-        - Level: 9
-          Amount: 12
-        - Level: 10
-          Amount: 12
-        - Level: 11
-          Amount: 24
-        - Level: 12
-          Amount: 36
-        - Level: 13
-          Amount: 48
-        - Level: 14
-          Amount: 60
-        - Level: 15
-          Amount: 60
+      SpCost: 12
       Weapon:
         Bow: true
       Ammo:
