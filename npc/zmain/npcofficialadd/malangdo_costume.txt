@@ -17,20 +17,6 @@
 // Missing 4th slot enchanter
 //mal_in01,24,121,x	script	Gregio Grumani#eventhat	x,{
 
-// These 4th slot Enchants are included in Enchant Stone Box 4-21
-//ID		Loc
-//25058, , 	Upper
-//25059, , 	Middle
-//25136, , 	Middle
-//25137, , 	Lower
-//25138, , 	Middle
-//25176, , 	Middle
-//25177, , 	Middle
-//25178, , 	Middle
-//25224, , 	Middle
-//25225, , 	Middle
-//25226, , 	Lower
-//25205, , 	Lower
 
 -	shop	costumeboxing1	-1,no,14629:50000,14681:50000,14695:50000,22826:50000,22868:50000,22905:50000,22953:50000,23001:50000,23058:150000,23086:150000,23174:150000,23299:150000,23524:150000,23629:150000,23682:150000,23770:150000
 -	shop	costumeboxing2	-1,no,9510:300000,100019:300000,100052:300000,100202:300000,100314:300000,100502:300000,100721:300000,100920:300000,101103:1000000,101271:1000000,101416:1000000
@@ -1096,6 +1082,10 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 			25171, 29159,	// EXPStone_Top	EXP2TOP
 			25172, 29156,	// CastingStone_Top	Casting_Top
 			25304, 29359,	// Critical_Stone_Top	Fatal_Top
+			1000375, 310325,	//Range_Stone_UP
+			1000377, 310327,	//Melee_Stone_UP
+			1000528, 310664,	//Magic_Stone_UP
+			//Class Stone
 			25409, 29423,	// SuraStone_Top	SuraStone_Top_
 			25413, 29428,	// RangerStone_Top	RangerStone_Top_
 			25417, 29432,	// SorcererStone_Top	SorcererStone_Top_
@@ -1175,11 +1165,15 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 			25006, 29020,	// ChangeVIT_Middle	VIT3AGI
 			25007, 29018,	// ChangeDEX_Middle	DEX3VIT
 			25060, 29047,	// Critical_Stone	Fatal0
-			25061, 29048,	// Range_Stone	Expert_Archer0
+			//25061, 29048,	// Range_Stone	Expert_Archer0
 			25070, 29054,	// ReloadStone_Middle	Skill_Delay1_Middle
 			25141, 29145,	// EXPStone_Middle	EXP2MIDDLE
 			25173, 29157,	// CastingStone_Middle	Casting_Middle
 			25175, 29155,	// LexAeternaStone_Middle	LexAeterna
+			25061, 310330,	//Ranged_mid
+			1000378, 310328,	//Melee_mid
+			1000529, 310665,	//Magic_mid
+			// Class Stone
 			25410, 29424,	// SuraStone_Middle	SuraStone_Middle_
 			25414, 29429,	// RangerStone_Middle	RangerStone_Middle_
 			25418, 29433,	// SorcererStone_Middle	SorcererStone_Middle_
@@ -1257,6 +1251,11 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 			25228, 29229,	// Teleport_Stone	Teleport
 			25229, 29228,	// Steal_Stone	Steal
 			25305, 29360,	// Critical_Stone_Bottom	Fatal_Bottom
+			1000376, 310326,	// Range (lower)	
+			1000379, 310329,	// Melee (lower)	
+			1000530, 310666,	// Magic (lower)	
+			
+			//Class Stone
 			25411, 29425,	// SuraStone_Bottom	SuraStone_Bottom_
 			25415, 29430,	// RangerStone_Bottom	RangerStone_Bottom_
 			25419, 29434,	// SorcererStone_Bottom	SorcererStone_Bottom_
@@ -1640,6 +1639,7 @@ mal_in01,24,121,3	script	Gregio Grumani#eventhat	4_ELEPHANT,{
 			,25178,29161	// PinkGlowEffect_Middle Effect
 			,25224,29224	// WhiteBodyEffect_Middle Effect
 			,25225,29226	// ExplodingEffect_Middle Effect
+			,25136,29142	// ElectricEffect_MID Effect
 			;
 		break;
 	case 2:
@@ -1651,6 +1651,7 @@ mal_in01,24,121,3	script	Gregio Grumani#eventhat	4_ELEPHANT,{
 		setarray .@stone_id[0]
 			,25205,29144	// ShrinkEffect_Bottom Effect
 			,25226,29225	// WaterFieldEffect_Bottom Effect
+			,25137,29143	// Green Flare Effect
 			;
 		break;
 	default:
