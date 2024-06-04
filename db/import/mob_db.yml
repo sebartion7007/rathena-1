@@ -1182,7 +1182,7 @@ Body:
       - Item: Old_White_Cloth
         Rate: 1000
       - Item: Piece_of_forgotten_Dimension
-        Rate: 10
+        Rate: 50
       - Item: Scarlet_Twohand_Sword
         Rate: 1
         RandomOptionGroup: Custom_new_crimson
@@ -1224,7 +1224,7 @@ Body:
       - Item: Old_White_Cloth
         Rate: 1000
       - Item: Piece_of_forgotten_Dimension
-        Rate: 10
+        Rate: 50
       - Item: Banshee_Paradox_Card
         Rate: 1
         StealProtected: true
@@ -1262,13 +1262,13 @@ Body:
       Detector: true
     Drops:
       - Item: Voucher_Of_Orcish_Hero
-        Rate: 1
+        Rate: 10
       - Item: Orcish_Voucher
         Rate: 2000
       - Item: Ogre_Tooth
         Rate: 1500
       - Item: Piece_of_forgotten_Dimension
-        Rate: 10
+        Rate: 50
       - Item: High_Orc_Paradox_Card
         Rate: 1
         StealProtected: true
@@ -1306,11 +1306,11 @@ Body:
       - Item: Orcish_Voucher
         Rate: 2500
       - Item: Voucher_Of_Orcish_Hero
-        Rate: 1
+        Rate: 10
       - Item: Ogre_Tooth
         Rate: 1000
       - Item: Piece_of_forgotten_Dimension
-        Rate: 10
+        Rate: 50
       - Item: Orc_Paradox_Card_2
         Rate: 1
         StealProtected: true
@@ -1349,13 +1349,13 @@ Body:
     Ai: 04
     Drops:
       - Item: Voucher_Of_Orcish_Hero
-        Rate: 1
+        Rate: 10
       - Item: Ogre_Tooth
         Rate: 1000
       - Item: Orcish_Voucher
         Rate: 2500
       - Item: Piece_of_forgotten_Dimension
-        Rate: 10
+        Rate: 50
       - Item: Orc_Paradox_Card
         Rate: 1
         StealProtected: true

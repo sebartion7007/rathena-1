@@ -49,3 +49,4 @@ Footer:
   Imports:
   - Path: npc/zmain/barters/newbie.yml
   - Path: npc/zmain/barters/Helphead.yml
+  - Path: npc/zmain/barters/paradoxmemorie1.yml

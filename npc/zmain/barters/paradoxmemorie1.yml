@@ -1,0 +1,40 @@
+Header:
+  Type: BARTER_DB
+  Version: 1
+
+Body:
+  - Name: Paradox Memorie Exchange
+    Map: jor_dback1
+    X: 136
+    Y: 17
+    Direction: South
+    Sprite: 4_EP19_ZORYARA
+    Items:
+      - Index: 0
+        Item: Paradox_Memorie_Mail
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Chain_Mail_
+            Amount: 1
+            Refine: 9
+          - Index: 2
+            Item: Voucher_Of_Orcish_Hero
+            Amount: 5
+          - Index: 3
+            Item: Piece_of_forgotten_Dimension
+            Amount: 20
+      - Index: 1
+        Item: Paradox_Memorie_Robe
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Mage_Coat
+            Amount: 1
+            Refine: 9
+          - Index: 2
+            Item: Voucher_Of_Orcish_Hero
+            Amount: 5
+          - Index: 3
+            Item: Piece_of_forgotten_Dimension
+            Amount: 20

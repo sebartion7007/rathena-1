@@ -230,6 +230,48 @@ Body:
     Weight: 10
     Flags:
       BuyingStore: true
+  - Id: 173001
+    AegisName: Paradox_Memorie_Mail
+    Name: Paradox Memorie Mail
+    Type: Armor
+    Weight: 3500
+    Defense: 55
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 1
+    EquipLevelMin: 95
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bBaseAtk,20 + 5 * .@r;
+      bonus bMaxHPrate,.@r;
+      if(.@r > 10 ) bonus bSupplementary,5000 * (.@r - 10);
+      if(.@r >= 7 ) bonus bAspdRate,5;
+      if(.@r >= 9 ) bonus bAtkRate,5;
+      if(.@r >= 11 ) bonus2 bAddClass,CLASS_BOSS,5;
+      if(.@r >= 13) bonus bFixedCast,-200;
+  - Id: 173002
+    AegisName: Paradox_Memorie_Robe
+    Name: Paradox Memorie Robe
+    Type: Armor
+    Weight: 900
+    Defense: 20
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 1
+    EquipLevelMin: 95
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMatk,40 + 5 * .@r;
+      bonus bMaxHPrate,.@r;
+      if(.@r > 10 ) bonus bSupplementary,5000 * (.@r - 10);
+      if(.@r >= 7 ) bonus bVariableCastrate,-5;
+      if(.@r >= 9 ) bonus bMAtkRate,5;
+      if(.@r >= 11 ) bonus2 bMagicAddClass,CLASS_BOSS,5;
+      if(.@r >= 13) bonus bFixedCast,-200;
   - Id: 35002
     AegisName: Chili_Red_Potion
     Name: Chili Red Potion
