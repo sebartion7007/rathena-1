@@ -56,6 +56,14 @@ Body:
       Price: 200
     - Item: Whikebain_Ears_K
       Price: 200
+    - Item: Garuda_Hat
+      Price: 150
+    - Item: Magic_Eyes
+      Price: 150
+    - Item: Skull_Cap
+      Price: 150
+    - Item: The_Sign_
+      Price: 200
 #  ===== Swordman =====
 #   It's OCP Level 100 equip
 #    - Item: Toy_Ring
@@ -92,6 +100,8 @@ Body:
       Price: 50
     - Item: Radio_Antenna
       Price: 50
+    - Item: Crown_Of_Deceit
+      Price: 120
     - Item: Super_Scell
       Price: 90
   - Tab: Limited
