@@ -110,14 +110,10 @@ Body:
       Price: 25
     - Item: Nyangvine_Fruit
       Price: 4
-    - Item: Evt_Cos_Coin
-      Price: 25
-    - Item: Evt_Cos_Coin
-      Price: 25
-    - Item: Evt_Cos_Coin
-      Price: 25
-    - Item: Evt_Cos_Coin
-      Price: 25
+    - Item: Max_Weight_Up_Scroll
+      Price: 100
+    - Item: Inventory_Ex
+      Price: 100
     - Item: Enchant_Stone_Box
       Price: 10
     - Item: Enchant_Stone_Box2
@@ -304,6 +300,10 @@ Body:
       Price: 200
     - Item: Enriched_Oridecon_Box
       Price: 500
+    - Item: HD_Carnium_Box10
+      Price: 300
+    - Item: HD_Bradium_Box10
+      Price: 300
     - Item: Blacksmith_Blessing
       Price: 10
   - Tab: Scrolls
@@ -330,6 +330,8 @@ Body:
       Price: 30
     - Item: Battle_Manual100_Box
       Price: 250
+    - Item: Battle_Manual_X3
+      Price: 100
     - Item: Convex_Mirror
       Price: 10
     - Item: Convex_Mirror_Box
