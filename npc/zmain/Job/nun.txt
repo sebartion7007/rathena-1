@@ -19,9 +19,9 @@ falserealm,143,263,5	script	The Nun#Decressdiecount	79,{
 				mes "ขั้นต่ำ 10,000 Zeny ค่ะ";
 				end;
 			}
-		zeny -= .moneydonate;
-		PC_DIE_COUNTER--;
-		break;
+			zeny -= .moneydonate;
+			PC_DIE_COUNTER--;
+			break;
 		case 2:
 			mes .@npcname$;
 			mes "ราคา 10,000 Zeny ต่อจำนวนกรรมเช่นเดิมค่ะ";
@@ -39,7 +39,7 @@ falserealm,143,263,5	script	The Nun#Decressdiecount	79,{
 			}
 			zeny -= .@totalmoney;
 			PC_DIE_COUNTER = 0;
-			brak;
+			break;
 		default:
 			end;
 	}
