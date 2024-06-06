@@ -8419,7 +8419,8 @@ void clif_autospell( map_session_data& sd, uint16 skill_lv ){
 		{ WZ_EARTHSPIKE, 6 },
 		{ MG_FROSTDIVER, 6 },
 		{ MG_THUNDERSTORM, 9 },
-		{ WZ_HEAVENDRIVE, 9 }
+		{ WZ_HEAVENDRIVE, 9 },
+		{ WZ_FROSTNOVA, 10 }
 	};
 #else
 	const std::vector<s_autospell_requirement> autospell_skills = {

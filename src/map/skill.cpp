@@ -14093,7 +14093,10 @@ int skill_castend_pos2(struct block_list* src, int x, int y, uint16 skill_id, ui
 	case AM_SPHEREMINE:
 	case AM_CANNIBALIZE:
 		{
-			int summons[5] = { MOBID_G_MANDRAGORA, MOBID_G_HYDRA, MOBID_G_FLORA, MOBID_G_PARASITE, MOBID_G_GEOGRAPHER };
+			int summons[10] = { 
+			MOBID_G_MANDRAGORA, MOBID_G_HYDRA, MOBID_G_FLORA, MOBID_G_PARASITE, MOBID_G_GEOGRAPHER,
+			MOBID_DROSERA, MOBID_DROSERA, MOBID_MUSCIPULAR, MOBID_MUSCIPULAR, MOBID_NEPENTHES
+			};
 			int class_ = skill_id==AM_SPHEREMINE?MOBID_MARINE_SPHERE:summons[skill_lv-1];
 			enum mob_ai ai = (skill_id == AM_SPHEREMINE) ? AI_SPHERE : AI_FLORA;
 			struct mob_data *md;
@@ -18501,8 +18504,9 @@ bool skill_check_condition_castend( map_session_data& sd, uint16 skill_id, uint1
 		case AM_CANNIBALIZE:
 		case AM_SPHEREMINE: {
 			int c=0;
-			int summons[5] = { MOBID_G_MANDRAGORA, MOBID_G_HYDRA, MOBID_G_FLORA, MOBID_G_PARASITE, MOBID_G_GEOGRAPHER };
-			int maxcount = (skill_id==AM_CANNIBALIZE)? 6-skill_lv : skill_get_maxcount(skill_id,skill_lv);
+			int summons[10] = { MOBID_G_MANDRAGORA, MOBID_G_HYDRA, MOBID_G_FLORA, MOBID_G_PARASITE, MOBID_G_GEOGRAPHER,
+								MOBID_DROSERA, MOBID_DROSERA, MOBID_MUSCIPULAR, MOBID_MUSCIPULAR, MOBID_NEPENTHES };
+			int maxcount = (skill_id==AM_CANNIBALIZE) ? ( skill_lv > 5 ? skill_get_maxcount(skill_id,skill_lv) : 6-skill_lv ) : skill_get_maxcount(skill_id,skill_lv);
 			int mob_class = (skill_id==AM_CANNIBALIZE)? summons[skill_lv-1] :MOBID_MARINE_SPHERE;
 			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
 				i = map_foreachinmap(skill_check_condition_mob_master_sub, sd.bl.m, BL_MOB, sd.bl.id, mob_class, skill_id, &c);
@@ -19453,7 +19457,7 @@ int skill_vfcastfix(struct block_list *bl, double time, uint16 skill_id, uint16 
 	if (varcast_r < 0)
 		time = time * (1 - (float)min(varcast_r, 100) / 100);
 
-	if (sd) fixed -= status_get_int(bl) + (status_get_int(bl) > 100 ? status_get_int(bl) / 100 : 0 ) * 100;
+	if (sd) fixed -= status_get_int(bl);
 	// Apply Variable CastTime calculation by INT & DEX
 	if (!(flag&1))
 		//time = time * (1 - sqrt(((float)(status_get_dex(bl) * 2 + status_get_int(bl)) / battle_config.vcast_stat_scale)));
@@ -19800,9 +19804,9 @@ int skill_autospell(map_session_data *sd, uint16 skill_id)
 
 #ifdef RENEWAL
 	if ((skill_id == MG_COLDBOLT || skill_id == MG_FIREBOLT || skill_id == MG_LIGHTNINGBOLT) && sd->sc.getSCE(SC_SPIRIT) && sd->sc.getSCE(SC_SPIRIT)->val2 == SL_SAGE)
-		maxlv = 10; //Soul Linker bonus. [Skotlex]
+		maxlv = 15; //Soul Linker bonus. [Skotlex]
 	else
-		maxlv = skill_lv / 2; // Half of Autospell's level unless player learned a lower level (capped below)
+		maxlv = skill_lv; // Half of Autospell's level unless player learned a lower level (capped below)
 #else
 	if(skill_id==MG_NAPALMBEAT)	maxlv=3;
 	else if(skill_id==MG_COLDBOLT || skill_id==MG_FIREBOLT || skill_id==MG_LIGHTNINGBOLT){

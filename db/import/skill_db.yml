@@ -6821,7 +6821,7 @@ Body:
   - Id: 212
     Name: RG_BACKSTAP
     Description: Back Stab
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
     TargetType: Attack
     Range: -1
@@ -7203,7 +7203,7 @@ Body:
   - Id: 229
     Name: AM_DEMONSTRATION
     Description: Bomb
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Weapon
     TargetType: Ground
     DamageFlags:
@@ -7234,6 +7234,16 @@ Body:
         Time: 55000
       - Level: 5
         Time: 60000
+      - Level: 6
+        Time: 60000
+      - Level: 7
+        Time: 60000
+      - Level: 8
+        Time: 60000
+      - Level: 9
+        Time: 60000
+      - Level: 10
+        Time: 60000
     FixedCastTime: 200
     Requires:
       SpCost: 10
@@ -7251,7 +7261,7 @@ Body:
   - Id: 230
     Name: AM_ACIDTERROR
     Description: Acid Terror
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Weapon
     TargetType: Attack
     DamageFlags:
@@ -7280,6 +7290,16 @@ Body:
       - Level: 4
         Time: 12
       - Level: 5
+        Time: 13
+      - Level: 6
+        Time: 13
+      - Level: 7
+        Time: 13
+      - Level: 8
+        Time: 13
+      - Level: 9
+        Time: 13
+      - Level: 10
         Time: 13
     Duration2: 108000
     FixedCastTime: 500
@@ -7330,14 +7350,54 @@ Body:
   - Id: 232
     Name: AM_CANNIBALIZE
     Description: Summon Flora
-    MaxLevel: 5
+    MaxLevel: 10
     TargetType: Ground
     DamageFlags:
       NoDamage: true
     Range: 4
     Hit: Single
-    HitCount: 1
-    ActiveInstance: 5
+    HitCount:
+      - Level: 1
+        Count: 3
+      - Level: 2
+        Count: 2
+      - Level: 3
+        Count: 3
+      - Level: 4
+        Count: 3
+      - Level: 5
+        Count: 3
+      - Level: 6
+        Count: 1
+      - Level: 7
+        Count: 2
+      - Level: 8
+        Count: 1
+      - Level: 9
+        Count: 2
+      - Level: 10
+        Count: 3
+    ActiveInstance:
+      - Level: 1
+        Max: 3
+      - Level: 2
+        Max: 2
+      - Level: 3
+        Max: 3
+      - Level: 4
+        Max: 3
+      - Level: 5
+        Max: 3
+      - Level: 6
+        Max: 1
+      - Level: 7
+        Max: 2
+      - Level: 8
+        Max: 1
+      - Level: 9
+        Max: 3
+      - Level: 10
+        Max: 20
     CastTime: 1600
     AfterCastActDelay: 500
     Duration1:
@@ -7351,9 +7411,19 @@ Body:
         Time: 120000
       - Level: 5
         Time: 60000
+      - Level: 6
+        Time: 60000
+      - Level: 7
+        Time: 60000
+      - Level: 8
+        Time: 60000
+      - Level: 9
+        Time: 60000
+      - Level: 10
+        Time: 10000
     FixedCastTime: 400
     Requires:
-      SpCost: 20
+      SpCost: 60
       ItemCost:
         - Item: MenEater_Plant_Bottle
           Amount: 1
@@ -7693,7 +7763,7 @@ Body:
   - Id: 253
     Name: CR_HOLYCROSS
     Description: Holy Cross
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
     TargetType: Attack
     Flags:
@@ -7729,11 +7799,21 @@ Body:
           Amount: 19
         - Level: 10
           Amount: 20
+        - Level: 11
+          Amount: 22
+        - Level: 12
+          Amount: 24
+        - Level: 13
+          Amount: 26
+        - Level: 14
+          Amount: 28
+        - Level: 15
+          Amount: 30
     Status: Blind
   - Id: 254
     Name: CR_GRANDCROSS
     Description: Grand Cross
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Magic
     TargetType: Self
     DamageFlags:
@@ -7750,7 +7830,37 @@ Body:
     CastTime: 1000
     AfterCastActDelay: 500
     AfterCastWalkDelay: 1000
-    Duration1: 950
+    Duration1:
+      - Level: 1
+        Time: 950
+      - Level: 2
+        Time: 950
+      - Level: 3
+        Time: 950
+      - Level: 4
+        Time: 950
+      - Level: 5
+        Time: 950
+      - Level: 6
+        Time: 950
+      - Level: 7
+        Time: 950
+      - Level: 8
+        Time: 950
+      - Level: 9
+        Time: 950
+      - Level: 10
+        Time: 950
+      - Level: 11
+        Time: 1250
+      - Level: 12
+        Time: 1250
+      - Level: 13
+        Time: 1550
+      - Level: 14
+        Time: 1550
+      - Level: 15
+        Time: 1850
     Duration2: 18000
     Cooldown: 1000
     FixedCastTime: 500
@@ -7775,6 +7885,16 @@ Body:
         - Level: 9
           Amount: 93
         - Level: 10
+          Amount: 100
+        - Level: 11
+          Amount: 100
+        - Level: 12
+          Amount: 100
+        - Level: 13
+          Amount: 100
+        - Level: 14
+          Amount: 100
+        - Level: 15
           Amount: 100
       HpRateCost: 20
     Unit:
@@ -7865,7 +7985,7 @@ Body:
   - Id: 258
     Name: CR_SPEARQUICKEN
     Description: Spear Quicken
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
     TargetType: Self
     DamageFlags:
@@ -7893,6 +8013,16 @@ Body:
         Time: 270000
       - Level: 10
         Time: 300000
+      - Level: 11
+        Time: 360000
+      - Level: 12
+        Time: 420000
+      - Level: 13
+        Time: 480000
+      - Level: 14
+        Time: 540000
+      - Level: 15
+        Time: 600000
     Requires:
       SpCost:
         - Level: 1
@@ -7915,6 +8045,16 @@ Body:
           Amount: 56
         - Level: 10
           Amount: 60
+        - Level: 11
+          Amount: 70
+        - Level: 12
+          Amount: 80
+        - Level: 13
+          Amount: 90
+        - Level: 14
+          Amount: 100
+        - Level: 15
+          Amount: 110
       Weapon:
         1hSpear: true
         2hSpear: true
@@ -7961,7 +8101,7 @@ Body:
   - Id: 263
     Name: MO_TRIPLEATTACK
     Description: Raging Trifecta Blow
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
     Flags:
       TargetTrap: true
@@ -7996,7 +8136,7 @@ Body:
   - Id: 266
     Name: MO_INVESTIGATE
     Description: Occult Impaction
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Weapon
     TargetType: Attack
     DamageFlags:
@@ -8026,7 +8166,37 @@ Body:
           Amount: 19
         - Level: 5
           Amount: 20
-      SpiritSphereCost: 1
+        - Level: 6
+          Amount: 21
+        - Level: 7
+          Amount: 22
+        - Level: 8
+          Amount: 23
+        - Level: 9
+          Amount: 24
+        - Level: 10
+          Amount: 25
+      SpiritSphereCost:
+        - Level: 1
+          Amount: 1
+        - Level: 2
+          Amount: 1
+        - Level: 3
+          Amount: 1
+        - Level: 4
+          Amount: 1
+        - Level: 5
+          Amount: 1
+        - Level: 6
+          Amount: 0
+        - Level: 7
+          Amount: 0
+        - Level: 8
+          Amount: 0
+        - Level: 9
+          Amount: 0
+        - Level: 10
+          Amount: 0
   - Id: 267
     Name: MO_FINGEROFFENSIVE
     Description: Throw Spirit Sphere
@@ -8352,7 +8522,7 @@ Body:
   - Id: 274
     Name: SA_ADVANCEDBOOK
     Description: Study
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
   - Id: 275
     Name: SA_CASTCANCEL
@@ -8452,7 +8622,7 @@ Body:
   - Id: 280
     Name: SA_FLAMELAUNCHER
     Description: Endow Blaze
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Magic
     TargetType: Support
     DamageFlags:
@@ -8477,6 +8647,16 @@ Body:
         Time: 1500000
       - Level: 5
         Time: 1800000
+      - Level: 6
+        Time: 2100000
+      - Level: 7
+        Time: 2400000
+      - Level: 8
+        Time: 2700000
+      - Level: 9
+        Time: 3000000
+      - Level: 10
+        Time: 3600000
     FixedCastTime: 1000
     Requires:
       SpCost: 40
@@ -8487,7 +8667,7 @@ Body:
   - Id: 281
     Name: SA_FROSTWEAPON
     Description: Endow Tsunami
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Magic
     TargetType: Support
     DamageFlags:
@@ -8512,6 +8692,16 @@ Body:
         Time: 1500000
       - Level: 5
         Time: 1800000
+      - Level: 6
+        Time: 2100000
+      - Level: 7
+        Time: 2400000
+      - Level: 8
+        Time: 2700000
+      - Level: 9
+        Time: 3000000
+      - Level: 10
+        Time: 3600000
     FixedCastTime: 1000
     Requires:
       SpCost: 40
@@ -8522,7 +8712,7 @@ Body:
   - Id: 282
     Name: SA_LIGHTNINGLOADER
     Description: Endow Tornado
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Magic
     TargetType: Support
     DamageFlags:
@@ -8547,6 +8737,16 @@ Body:
         Time: 1500000
       - Level: 5
         Time: 1800000
+      - Level: 6
+        Time: 2100000
+      - Level: 7
+        Time: 2400000
+      - Level: 8
+        Time: 2700000
+      - Level: 9
+        Time: 3000000
+      - Level: 10
+        Time: 3600000
     FixedCastTime: 1000
     Requires:
       SpCost: 40
@@ -8557,7 +8757,7 @@ Body:
   - Id: 283
     Name: SA_SEISMICWEAPON
     Description: Endow Quake
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Magic
     TargetType: Support
     DamageFlags:
@@ -8582,6 +8782,16 @@ Body:
         Time: 1500000
       - Level: 5
         Time: 1800000
+      - Level: 6
+        Time: 2100000
+      - Level: 7
+        Time: 2400000
+      - Level: 8
+        Time: 2700000
+      - Level: 9
+        Time: 3000000
+      - Level: 10
+        Time: 3600000
     FixedCastTime: 1000
     Requires:
       SpCost: 40
@@ -9312,25 +9522,65 @@ Body:
   - Id: 315
     Name: BA_MUSICALLESSON
     Description: Music Lessons
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
   - Id: 316
     Name: BA_MUSICALSTRIKE
     Description: Melody Strike
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Weapon
     TargetType: Attack
     Flags:
       AllowWhenPerforming: true
     Range: 9
     Hit: Single
-    HitCount: 2
+    HitCount:
+      - Level: 1
+        Count: 2
+      - Level: 2
+        Count: 2
+      - Level: 3
+        Count: 2
+      - Level: 4
+        Count: 2
+      - Level: 5
+        Count: 2
+      - Level: 6
+        Count: 3
+      - Level: 7
+        Count: 3
+      - Level: 8
+        Count: 3
+      - Level: 9
+        Count: 3
+      - Level: 10
+        Count: 4
     Element: Weapon
     CastTime: 500
     AfterCastActDelay: 300
     FixedCastTime: 300
     Requires:
-      SpCost: 12
+      SpCost:
+        - Level: 1
+          Amount: 12
+        - Level: 2
+          Amount: 12
+        - Level: 3
+          Amount: 12
+        - Level: 4
+          Amount: 12
+        - Level: 5
+          Amount: 12
+        - Level: 6
+          Amount: 25
+        - Level: 7
+          Amount: 25
+        - Level: 8
+          Amount: 25
+        - Level: 9
+          Amount: 25
+        - Level: 10
+          Amount: 25
       Weapon:
         Musical: true
       Ammo:
@@ -9399,7 +9649,7 @@ Body:
   - Id: 319
     Name: BA_WHISTLE
     Description: Perfect Tablature
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Misc
     TargetType: Self
     DamageFlags:
@@ -9435,6 +9685,16 @@ Body:
           Amount: 38
         - Level: 10
           Amount: 40
+        - Level: 11
+          Amount: 50
+        - Level: 12
+          Amount: 60
+        - Level: 13
+          Amount: 70
+        - Level: 14
+          Amount: 80
+        - Level: 15
+          Amount: 90
       Weapon:
         Musical: true
         Whip: true
@@ -9442,7 +9702,7 @@ Body:
   - Id: 320
     Name: BA_ASSASSINCROSS
     Description: Impressive Riff
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Misc
     TargetType: Self
     DamageFlags:
@@ -9478,6 +9738,16 @@ Body:
           Amount: 80
         - Level: 10
           Amount: 85
+        - Level: 11
+          Amount: 95
+        - Level: 12
+          Amount: 105
+        - Level: 13
+          Amount: 115
+        - Level: 14
+          Amount: 125
+        - Level: 15
+          Amount: 135
       Weapon:
         Musical: true
         Whip: true
@@ -9485,7 +9755,7 @@ Body:
   - Id: 321
     Name: BA_POEMBRAGI
     Description: Magic Strings
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Misc
     TargetType: Self
     DamageFlags:
@@ -9521,6 +9791,16 @@ Body:
           Amount: 105
         - Level: 10
           Amount: 110
+        - Level: 11
+          Amount: 120
+        - Level: 12
+          Amount: 130
+        - Level: 13
+          Amount: 140
+        - Level: 14
+          Amount: 150
+        - Level: 15
+          Amount: 160
       Weapon:
         Musical: true
         Whip: true
@@ -9528,7 +9808,7 @@ Body:
   - Id: 322
     Name: BA_APPLEIDUN
     Description: Song of Lutie
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Misc
     TargetType: Self
     DamageFlags:
@@ -9564,6 +9844,16 @@ Body:
           Amount: 80
         - Level: 10
           Amount: 85
+        - Level: 11
+          Amount: 95
+        - Level: 12
+          Amount: 105
+        - Level: 13
+          Amount: 115
+        - Level: 14
+          Amount: 125
+        - Level: 15
+          Amount: 135
       Weapon:
         Musical: true
         Whip: true
@@ -9571,24 +9861,65 @@ Body:
   - Id: 323
     Name: DC_DANCINGLESSON
     Description: Dance Lessons
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
   - Id: 324
     Name: DC_THROWARROW
     Description: Slinging Arrow
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Weapon
     TargetType: Attack
     Flags:
       AllowWhenPerforming: true
     Range: 9
     Hit: Single
-    HitCount: 2
+    HitCount:
+      - Level: 1
+        Count: 2
+      - Level: 2
+        Count: 2
+      - Level: 3
+        Count: 2
+      - Level: 4
+        Count: 2
+      - Level: 5
+        Count: 2
+      - Level: 6
+        Count: 3
+      - Level: 7
+        Count: 3
+      - Level: 8
+        Count: 3
+      - Level: 9
+        Count: 3
+      - Level: 10
+        Count: 4
     Element: Weapon
-    CastTime: 1200
+    CastTime: 500
+    AfterCastActDelay: 300
     FixedCastTime: 300
     Requires:
-      SpCost: 12
+      SpCost:
+        - Level: 1
+          Amount: 12
+        - Level: 2
+          Amount: 12
+        - Level: 3
+          Amount: 12
+        - Level: 4
+          Amount: 12
+        - Level: 5
+          Amount: 12
+        - Level: 6
+          Amount: 25
+        - Level: 7
+          Amount: 25
+        - Level: 8
+          Amount: 25
+        - Level: 9
+          Amount: 25
+        - Level: 10
+          Amount: 25
       Weapon:
         Whip: true
       Ammo:
@@ -9656,7 +9987,7 @@ Body:
   - Id: 327
     Name: DC_HUMMING
     Description: Focus Ballet
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Misc
     TargetType: Self
     DamageFlags:
@@ -9692,6 +10023,16 @@ Body:
           Amount: 57
         - Level: 10
           Amount: 60
+        - Level: 11
+          Amount: 63
+        - Level: 12
+          Amount: 66
+        - Level: 13
+          Amount: 69
+        - Level: 14
+          Amount: 72
+        - Level: 15
+          Amount: 75
       Weapon:
         Musical: true
         Whip: true
@@ -9699,7 +10040,7 @@ Body:
   - Id: 328
     Name: DC_DONTFORGETME
     Description: Slow Grace
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Misc
     TargetType: Self
     DamageFlags:
@@ -9735,6 +10076,16 @@ Body:
           Amount: 62
         - Level: 10
           Amount: 65
+        - Level: 11
+          Amount: 75
+        - Level: 12
+          Amount: 85
+        - Level: 13
+          Amount: 95
+        - Level: 14
+          Amount: 105
+        - Level: 15
+          Amount: 125
       Weapon:
         Musical: true
         Whip: true
@@ -9742,7 +10093,7 @@ Body:
   - Id: 329
     Name: DC_FORTUNEKISS
     Description: Lady Luck
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Misc
     TargetType: Self
     DamageFlags:
@@ -9778,6 +10129,16 @@ Body:
           Amount: 80
         - Level: 10
           Amount: 85
+        - Level: 11
+          Amount: 95
+        - Level: 12
+          Amount: 105
+        - Level: 13
+          Amount: 115
+        - Level: 14
+          Amount: 125
+        - Level: 15
+          Amount: 135
       Weapon:
         Musical: true
         Whip: true
@@ -9785,7 +10146,7 @@ Body:
   - Id: 330
     Name: DC_SERVICEFORYOU
     Description: Gypsy's Kiss
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Misc
     TargetType: Self
     DamageFlags:
@@ -9821,6 +10182,16 @@ Body:
           Amount: 84
         - Level: 10
           Amount: 87
+        - Level: 11
+          Amount: 110
+        - Level: 12
+          Amount: 120
+        - Level: 13
+          Amount: 130
+        - Level: 14
+          Amount: 140
+        - Level: 15
+          Amount: 150
       Weapon:
         Musical: true
         Whip: true

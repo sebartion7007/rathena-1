@@ -6,20 +6,43 @@ falserealm,143,263,5	script	The Nun#Decressdiecount	79,{
 	mes "ตัวเธอมีอยู่ ^FF0000"+PC_DIE_COUNTER+"^000000 กรรม";
 	mes "อยากสารภาพหรือไม่คะ?";
 	next;
-	if(select("เอาเลย:ยังก่อน") == 2 ) end;
-	if(!PC_DIE_COUNTER) {
-		mes .@npcname$;
-		mes "ตัวเธอ ไม่เหลือกรรมแล้ว";
-		end;
+	switch(select("เอาเลย:ขอแบบบุฟเฟ่:ยังก่อน")) {
+		if(!PC_DIE_COUNTER) {
+			mes .@npcname$;
+			mes "ตัวเธอ ไม่เหลือกรรมแล้ว";
+			end;
+		}
+		case 1:
+			if(zeny < .moneydonate) {
+				mes .@npcname$;
+				mes "ทางเราจำเป็นต้องรับเงินบริจาคก่อน เพราะว่ามันค่อนข้างจำเป็นกับการบูรณะ";
+				mes "ขั้นต่ำ 10,000 Zeny ค่ะ";
+				end;
+			}
+		zeny -= .moneydonate;
+		PC_DIE_COUNTER--;
+		break;
+		case 2:
+			mes .@npcname$;
+			mes "ราคา 10,000 Zeny ต่อจำนวนกรรมเช่นเดิมค่ะ";
+			mes "แต่ทางโบสส์ของเราต้องมีค่าล่วงเวลาให้แก่ แม่ชี รับคำสารภาพบาป จะคิดเพิ่ม 5% จากยอดทั้งหมดเป็นค่าล่วงเวลาค่ะ";
+			mes "สนใจเข้าห้องสารภาพเลยไหมคะ?";
+			next;
+			if(select("เอาเลย:ยังก่อน") == 2 ) end;
+			.@totalmoney = .moneydonate * PC_DIE_COUNTER;
+			.@totalmoney += .@totalmoney * 5 / 100;
+			if(zeny < .@totalmoney) {
+				mes .@npcname$;
+				mes "เหมือนเงินของท่านจะไม่พอกับการบูรณะของทางเรา เชิญออกห้องค่ะ";
+				mes "^FF0000[ระบบ] : จำนวนเงินที่ต้องใช้คือ "+callfunc("F_InsertComma",.@totalmoney);
+				end;
+			}
+			zeny -= .@totalmoney;
+			PC_DIE_COUNTER = 0;
+			brak;
+		default:
+			end;
 	}
-	if(zeny < .moneydonate) {
-		mes .@npcname$;
-		mes "ทางเราจำเป็นต้องรับเงินบริจาคก่อน เพราะว่ามันค่อนข้างจำเป็นกับการบูรณะ";
-		mes "ขั้นต่ำ 10,000 Zeny ค่ะ";
-		end;
-	}
-	zeny -= .moneydonate;
-	PC_DIE_COUNTER--;
 	mes .@npcname$;
 	mes "ตัวเธอเหลืออยู่ ^FF0000"+PC_DIE_COUNTER+"^000000 กรรม";
 	end;

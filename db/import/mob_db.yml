@@ -1317,6 +1317,95 @@ Body:
       - Item: Scarlet_Twohand_Sword
         Rate: 1
         RandomOptionGroup: Custom_new_crimson
+  - Id: 29001
+    AegisName: G_DROSERA
+    Name: Drosera
+    Level: 101
+    Hp: 10878
+    BaseExp: 1622
+    JobExp: 1467
+    Attack: 218
+    Attack2: 54
+    Defense: 86
+    MagicDefense: 52
+    Str: 79
+    Agi: 32
+    Vit: 64
+    Int: 38
+    Dex: 94
+    Luk: 14
+    AttackRange: 7
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Earth
+    ElementLevel: 1
+    WalkSpeed: 1000
+    AttackDelay: 864
+    AttackMotion: 576
+    DamageMotion: 336
+    Ai: 10
+  - Id: 29002
+    AegisName: G_MUSCIPULAR
+    Name: Muscipular
+    Level: 105
+    Hp: 12550
+    BaseExp: 1706
+    JobExp: 1547
+    Attack: 521
+    Attack2: 76
+    Defense: 114
+    MagicDefense: 43
+    Str: 100
+    Agi: 60
+    Vit: 58
+    Int: 37
+    Dex: 72
+    Luk: 47
+    AttackRange: 3
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Earth
+    ElementLevel: 1
+    WalkSpeed: 1000
+    AttackDelay: 672
+    AttackMotion: 648
+    DamageMotion: 360
+    Ai: 10
+  - Id: 29003
+    AegisName: G_NEPENTHES
+    Name: Nepenthes
+    Level: 114
+    Hp: 15099
+    BaseExp: 2224
+    JobExp: 2128
+    Attack: 843
+    Attack2: 125
+    Defense: 25
+    MagicDefense: 5
+    Str: 94
+    Agi: 32
+    Vit: 41
+    Int: 39
+    Dex: 210
+    Luk: 59
+    AttackRange: 7
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    RaceGroups:
+      Manuk: true
+    Element: Poison
+    ElementLevel: 2
+    WalkSpeed: 1000
+    AttackDelay: 500
+    AttackMotion: 576
+    DamageMotion: 504
+    Ai: 10
   - Id: 30001
     AegisName: ORC_WARRIOR_PARADOX
     Name: Orc Warrior Paradox

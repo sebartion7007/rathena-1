@@ -1621,9 +1621,9 @@ int64 battle_calc_damage(struct block_list *src,struct block_list *bl,struct Dam
 #ifdef RENEWAL
 		if( tsc->getSCE(SC_RAID) ) {
 			if (status_get_class_(bl) == CLASS_BOSS)
-				damage += damage * 15 / 100;
-			else
 				damage += damage * 30 / 100;
+			else
+				damage += damage * 50 / 100;
 		}
 #endif
 
@@ -2017,36 +2017,42 @@ int64 battle_calc_damage(struct block_list *src,struct block_list *bl,struct Dam
 		if (!battle_status_block_damage(src, bl, tsc, d, damage, skill_id, skill_lv)) // Statuses that reduce damage to 0.
 			return 0;
 	}
-
-	int maxcap = battle_config.capdamage;
-	if (tsd && tsd->bonus.capdamage_val > 0)
-		maxcap += tsd->bonus.capdamage_val;
-	if (tsd && tsd->bonus.capdamage_rate > 0)
-		maxcap += (tsd->bonus.capdamage_rate * maxcap) / 100;
-	if ((tsd && tsd->bonus.capdamage_nm_chance > 0) || (tsd && tsd->bonus.capdamage_sk_chance > 0)) {
-		if (damage < maxcap)
-			if (skill_id > 0) {
-				if (rand() % 10000 < tsd->bonus.capdamage_sk_chance)
-					damage = maxcap;
-			}
-			else {
-				if (rand() % 10000 < tsd->bonus.capdamage_nm_chance)
-					damage = maxcap;
-			}
-	}
-	damage = cap_value(damage, INT_MIN, maxcap);
-	
-	//SC effects from caster side.
-	status_change* scs = status_get_sc(src);
-	//ShowDebug("Debug Test \n");
-	if (scs && scs->count) {
-		if (scs->getSCE(SC_BLESSING)) {
-			damage += scs->getSCE(SC_BLESSING)->val3*200;
+	if(tsd) {
+		int maxcap = battle_config.capdamage;
+		if (tsd && tsd->bonus.capdamage_val > 0)
+			maxcap += tsd->bonus.capdamage_val;
+		if (tsd && tsd->bonus.capdamage_rate > 0)
+			maxcap += (tsd->bonus.capdamage_rate * maxcap) / 100;
+		if ((tsd && tsd->bonus.capdamage_nm_chance > 0) || (tsd && tsd->bonus.capdamage_sk_chance > 0)) {
+			if (damage < maxcap)
+				if (skill_id > 0) {
+					if (rand() % 10000 < tsd->bonus.capdamage_sk_chance)
+						damage = maxcap;
+				}
+				else {
+					if (rand() % 10000 < tsd->bonus.capdamage_nm_chance)
+						damage = maxcap;
+				}
 		}
+		switch (skill_id) {
+			case MO_EXTREMITYFIST:
+				maxcap *= 3;
+			break;
+		}
+		
+		damage = cap_value(damage, INT_MIN, maxcap);
+		
+		//SC effects from caster side.
+		status_change* scs = status_get_sc(src);
+		//ShowDebug("Debug Test \n");
+		if (scs && scs->count) {
+			if (scs->getSCE(SC_BLESSING)) {
+				damage += scs->getSCE(SC_BLESSING)->val3*200;
+			}
+		}
+		
+		if (tsd && tsd->bonus.supplementary) damage += tsd->bonus.supplementary;
 	}
-	
-	if (tsd && tsd->bonus.supplementary) damage += tsd->bonus.supplementary;
-
 	damage = cap_value(damage, INT_MIN, INT_MAX);
 	return damage;
 }
@@ -2366,15 +2372,15 @@ int64 battle_addmastery(map_session_data *sd,struct block_list *target,int64 dmg
 			[[fallthrough]];
 		case W_KNUCKLE:
 			if((skill = pc_checkskill(sd,MO_IRONHAND)) > 0)
-				damage += (skill * 3);
+				damage += (skill * 100);
 			break;
 		case W_MUSICAL:
 			if((skill = pc_checkskill(sd,BA_MUSICALLESSON)) > 0)
-				damage += (skill * 3);
+				damage += (skill * 30);
 			break;
 		case W_WHIP:
 			if((skill = pc_checkskill(sd,DC_DANCINGLESSON)) > 0)
-				damage += (skill * 3);
+				damage += (skill * 30);
 			break;
 		case W_BOOK:
 			if((skill = pc_checkskill(sd,SA_ADVANCEDBOOK)) > 0)
@@ -4744,10 +4750,18 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			skillratio += 400 + 200 * skill_lv;
 			break;
 		case RG_BACKSTAP:
-			if(sd && sd->status.weapon == W_BOW && battle_config.backstab_bow_penalty)
-				skillratio += (200 + 40 * skill_lv) / 2;
-			else
-				skillratio += 200 + 40 * skill_lv;
+			if(sd && sd->status.weapon == W_BOW && battle_config.backstab_bow_penalty) {
+				if (skill_lv < 10)
+					skillratio += (200 + 40 * skill_lv) / 2;
+				else
+					skillratio += 450 + 50 * (skill_lv - 10);
+			}
+			else {
+				if (skill_lv < 10)
+					skillratio += (200 + 40 * skill_lv) / 2;
+				else
+					skillratio += 900 + 150 * (skill_lv - 10);
+			}
 			break;
 		case RG_RAID:
 #ifdef RENEWAL
@@ -4777,15 +4791,17 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			else
 #endif
 				skillratio += 35 * skill_lv;
+			if (skill_lv > 10 )
+				skillratio += 70 * (skill_lv - 10);
 			break;
 		case AM_DEMONSTRATION:
-			skillratio += 20 * skill_lv;
+			skillratio += 200 * skill_lv;
 			break;
 		case AM_ACIDTERROR:
 #ifdef RENEWAL
 			skillratio += -100 + 200 * skill_lv;
 			if (sd && pc_checkskill(sd, AM_LEARNINGPOTION))
-				skillratio += 100; // !TODO: What's this bonus increase?
+				skillratio += 100 * pc_checkskill(sd, AM_LEARNINGPOTION); // !TODO: What's this bonus increase?
 #else
 			skillratio += -50 + 50 * skill_lv;
 #endif
@@ -4803,13 +4819,13 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 #ifdef RENEWAL
 			skillratio += -100 + 100 * skill_lv;
 			if (tsc && tsc->getSCE(SC_BLADESTOP))
-				skillratio += skillratio / 2;
+				skillratio += skillratio;
 #else
 			skillratio += 75 * skill_lv;
 #endif
 			break;
 		case MO_EXTREMITYFIST:
-			skillratio += 700 + sstatus->sp * 10;
+			skillratio += 10000 + sstatus->sp * 20;
 #ifdef RENEWAL
 			if (wd->miscflag&1)
 				skillratio *= 2; // More than 5 spirit balls active
@@ -4817,7 +4833,10 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			skillratio = min(500000,skillratio); //We stop at roughly 50k SP for overflow protection
 			break;
 		case MO_TRIPLEATTACK:
-			skillratio += 20 * skill_lv;
+			if(skill_lv < 10)
+				skillratio += 20 * skill_lv;
+			else
+				skillratio += 300 + 100 * (skill_lv - 10);
 			break;
 		case MO_CHAINCOMBO:
 #ifdef RENEWAL
@@ -4827,6 +4846,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 #else
 			skillratio += 50 + 50 * skill_lv;
 #endif
+			skillratio *= 2;
 			break;
 		case MO_COMBOFINISH:
 #ifdef RENEWAL
@@ -4836,6 +4856,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 #endif
 			if (sc->getSCE(SC_GT_ENERGYGAIN))
 				skillratio += skillratio * 50 / 100;
+			skillratio *= 2;
 			break;
 		case BA_MUSICALSTRIKE:
 		case DC_THROWARROW:

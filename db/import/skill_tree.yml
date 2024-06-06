@@ -841,7 +841,7 @@ Body:
           - Name: KN_RIDING
             Level: 1
       - Name: KN_SPEARMASTERY
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: AL_CURE
         MaxLevel: 1
         Requires:
@@ -884,12 +884,12 @@ Body:
           - Name: CR_SHIELDBOOMERANG
             Level: 3
       - Name: CR_HOLYCROSS
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: CR_TRUST
             Level: 7
       - Name: CR_GRANDCROSS
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: CR_HOLYCROSS
             Level: 6
@@ -915,7 +915,7 @@ Body:
           - Name: CR_SHIELDBOOMERANG
             Level: 1
       - Name: CR_SPEARQUICKEN
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: KN_SPEARMASTERY
             Level: 10
@@ -949,7 +949,7 @@ Body:
           - Name: MO_CALLSPIRITS
             Level: 5
       - Name: MO_TRIPLEATTACK
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: MO_DODGE
             Level: 5
@@ -970,7 +970,7 @@ Body:
           - Name: MO_CALLSPIRITS
             Level: 5
       - Name: MO_INVESTIGATE
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: MO_CALLSPIRITS
             Level: 5
@@ -1028,12 +1028,12 @@ Body:
           - Name: SA_SEISMICWEAPON
             Level: 1
       - Name: WZ_HEAVENDRIVE
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: WZ_EARTHSPIKE
             Level: 1
       - Name: SA_ADVANCEDBOOK
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: SA_CASTCANCEL
         MaxLevel: 5
         Requires:
@@ -1060,28 +1060,28 @@ Body:
           - Name: SA_FREECAST
             Level: 4
       - Name: SA_FLAMELAUNCHER
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: MG_FIREBOLT
             Level: 1
           - Name: SA_ADVANCEDBOOK
             Level: 5
       - Name: SA_FROSTWEAPON
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: MG_COLDBOLT
             Level: 1
           - Name: SA_ADVANCEDBOOK
             Level: 5
       - Name: SA_LIGHTNINGLOADER
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: MG_LIGHTNINGBOLT
             Level: 1
           - Name: SA_ADVANCEDBOOK
             Level: 5
       - Name: SA_SEISMICWEAPON
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: MG_STONECURSE
             Level: 1
@@ -1170,7 +1170,7 @@ Body:
           - Name: RG_SNATCHER
             Level: 4
       - Name: RG_BACKSTAP
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: RG_STEALCOIN
             Level: 4
@@ -1260,12 +1260,12 @@ Body:
           - Name: AM_LEARNINGPOTION
             Level: 5
       - Name: AM_DEMONSTRATION
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: AM_PHARMACY
             Level: 4
       - Name: AM_ACIDTERROR
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: AM_PHARMACY
             Level: 5
@@ -1275,7 +1275,7 @@ Body:
           - Name: AM_PHARMACY
             Level: 3
       - Name: AM_CANNIBALIZE
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: AM_PHARMACY
             Level: 6
@@ -1349,9 +1349,9 @@ Body:
       Archer: true
     Tree:
       - Name: BA_MUSICALLESSON
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: BA_MUSICALSTRIKE
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: BA_MUSICALLESSON
             Level: 3
@@ -1368,22 +1368,22 @@ Body:
           - Name: BD_ENCORE
             Level: 1
       - Name: BA_WHISTLE
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: BA_DISSONANCE
             Level: 3
       - Name: BA_ASSASSINCROSS
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: BA_DISSONANCE
             Level: 3
       - Name: BA_POEMBRAGI
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: BA_DISSONANCE
             Level: 3
       - Name: BA_APPLEIDUN
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: BA_DISSONANCE
             Level: 3
@@ -1442,9 +1442,9 @@ Body:
       Archer: true
     Tree:
       - Name: DC_DANCINGLESSON
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: DC_THROWARROW
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: DC_DANCINGLESSON
             Level: 3
@@ -1461,22 +1461,22 @@ Body:
           - Name: BD_ENCORE
             Level: 1
       - Name: DC_HUMMING
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: DC_UGLYDANCE
             Level: 3
       - Name: DC_DONTFORGETME
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: DC_UGLYDANCE
             Level: 3
       - Name: DC_FORTUNEKISS
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: DC_UGLYDANCE
             Level: 3
       - Name: DC_SERVICEFORYOU
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: DC_UGLYDANCE
             Level: 3

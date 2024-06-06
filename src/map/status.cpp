@@ -4717,13 +4717,13 @@ int status_calc_pc_sub(map_session_data* sd, uint8 opt)
 			sd->indexed_bonus.magic_atk_ele[ELE_HOLY] += sc->getSCE(SC_BASILICA)->val1 * 3;
 		}
 		if (sc->getSCE(SC_FIREWEAPON))
-			sd->indexed_bonus.magic_atk_ele[ELE_FIRE] += sc->getSCE(SC_FIREWEAPON)->val1;
+			sd->indexed_bonus.magic_atk_ele[ELE_FIRE] += sc->getSCE(SC_FIREWEAPON)->val1 < 10 ? sc->getSCE(SC_FIREWEAPON)->val1 : 15;
 		if (sc->getSCE(SC_WINDWEAPON))
-			sd->indexed_bonus.magic_atk_ele[ELE_WIND] += sc->getSCE(SC_WINDWEAPON)->val1;
+			sd->indexed_bonus.magic_atk_ele[ELE_WIND] += sc->getSCE(SC_WINDWEAPON)->val1 < 10 ? sc->getSCE(SC_WINDWEAPON)->val1 : 15;
 		if (sc->getSCE(SC_WATERWEAPON))
-			sd->indexed_bonus.magic_atk_ele[ELE_WATER] += sc->getSCE(SC_WATERWEAPON)->val1;
+			sd->indexed_bonus.magic_atk_ele[ELE_WATER] += sc->getSCE(SC_WATERWEAPON)->val1 < 10 ? sc->getSCE(SC_WATERWEAPON)->val1 : 15;
 		if (sc->getSCE(SC_EARTHWEAPON))
-			sd->indexed_bonus.magic_atk_ele[ELE_EARTH] += sc->getSCE(SC_EARTHWEAPON)->val1;
+			sd->indexed_bonus.magic_atk_ele[ELE_EARTH] += sc->getSCE(SC_EARTHWEAPON)->val1 < 10 ? sc->getSCE(SC_EARTHWEAPON)->val1 : 15;
 #endif
 		if(sc->getSCE(SC_PROVIDENCE)) {
 			sd->indexed_bonus.subele[ELE_HOLY] += sc->getSCE(SC_PROVIDENCE)->val2;
@@ -6117,6 +6117,8 @@ void status_calc_bl_main(struct block_list *bl, std::bitset<SCB_MAX> flag)
 			amotion += sd->bonus.aspd_add;
 			if( (sd && pc_checkskill(sd,AS_KATAR) >= 15) || 
 				(sd && pc_checkskill(sd,BS_WEAPONRESEARCH) >= 15) || 
+				(sd && pc_checkskill(sd,DC_DANCINGLESSON) >= 15) || 
+				(sd && pc_checkskill(sd,BA_MUSICALLESSON) >= 15) || 
 				(sd && pc_checkskill(sd, PR_MACEMASTERY) >= 10) ||
 				(sd && pc_checkskill(sd, HT_FALCON) >= 5)
 			)
@@ -6128,6 +6130,8 @@ void status_calc_bl_main(struct block_list *bl, std::bitset<SCB_MAX> flag)
 			if ( 
 				(sd && pc_checkskill(sd,AS_KATAR) >= 15) || 
 				(sd && pc_checkskill(sd,BS_WEAPONRESEARCH) >= 15) || 
+				(sd && pc_checkskill(sd,DC_DANCINGLESSON) >= 15) || 
+				(sd && pc_checkskill(sd,BA_MUSICALLESSON) >= 15) || 
 				(sd && pc_checkskill(sd, PR_MACEMASTERY) >= 10) ||
 				(sd && pc_checkskill(sd, HT_FALCON) >= 5)
 			)
