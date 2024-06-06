@@ -1150,7 +1150,7 @@ Body:
       - Name: AC_VULTURE
         MaxLevel: 10
       - Name: AC_DOUBLE
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: AC_VULTURE
             Level: 10
