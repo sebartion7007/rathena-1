@@ -6845,7 +6845,7 @@ Body:
   - Id: 214
     Name: RG_RAID
     Description: Sightless Mind
-    MaxLevel: 5
+    MaxLevel: 15
     Type: Weapon
     TargetType: Self
     DamageFlags:
@@ -6861,9 +6861,6 @@ Body:
     Duration2: 20000
     Requires:
       SpCost: 15
-      Status:
-        Hiding: true
-    Status: Raid
   - Id: 215
     Name: RG_STRIPWEAPON
     Description: Divest Weapon
@@ -7177,7 +7174,7 @@ Body:
   - Id: 225
     Name: RG_PLAGIARISM
     Description: Intimidate
-    MaxLevel: 10
+    MaxLevel: 15
   - Id: 226
     Name: AM_AXEMASTERY
     Description: Axe Mastery
