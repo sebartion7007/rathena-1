@@ -1451,6 +1451,7 @@ mal_in01,20,107,3	script	Lace La Zard#cos_ect	4_FROG,{
 		25302, 29362, "Enables the use of Level 3 Double Attack.",	// DoubleAttack_Stone	DoubleAttack
 		25303, 29361, "Increases Critical Damage by 20%.",	// Critical_Stone_Robe	Fatal_Robe
 		25306, 29358, "Decreases Variable Casting Time by 10%.",	// CastStone_Robe	Casting_Robe
+		10001053,	311469,	"Melee Physical Attack",	// M_PATKStone_Robe P-atk
 		25412, 29426, "Increases damage of Rampage Blaster by 15%.",	// SuraStone_Robe	SuraStone_Robe_
 		25416, 29431, "Increases damage of Arrow Storm by 10%.",	// RangerStone_Robe	RangerStone_Robe_
 		25420, 29435, "Increases damage of Psychic Wave by 10%.",	// SorcererStone_Robe	SorcererStone_Robe_
