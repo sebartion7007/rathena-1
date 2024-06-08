@@ -50,7 +50,7 @@
 	if(.@checkitem) {
 		if (Zeny < .@totalcost) {
 				dispbottom "Need Zeny "+callfunc("F_InsertComma",.@totalcost)+" For Repair All equipment";
-				break;
+				close;
 			}
 		.@checkitem2 = 1;
 			while (1) {

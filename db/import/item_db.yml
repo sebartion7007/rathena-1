@@ -354,7 +354,7 @@ Body:
     Defense: 15
     Slots: 1
     Locations:
-      Armor: true
+      Garment: true
     ArmorLevel: 1
     EquipLevelMin: 95
     Refineable: true
@@ -377,7 +377,7 @@ Body:
     Defense: 10
     Slots: 1
     Locations:
-      Armor: true
+      Garment: true
     ArmorLevel: 1
     EquipLevelMin: 95
     Refineable: true
