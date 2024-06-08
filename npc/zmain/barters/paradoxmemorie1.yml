@@ -38,3 +38,38 @@ Body:
           - Index: 3
             Item: Piece_of_forgotten_Dimension
             Amount: 20
+  - Name: Paradox Memorie Exchange 2
+    Map: jor_dback2
+    X: 237
+    Y: 20
+    Direction: South
+    Sprite: 4_EP19_ZORYARA
+    Items:
+      - Index: 0
+        Item: Paradox_Memorie_Manteau
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Manteau_
+            Amount: 1
+            Refine: 9
+          - Index: 2
+            Item: Mother's_Nightmare
+            Amount: 5
+          - Index: 3
+            Item: Cobold_Hair_INDY
+            Amount: 20
+      - Index: 1
+        Item: Paradox_Memorie_Hood
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Hood_
+            Amount: 1
+            Refine: 9
+          - Index: 2
+            Item: Mother's_Nightmare
+            Amount: 5
+          - Index: 3
+            Item: Cobold_Hair_INDY
+            Amount: 20

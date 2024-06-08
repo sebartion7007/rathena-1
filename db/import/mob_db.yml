@@ -1189,6 +1189,240 @@ Body:
       - Item: Wind_Paradox_Ghost_Card
         Rate: 1
         StealProtected: true
+  - Id: 30006
+    AegisName: KOBOLD_PARADOX_1
+    Name: Kobold Paradox
+    Level: 107
+    Hp: 14127
+    Attack: 1024
+    Attack2: 789
+    Defense: 103
+    MagicDefense: 25
+    Str: 109
+    Agi: 76
+    Vit: 61
+    Int: 53
+    Dex: 98
+    Luk: 30
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    RaceGroups:
+      Kobold: true
+    Element: Wind
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 607
+    AttackMotion: 504
+    DamageMotion: 504
+    Ai: 13
+    Drops:
+      - Item: Steel
+        Rate: 50
+      - Item: Cobold_Hair_INDY
+        Rate: 10
+      - Item: Zargon
+        Rate: 350
+      - Item: Elunium_Stone
+        Rate: 13
+      - Item: Scarlet_Saber
+        Rate: 100
+        StealProtected: true
+        RandomOptionGroup: Custom_new_crimson
+      - Item: Buckler_
+        Rate: 3
+      - Item: Mother's_Nightmare
+        Rate: 5
+      - Item: Paradox_Kobold1_Card
+        Rate: 1
+  - Id: 30007
+    AegisName: KOBOLD_PARADOX_3
+    Name: Kobold Paradox
+    Level: 101
+    Hp: 14127
+    Attack: 1027
+    Attack2: 789
+    Defense: 109
+    MagicDefense: 48
+    Str: 103
+    Agi: 64
+    Vit: 59
+    Int: 42
+    Dex: 80
+    Luk: 20
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    RaceGroups:
+      Kobold: true
+    Element: Fire
+    ElementLevel: 2
+    WalkSpeed: 170
+    AttackDelay: 607
+    AttackMotion: 504
+    DamageMotion: 504
+    Ai: 13
+    Drops:
+      - Item: Boody_Red
+        Rate: 18
+      - Item: Steel
+        Rate: 50
+      - Item: Cobold_Hair_INDY
+        Rate: 10
+      - Item: Zargon
+        Rate: 100
+      - Item: Scarlet_Mace
+        Rate: 100
+        StealProtected: true
+        RandomOptionGroup: Custom_new_crimson
+      - Item: Mother's_Nightmare
+        Rate: 5
+      - Item: Paradox_Kobold2_Card
+        Rate: 1
+  - Id: 30008
+    AegisName: KOBOLD_PARADOX_2
+    Name: Kobold Paradox
+    Level: 102
+    Hp: 14127
+    Attack: 1027
+    Attack2: 789
+    Defense: 117
+    MagicDefense: 59
+    Str: 96
+    Agi: 61
+    Vit: 55
+    Int: 48
+    Dex: 95
+    Luk: 20
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    RaceGroups:
+      Kobold: true
+    Element: Poison
+    ElementLevel: 2
+    WalkSpeed: 160
+    AttackDelay: 607
+    AttackMotion: 504
+    DamageMotion: 504
+    Ai: 13
+    Drops:
+      - Item: Steel
+        Rate: 50
+      - Item: Cobold_Hair_INDY
+        Rate: 10
+      - Item: Zargon
+        Rate: 100
+      - Item: Buckler_
+        Rate: 2
+      - Item: Yellow_Herb
+        Rate: 50
+      - Item: Scarlet_Bible
+        Rate: 100
+        StealProtected: true
+        RandomOptionGroup: Custom_new_crimson
+      - Item: Paradox_Kobold3_Card
+        Rate: 1
+  - Id: 30009
+    AegisName: KOBOLD_PARADOX_4
+    Name: Kobold Paradox
+    Level: 109
+    Hp: 10312
+    Attack: 1316
+    Attack2: 1162
+    Defense: 1
+    MagicDefense: 1
+    Str: 124
+    Agi: 31
+    Vit: 31
+    Int: 20
+    Dex: 155
+    Luk: 20
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    RaceGroups:
+      Kobold: true
+    Element: Poison
+    ElementLevel: 2
+    WalkSpeed: 120
+    AttackDelay: 607
+    AttackMotion: 504
+    DamageMotion: 504
+    Ai: 13
+    Modes:
+      Detector: true
+    Drops:
+      - Item: Steel
+        Rate: 25
+      - Item: Cobold_Hair_INDY
+        Rate: 10
+      - Item: Zargon
+        Rate: 50
+      - Item: Scarlet_Dagger
+        Rate: 100
+        StealProtected: true
+        RandomOptionGroup: Custom_new_crimson
+      - Item: Yellow_Herb
+        Rate: 50
+      - Item: Paradox_Kobold4_Card
+        Rate: 1
+  - Id: 30010
+    AegisName: KOBOLD_PARADOX_5
+    Name: Kobold Paradox
+    Level: 108
+    Hp: 10791
+    Attack: 1223
+    Attack2: 1133
+    Defense: 1
+    MagicDefense: 1
+    Str: 173
+    Agi: 31
+    Vit: 31
+    Int: 20
+    Dex: 188
+    Luk: 20
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    RaceGroups:
+      Kobold: true
+    Element: Fire
+    ElementLevel: 2
+    WalkSpeed: 120
+    AttackDelay: 607
+    AttackMotion: 504
+    DamageMotion: 504
+    Ai: 13
+    Modes:
+      Detector: true
+    Drops:
+      - Item: Steel
+        Rate: 20
+      - Item: Cobold_Hair_INDY
+        Rate: 10
+      - Item: Zargon
+        Rate: 50
+      - Item: Scarlet_Staff
+        Rate: 100
+        StealProtected: true
+        RandomOptionGroup: Custom_new_crimson
+      - Item: Yellow_Herb
+        Rate: 50
+      - Item: Mother's_Nightmare
+        Rate: 5
+      - Item: Paradox_Kobold5_Card
+        Rate: 1
   - Id: 30004
     AegisName: BANSHEE_PARADOX
     Name: Banshee Paradox

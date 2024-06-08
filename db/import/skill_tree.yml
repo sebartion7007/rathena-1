@@ -1180,7 +1180,7 @@ Body:
           - Name: TF_HIDING
             Level: 1
       - Name: RG_RAID
-        MaxLevel: 5
+        MaxLevel: 15
         Requires:
           - Name: RG_BACKSTAP
             Level: 2
@@ -1239,7 +1239,7 @@ Body:
           - Name: RG_GANGSTER
             Level: 1
       - Name: RG_PLAGIARISM
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: RG_INTIMIDATE
             Level: 5

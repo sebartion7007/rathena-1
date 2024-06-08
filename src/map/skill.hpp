@@ -2812,4 +2812,18 @@ int skill_get_time3(struct map_data *mapdata, uint16 skill_id, uint16 skill_lv);
 #define SKILL_CHK_ABR(skill_id)   ( (skill_id) >= ABR_SKILLBASE && (skill_id) < ABR_SKILLBASE+MAX_ABRSKILL )
 #define SKILL_CHK_GUILD(skill_id) ( (skill_id) >= GD_SKILLBASE && (skill_id) < GD_SKILLBASE+MAX_GUILDSKILL )
 
+
+enum e_skillrate_type : uint8 {
+	SKILLRATE_TYPE_WEAPON = 0,
+	SKILLRATE_TYPE_MAGIC,
+	SKILLRATE_TYPE_MISC,
+	SKILLRATE_TYPE_ALL,
+	SKILLRATE_TYPE_MAX
+};
+
+int get_bonus_skillsupplement(struct block_list *src, uint16 skill_id);
+int get_bonus_skillrate(struct block_list *src, uint16 skill_id);
+int get_bonus_skillratedef(struct block_list *target, uint16 skill_id);
+
+
 #endif /* SKILL_HPP */

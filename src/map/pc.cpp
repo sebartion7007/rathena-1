@@ -3046,6 +3046,8 @@ int pc_disguise(map_session_data *sd, int class_)
 /// Check for valid SC, break & show error message if invalid SC
 #define PC_BONUS_CHK_SC(sc,bonus) { if ((sc) <= SC_NONE || (sc) >= SC_MAX) { PC_BONUS_SHOW_ERROR((bonus),Effect,(sc)); }}
 
+#define PC_SKILLRATE_CHECK(type,val) { ShowError("%s: %s: Invalid %d.\n",__FUNCTION__,#type,(val)); break; }
+
 /**
  * Add auto spell bonus for player while attacking/attacked
  * @param spell: Spell array
@@ -5045,6 +5047,37 @@ void pc_bonus2(map_session_data *sd,int type,int type2,int val)
 
 		pc_bonus_itembonus( sd->itemgroupsphealrate, type2, val, false );
 		break;
+
+	//Custom Part bonus2
+	/*
+	case SP_SKILLSUPPLEMENT:
+		PC_SKILLRATE_CHECK(SP_SKILLSUPPLEMENT, val);
+		if (sd->state.lr_flag != 2)
+			sd->indexed_bonus.skill_supplement[type2] += val;
+		break;
+		case SP_SUBRACE2: // bonus2 bSubRace2,mr,x;
+	case SP_SUBRACE2: // bonus2 bSubRace2,mr,x;
+		PC_BONUS_CHK_RACE2(type2,SP_SUBRACE2);
+		if(sd->state.lr_flag != 2)
+			sd->indexed_bonus.subrace2[type2]+=val;
+		break;
+	*/
+	case SP_SKILLSUPPLEMENT: // bonus2 bSubRace2,mr,x;
+		//PC_SKILLRATE_CHECK(SP_SKILLSUPPLEMENT, val);
+		if(sd->state.lr_flag != 2)
+			sd->indexed_bonus.skill_supplement[type2]+=val;
+		break;
+	case SP_SKILLRATE:
+		//PC_SKILLRATE_CHECK(SP_SKILLRATE, val);
+		if (sd->state.lr_flag != 2)
+			sd->indexed_bonus.skill_rate[type2] += val;
+		break;
+	case SP_SKILLRATE_DEF:
+		//PC_SKILLRATE_CHECK(SP_SKILLRATE_DEF, val);
+		if (sd->state.lr_flag != 2)
+			sd->indexed_bonus.skill_rate_def[type2] += val;
+		break;
+	//End Custom Part
 	default:
 		if (current_equip_combo_pos > 0) {
 			ShowWarning("pc_bonus2: unknown bonus type %d %d %d in a combo with item #%u\n", type, type2, val, sd->inventory_data[pc_checkequip( sd, current_equip_combo_pos )]->nameid);

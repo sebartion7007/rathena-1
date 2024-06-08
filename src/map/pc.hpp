@@ -599,6 +599,12 @@ public:
 		int magic_subdefele[ELE_MAX];
 		int ignore_res_by_race[RC_MAX];
 		int ignore_mres_by_race[RC_MAX];
+		// Custom Part bonus2
+		int skill_supplement[SKILLRATE_TYPE_MAX];
+		int skill_rate[SKILLRATE_TYPE_MAX];
+		int skill_rate_def[SKILLRATE_TYPE_MAX];
+		
+		//End Custom Part
 	} indexed_bonus;
 	// zeroed arrays end here.
 

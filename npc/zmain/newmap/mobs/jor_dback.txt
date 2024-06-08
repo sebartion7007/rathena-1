@@ -1,0 +1,13 @@
+//========= Jor_dback1 (Map 1)==================
+jor_dback1,0,0	monster	--ja--	30001,40,5000
+jor_dback1,0,0	monster	--ja--	30002,40,5000
+jor_dback1,0,0	monster	--ja--	30003,40,5000
+jor_dback1,0,0	monster	--ja--	30004,55,5000
+jor_dback1,0,0	monster	--ja--	30005,55,5000
+
+//========= Jor_dback2 (Map 2)==================
+jor_dback2,0,0	monster	--ja--	30006,50,5000
+jor_dback2,0,0	monster	--ja--	30007,50,5000
+jor_dback2,0,0	monster	--ja--	30008,50,5000
+jor_dback2,0,0	monster	--ja--	30009,55,5000
+jor_dback2,0,0	monster	--ja--	30010,55,5000

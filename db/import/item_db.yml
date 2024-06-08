@@ -222,11 +222,85 @@ Body:
       bonus bUseSPrate,10;
       bonus2 bSkillAtk,"WZ_JUPITEL",10;
       bonus2 bSkillAtk,"WZ_VERMILION",10;
+  - Id: 44006
+    AegisName: Paradox_Kobold1_Card
+    Name: Paradox Kobold Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus bCritAtkRate,2*(readparam(bLuk)/15);
+  - Id: 44007
+    AegisName: Paradox_Kobold2_Card
+    Name: Paradox Kobold Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus bLongAtkRate,(readparam(bDex)/15);
+  - Id: 44008
+    AegisName: Paradox_Kobold3_Card
+    Name: Paradox Kobold Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus bShortAtkRate,(readparam(bStr)/15);
+  - Id: 44009
+    AegisName: Paradox_Kobold4_Card
+    Name: Paradox Kobold Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus bMatkRate,2 * (readparam(bint)/15);
+  - Id: 44010
+    AegisName: Paradox_Kobold5_Card
+    Name: Paradox Kobold Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus bMaxHPRate,(readparam(bVit)/15);
+      bonus bMaxSPRate,(readparam(bInt)/15);
   - Id: 50001
     AegisName: Piece_of_forgotten_Dimension
     Name: Dark Piece
     Type: Etc
     Buy: 1000
+    Weight: 10
+    Flags:
+      BuyingStore: true
+  - Id: 50002
+    AegisName: Cobold_Hair_INDY
+    Name: Indy Blue Hair
+    Type: Etc
+    Buy: 342
     Weight: 10
     Flags:
       BuyingStore: true
@@ -272,6 +346,52 @@ Body:
       if(.@r >= 9 ) bonus bMAtkRate,5;
       if(.@r >= 11 ) bonus2 bMagicAddClass,CLASS_BOSS,5;
       if(.@r >= 13) bonus bFixedCast,-200;
+  - Id: 176001
+    AegisName: Paradox_Memorie_Manteau
+    Name: Paradox Memorie Manteau
+    Type: Armor
+    Weight: 1700
+    Defense: 15
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 1
+    EquipLevelMin: 95
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,500+30*(.@r);
+      bonus2 bSkillSupplement,Type_Attack,30000;
+      if(.@r > 10 ) bonus2 bSkillSupplement,Type_Attack,15000 * (.@r - 10);
+      if (.@r>=7) {
+        bonus bAspdRate,5;
+      }
+      if (.@r >= 9 ) {
+        bonus bMaxSPrate,5;
+      }
+  - Id: 176002
+    AegisName: Paradox_Memorie_Hood
+    Name: Paradox Memorie Hood
+    Type: Armor
+    Weight: 200
+    Defense: 10
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 1
+    EquipLevelMin: 95
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,500+30*(.@r);
+      bonus2 bSkillSupplement,Type_Magic,30000;
+      if(.@r > 10 ) bonus2 bSkillSupplement,Type_Magic,15000 * (.@r - 10);
+      if (.@r>=7) {
+        bonus bVariableCastrate,-10;
+      }
+      if (.@r >= 9 ) {
+        bonus bMaxSPrate,5;
+      }
   - Id: 35002
     AegisName: Chili_Red_Potion
     Name: Chili Red Potion

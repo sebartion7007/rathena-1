@@ -2052,6 +2052,8 @@ int64 battle_calc_damage(struct block_list *src,struct block_list *bl,struct Dam
 		}
 		
 		if (tsd && tsd->bonus.supplementary) damage += tsd->bonus.supplementary;
+		if (skill_id) 
+			damage += get_bonus_skillsupplement(src, skill_id);
 	}
 	damage = cap_value(damage, INT_MIN, INT_MAX);
 	return damage;
@@ -2368,7 +2370,7 @@ int64 battle_addmastery(map_session_data *sd,struct block_list *target,int64 dmg
 			break;
 		case W_FIST:
 			if((skill = pc_checkskill(sd,TK_RUN)) > 0)
-				damage += (skill * 10);
+				damage += (skill * 100);
 			[[fallthrough]];
 		case W_KNUCKLE:
 			if((skill = pc_checkskill(sd,MO_IRONHAND)) > 0)
@@ -2384,7 +2386,7 @@ int64 battle_addmastery(map_session_data *sd,struct block_list *target,int64 dmg
 			break;
 		case W_BOOK:
 			if((skill = pc_checkskill(sd,SA_ADVANCEDBOOK)) > 0)
-				damage += (skill * 3);
+				damage += (skill * 50);
 			break;
 		case W_KATAR:
 			if((skill = pc_checkskill(sd,AS_KATAR)) > 0)
@@ -2842,7 +2844,7 @@ static int battle_skill_damage(struct block_list *src, struct block_list *target
 	if (!target || !skill_id)
 		return 0;
 	skill_id = skill_dummy2skill_id(skill_id);
-	return battle_skill_damage_skill(src, target, skill_id) + battle_skill_damage_map(src, target, skill_id);
+	return battle_skill_damage_skill(src, target, skill_id) + battle_skill_damage_map(src, target, skill_id) + get_bonus_skillrate(src, skill_id)  - get_bonus_skillratedef(target,skill_id);
 }
 
 /**
@@ -4765,10 +4767,12 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			break;
 		case RG_RAID:
 #ifdef RENEWAL
-			skillratio += -100 + 50 + skill_lv * 150;
+			skillratio += -100 + 50 + skill_lv * 50;
 #else
 			skillratio += 40 * skill_lv;
 #endif
+			if (sc->getSCE(SC_HIDING))
+				skillratio *= 2;
 			break;
 		case RG_INTIMIDATE:
 			skillratio += 30 * skill_lv;

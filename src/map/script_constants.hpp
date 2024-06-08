@@ -862,6 +862,9 @@
 	export_constant2("bCapDamageVal", SP_CAPDAMAGE_VAL);
 	export_constant2("bCapDamageOnSkill", SP_CAPDAMAGE_SK_CHANCE);
 	export_constant2("bCapDamageOnAtk", SP_CAPDAMAGE_NM_CHANCE);
+	export_constant2("bSkillSupplement", SP_SKILLSUPPLEMENT);
+	export_constant2("bSkillRate", SP_SKILLRATE);
+	export_constant2("bSkillRateDef", SP_SKILLRATE_DEF);
 	/*End Custom Part*/
 
 	/* equip indices */
@@ -11285,6 +11288,14 @@
 	export_constant(MER_DIETER);
 	export_constant(MER_ELEANOR);
 
+	// Custom Part 
+	export_constant2("Type_Attack",SKILLRATE_TYPE_WEAPON);
+	export_constant2("Type_Magic",SKILLRATE_TYPE_MAGIC);
+	export_constant2("Type_Misc",SKILLRATE_TYPE_MISC);
+	export_constant2("Type_All",SKILLRATE_TYPE_ALL);	
+	export_constant(SKILLRATE_TYPE_MAX);
+	// End Custom Part
+	
 	#undef export_constant
 	#undef export_constant2
 	#undef export_parameter

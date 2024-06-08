@@ -1574,8 +1574,8 @@ int skill_additional_effect( struct block_list* src, struct block_list *bl, uint
 #endif
 
 	case RG_RAID:
-		sc_start(src,bl,SC_STUN,(10+3*skill_lv),skill_lv,skill_get_time(skill_id,skill_lv));
-		sc_start(src,bl,SC_BLIND,(10+3*skill_lv),skill_lv,skill_get_time2(skill_id,skill_lv));
+		sc_start(src,bl,SC_STUN,min(25,(10+3*skill_lv)),skill_lv,skill_get_time(skill_id,skill_lv));
+		sc_start(src,bl,SC_BLIND,min(25,(10+3*skill_lv)),skill_lv,skill_get_time2(skill_id,skill_lv));
 #ifdef RENEWAL
 		sc_start(src, bl, SC_RAID, 100, skill_lv, 10000); // Hardcoded to 10 seconds since Duration1 and Duration2 are used
 		break;
@@ -8606,7 +8606,8 @@ int skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, ui
 			skill_get_splash(skill_id, skill_lv), BL_CHAR|BL_SKILL,
 			src,skill_id,skill_lv,tick, flag|BCT_ENEMY|1,
 			skill_castend_damage_id);
-		status_change_end(src, SC_HIDING);
+		if( sd->sc.getSCE(SC_HIDING) )
+			status_change_end(src, SC_HIDING);
 		break;
 
 	//List of self skills that give damage around caster
@@ -25297,6 +25298,92 @@ static bool skill_parse_row_skilldamage( char* split[], size_t columns, size_t c
 	}
 
 	return true;
+}
+
+
+int get_bonus_skillsupplement(struct block_list *src, uint16 skill_id)
+{
+	if (src == nullptr)
+		return 0;
+	
+	map_session_data *sd = BL_CAST(BL_PC, src);
+	
+	if (sd == nullptr)
+		return 0;
+
+	int vals = 0;
+
+	switch (skill_get_type(skill_id))
+	{
+		case BF_WEAPON:
+			vals = sd->indexed_bonus.skill_supplement[SKILLRATE_TYPE_WEAPON] + sd->indexed_bonus.skill_supplement[SKILLRATE_TYPE_ALL];
+			break;
+		case BF_MAGIC:
+			vals = sd->indexed_bonus.skill_supplement[SKILLRATE_TYPE_MAGIC] + sd->indexed_bonus.skill_supplement[SKILLRATE_TYPE_ALL];
+			break;
+		case BF_MISC:
+			vals = sd->indexed_bonus.skill_supplement[SKILLRATE_TYPE_MISC] + sd->indexed_bonus.skill_supplement[SKILLRATE_TYPE_ALL];
+			break;
+	}
+
+	return vals;
+}
+
+int get_bonus_skillrate(struct block_list *src, uint16 skill_id)
+{
+	
+	if (src == nullptr)
+		return 0;
+	
+	map_session_data *sd = BL_CAST(BL_PC, src);
+	
+	if (sd == nullptr)
+		return 0;
+
+	int16 rate = 0;
+
+	switch (skill_get_type(skill_id))
+	{
+		case BF_WEAPON:
+			rate = sd->indexed_bonus.skill_rate[SKILLRATE_TYPE_WEAPON] + sd->indexed_bonus.skill_rate[SKILLRATE_TYPE_ALL];
+			break;
+		case BF_MAGIC:
+			rate = sd->indexed_bonus.skill_rate[SKILLRATE_TYPE_MAGIC] + sd->indexed_bonus.skill_rate[SKILLRATE_TYPE_ALL];
+			break;
+		case BF_MISC:
+			rate = sd->indexed_bonus.skill_rate[SKILLRATE_TYPE_MISC] + sd->indexed_bonus.skill_rate[SKILLRATE_TYPE_ALL];
+			break;
+	}
+
+	return rate;
+}
+
+int get_bonus_skillratedef(struct block_list *target, uint16 skill_id)
+{
+	if (target == nullptr)
+		return 0;
+	
+	map_session_data *tsd = BL_CAST(BL_PC, target);
+	
+	if (tsd == nullptr)
+		return 0;
+
+	int16 rate = 0;
+
+	switch (skill_get_type(skill_id))
+	{
+		case BF_WEAPON:
+			rate = tsd->indexed_bonus.skill_rate_def[SKILLRATE_TYPE_WEAPON] + tsd->indexed_bonus.skill_rate_def[SKILLRATE_TYPE_ALL];
+			break;
+		case BF_MAGIC:
+			rate = tsd->indexed_bonus.skill_rate_def[SKILLRATE_TYPE_MAGIC] + tsd->indexed_bonus.skill_rate_def[SKILLRATE_TYPE_ALL];
+			break;
+		case BF_MISC:
+			rate = tsd->indexed_bonus.skill_rate_def[SKILLRATE_TYPE_MISC] + tsd->indexed_bonus.skill_rate_def[SKILLRATE_TYPE_ALL];
+			break;
+	}
+
+	return rate;
 }
 
 /** Reads skill database files */

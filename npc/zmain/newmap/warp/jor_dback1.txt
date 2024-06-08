@@ -1,5 +1,0 @@
-//<from mapname>,<fromX>,<fromY>,<facing>%TAB%warp%TAB%<warp name>%TAB%<spanx>,<spany>,<to mapname>,<toX>,<toY>
-falserealm2,160,165,0	warp	#to-jor_dback1	2,2,jor_dback1,132,17
-jor_dback1,132,9,0	warp	#to-falserealm2_1	2,2,falserealm2,155,160
-jor_dback1,98,9,0	warp	#to-falserealm2_2	2,2,falserealm2,155,160
-jor_dback1,222,19,0	warp	#to-falserealm2_3	2,2,falserealm2,155,160
