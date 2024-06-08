@@ -1222,7 +1222,7 @@ Body:
       - Item: Steel
         Rate: 50
       - Item: Cobold_Hair_INDY
-        Rate: 10
+        Rate: 50
       - Item: Zargon
         Rate: 350
       - Item: Elunium_Stone
@@ -1234,7 +1234,7 @@ Body:
       - Item: Buckler_
         Rate: 3
       - Item: Mother's_Nightmare
-        Rate: 5
+        Rate: 10
       - Item: Paradox_Kobold1_Card
         Rate: 1
   - Id: 30007
@@ -1272,7 +1272,7 @@ Body:
       - Item: Steel
         Rate: 50
       - Item: Cobold_Hair_INDY
-        Rate: 10
+        Rate: 50
       - Item: Zargon
         Rate: 100
       - Item: Scarlet_Mace
@@ -1280,7 +1280,7 @@ Body:
         StealProtected: true
         RandomOptionGroup: Custom_new_crimson
       - Item: Mother's_Nightmare
-        Rate: 5
+        Rate: 10
       - Item: Paradox_Kobold2_Card
         Rate: 1
   - Id: 30008
@@ -1316,7 +1316,7 @@ Body:
       - Item: Steel
         Rate: 50
       - Item: Cobold_Hair_INDY
-        Rate: 10
+        Rate: 50
       - Item: Zargon
         Rate: 100
       - Item: Buckler_
@@ -1364,7 +1364,7 @@ Body:
       - Item: Steel
         Rate: 25
       - Item: Cobold_Hair_INDY
-        Rate: 10
+        Rate: 50
       - Item: Zargon
         Rate: 50
       - Item: Scarlet_Dagger
@@ -1410,7 +1410,7 @@ Body:
       - Item: Steel
         Rate: 20
       - Item: Cobold_Hair_INDY
-        Rate: 10
+        Rate: 50
       - Item: Zargon
         Rate: 50
       - Item: Scarlet_Staff
@@ -1420,7 +1420,7 @@ Body:
       - Item: Yellow_Herb
         Rate: 50
       - Item: Mother's_Nightmare
-        Rate: 5
+        Rate: 10
       - Item: Paradox_Kobold5_Card
         Rate: 1
   - Id: 30004
