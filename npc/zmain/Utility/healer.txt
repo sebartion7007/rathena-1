@@ -18,6 +18,7 @@
 	.@Price = 0;	// Zeny required for heal
 	.@Buffs = 1;	// Also buff players? (1: yes / 0: no)
 	.@Delay = 0;	// Heal delay, in seconds
+	.@repairprice = 5000;	//	Repair Cost per unit
 
 	if (@HD > gettimetick(2))
 		end;
@@ -37,6 +38,44 @@
 		sc_start SC_INCREASEAGI,600000,5;
 		specialeffect2 EF_BLESSING;
 		sc_start SC_BLESSING,600000,5;
+	}
+	.@checkitem = 1;
+		while (1) {
+			if (getbrokenid(.@checkitem) == 0) {
+				break;
+			}
+			.@checkitem = .@checkitem+1;
+		}
+		.@checkitem = .@checkitem-1;
+	if(.@checkitem) {
+		if (Zeny < .@totalcost) {
+				dispbottom "Need Zeny "+callfunc("F_InsertComma",.@totalcost)+" For Repair All equipment";
+				break;
+			}
+		.@checkitem2 = 1;
+			while (1) {
+				if (getbrokenid(.@checkitem2) == 0) {
+					break;
+				}
+				.@checkitem2 = .@checkitem2+1;
+			}
+			.@checkitem2 = .@checkitem2-1;
+			if (.@checkitem == .@checkitem2) {
+				Zeny = Zeny-.@totalcost;
+				while (.@checkitem) {
+					repair(.@checkitem);
+					.@checkitem = .@checkitem-1;
+				}
+				mes "["+ .@npc_name$ +"]";
+				mes "Okay! All done. Now, try to be a little more careful. Items have lives too you know.";
+				close;
+			}
+			else {
+				mes "["+ .@npc_name$ +"]";
+				mes "Mmm? Something's wrong. Wait... Equip the items you need to repair and then come back to me.";
+				close;
+			}
+			
 	}
 	if (.@Delay)
 		@HD = gettimetick(2) + .@Delay;
