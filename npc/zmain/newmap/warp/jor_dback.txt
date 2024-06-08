@@ -3,3 +3,7 @@ falserealm2,160,165,0	warp	#to-jor_dback1	2,2,jor_dback1,132,17
 jor_dback1,132,9,0	warp	#to-falserealm2_1	2,2,falserealm2,155,160
 jor_dback1,98,9,0	warp	#to-falserealm2_2	2,2,falserealm2,155,160
 jor_dback1,222,19,0	warp	#to-falserealm2_3	2,2,falserealm2,155,160
+
+// Jor_dback2
+jor_dback1,222,392,0	warp	#to-jor_dback1_to_2	2,2,jor_dback2,229,15
+jor_dback2,229,8,0	warp	#to-jor_dback2_to_1	2,2,jor_dback1,222,387
