@@ -2392,7 +2392,7 @@ Body:
     HitCount: 3
     Element: Weapon
     Requires:
-      SpCost: 45
+      SpCost: 35
       Weapon:
         1hSpear: true
         2hSpear: true
