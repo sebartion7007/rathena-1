@@ -1,0 +1,271 @@
+//===== rAthena Script ======================================= 
+//= Orc's Memory
+//===== By: ================================================== 
+//= L0ne_W0lf
+//===== Current Version: ===================================== 
+//= 1.7
+//===== Compatible With: ===================================== 
+//= rAthena Project
+//===== Description: ========================================= 
+//= [Official Conversion]
+//= Relive the memory of an orc.
+//===== Additional Comments: ================================= 
+//= 1.0 First version. [L0ne_W0lf]
+//= 1.1 First round of bugfixes. (bugreport:3928) [L0ne_W0lf]
+//=     Fixed some npcs calling wrong events. 
+//=     Fixed Depraved Orc Spirit spawn point
+//=     Fixed an NPC that was never being enabled.
+//= 1.1a Second round from bugreport. (bugreport:3928) [L0ne_W0lf]
+//=     Fixed first warp never enabling, issue not seen
+//=     because of a local source mod.
+//=     Corrected the IDs for the Vengeful Orc Spirit and
+//=     Shaman Cargalache, copy/paste fail.
+//=     Changed spawn point for dungeon according to spawn
+//=     point on iRO.
+//= 1.2 More bugfixes, mostly typos. :O (bugreport:3944) [L0ne_W0lf]
+//=     Fixed some varaibles (types/values) as well.
+//= 1.3 Disabled an exploit related to the orc hero spawn. [L0ne_W0lf]
+//=     Corrected the variable type for party leader name.
+//= 1.4 Fixed donpcevent calling non-existant npc. (bugreport:4039) [L0ne_W0lf]
+//= 1.5 Fixed a checkquest condition never setting quest. [L0ne_W0lf]
+//= 1.6 Added 'instance_check_party' command to the script for proper checking if
+//=     the invoking party meets the requirements to join the Memorial Dungeon.
+//= 1.7 Instance system rewrite. [Euphy]
+//============================================================ 
+
+// Entrance
+//============================================================
+falserealm2,138,167,5	script	Poring#Instance_saiyan	909,{
+
+	set .@party_id,getcharid(1);
+	set .@md_name$,"Poring's Saiyan";
+
+	if (!instance_check_party(.@party_id,1,80,200)) {
+		mes "Only users between Levels ^ff000080 ~ 200^000000 can enter this Dungeon.";
+		close;
+	}	
+	switch( checkquest(40001,PLAYTIME) ) {
+	case -1:
+		.@party_id = getcharid(1);
+		.@p_name$ = getpartyname(.@party_id);
+		.@md_name$ = "Poring's Saiyan";
+
+		if (!instance_check_party(.@party_id)) {
+			mes "[Poring]";
+			mes "Why don't you make a party with more than 1 person and talk to me again?";
+			close;
+		}
+		if (is_party_leader() == true)
+			.@menu$ = "Generate Time Gap";
+		else {
+			mes "[Poring]";
+			mes "Have we met before? No way. It's my first time seeing you. What do you want?";
+		}
+		switch( select( .@menu$, "Enter Poring's Saiyan", "Cancel" ) ) {
+		case 1:
+			switch( instance_create(.@md_name$) ) {
+			case -3:
+				dispbottom "Memorial Dungeon, 'Poring's Saiyan' is already in progress.",0xFFFFFF;
+				close;
+			case -4:
+			case -2:
+			case -1:
+				mes "Party Name: " + getpartyname( getcharid(1) );
+				mes "Party Leader: " + strcharinfo(0);
+				mes "^0000ff" + .@md_name$ + "^000000 - time gap generation failed.";
+				close;
+			}
+			mes "[Poring]";
+			mes "After the time gap opens, please tell me again.";
+			close;
+		case 2:
+			switch( instance_enter(.@md_name$) ) {
+			case IE_OTHER:
+				mes "[Poring]";
+				mes "An unknown error has occurred.";
+				close;
+			case IE_NOINSTANCE:
+				mes "[Poring]";
+				mes "The time gap is not yet open.";
+				close;
+			case IE_NOMEMBER:
+				mes "[Poring]";
+				mes "Your body is not fit to enter the time gap. You won't be able to get in if you're not in a party.";
+				close;
+			case IE_OK:
+				mapannounce "falserealm2", "" + getpartyname( getcharid(1) ) + " party member " + strcharinfo(0) + " enters the " + .@md_name$ + ".", bc_map,0x00FF99;
+				setquest 40001;// Trace of Time Travel
+				// warp "1@gl_k",150,20;
+				end;
+			}
+		case 3:
+			close;
+		}
+	case 0:
+	case 1:
+		mes "[Poring]";
+		mes "Oh, my...";
+		mes "You still have after-effects of time travel. You can't travel again with this condition.";
+		next;
+		mes "[Poring]";
+		mes "Staying healthy is important, so please take a break and come back again later.";
+		close;
+	case 2:
+		mes "^0000ffAll traces of access to Poring's Saiyan have been removed. Now you can talk with Poring again.^000000";
+		erasequest 40001;
+		close;
+	}
+}
+
+//==========================================================
+// Warp 
+//==========================================================
+1@poring,168,125,0	warp	#1second	2,2,1@poring,168,131
+1@poring,88,94,0	warp	#2second	2,2,1@poring,88,88
+1@poring,37,105,0	warp	#3second	2,2,1@poring,36,111
+1@poring,21,189,0	warp	#bossroom	2,2,2@poring,97,73
+
+
+// Orc's Memory Floor 1
+//============================================================
+1@poring,173,28,0	script	Elder#Start_Saiyan1	909,{
+	'diff = select("Eazy:Hard");
+	donpcevent instance_npcname("#P_Saiyan1")+"::OnSpawn";
+	end;
+
+OnInstanceInit:
+
+	'poring_map$ = instance_mapname("1@poring");
+	'poring_boss_map$ = instance_mapname("2@poring");
+	
+	// Array On NPC
+	setarray 'mob1,31001,31002,31003,31004,31005;
+	setarray 'mob2,31006,31007,31008,31009,31010;
+	
+	// Warp
+	disablenpc instance_npcname("#1second");
+	disablenpc instance_npcname("#2second");
+	disablenpc instance_npcname("#3second");
+	disablenpc instance_npcname("#bossroom");
+	
+	//Boss rooom
+	disablenpc instance_npcname("Reward#rewardporingNPC");
+	disablenpc instance_npcname("Angeling#Ready");
+	end;
+}
+
+1@poring,1,1,0	script	#P_Saiyan1	909,{
+	end;
+
+OnSpawn:
+	'saiyan1$ = instance_npcname(strnpcinfo(0))+"::OnMyMobDead";
+	areamonster 'poring_map$,134,48,172,116,"--ja--",getd("'mob"+'diff+"[0]"),20,'saiyan1$;
+	areamonster 'poring_map$,134,48,172,116,"--ja--",getd("'mob"+'diff+"[1]"),20,'saiyan1$;
+	hideonnpc instance_npcname("Elder#Start_Saiyan1");
+	end;
+
+OnMyMobDead:
+	set .@mob_dead_num,mobcount('poring_map$,'saiyan1$);
+	if(!.@mob_dead_num) {
+		mapannounce 'poring_map$,"Next Area Open.",bc_map,"0xff4444";
+		enablenpc instance_npcname("#1second");
+		donpcevent instance_npcname("#P_Saiyan2")+"::OnSpawn";
+	}
+	end;
+}
+
+1@poring,1,1,0	script	#P_Saiyan2	909,{
+	end;
+
+OnSpawn:
+	'saiyan2$ = instance_npcname(strnpcinfo(0))+"::OnMyMobDead";
+	areamonster 'poring_map$,129,168,93,104,"--ja--",getd("'mob"+'diff+"[0]"),15,'saiyan2$;
+	areamonster 'poring_map$,129,168,93,104,"--ja--",getd("'mob"+'diff+"[1]"),15,'saiyan2$;
+	areamonster 'poring_map$,129,168,93,104,"--ja--",getd("'mob"+'diff+"[2]"),15,'saiyan2$;
+	end;
+
+OnMyMobDead:
+	set .@mob_dead_num,mobcount('poring_map$,'saiyan2$);
+	if(!.@mob_dead_num) {
+		mapannounce 'poring_map$,"Next Area Open.",bc_map,"0xff4444";
+		enablenpc instance_npcname("#2second");
+		donpcevent instance_npcname("#P_Saiyan3")+"::OnSpawn";
+	}
+	end;
+}
+
+1@poring,1,1,0	script	#P_Saiyan3	909,{
+	end;
+
+OnSpawn:
+	'saiyan3$ = instance_npcname(strnpcinfo(0))+"::OnMyMobDead";
+	areamonster 'poring_map$,38,87,112,33,"--ja--",getd("'mob"+'diff+"[0]"),15,'saiyan3$;
+	areamonster 'poring_map$,38,87,112,33,"--ja--",getd("'mob"+'diff+"[1]"),15,'saiyan3$;
+	areamonster 'poring_map$,38,87,112,33,"--ja--",getd("'mob"+'diff+"[2]"),15,'saiyan3$;
+	end;
+
+OnMyMobDead:
+	set .@mob_dead_num,mobcount('poring_map$,'saiyan3$);
+	if(!.@mob_dead_num) {
+		mapannounce 'poring_map$,"Next Area Open.",bc_map,"0xff4444";
+		enablenpc instance_npcname("#3second");
+		donpcevent instance_npcname("#P_Saiyan4")+"::OnSpawn";
+	}
+	end;
+}
+
+1@poring,1,1,0	script	#P_Saiyan4	909,{
+	end;
+
+OnSpawn:
+	'saiyan4$ = instance_npcname(strnpcinfo(0))+"::OnMyMobDead";
+	areamonster 'poring_map$,13,180,74,120,"--ja--",getd("'mob"+'diff+"[0]"),15,'saiyan4$;
+	areamonster 'poring_map$,13,180,74,120,"--ja--",getd("'mob"+'diff+"[1]"),15,'saiyan4$;
+	areamonster 'poring_map$,13,180,74,120,"--ja--",getd("'mob"+'diff+"[2]"),15,'saiyan4$;
+	areamonster 'poring_map$,13,180,74,120,"--ja--",getd("'mob"+'diff+"[3]"),15,'saiyan4$;
+	end;
+
+OnMyMobDead:
+	set .@mob_dead_num,mobcount('poring_map$,'saiyan4$);
+	if(!.@mob_dead_num) {
+		mapannounce 'poring_map$,"Boss Area is Ready.",bc_map,"0xff4444";
+		enablenpc instance_npcname("#bossroom");
+		enablenpc instance_npcname("Angeling#Ready");
+	}
+	end;
+}
+
+2@poring,82,92,6	script	Angeling#Ready	948,{
+	if(select("Ready to Fight:Need Times Prepare") == 2 ) end;
+	donpcevent instance_npcname("#Boss_ASaiyan1")+"::OnSpawn";
+	disablenpc instance_npcname("Angeling#Ready");
+	end;
+}
+
+2@poring,1,1,0	script	#Boss_ASaiyan1	-1,{
+
+OnSpawn:
+	'bosssaiyan1$ = instance_npcname(strnpcinfo(0))+"::OnBossDead";
+	monster	'poring_boss_map$,82,92,"--ja--",31005,1,'bosssaiyan1$;
+	if('diff >= 2 )
+		monster	'poring_boss_map$,82,85,"--ja--",31010,1,'bosssaiyan1$;
+	end;
+
+OnBossDead:
+	set .@mob_dead_num,mobcount('poring_boss_map$,'bosssaiyan1$);
+	if(!.@mob_dead_num) {
+		mapannounce 'poring_boss_map$,"Next Times it's Your Turn!!!",bc_map,"0xff4444";
+		enablenpc instance_npcname("Reward#rewardporingNPC");
+	}
+	end;
+}
+
+2@poring,82,83,6	script	Reward#rewardporingNPC	4_TREASURE_BOX,{
+	mes "Ready to leave and";
+	mes "Get your Reward.";
+	if(select("Yes:No") == 2 ) end;
+	.@number = ('diff == 2 ? 3 : 1 );
+	getitem 34005,.@number;
+	warp "SavePoint",0,0;
+	end;
+}

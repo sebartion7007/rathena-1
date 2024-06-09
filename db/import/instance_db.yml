@@ -40,3 +40,13 @@
 Header:
   Type: INSTANCE_DB
   Version: 2
+
+Body:
+  - Id: 301
+    Name: Poring's Saiyan
+    Enter:
+      Map: 1@poring
+      X: 179
+      Y: 15
+    AdditionalMaps:
+      2@poring: true

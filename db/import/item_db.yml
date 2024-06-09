@@ -134,6 +134,37 @@ Body:
     Script: |
       itemheal 0,rand(10,15);
       specialeffect2 EF_POTION8;
+  - Id: 34005
+    AegisName: Sharky_Daily_Box
+    Name: Sharky Daily Box
+    Type: Usable
+    Buy: 10
+    Script: |
+      getitem 34001,rand(1,3);
+  - Id: 34006
+    AegisName: Blacksmith_Bless_Box_10
+    Name: Blacksmith Bless Box 10
+    Type: Usable
+    Flags:
+      Container: true
+    Trade:
+      Override: 100
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      getitem 6635,10;
+  - Id: 34007
+    AegisName: Meow_Meow_Box
+    Name: Meow Meow Box
+    Type: Usable
+    Buy: 10
+    Script: |
+      callfunc("F_allow_box",2);
   - Id: 35001
     AegisName: A_Center_Potion
     Name: Awakeing Concentration Potion
@@ -288,6 +319,38 @@ Body:
     Script: |
       bonus bMaxHPRate,(readparam(bVit)/15);
       bonus bMaxSPRate,(readparam(bInt)/15);
+  - Id: 49001
+    AegisName: Super_Saiyan_1_Angeling_Card
+    Name: Super Saiyan 1 Angeling Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Armor: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus bDefEle,Ele_Holy;
+      bonus bInt,getrefine();
+      bonus bDex,getrefine();
+      bonus bLuk,getrefine();
+  - Id: 49002
+    AegisName: Super_Saiyan_1_Deveiling_Card
+    Name: Super Saiyan 1 Deveiling Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Armor: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus bDefEle,Ele_Dark;
+      bonus bAgi,getrefine();
+      bonus bVit,getrefine();
+      bonus bStr,getrefine();
   - Id: 50001
     AegisName: Piece_of_forgotten_Dimension
     Name: Dark Piece
@@ -304,6 +367,40 @@ Body:
     Weight: 10
     Flags:
       BuyingStore: true
+  - Id: 170001
+    AegisName: Super_Angel_Wing
+    Name: Super Angel Wing
+    Type: Armor
+    View: 38
+    Buy: 20
+    Weight: 100
+    Defense: 4
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    Refineable: true
+    Script: |
+      bonus bMdef,10;
+      bonus bBaseAtk,5*(readparam(bStr)/10);
+      bonus2 bSubRace,RC_Angel,10;
+      bonus2 bAddClass,CLASS_BOSS,10;
+  - Id: 170002
+    AegisName: Super_Evil_Wing
+    Name: Super Evil Wing
+    Type: Armor
+    View: 39
+    Buy: 20
+    Weight: 100
+    Defense: 6
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    Refineable: true
+    Script: |
+      bonus bMdef,10;
+      bonus bMAtk,(readparam(bInt);
+      bonus2 bSubRace,RC_Demon,10;
+      bonus2 bMagicAddClass,CLASS_BOSS,10;
   - Id: 173001
     AegisName: Paradox_Memorie_Mail
     Name: Paradox Memorie Mail

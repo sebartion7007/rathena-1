@@ -1,11 +1,17 @@
 function	script	F_allow_box	{
 	switch(getarg(0)) {
-	case 1:	// Cbt Event
+	case 1:	// Boss Box
 		//.@boxid = 34001;
 		setarray .@item,6240,6241,7619,7620,984,985,36001,6898,34001;
 		setarray .@rate,30,30,50,50,100,100,100,150,1000;
 		//setarray .@more1,1,1;
-		break;
+		break;		
+	case 2:	// Boss Box
+		//.@boxid = 34001;
+		setarray .@item,7619,7620,36001,6898,34001;
+		setarray .@rate,100,100,100,150,1000;
+		//setarray .@more1,1,1;
+		break;		
 	}
 	if(.@chooseable) {
 		mes "กดแล้วต้องเลือก ถ้าไม่เลือกกล่องจะหายไป +!";

@@ -48,3 +48,8 @@
 Header:
   Type: QUEST_DB
   Version: 3
+
+Body:
+  - Id: 40001
+    Title: Orc's Memory Time Limit
+    TimeLimit: 4h

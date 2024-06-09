@@ -1,0 +1,40 @@
+Header:
+  Type: BARTER_DB
+  Version: 1
+
+Body:
+  - Name: Saiyan Poring Exchange
+    Map: falserealm2
+    X: 141
+    Y: 167
+    Direction: South
+    Sprite: 4_WOODBOX
+    Items:
+      - Index: 0
+        Item: Super_Angel_Wing
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Poring_Coin
+            Amount: 500
+      - Index: 1
+        Item: Super_Evil_Wing
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Poring_Coin
+            Amount: 500
+      - Index: 2
+        Item: Super_Saiyan_1_Angeling_Card
+        Zeny: 20000000
+        RequiredItems:
+          - Index: 0
+            Item: Poring_Coin
+            Amount: 1000
+      - Index: 3
+        Item: Super_Saiyan_1_Deveiling_Card
+        Zeny: 20000000
+        RequiredItems:
+          - Index: 0
+            Item: Poring_Coin
+            Amount: 1000

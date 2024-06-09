@@ -165,3 +165,36 @@ Body:
         MinValue: 1
         MaxValue: 10
         Chance: 1000
+  - Id: 1602
+    Group: instance_drop
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_PLUSASPD
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_ATKPERCENT
+            MinValue: 1
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 1
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_CRITICALSUCCESSVALUE
+            MinValue: 1
+            MaxValue: 10
+            Chance: 5000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 1
+            MaxValue: 10
+            Chance: 5000
+          - Option: DEC_SPELL_DELAY_TIME
+            MinValue: 1
+            MaxValue: 10
+            Chance: 5000
+          - Option: DEC_SP_CONSUMPTION
+            MinValue: 1
+            MaxValue: 10
+            Chance: 5000

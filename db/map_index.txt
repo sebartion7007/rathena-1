@@ -1270,6 +1270,8 @@ falserealm2
 thinkter
 //======================================================================================
 // Clonemap
+1@poring
+2@poring
 jor_ite01
 jor_ite02
 jor_dback1

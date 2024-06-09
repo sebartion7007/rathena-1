@@ -1,0 +1,3 @@
+falserealm	mapflag	town
+falserealm2	mapflag	town
+thinkter	mapflag	town

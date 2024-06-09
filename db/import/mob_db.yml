@@ -1423,6 +1423,621 @@ Body:
         Rate: 10
       - Item: Paradox_Kobold5_Card
         Rate: 1
+  - Id: 31001
+    AegisName: SUPER_SAIYAN_1_PORING
+    Name: Super Saiyan 1 Poring
+    Level: 99
+    Hp: 8633
+    Attack: 694
+    Attack2: 337
+    Defense: 10
+    Str: 141
+    Agi: 93
+    Vit: 77
+    Int: 99
+    Dex: 100
+    Luk: 34
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Water
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 683
+    AttackMotion: 550
+    DamageMotion: 480
+    Ai: 21
+    Modes:
+      FixedItemDrop: true
+      Detector: true
+      KnockBackImmune: true
+    Drops:
+      - Item: Poring_Coin
+        Rate: 100
+  - Id: 31002
+    AegisName: SUPER_SAIYAN_1_DROP
+    Name: Super Saiyan 1 Drop
+    Level: 99
+    Hp: 8633
+    Attack: 694
+    Attack2: 337
+    Defense: 10
+    Str: 141
+    Agi: 93
+    Vit: 77
+    Int: 99
+    Dex: 100
+    Luk: 34
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Fire
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 683
+    AttackMotion: 550
+    DamageMotion: 480
+    Ai: 21
+    Modes:
+      FixedItemDrop: true
+      Detector: true
+      KnockBackImmune: true
+    Drops:
+      - Item: Poring_Coin
+        Rate: 100
+  - Id: 31003
+    AegisName: SUPER_SAIYAN_1_POPORING
+    Name: Super Saiyan 1 Poporing
+    Level: 99
+    Hp: 8633
+    Attack: 694
+    Attack2: 337
+    Defense: 10
+    Str: 141
+    Agi: 93
+    Vit: 77
+    Int: 99
+    Dex: 100
+    Luk: 34
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Poison
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 683
+    AttackMotion: 550
+    DamageMotion: 480
+    Ai: 21
+    Modes:
+      FixedItemDrop: true
+      Detector: true
+      KnockBackImmune: true
+    Drops:
+      - Item: Poring_Coin
+        Rate: 100
+  - Id: 31004
+    AegisName: SUPER_SAIYAN_1_BLUERING
+    Name: Super Saiyan 1 Bluering
+    Level: 99
+    Hp: 8633
+    Attack: 494
+    Attack2: 337
+    Defense: 10
+    Str: 141
+    Agi: 93
+    Vit: 77
+    Int: 99
+    Dex: 229
+    Luk: 34
+    AttackRange: 9
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Water
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 683
+    AttackMotion: 550
+    DamageMotion: 480
+    Ai: 21
+    Modes:
+      FixedItemDrop: true
+      Detector: true
+      KnockBackImmune: true
+    Drops:
+      - Item: Poring_Coin
+        Rate: 100
+  - Id: 31005
+    AegisName: SUPER_SAIYAN_1_ANGELING
+    Name: Super Saiyan 1 Angeling
+    Level: 99
+    Hp: 219800
+    Attack: 2391
+    Attack2: 1145
+    Defense: 72
+    MagicDefense: 238
+    Str: 58
+    Agi: 50
+    Vit: 33
+    Int: 105
+    Dex: 80
+    Luk: 200
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Angel
+    Element: Holy
+    ElementLevel: 1
+    WalkSpeed: 150
+    AttackDelay: 683
+    AttackMotion: 550
+    DamageMotion: 480
+    Ai: 21
+    Class: Boss
+    Modes:
+      FixedItemDrop: true
+      Detector: true
+      KnockBackImmune: true
+      Mvp: true
+    MvpDrops:
+      - Item: Poring_Coin
+        Rate: 10000
+      - Item: Sharky_Boss_Box
+        Rate: 10000
+    Drops:
+      - Item: Super_Saiyan_1_Angeling_Card
+        Rate: 1
+        StealProtected: true
+      - Item: Poring_Coin
+        Rate: 10000
+      - Item: Poring_Coin
+        Rate: 10000
+      - Item: Poring_Coin
+        Rate: 10000
+      - Item: Poring_Coin
+        Rate: 10000
+      - Item: Super_Angel_Wing
+        Rate: 50
+        StealProtected: true
+        RandomOptionGroup: instance_drop
+  - Id: 31006
+    AegisName: SUPER_SAIYAN_1_PORING_
+    Name: Super Saiyan 1 Poring
+    Level: 99
+    Hp: 48633
+    Attack: 1594
+    Attack2: 337
+    Defense: 10
+    Str: 186
+    Agi: 131
+    Vit: 162
+    Int: 99
+    Dex: 251
+    Luk: 66
+    AttackRange: 3
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Water
+    ElementLevel: 1
+    WalkSpeed: 140
+    AttackDelay: 683
+    AttackMotion: 550
+    DamageMotion: 480
+    Ai: 21
+    Modes:
+      FixedItemDrop: true
+      Detector: true
+      KnockBackImmune: true
+    Drops:
+      - Item: Poring_Coin
+        Rate: 1000
+  - Id: 31007
+    AegisName: SUPER_SAIYAN_1_DROP_
+    Name: Super Saiyan 1 Drop
+    Level: 99
+    Hp: 48633
+    Attack: 1594
+    Attack2: 337
+    Defense: 10
+    Str: 186
+    Agi: 131
+    Vit: 162
+    Int: 99
+    Dex: 251
+    Luk: 66
+    AttackRange: 3
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Fire
+    ElementLevel: 1
+    WalkSpeed: 140
+    AttackDelay: 683
+    AttackMotion: 550
+    DamageMotion: 480
+    Ai: 21
+    Modes:
+      FixedItemDrop: true
+      Detector: true
+      KnockBackImmune: true
+    Drops:
+      - Item: Poring_Coin
+        Rate: 1000
+  - Id: 31008
+    AegisName: SUPER_SAIYAN_1_POPORING_
+    Name: Super Saiyan 1 Poporing
+    Level: 99
+    Hp: 48633
+    Attack: 1594
+    Attack2: 337
+    Defense: 10
+    Str: 186
+    Agi: 131
+    Vit: 162
+    Int: 99
+    Dex: 251
+    Luk: 66
+    AttackRange: 3
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Poison
+    ElementLevel: 1
+    WalkSpeed: 140
+    AttackDelay: 683
+    AttackMotion: 550
+    DamageMotion: 480
+    Ai: 21
+    Modes:
+      FixedItemDrop: true
+      Detector: true
+      KnockBackImmune: true
+    Drops:
+      - Item: Poring_Coin
+        Rate: 1000
+  - Id: 31009
+    AegisName: SUPER_SAIYAN_1_BLUERING_
+    Name: Super Saiyan 1 Bluering
+    Level: 99
+    Hp: 48633
+    Attack: 1594
+    Attack2: 337
+    Defense: 10
+    Str: 186
+    Agi: 131
+    Vit: 162
+    Int: 99
+    Dex: 251
+    Luk: 66
+    AttackRange: 9
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Water
+    ElementLevel: 1
+    WalkSpeed: 140
+    AttackDelay: 483
+    AttackMotion: 550
+    DamageMotion: 480
+    Ai: 21
+    Modes:
+      FixedItemDrop: true
+      Detector: true
+      KnockBackImmune: true
+    Drops:
+      - Item: Poring_Coin
+        Rate: 1000
+  - Id: 31010
+    AegisName: SUPER_SAIYAN_1_DEVELING
+    Name: Super Saiyan 1 Develing
+    Level: 99
+    Hp: 169817
+    Attack: 1391
+    Attack2: 1145
+    Defense: 472
+    MagicDefense: 38
+    Str: 258
+    Agi: 90
+    Vit: 133
+    Int: 105
+    Dex: 380
+    Luk: 200
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Angel
+    Element: Dark
+    ElementLevel: 1
+    WalkSpeed: 120
+    AttackDelay: 683
+    AttackMotion: 550
+    DamageMotion: 480
+    DamageTaken: 30
+    Ai: 21
+    Class: Boss
+    Modes:
+      FixedItemDrop: true
+      Detector: true
+      KnockBackImmune: true
+      Mvp: true
+    MvpDrops:
+      - Item: Poring_Coin
+        Rate: 10000
+      - Item: Sharky_Boss_Box
+        Rate: 10000
+      - Item: Sharky_Boss_Box
+        Rate: 10000
+    Drops:
+      - Item: Super_Saiyan_1_Deveiling_Card
+        Rate: 1
+        StealProtected: true
+      - Item: Poring_Coin
+        Rate: 10000
+      - Item: Poring_Coin
+        Rate: 10000
+      - Item: Poring_Coin
+        Rate: 10000
+      - Item: Poring_Coin
+        Rate: 10000
+      - Item: Super_Evil_Wing
+        Rate: 50
+        StealProtected: true
+        RandomOptionGroup: instance_drop
+  - Id: 31011
+    AegisName: SUPER_GEGE_1_PORING
+    Name: Super Saiyan 1 Poring
+    Level: 99
+    Hp: 8633
+    Attack: 694
+    Attack2: 337
+    Defense: 10
+    Str: 141
+    Agi: 93
+    Vit: 77
+    Int: 99
+    Dex: 100
+    Luk: 34
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Water
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 683
+    AttackMotion: 550
+    DamageMotion: 480
+    Ai: 21
+    Modes:
+      FixedItemDrop: true
+      Detector: true
+      KnockBackImmune: true
+  - Id: 31012
+    AegisName: SUPER_GEGE_1_DROP
+    Name: Super Saiyan 1 Drop
+    Level: 99
+    Hp: 8633
+    Attack: 694
+    Attack2: 337
+    Defense: 10
+    Str: 141
+    Agi: 93
+    Vit: 77
+    Int: 99
+    Dex: 100
+    Luk: 34
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Fire
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 683
+    AttackMotion: 550
+    DamageMotion: 480
+    Ai: 21
+    Modes:
+      FixedItemDrop: true
+      Detector: true
+      KnockBackImmune: true
+  - Id: 31013
+    AegisName: SUPER_GEGE_1_POPORING
+    Name: Super Saiyan 1 Poporing
+    Level: 99
+    Hp: 8633
+    Attack: 694
+    Attack2: 337
+    Defense: 10
+    Str: 141
+    Agi: 93
+    Vit: 77
+    Int: 99
+    Dex: 100
+    Luk: 34
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Poison
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 683
+    AttackMotion: 550
+    DamageMotion: 480
+    Ai: 21
+    Modes:
+      FixedItemDrop: true
+      Detector: true
+      KnockBackImmune: true
+  - Id: 31014
+    AegisName: SUPER_GEGE_1_BLUERING
+    Name: Super Saiyan 1 Bluering
+    Level: 99
+    Hp: 8633
+    Attack: 494
+    Attack2: 337
+    Defense: 10
+    Str: 141
+    Agi: 93
+    Vit: 77
+    Int: 99
+    Dex: 229
+    Luk: 34
+    AttackRange: 9
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Water
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 683
+    AttackMotion: 550
+    DamageMotion: 480
+    Ai: 21
+    Modes:
+      FixedItemDrop: true
+      Detector: true
+      KnockBackImmune: true
+  - Id: 31016
+    AegisName: SUPER_GEGE_1_PORING_
+    Name: Super Saiyan 1 Poring
+    Level: 99
+    Hp: 48633
+    Attack: 1594
+    Attack2: 337
+    Defense: 10
+    Str: 186
+    Agi: 131
+    Vit: 162
+    Int: 99
+    Dex: 251
+    Luk: 66
+    AttackRange: 3
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Water
+    ElementLevel: 1
+    WalkSpeed: 140
+    AttackDelay: 683
+    AttackMotion: 550
+    DamageMotion: 480
+    Ai: 21
+    Modes:
+      FixedItemDrop: true
+      Detector: true
+      KnockBackImmune: true
+  - Id: 31017
+    AegisName: SUPER_GEGE_1_DROP_
+    Name: Super Saiyan 1 Drop
+    Level: 99
+    Hp: 48633
+    Attack: 1594
+    Attack2: 337
+    Defense: 10
+    Str: 186
+    Agi: 131
+    Vit: 162
+    Int: 99
+    Dex: 251
+    Luk: 66
+    AttackRange: 3
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Fire
+    ElementLevel: 1
+    WalkSpeed: 140
+    AttackDelay: 683
+    AttackMotion: 550
+    DamageMotion: 480
+    Ai: 21
+    Modes:
+      FixedItemDrop: true
+      Detector: true
+      KnockBackImmune: true
+  - Id: 31018
+    AegisName: SUPER_GEGE_1_POPORING_
+    Name: Super Saiyan 1 Poporing
+    Level: 99
+    Hp: 48633
+    Attack: 1594
+    Attack2: 337
+    Defense: 10
+    Str: 186
+    Agi: 131
+    Vit: 162
+    Int: 99
+    Dex: 251
+    Luk: 66
+    AttackRange: 3
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Poison
+    ElementLevel: 1
+    WalkSpeed: 140
+    AttackDelay: 683
+    AttackMotion: 550
+    DamageMotion: 480
+    Ai: 21
+    Modes:
+      FixedItemDrop: true
+      Detector: true
+      KnockBackImmune: true
+  - Id: 31019
+    AegisName: SUPER_GEGE_1_BLUERING_
+    Name: Super Saiyan 1 Bluering
+    Level: 99
+    Hp: 48633
+    Attack: 1594
+    Attack2: 337
+    Defense: 10
+    Str: 186
+    Agi: 131
+    Vit: 162
+    Int: 99
+    Dex: 251
+    Luk: 66
+    AttackRange: 9
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Water
+    ElementLevel: 1
+    WalkSpeed: 140
+    AttackDelay: 483
+    AttackMotion: 550
+    DamageMotion: 480
+    Ai: 21
+    Modes:
+      FixedItemDrop: true
+      Detector: true
+      KnockBackImmune: true
   - Id: 30004
     AegisName: BANSHEE_PARADOX
     Name: Banshee Paradox

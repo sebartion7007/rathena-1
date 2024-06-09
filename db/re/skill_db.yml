@@ -6354,6 +6354,7 @@ Body:
     HitCount: 1
     Element: Weapon
     SplashArea: 2
+    AfterCastActDelay: 300
     Duration1: 5000
     Duration2: 20000
     Requires:
