@@ -398,7 +398,7 @@ Body:
     Refineable: true
     Script: |
       bonus bMdef,10;
-      bonus bMAtk,(readparam(bInt);
+      bonus bMAtk,readparam(bInt);
       bonus2 bSubRace,RC_Demon,10;
       bonus2 bMagicAddClass,CLASS_BOSS,10;
   - Id: 173001
