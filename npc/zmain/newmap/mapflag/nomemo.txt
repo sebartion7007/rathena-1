@@ -1,1 +1,2 @@
 1@poring	mapflag	nomemo
+2@poring	mapflag	nomemo

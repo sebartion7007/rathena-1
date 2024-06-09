@@ -1,5 +1,6 @@
 //====Instance=====
 1@poring	mapflag	hidemobhpbar
+2@poring	mapflag	hidemobhpbar
 //====Normal=====
 jor_dback1	mapflag	hidemobhpbar
 jor_dback2	mapflag	hidemobhpbar

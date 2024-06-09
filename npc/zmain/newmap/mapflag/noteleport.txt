@@ -1,1 +1,2 @@
 1@poring	mapflag	noteleport
+2@poring	mapflag	noteleport

@@ -1,1 +1,2 @@
 1@poring	mapflag	partylock
+2@poring	mapflag	partylock

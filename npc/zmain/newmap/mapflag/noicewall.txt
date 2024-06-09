@@ -1,1 +1,2 @@
 1@poring	mapflag	noicewall
+2@poring	mapflag	noicewall
