@@ -76179,12 +76179,13 @@ Body:
       item_reform();
   - Id: 101947
     AegisName: A_Bubble_Gum
-    Name: "[Achievement] Bubble Gum"    # !todo check english name
+    Name: "[Achievement] Bubble Gum"
     Type: Usable
     Delay:
       Duration: 60000
       Status: Reuse_Limit_D
     Trade:
+      Override: 100
       NoDrop: true
       NoTrade: true
       NoCart: true
@@ -76193,7 +76194,7 @@ Body:
       NoMail: true
       NoAuction: true
     Script: |
-      sc_start SC_ITEMBOOST,1800000,100;
+      sc_start SC_ITEMBOOST,1800000,200;
   - Id: 101948
     AegisName: A_Bubble_Gum_Box10
     Name: "[Achievement] 10 boxes of bubble gum"    # !todo check english name
