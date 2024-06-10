@@ -3177,25 +3177,25 @@ Body:
     CastCancel: true
     CastTime:
       - Level: 1
-        Time: 9600
+        Time: 2500
       - Level: 2
-        Time: 9600
+        Time: 2600
       - Level: 3
-        Time: 9600
+        Time: 2700
       - Level: 4
-        Time: 9600
+        Time: 2800
       - Level: 5
-        Time: 9600
+        Time: 2900
       - Level: 6
-        Time: 9600
+        Time: 3100
       - Level: 7
-        Time: 9600
+        Time: 3300
       - Level: 8
-        Time: 9600
+        Time: 3500
       - Level: 9
-        Time: 9600
+        Time: 3800
       - Level: 10
-        Time: 6300
+        Time: 4000
     AfterCastActDelay: 1000
     Duration1:
       - Level: 1
@@ -3270,7 +3270,6 @@ Body:
       Target: Enemy
       Flag:
         PathCheck: true
-    Status: Stun
   - Id: 84
     Name: WZ_JUPITEL
     Description: Jupitel Thunder
@@ -3333,23 +3332,23 @@ Body:
       - Level: 1
         Time: 1600
       - Level: 2
-        Time: 1920
+        Time: 1700
       - Level: 3
-        Time: 2240
+        Time: 1800
       - Level: 4
-        Time: 2560
+        Time: 1900
       - Level: 5
-        Time: 2880
+        Time: 2000
       - Level: 6
-        Time: 3200
+        Time: 2100
       - Level: 7
-        Time: 3520
+        Time: 2200
       - Level: 8
-        Time: 3840
+        Time: 2300
       - Level: 9
-        Time: 4160
+        Time: 2400
       - Level: 10
-        Time: 3800
+        Time: 2500
     FixedCastTime:
       - Level: 1
         Time: 400
@@ -3412,25 +3411,25 @@ Body:
     CastCancel: true
     CastTime:
       - Level: 1
-        Time: 9600
+        Time: 2500
       - Level: 2
-        Time: 9280
+        Time: 2600
       - Level: 3
-        Time: 8960
+        Time: 2700
       - Level: 4
-        Time: 8640
+        Time: 2800
       - Level: 5
-        Time: 8320
+        Time: 2900
       - Level: 6
-        Time: 8000
+        Time: 3000
       - Level: 7
-        Time: 7680
+        Time: 3100
       - Level: 8
-        Time: 7360
+        Time: 3200
       - Level: 9
-        Time: 7040
+        Time: 3300
       - Level: 10
-        Time: 4500
+        Time: 3400
     AfterCastActDelay: 1000
     Duration1: 1000
     Duration2: 18000
@@ -3509,7 +3508,6 @@ Body:
       Flag:
         NoOverlap: true
         PathCheck: true
-    Status: Blind
   - Id: 86
     Name: WZ_WATERBALL
     Description: Water Ball
@@ -3748,25 +3746,25 @@ Body:
     CastCancel: true
     CastTime:
       - Level: 1
-        Time: 3840
+        Time: 2000
       - Level: 2
-        Time: 4480
+        Time: 2200
       - Level: 3
-        Time: 5120
+        Time: 2400
       - Level: 4
-        Time: 5760
+        Time: 2600
       - Level: 5
-        Time: 6400
+        Time: 2800
       - Level: 6
-        Time: 7040
+        Time: 3000
       - Level: 7
-        Time: 7680
+        Time: 3200
       - Level: 8
-        Time: 8320
+        Time: 3400
       - Level: 9
-        Time: 8960
+        Time: 3600
       - Level: 10
-        Time: 6300
+        Time: 3800
     AfterCastActDelay: 1000
     Duration1: 4500
     Duration2: 27000
@@ -3803,7 +3801,6 @@ Body:
       Flag:
         NoOverlap: true
         PathCheck: true
-    Status: Freeze
   - Id: 90
     Name: WZ_EARTHSPIKE
     Description: Earth Spike
