@@ -19458,7 +19458,7 @@ int skill_vfcastfix(struct block_list *bl, double time, uint16 skill_id, uint16 
 	if (varcast_r < 0)
 		time = time * (1 - (float)min(varcast_r, 100) / 100);
 
-	if (sd) fixed -= status_get_int(bl);
+	if (sd) fixed -= status_get_int(bl) * 2;
 	// Apply Variable CastTime calculation by INT & DEX
 	if (!(flag&1))
 		//time = time * (1 - sqrt(((float)(status_get_dex(bl) * 2 + status_get_int(bl)) / battle_config.vcast_stat_scale)));
