@@ -11,3 +11,13 @@ jor_dback2,0,0	monster	--ja--	30007,50,5000
 jor_dback2,0,0	monster	--ja--	30008,50,5000
 jor_dback2,0,0	monster	--ja--	30009,55,5000
 jor_dback2,0,0	monster	--ja--	30010,55,5000
+
+
+//========= Jor_dback2 (Map 3)==================
+jor_dback3,0,0	monster	--ja--	30011,50,5000
+jor_dback3,0,0	monster	--ja--	30012,50,5000
+jor_dback3,0,0	monster	--ja--	30013,50,5000
+jor_dback3,0,0	monster	--ja--	30014,50,5000
+jor_dback3,0,0	monster	--ja--	30015,50,5000
+jor_dback3,0,0	monster	--ja--	30016,50,5000
+jor_dback3,0,0	boss_monster	--ja--	30019,1,7200000,600000,1

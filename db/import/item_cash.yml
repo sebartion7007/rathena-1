@@ -33,6 +33,13 @@ Header:
   Version: 1
   
 Body:
+  - Tab: Other
+    Items:
+#  ===== Custom =====
+    - Item: Maybe_Spell_Circuit
+      Price: 500
+    - Item: Maybe_General's_Helm
+      Price: 500
   - Tab: Permanent
     Items:
 #  ===== LT Evolution =====

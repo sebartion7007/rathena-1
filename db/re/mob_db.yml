@@ -55387,7 +55387,7 @@ Body:
   - Id: 2410
     AegisName: DUMMY_100
     Name: Dummy 100
-    Level: 100
+    Level: 1
     Hp: 99999999
     Defense: 90
     MagicDefense: 90
@@ -55396,11 +55396,12 @@ Body:
     Element: Neutral
     ElementLevel: 1
     WalkSpeed: 200
-    ClientAttackMotion: 240
+    DamageTaken: 30
     Class: Boss
     Modes:
       NoRandomWalk: true
       TeleportBlock: true
+      Mvp: true
   - Id: 2411
     AegisName: DUMMY_150
     Name: Dummy 150

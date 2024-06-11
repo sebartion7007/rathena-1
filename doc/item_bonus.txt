@@ -76,6 +76,12 @@ This list contains all available constants referenced in the 'bonus' commands.
 	Weapon type (w): see 'doc/item_db.txt' -> SubType
 
 
+* Type : t
+		"Type_Attack"
+		"Type_Magic"
+		"Type_Misc"
+		"Type_All"
+
 Bonuses
 -------
 The format of bonuses listed in this file is as follows:
@@ -95,6 +101,10 @@ bonus bCapDamageVal,n;					Capdamage + n
 bonus bCapDamageOnSkill,n;				Chance to deal damage to Capdamage with all skills in n%
 bonus bCapDamageOnAtk,n;				Chance to deal damage to Capdamage with all attack in n%
 
+bonus2 bSkillSupplement,t,n;             Skill Type T Damage +n					
+bonus2 bSkillRate,t,n;                   Skill Type T Damage +n%
+bonus2 bSkillRateDef,t,n;                Skill Type T reducedamage +n%
+bonus2 bAmplify,t,n;                     damage Type T +n%
 
 
 ====================

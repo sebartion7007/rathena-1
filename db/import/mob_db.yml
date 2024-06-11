@@ -1423,6 +1423,433 @@ Body:
         Rate: 10
       - Item: Paradox_Kobold5_Card
         Rate: 1
+  - Id: 30011
+    AegisName: PARADOX_GOBLIN_1
+    Name: Paradox Goblin
+    Level: 99
+    Hp: 11058
+    Attack: 687
+    Attack2: 234
+    Defense: 56
+    MagicDefense: 5
+    Str: 37
+    Agi: 54
+    Vit: 25
+    Int: 20
+    Dex: 36
+    Luk: 10
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    RaceGroups:
+      Goblin: true
+    Element: Wind
+    ElementLevel: 1
+    WalkSpeed: 250
+    AttackDelay: 620
+    AttackMotion: 620
+    DamageMotion: 240
+    Ai: 05
+    Modes:
+      ChangeChase: true
+      ChangeTargetMelee: true
+    Drops:
+      - Item: Goblini_Mask
+        Rate: 1
+      - Item: Goblin_Bibles
+        Rate: 50
+      - Item: Paradox_Goblin_Card_1
+        Rate: 1
+        StealProtected: true
+      - Item: Young_Twig
+        Rate: 5
+  - Id: 30012
+    AegisName: PARADOX_GOBLIN_2
+    Name: Paradox Goblin
+    Level: 99
+    Hp: 11931
+    Attack: 694
+    Attack2: 228
+    Defense: 52
+    MagicDefense: 5
+    Str: 33
+    Agi: 16
+    Vit: 24
+    Int: 15
+    Dex: 58
+    Luk: 10
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    RaceGroups:
+      Goblin: true
+    Element: Fire
+    ElementLevel: 1
+    WalkSpeed: 250
+    AttackDelay: 620
+    AttackMotion: 620
+    DamageMotion: 240
+    Ai: 05
+    Modes:
+      ChangeChase: true
+      ChangeTargetMelee: true
+    Drops:
+      - Item: Goblini_Mask
+        Rate: 2
+      - Item: Goblin_Bibles
+        Rate: 50
+      - Item: Paradox_Goblin_Card_2
+        Rate: 1
+        StealProtected: true
+      - Item: Young_Twig
+        Rate: 5
+  - Id: 30013
+    AegisName: PARADOX_GOBLIN_3
+    Name: Paradox Goblin
+    Level: 99
+    Hp: 10930
+    Attack: 688
+    Attack2: 323
+    Defense: 47
+    MagicDefense: 5
+    Str: 30
+    Agi: 16
+    Vit: 24
+    Int: 15
+    Dex: 17
+    Luk: 10
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    RaceGroups:
+      Goblin: true
+    Element: Poison
+    ElementLevel: 1
+    WalkSpeed: 250
+    AttackDelay: 624
+    AttackMotion: 624
+    DamageMotion: 240
+    Ai: 05
+    Modes:
+      ChangeChase: true
+      ChangeTargetMelee: true
+    Drops:
+      - Item: Goblin_Mask_02
+        Rate: 8
+      - Item: Goblin_Bibles
+        Rate: 50
+      - Item: Paradox_Goblin_Card_3
+        Rate: 1
+        StealProtected: true
+      - Item: Young_Twig
+        Rate: 5
+  - Id: 30014
+    AegisName: PARADOX_GOBLIN_4
+    Name: Paradox Goblin
+    Level: 99
+    Hp: 11494
+    Attack: 672
+    Attack2: 322
+    Defense: 70
+    MagicDefense: 3
+    Str: 31
+    Agi: 27
+    Vit: 46
+    Int: 15
+    Dex: 34
+    Luk: 10
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    RaceGroups:
+      Goblin: true
+    Element: Earth
+    ElementLevel: 1
+    WalkSpeed: 250
+    AttackDelay: 624
+    AttackMotion: 624
+    DamageMotion: 240
+    Ai: 05
+    Modes:
+      ChangeChase: true
+      ChangeTargetMelee: true
+    Drops:
+      - Item: Goblin_Mask_01
+        Rate: 8
+      - Item: Goblin_Bibles
+        Rate: 50
+      - Item: Paradox_Goblin_Card_4
+        Rate: 1
+        StealProtected: true
+      - Item: Young_Twig
+        Rate: 5
+  - Id: 30015
+    AegisName: PARADOX_GOBLIN_5
+    Name: Paradox Goblin
+    Level: 99
+    Hp: 12342
+    Attack: 867
+    Attack2: 531
+    Defense: 64
+    MagicDefense: 5
+    Str: 51
+    Agi: 37
+    Vit: 22
+    Int: 15
+    Dex: 42
+    Luk: 10
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    RaceGroups:
+      Goblin: true
+    Element: Water
+    ElementLevel: 1
+    WalkSpeed: 250
+    AttackDelay: 674
+    AttackMotion: 674
+    DamageMotion: 480
+    Ai: 05
+    Modes:
+      ChangeChase: true
+      ChangeTargetMelee: true
+    Drops:
+      - Item: Goblin_Mask_03
+        Rate: 8
+      - Item: Goblin_Bibles
+        Rate: 50
+      - Item: Paradox_Goblin_Card_5
+        Rate: 1
+        StealProtected: true
+  - Id: 30016
+    AegisName: PARADOX_GOBLIN_ARCHER
+    Name: Paradox Goblin Archer
+    Level: 99
+    Hp: 9575
+    Attack: 1500
+    Attack2: 724
+    Defense: 69
+    Str: 106
+    Agi: 34
+    Vit: 20
+    Int: 15
+    Dex: 421
+    Luk: 20
+    AttackRange: 9
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Demihuman
+    RaceGroups:
+      Goblin: true
+    Element: Poison
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 472
+    AttackMotion: 672
+    DamageMotion: 420
+    Ai: 05
+    Modes:
+      Detector: true
+    Drops:
+      - Item: Goblin_Bibles
+        Rate: 50
+      - Item: Paradox_Goblin_Archer_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 30017
+    AegisName: PARADOX_STEAM_GOBLIN
+    Name: Paradox Steam Goblin
+    Level: 99
+    Hp: 2241
+    Attack: 294
+    Attack2: 35
+    Defense: 85
+    MagicDefense: 5
+    Str: 52
+    Agi: 61
+    Vit: 32
+    Int: 15
+    Dex: 90
+    Luk: 25
+    AttackRange: 9
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Wind
+    ElementLevel: 2
+    WalkSpeed: 120
+    AttackDelay: 508
+    AttackMotion: 508
+    DamageMotion: 528
+    Ai: 17
+    Modes:
+      Aggressive: true
+      Detector: true
+      KnockBackImmune: true
+  - Id: 30018
+    AegisName: PARADOX_PANZER_GOBLIN
+    Name: Paradox Panzer Goblin
+    Level: 99
+    Hp: 1471
+    Attack: 128
+    Attack2: 58
+    Defense: 60
+    MagicDefense: 25
+    Str: 52
+    Agi: 60
+    Vit: 35
+    Int: 35
+    Dex: 75
+    Luk: 31
+    AttackRange: 9
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Wind
+    ElementLevel: 2
+    WalkSpeed: 120
+    AttackDelay: 560
+    AttackMotion: 508
+    DamageMotion: 540
+    Ai: 17
+    Modes:
+      Aggressive: true
+      Detector: true
+      KnockBackImmune: true
+  - Id: 30019
+    AegisName: PARADOX_LEADER
+    Name: Paradox Leader
+    Level: 121
+    Hp: 621692
+    Attack: 5173
+    Attack2: 3849
+    Defense: 72
+    MagicDefense: 30
+    Str: 229
+    Agi: 276
+    Vit: 145
+    Int: 418
+    Dex: 573
+    Luk: 77
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    RaceGroups:
+      Goblin: true
+    Element: Wind
+    ElementLevel: 4
+    WalkSpeed: 120
+    AttackDelay: 320
+    AttackMotion: 220
+    DamageMotion: 340
+    DamageTaken: 30
+    Ai: 21
+    Class: Boss
+    Modes:
+      Mvp: true
+    MvpDrops:
+      - Item: Sharky_Boss_Box
+        Rate: 10000
+      - Item: Sharky_Boss_Box
+        Rate: 10000
+      - Item: Old_Violet_Box
+        Rate: 5000
+    Drops:
+      - Item: Paradox_Leader_Card
+        Rate: 1
+        StealProtected: true
+      - Item: Paradox_Leader_Mask
+        Rate: 1
+        StealProtected: true
+      - Item: Paradox_Jewel_Acc
+        Rate: 1
+        StealProtected: true
+      - Item: Paradox_Jewel_Acc2
+        Rate: 1
+        StealProtected: true
+      - Item: Goblin_Bibles
+        Rate: 1000
+      - Item: Goblin_Bibles
+        Rate: 1000
+      - Item: Young_Twig
+        Rate: 10000
+  - Id: 30020
+    AegisName: PARADOX_GOBLIN_GEGE
+    Name: Paradox Goblin
+    Level: 99
+    Hp: 12342
+    Attack: 867
+    Attack2: 531
+    Defense: 64
+    MagicDefense: 5
+    Str: 51
+    Agi: 37
+    Vit: 22
+    Int: 15
+    Dex: 42
+    Luk: 10
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    RaceGroups:
+      Goblin: true
+    Element: Water
+    ElementLevel: 1
+    WalkSpeed: 250
+    AttackDelay: 3074
+    AttackMotion: 1874
+    DamageMotion: 480
+    Ai: 05
+    Modes:
+      ChangeChase: true
+      ChangeTargetMelee: true
+  - Id: 30021
+    AegisName: PARADOX_ARCHER_GEGE
+    Name: Paradox Goblin Archer
+    Level: 99
+    Hp: 9575
+    Attack: 1500
+    Attack2: 724
+    Defense: 69
+    Str: 106
+    Agi: 34
+    Vit: 20
+    Int: 15
+    Dex: 421
+    Luk: 20
+    AttackRange: 9
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Demihuman
+    RaceGroups:
+      Goblin: true
+    Element: Poison
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 472
+    AttackMotion: 672
+    DamageMotion: 420
+    Ai: 05
+    Modes:
+      Detector: true
   - Id: 31001
     AegisName: SUPER_SAIYAN_1_PORING
     Name: Super Saiyan 1 Poring

@@ -7099,6 +7099,8 @@ Body:
     MaxLevel: 5
     Type: Weapon
     TargetType: Attack
+    DamageFlags:
+      IgnoreFlee: true
     Range: 3
     Hit: Single
     HitCount: 1
@@ -7121,13 +7123,14 @@ Body:
     Requires:
       SpCost: 10
       State: Shield
-    Status: Stun
   - Id: 251
     Name: CR_SHIELDBOOMERANG
     Description: Shield Boomerang
     MaxLevel: 5
     Type: Weapon
     TargetType: Attack
+    DamageFlags:
+      IgnoreFlee: true
     Range:
       - Level: 1
         Size: 3

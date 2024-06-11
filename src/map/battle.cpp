@@ -2005,7 +2005,7 @@ int64 battle_calc_damage(struct block_list *src,struct block_list *bl,struct Dam
 		if ((sce = sc->getSCE(SC_RELIEVE_ON)) && !sc->getSCE(SC_RELIEVE_OFF))
 			damage = i64max((damage - damage * sce->val2 / 100), 1);
 	}
-
+	
 	if (bl->type == BL_MOB) { // Reduces damage received for Green Aura MVP
 		mob_data *md = BL_CAST(BL_MOB, bl);
 
@@ -2037,8 +2037,11 @@ int64 battle_calc_damage(struct block_list *src,struct block_list *bl,struct Dam
 		switch (skill_id) {
 			case MO_EXTREMITYFIST:
 				maxcap *= 3;
-			break;
+				break;
+			default:
+				break;
 		}
+		maxcap = cap_value(maxcap, INT_MIN, INT_MAX);
 		
 		damage = cap_value(damage, INT_MIN, maxcap);
 		
@@ -4778,11 +4781,11 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			skillratio += 30 * skill_lv;
 			break;
 		case CR_SHIELDCHARGE:
-			skillratio += 20 * skill_lv;
+			skillratio += 200 * skill_lv;
 			break;
 		case CR_SHIELDBOOMERANG:
 #ifdef RENEWAL
-			skillratio += -100 + skill_lv * 80;
+			skillratio += skill_lv * 400;
 #else
 			skillratio += 30 * skill_lv;
 #endif
@@ -7772,7 +7775,13 @@ static struct Damage battle_calc_weapon_attack(struct block_list *src, struct bl
 	battle_absorb_damage(target, &wd);
 
 	battle_do_reflect(BF_WEAPON,&wd, src, target, skill_id, skill_lv); //WIP [lighta]
-
+	
+	if( sd ) {
+		wd.damage = wd.damage * (100 + (sd->indexed_bonus.damage_amplify[SKILLRATE_TYPE_WEAPON] + sd->indexed_bonus.damage_amplify[SKILLRATE_TYPE_ALL]) ) / 100;
+		if(is_attack_left_handed(src, skill_id))
+			wd.damage2 = wd.damage * (100 + (sd->indexed_bonus.damage_amplify[SKILLRATE_TYPE_WEAPON] + sd->indexed_bonus.damage_amplify[SKILLRATE_TYPE_ALL]) ) / 100;
+	}
+	
 	return wd;
 }
 
@@ -9029,6 +9038,13 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 
 	battle_absorb_damage(target, &ad);
 
+	if( sd ) {
+		ad.damage = ad.damage * (100 + (sd->indexed_bonus.damage_amplify[SKILLRATE_TYPE_MAGIC] + sd->indexed_bonus.damage_amplify[SKILLRATE_TYPE_ALL]) ) / 100;
+		if(is_attack_left_handed(src, skill_id))
+			ad.damage2 = ad.damage * (100 + (sd->indexed_bonus.damage_amplify[SKILLRATE_TYPE_MAGIC] + sd->indexed_bonus.damage_amplify[SKILLRATE_TYPE_ALL]) ) / 100;
+	}
+	
+	
 	//battle_do_reflect(BF_MAGIC,&ad, src, target, skill_id, skill_lv); //WIP [lighta] Magic skill has own handler at skill_attack
 	return ad;
 }
@@ -9441,6 +9457,12 @@ struct Damage battle_calc_misc_attack(struct block_list *src,struct block_list *
 
 	battle_do_reflect(BF_MISC,&md, src, target, skill_id, skill_lv); //WIP [lighta]
 
+	if( sd ) {
+		md.damage = md.damage * (100 + (sd->indexed_bonus.damage_amplify[SKILLRATE_TYPE_MISC] + sd->indexed_bonus.damage_amplify[SKILLRATE_TYPE_ALL]) ) / 100;
+		if(is_attack_left_handed(src, skill_id))
+			md.damage2 = md.damage * (100 + (sd->indexed_bonus.damage_amplify[SKILLRATE_TYPE_MISC] + sd->indexed_bonus.damage_amplify[SKILLRATE_TYPE_ALL]) ) / 100;
+	}
+	
 	return md;
 }
 

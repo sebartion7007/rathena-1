@@ -865,6 +865,7 @@
 	export_constant2("bSkillSupplement", SP_SKILLSUPPLEMENT);
 	export_constant2("bSkillRate", SP_SKILLRATE);
 	export_constant2("bSkillRateDef", SP_SKILLRATE_DEF);
+	export_constant2("bAmplify", SP_DAMAGE_AMPLIFY);
 	/*End Custom Part*/
 
 	/* equip indices */

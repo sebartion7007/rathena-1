@@ -73,3 +73,76 @@ Body:
           - Index: 3
             Item: Cobold_Hair_INDY
             Amount: 20
+  - Name: Paradox Memorie Exchange 3
+    Map: jor_dback3
+    X: 361
+    Y: 254
+    Direction: South
+    Sprite: 4_EP19_ZORYARA
+    Items:
+      - Index: 0
+        Item: Cins_Sandals
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Spiky_Heel
+            Amount: 1
+            Refine: 9
+          - Index: 2
+            Item: Young_Twig
+            Amount: 5
+          - Index: 3
+            Item: Goblin_Bibles
+            Amount: 20
+      - Index: 1
+        Item: Sins_Sandals
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Chrystal_Pumps
+            Amount: 1
+            Refine: 9
+          - Index: 2
+            Item: Young_Twig
+            Amount: 5
+          - Index: 3
+            Item: Goblin_Bibles
+            Amount: 20
+      - Index: 2
+        Item: Paradox_Jewel_Acc
+        Zeny: 30000000
+        RequiredItems:
+          - Index: 0
+            Item: Goblini_Mask
+            Amount: 1
+          - Index: 1
+            Item: Goblin_Mask_01
+            Amount: 1
+          - Index: 2
+            Item: Goblin_Mask_02
+            Amount: 1
+          - Index: 3
+            Item: Goblin_Mask_04
+            Amount: 1
+          - Index: 4
+            Item: Goblin_Bibles
+            Amount: 100
+      - Index: 3
+        Item: Paradox_Jewel_Acc2
+        Zeny: 30000000
+        RequiredItems:
+          - Index: 0
+            Item: Goblini_Mask
+            Amount: 1
+          - Index: 1
+            Item: Goblin_Mask_01
+            Amount: 1
+          - Index: 2
+            Item: Goblin_Mask_02
+            Amount: 1
+          - Index: 3
+            Item: Goblin_Mask_04
+            Amount: 1
+          - Index: 4
+            Item: Goblin_Bibles
+            Amount: 100

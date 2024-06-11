@@ -319,6 +319,97 @@ Body:
     Script: |
       bonus bMaxHPRate,(readparam(bVit)/15);
       bonus bMaxSPRate,(readparam(bInt)/15);
+  - Id: 44011
+    AegisName: Paradox_Goblin_Card_1
+    Name: Paradox Goblin Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus2 bMagicAtkEle,ELE_WIND,10+getrefine();
+  - Id: 44012
+    AegisName: Paradox_Goblin_Card_2
+    Name: Paradox Goblin Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus2 bMagicAtkEle,ELE_FIRE,10+getrefine();
+  - Id: 44013
+    AegisName: Paradox_Goblin_Card_3
+    Name: Paradox Goblin Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus2 bMagicAtkEle,ELE_POISON,10+getrefine();
+  - Id: 44014
+    AegisName: Paradox_Goblin_Card_4
+    Name: Paradox Goblin Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus2 bMagicAtkEle,ELE_EARTH,10+getrefine();
+  - Id: 44015
+    AegisName: Paradox_Goblin_Card_5
+    Name: Paradox Goblin Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus2 bMagicAtkEle,ELE_WATER,10+getrefine();
+  - Id: 44016
+    AegisName: Paradox_Goblin_Archer_Card
+    Name: Paradox Goblin Archer Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus bCritAtkRate,10;
+      bonus bCritical,9;
+  - Id: 44017
+    AegisName: Paradox_Leader_Card
+    Name: Paradox Leader Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus bSupplementary,1000*getrefine();
   - Id: 49001
     AegisName: Super_Saiyan_1_Angeling_Card
     Name: Super Saiyan 1 Angeling Card
@@ -367,6 +458,14 @@ Body:
     Weight: 10
     Flags:
       BuyingStore: true
+  - Id: 50003
+    AegisName: Goblin_Bibles
+    Name: Goblin Bibles
+    Type: Etc
+    Buy: 342
+    Weight: 10
+    Flags:
+      BuyingStore: true
   - Id: 170001
     AegisName: Super_Angel_Wing
     Name: Super Angel Wing
@@ -401,6 +500,58 @@ Body:
       bonus bMAtk,readparam(bInt);
       bonus2 bSubRace,RC_Demon,10;
       bonus2 bMagicAddClass,CLASS_BOSS,10;
+  - Id: 170003
+    AegisName: Maybe_Spell_Circuit
+    Name: Maybe Spell Circuit
+    Type: Armor
+    View: 1301
+    Buy: 20
+    Weight: 100
+    Slots: 1
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMatk,(.@r/2)*10;
+      bonus bVariableCastrate,-(.@r*2);
+      .@val = max(min(.@r,15),0);
+      bonus bFixedCast,-(.@val/3)*100;
+  - Id: 170004
+    AegisName: Maybe_General's_Helm
+    Name: Maybe General's Helm
+    Type: Armor
+    View: 729
+    Buy: 20
+    Weight: 800
+    Defense: 12
+    Slots: 1
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bBaseAtk,(.@r/2)*10;
+      bonus bCritAtkRate,.@r;
+      bonus bCritical,.@r;
+      bonus bPerfectHitAddRate,.@r*2;
+  - Id: 172101
+    AegisName: Paradox_Leader_Mask
+    Name: Paradox Leader Mask
+    Type: Armor
+    View: 174
+    Buy: 20
+    Weight: 100
+    Defense: 2
+    Locations:
+      Head_Low: true
+      Head_Mid: true
+    ArmorLevel: 1
+    Script: |
+      bonus bMdef,100;
+      bonus bMagicAtkDef,10;
   - Id: 173001
     AegisName: Paradox_Memorie_Mail
     Name: Paradox Memorie Mail
@@ -489,6 +640,73 @@ Body:
       if (.@r >= 9 ) {
         bonus bMaxSPrate,5;
       }
+  - Id: 177001
+    AegisName: Cins_Sandals
+    Name: Cins Sandals
+    Type: Armor
+    Buy: 20
+    Weight: 600
+    Defense: 20
+    Slots: 1
+    Locations:
+      Shoes: true
+    ArmorLevel: 1
+    EquipLevelMin: 80
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHPrate,.@r;
+      bonus bMaxSPrate,.@r;
+      bonus2 bAddClass,CLASS_ALL,.@r;
+      if(.@r >= 9 ) bonus bFixedCast,-300;
+      .@val = max(min(.@r-10,5),0);
+      bonus2 bSkillRate,Type_Attack,3*.@val;
+  - Id: 177002
+    AegisName: Sins_Sandals
+    Name: Sins Sandals
+    Type: Armor
+    Buy: 20
+    Weight: 600
+    Defense: 5
+    Slots: 1
+    Locations:
+      Shoes: true
+    ArmorLevel: 1
+    EquipLevelMin: 80
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMdef,30;
+      bonus bMaxHPrate,.@r;
+      bonus bMaxSPrate,.@r;
+      bonus2 bMagicAddClass,CLASS_ALL,.@r;
+      if(.@r >= 9 ) bonus bFixedCast,-300;
+      .@val = max(min(.@r-10,5),0);
+      bonus2 bSkillRate,Type_Magic,3*.@r;
+  - Id: 178001
+    AegisName: Paradox_Jewel_Acc
+    Name: Paradox Jewel Acc
+    Type: Armor
+    Buy: 30000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 20
+    Script: |
+      bonus bAtkRate,7;
+  - Id: 178002
+    AegisName: Paradox_Jewel_Acc2
+    Name: Paradox Jewel Acc 2
+    Type: Armor
+    Buy: 30000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 20
+    Script: |
+      bonus bMatkRate,7;
   - Id: 35002
     AegisName: Chili_Red_Potion
     Name: Chili Red Potion

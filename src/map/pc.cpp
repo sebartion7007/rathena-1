@@ -5077,6 +5077,11 @@ void pc_bonus2(map_session_data *sd,int type,int type2,int val)
 		if (sd->state.lr_flag != 2)
 			sd->indexed_bonus.skill_rate_def[type2] += val;
 		break;
+	case SP_DAMAGE_AMPLIFY:
+		//PC_SKILLRATE_CHECK(SP_SKILLRATE_DEF, val);
+		if (sd->state.lr_flag != 2)
+			sd->indexed_bonus.damage_amplify[type2] += val;
+		break;
 	//End Custom Part
 	default:
 		if (current_equip_combo_pos > 0) {

@@ -36,6 +36,29 @@ Header:
 Body:
   - Combos:
       - Combo:
+          - Paradox_Memorie_Mail
+          - Paradox_Memorie_Manteau
+          - Cins_Sandals
+          - Paradox_Jewel_Acc
+    Script: |
+      if(getequiprefinerycnt(EQI_SHOES) + getequiprefinerycnt(EQI_GARMENT) + getequiprefinerycnt(EQI_ARMOR) >= 40 ) {
+        bonus2 bAmplify,Type_Attack,30;
+        bonus bAspd,1;
+      }
+  - Combos:
+      - Combo:
+          - Paradox_Memorie_Robe
+          - Paradox_Memorie_Hood
+          - Sins_Sandals
+          - Paradox_Jewel_Acc2
+    Script: |
+      if(getequiprefinerycnt(EQI_SHOES) + getequiprefinerycnt(EQI_GARMENT) + getequiprefinerycnt(EQI_ARMOR) >= 40 ) {
+        bonus2 bAmplify,Type_Magic,30;
+        bonus bFixedCast,-100;
+        bonus bVariableCast,-100;
+      }
+  - Combos:
+      - Combo:
           - Wind_Paradox_Ghost_Card
           - Banshee_Paradox_Card
     Script: |

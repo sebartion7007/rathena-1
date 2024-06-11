@@ -12,7 +12,7 @@
 //===== Additional Comments: =======================================
 //= When duplicating this NPC. Only use NUMBER after the # [secret]
 //==================================================================
-falserealm,150,107,0	script	กระสอบไข่#0	-1,{
+falserealm,150,112,0	script	กระสอบไข่#0	-1,{
 	end;
 	
 OnMyMobDead:
@@ -40,7 +40,10 @@ OnTimer5000:
 	initnpctimer;
 }
 
-falserealm,142,115,5	script	ทางไปห้องเทสดาเมจ	800,{
+falserealm,145,122	monster	"Test Damage Normal"	2411,1,5000
+falserealm,153,122	monster	"Test Damage Boss"	2410,1,5000
+
+falserealm,136,124,5	script	ทางไปห้องเทสดาเมจ	800,{
 	warp "tra_fild",103,172;
 	end;
 OnInit:
