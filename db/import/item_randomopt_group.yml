@@ -198,3 +198,80 @@ Body:
             MinValue: 1
             MaxValue: 10
             Chance: 5000
+  - Id: 1603
+    Group: Custom_new_crimson_bow
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_INTAMOUNT
+            MinValue: 1
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_DEXAMOUNT
+            MinValue: 1
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 1
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 100
+            MaxValue: 500
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 10
+            MaxValue: 100
+            Chance: 5000
+          - Option: VAR_HPACCELERATION
+            MinValue: 1
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_SPACCELERATION
+            MinValue: 1
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_ATKPERCENT
+            MinValue: 1
+            MaxValue: 5
+            Chance: 1000
+          - Option: DEC_SP_CONSUMPTION
+            MinValue: 1
+            MaxValue: 5
+            Chance: 1000
+          - Option: DEC_SPELL_DELAY_TIME
+            MinValue: 1
+            MaxValue: 5
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 1
+            MaxValue: 5
+            Chance: 1000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 1
+            MaxValue: 5
+            Chance: 1000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 1
+            MaxValue: 5
+            Chance: 1000
+          - Option: MELEE_ATTACK_DAMAGE_TARGET
+            MinValue: 1
+            MaxValue: 5
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 1
+            MaxValue: 10
+            Chance: 1000
