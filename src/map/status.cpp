@@ -2560,12 +2560,12 @@ void status_calc_misc(struct block_list *bl, struct status_data *status, int lev
 	} else {
 		// Hit
 		stat = status->hit;
-		stat += status->dex * (bl->type == BL_MOB ? 1 : 3) + (level * (bl->type == BL_MOB ? (level > 100 ? 5 + (level - 100 )/100 : 5 ) : 3) ) + 175; //base level + ( every 1 dex = +1 hit ) + (every 3 luk = +1 hit) + 175
+		stat += status->dex * (bl->type == BL_MOB ? (level > 150 ? 2 : 1 ) : 3) + (level * (bl->type == BL_MOB ? (level > 100 ? 5 + (1 + (level - 100 )/100 ) : 5 ) : 3) ) + 175; //base level + ( every 1 dex = +1 hit ) + (every 3 luk = +1 hit) + 175
 		stat += 11 * status->con;
 		status->hit = cap_value(stat, 1, SHRT_MAX);
 		// Flee
 		stat = status->flee;
-		stat += status->agi * (bl->type == BL_MOB ? 1 : 4) + ( level * (bl->type == BL_MOB ? 5 : 3 ) ) + 100; //base level + ( every 1 agi = +1 flee ) + (every 5 luk = +1 flee) + 100
+		stat += status->agi * (bl->type == BL_MOB ? (level > 150 ? 2 : 1 ) : 4) + ( level * (bl->type == BL_MOB ? (level < 100 ? 3 : 5) : 3 ) ) + 100; //base level + ( every 1 agi = +1 flee ) + (every 5 luk = +1 flee) + 100
 		stat += 11 * status->con;
 		status->flee = cap_value(stat, 1, SHRT_MAX);
 		// Def2
@@ -2573,7 +2573,7 @@ void status_calc_misc(struct block_list *bl, struct status_data *status, int lev
 			stat = (int)(status->vit + ((float)level / 10) + ((float)status->vit / 5));
 		else {
 			stat = status->def2;
-			stat += (int)((float)level * 2 ) + (bl->type == BL_PC ? ((float)status->agi * 2 ) : 0) + (bl->type == BL_MOB ? (float)level * 2  : 0); //base level + (every 2 vit = +1 def) + (every 5 agi = +1 def)
+			stat += (int)((float)level * 2 ) + (bl->type == BL_PC ? ((float)status->agi * 2 ) : 0) + (bl->type == BL_MOB ? (level > 150 ? (float)level * 11 : 1 )  : 0); //base level + (every 2 vit = +1 def) + (every 5 agi = +1 def)
 		}
 		status->def2 = cap_value(stat, 0, SHRT_MAX);
 		// Mdef2
@@ -6118,6 +6118,7 @@ void status_calc_bl_main(struct block_list *bl, std::bitset<SCB_MAX> flag)
 			if( (sd && pc_checkskill(sd,AS_KATAR) >= 15) || 
 				(sd && pc_checkskill(sd,BS_WEAPONRESEARCH) >= 15) || 
 				(sd && pc_checkskill(sd,DC_DANCINGLESSON) >= 15) || 
+				(sd && pc_checkskill(sd,KN_SPEARMASTERY) >= 15) || 
 				(sd && pc_checkskill(sd,BA_MUSICALLESSON) >= 15) || 
 				(sd && pc_checkskill(sd, PR_MACEMASTERY) >= 10) ||
 				(sd && pc_checkskill(sd, HT_FALCON) >= 5)
@@ -6131,6 +6132,7 @@ void status_calc_bl_main(struct block_list *bl, std::bitset<SCB_MAX> flag)
 				(sd && pc_checkskill(sd,AS_KATAR) >= 15) || 
 				(sd && pc_checkskill(sd,BS_WEAPONRESEARCH) >= 15) || 
 				(sd && pc_checkskill(sd,DC_DANCINGLESSON) >= 15) || 
+				(sd && pc_checkskill(sd,KN_SPEARMASTERY) >= 15) || 
 				(sd && pc_checkskill(sd,BA_MUSICALLESSON) >= 15) || 
 				(sd && pc_checkskill(sd, PR_MACEMASTERY) >= 10) ||
 				(sd && pc_checkskill(sd, HT_FALCON) >= 5)
