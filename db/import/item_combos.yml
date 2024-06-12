@@ -42,7 +42,7 @@ Body:
           - Paradox_Jewel_Acc
     Script: |
       if(getequiprefinerycnt(EQI_SHOES) + getequiprefinerycnt(EQI_GARMENT) + getequiprefinerycnt(EQI_ARMOR) >= 40 ) {
-        bonus2 bAmplify,Type_Attack,30;
+        bonus2 bAmplify,Type_Attack,18;
         bonus bAspd,1;
       }
   - Combos:
@@ -53,7 +53,7 @@ Body:
           - Paradox_Jewel_Acc2
     Script: |
       if(getequiprefinerycnt(EQI_SHOES) + getequiprefinerycnt(EQI_GARMENT) + getequiprefinerycnt(EQI_ARMOR) >= 40 ) {
-        bonus2 bAmplify,Type_Magic,30;
+        bonus2 bAmplify,Type_Magic,18;
         bonus bFixedCast,-100;
         bonus bVariableCast,-100;
       }
