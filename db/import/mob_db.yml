@@ -1734,15 +1734,15 @@ Body:
     Name: Paradox Leader
     Level: 121
     Hp: 621692
-    Attack: 3173
+    Attack: 2173
     Attack2: 1849
     Defense: 72
     MagicDefense: 30
-    Str: 139
+    Str: 24
     Agi: 276
     Vit: 145
     Int: 418
-    Dex: 573
+    Dex: 373
     Luk: 77
     AttackRange: 2
     SkillRange: 10
