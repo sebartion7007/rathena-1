@@ -42,14 +42,17 @@ OnInit:
 					if(.bonusitem) {
 							set .@week,0;
 							
-							setarray .@val[0],10;							
-							setarray .@itembonus,.top_up_coin;
+							setarray .@val[0],10,100;							
+							setarray .@itembonus,.top_up_coin,60001;
 							for(.@g=0; .@g<getarraysize(.@val); .@g++) {
 								setd "#cash_collect_w"+.@week+"_"+.@val[.@g],getd("#cash_collect_w"+.@week+"_"+.@val[.@g])+.pay_amount[.i];
 								.@dot[.@g] = getd("#cash_collect_w"+.@week+"_"+.@val[.@g])/.@val[.@g];
 								setd "#cash_collect_w"+.@week+"_"+.@val[.@g],getd("#cash_collect_w"+.@week+"_"+.@val[.@g])%.@val[.@g];
 							}
-							getitem .@itembonus[.@s],.@dot[.@s];
+							for(.@s=0;.@s<getarraysize(.@dot);.@s++) {
+								if(.@dot[.@s])
+									getitem .@itembonus[.@s],.@dot[.@s];
+							}
 							/*
 							for(.@s=0;.@s<getarraysize(.@dot);.@s++) {
 								//if(.@itembonus[.@s] == 12411) .@dot[.@s] *= 3;
