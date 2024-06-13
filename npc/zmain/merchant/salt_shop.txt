@@ -1,1 +1,9 @@
-falserealm,134,134,7	itemshop	SaltyShop#1	552,40000:no,170005:90,176003:90,5208:90,5972:50,19101:50,18666:50,100906:10,16260:10,16261:10,34006:5
+-	itemshop	SaltyShop#1	552,40000:no,170005:90,176003:90,5208:90,5972:50,19101:50,18666:50,100906:10,16260:10,16261:10,34006:5
+
+falserealm,134,134,7	script	Salty Shop	4_EP18_MERCHANT,{
+	callshop "SaltyShop#"+.season,1;
+	end;
+Oninit:
+	.season = 1;
+	end;
+}
