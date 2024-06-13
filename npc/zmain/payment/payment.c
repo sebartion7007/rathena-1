@@ -35,7 +35,7 @@ OnInit:
 					}
 					dispbottom "==============================================";
 					dispbottom "[ Payment Server ] คุณได้รับ " + callfunc("F_InsertComma",.@realget) + " Cash ปัจจุบันมี "+ callfunc("F_InsertComma",#CASHPOINTS);
-					announce "ท่าน ["+strcharinfo(0)+"] เติมเงินจำนวน ["+.pay_amount[.i]+"] เรียบร้อยแล้ว",bc_all;
+					announce "ท่าน ["+strcharinfo(0)+"] เติมเงินจำนวน ["+.pay_amount[.i]+"] บาท เรียบร้อยแล้ว",bc_all;
 					query_sql "UPDATE `paymentma` SET `status` = '2' WHERE `souce` = '" + .souce$[.i]+"'";
 					
 					// Bonus Item Refil
@@ -49,6 +49,7 @@ OnInit:
 								.@dot[.@g] = getd("#cash_collect_w"+.@week+"_"+.@val[.@g])/.@val[.@g];
 								setd "#cash_collect_w"+.@week+"_"+.@val[.@g],getd("#cash_collect_w"+.@week+"_"+.@val[.@g])%.@val[.@g];
 							}
+							getitem .@itembonus[.@s],.@dot[.@s];
 							/*
 							for(.@s=0;.@s<getarraysize(.@dot);.@s++) {
 								//if(.@itembonus[.@s] == 12411) .@dot[.@s] *= 3;
