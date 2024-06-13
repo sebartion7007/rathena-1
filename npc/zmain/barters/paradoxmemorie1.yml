@@ -126,7 +126,7 @@ Body:
             Amount: 1
           - Index: 4
             Item: Goblin_Bibles
-            Amount: 100
+            Amount: 40
       - Index: 3
         Item: Paradox_Jewel_Acc2
         Zeny: 30000000
@@ -145,4 +145,4 @@ Body:
             Amount: 1
           - Index: 4
             Item: Goblin_Bibles
-            Amount: 100
+            Amount: 40

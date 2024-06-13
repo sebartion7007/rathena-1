@@ -143,10 +143,10 @@ function	script	F_GGachapon	{
 			break;
 		}
 	}
-	dispbottom "before rand 2 :"+.@aa[.@cc];
+	//dispbottom "before rand 2 :"+.@aa[.@cc];
 	if(.@aa[.@cc] == 1) .@bb = 0;
 	else .@bb = rand(.@aa[.@cc]);
-	dispbottom "rand 2 pass";
+	//dispbottom "rand 2 pass";
 	.@nn = 0;
 	for(.@i = 0 ; .@i < getarraysize(.@arr) ;.@i++) {
 		if(.@arr[.@i] == .@x[.@cc]){
@@ -154,7 +154,7 @@ function	script	F_GGachapon	{
 			break;
 		}
 	}
-	if(.@saltgaruntee) getitem 40000,1;
+	if(.@saltgaruntee) getitem 9901,1;
 	getitem .@item[.@position],.@amt[.@position];
 	if(.@arr[.@position]/100 < 5)
 		announce "[ Sharky Egg ] : คุณ [ "+strcharinfo(0)+" ] ได้รับ "+getitemname(.@item[.@position])+" จำนวน "+.@amt[.@position]+" ชิ้น ",bc_all,0xFFFFFF;
