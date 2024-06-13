@@ -33,6 +33,26 @@ Header:
   Version: 1
   
 Body:
+  - Tab: New
+    Items:
+    - Item: CASH_SHARKY_CC_F
+      Price: 10
+    - Item: Battle_Manual100
+      Price: 30
+    - Item: Battle_Manual100_Box
+      Price: 250
+    - Item: Battle_Manual_X3
+      Price: 100
+    - Item: Convex_Mirror
+      Price: 10
+    - Item: Convex_Mirror_Box
+      Price: 90
+    - Item: Convex_Mirror_Box30
+      Price: 270
+    - Item: Kafra_Card_Box
+      Price: 270
+    - Item: Sharky_Gacha_Egg_Vol.1
+      Price: 99
   - Tab: Other
     Items:
 #  ===== Custom =====
@@ -329,21 +349,3 @@ Body:
       Price: 90
     - Item: E_All_In_One_Buff
       Price: 300
-  - Tab: New
-    Items:
-    - Item: CASH_SHARKY_CC_F
-      Price: 10
-    - Item: Battle_Manual100
-      Price: 30
-    - Item: Battle_Manual100_Box
-      Price: 250
-    - Item: Battle_Manual_X3
-      Price: 100
-    - Item: Convex_Mirror
-      Price: 10
-    - Item: Convex_Mirror_Box
-      Price: 90
-    - Item: Convex_Mirror_Box30
-      Price: 270
-    - Item: Kafra_Card_Box
-      Price: 270

@@ -866,6 +866,9 @@
 	export_constant2("bSkillRate", SP_SKILLRATE);
 	export_constant2("bSkillRateDef", SP_SKILLRATE_DEF);
 	export_constant2("bAmplify", SP_DAMAGE_AMPLIFY);
+	
+	export_constant2("bMHPDrainRate",SP_MAGIC_HP_DRAIN_RATE);
+	export_constant2("bMSPDrainRate",SP_MAGIC_SP_DRAIN_RATE);
 	/*End Custom Part*/
 
 	/* equip indices */

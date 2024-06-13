@@ -7226,7 +7226,6 @@ Body:
           Amount: 19
         - Level: 10
           Amount: 20
-    Status: Blind
   - Id: 254
     Name: CR_GRANDCROSS
     Description: Grand Cross

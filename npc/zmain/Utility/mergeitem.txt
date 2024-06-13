@@ -1,0 +1,7 @@
+falserealm,131,153,6	script	Merge Item#falserealm	4_EP18_TAMARIN,{
+    mes "Let's check if any item can be merged.";
+    close2;
+    mergeitem;
+    mergeitem2;
+    end;
+}

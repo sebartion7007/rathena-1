@@ -23211,14 +23211,6 @@ Body:
     Name: Actinidia Cat Fruit
     Type: Etc
     Buy: 10
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
   - Id: 6910
     AegisName: LI_HD_Oridecon
     Name: (Limited) Purified Oridecon

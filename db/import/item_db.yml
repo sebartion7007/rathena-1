@@ -182,6 +182,23 @@ Body:
     Type: Etc
     Buy: 10
     Weight: 100
+  - Id: 40000
+    AegisName: Salty
+    Name: Salty
+    Type: Etc
+    Buy: 1000
+    Weight: 10
+    Flags:
+      BuyingStore: true
+    Trade:
+      Override: 100
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
   - Id: 44001
     AegisName: Orc_Paradox_Card
     Name: Orc Paradox Card
@@ -193,6 +210,15 @@ Body:
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
+    Trade:
+      Override: 100
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
     Script: |
       .@r = getrefine();
       bonus2 bSkillAtk,"KN_PIERCE",15 + (2 * .@r);
@@ -466,6 +492,13 @@ Body:
     Weight: 10
     Flags:
       BuyingStore: true
+  - Id: 60001
+    AegisName: Sharky_Gacha_Egg_Vol.1
+    Name: Sharky Gacha Egg Vol.1
+    Type: Usable
+    Buy: 10
+    Script: |
+      callfunc("F_GGachapon",1);
   - Id: 170001
     AegisName: Super_Angel_Wing
     Name: Super Angel Wing
@@ -537,6 +570,27 @@ Body:
       bonus bCritAtkRate,.@r;
       bonus bCritical,.@r;
       bonus bPerfectHitAddRate,.@r*2;
+  - Id: 170005
+    AegisName: Mystic_Rideword_Hat
+    Name: Mystic Rideword Hat
+    Type: Armor
+    View: 262
+    Buy: 20
+    Weight: 300
+    Defense: 3
+    Jobs:
+      All: true
+      Novice: false
+      SuperNovice: false
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 40
+    Refineable: true
+    Script: |
+      bonus2 bMHPDrainRate,50,8;
+      bonus2 bMSPDrainRate,10,4;
+      bonus2 bHPLossRate,1000,5000;
   - Id: 172101
     AegisName: Paradox_Leader_Mask
     Name: Paradox Leader Mask
@@ -640,6 +694,30 @@ Body:
       if (.@r >= 9 ) {
         bonus bMaxSPrate,5;
       }
+  - Id: 176003
+    AegisName: Sha_lalalunla_wing
+    Name: Sha lalalunla wing
+    Type: Armor
+    Weight: 100
+    Defense: 30
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus2 bSubEle,Ele_Neutral,10;
+      bonus2 bExpAddRace,RC_All,10;
+      bonus bBaseAtk,BaseLevel/2;
+      bonus bMatk,BaseLevel/2;
+      bonus bMaxHP,BaseLevel*50;
+      bonus bMaxSP,BaseLevel*2;
+      if (.@r>=7) {
+        bonus2 bHPDrainRate,50,2;
+        bonus2 bMHPDrainRate,50,2;
+      }
   - Id: 177001
     AegisName: Cins_Sandals
     Name: Cins Sandals
@@ -682,7 +760,7 @@ Body:
       bonus2 bMagicAddClass,CLASS_ALL,.@r;
       if(.@r >= 9 ) bonus bFixedCast,-300;
       .@val = max(min(.@r-10,5),0);
-      bonus2 bSkillRate,Type_Magic,3*.@r;
+      bonus2 bSkillRate,Type_Magic,3*.@val;
   - Id: 178001
     AegisName: Paradox_Jewel_Acc
     Name: Paradox Jewel Acc
@@ -707,6 +785,54 @@ Body:
     EquipLevelMin: 20
     Script: |
       bonus bMatkRate,7;
+  - Id: 317001
+    AegisName: Shark_St_Str
+    Name: Sharky Stonk (Str)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bStr,5+getrefine();
+      if(getrefine() >= 13 ) bonus bShortAtkRate,15;
+  - Id: 317002
+    AegisName: Shark_St_Agi
+    Name: Sharky Stonk (Agi)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bAgi,5+getrefine();
+      if(getrefine() >= 13 ) bonus bAspd,2;
+  - Id: 317003
+    AegisName: Shark_St_Vit
+    Name: Sharky Stonk (Vit)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bVit,5+getrefine();
+      if(getrefine() >= 13 ) bonus bMaxHPrate,15;
+  - Id: 317004
+    AegisName: Shark_St_Int
+    Name: Sharky Stonk (Int)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bInt,5+getrefine();
+      if(getrefine() >= 13 ) bonus2 bMagicAddClass,CLASS_ALL,15;
+  - Id: 317005
+    AegisName: Shark_St_Dex
+    Name: Sharky Stonk (Dex)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bDex,5+getrefine();
+      if(getrefine() >= 13 ) bonus bLongAtkRate,15;
+  - Id: 317006
+    AegisName: Shark_St_Luk
+    Name: Sharky Stonk (Luk)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bLuk,5+getrefine();
+      if(getrefine() >= 13 ) bonus bCritical,10;
   - Id: 35002
     AegisName: Chili_Red_Potion
     Name: Chili Red Potion

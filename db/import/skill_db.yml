@@ -7768,7 +7768,7 @@ Body:
       TargetTrap: true
     Range: -2
     Hit: Multi_Hit
-    HitCount: -2
+    HitCount: 2
     Element: Holy
     CopyFlags:
       Skill:
@@ -7807,7 +7807,6 @@ Body:
           Amount: 28
         - Level: 15
           Amount: 30
-    Status: Blind
   - Id: 254
     Name: CR_GRANDCROSS
     Description: Grand Cross

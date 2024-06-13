@@ -9057,7 +9057,8 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 			ad.damage2 = ad.damage * (100 + (sd->indexed_bonus.damage_amplify[SKILLRATE_TYPE_MAGIC] + sd->indexed_bonus.damage_amplify[SKILLRATE_TYPE_ALL]) ) / 100;
 	}
 	
-	
+	if( sd )
+		magic_battle_drain(sd, target, ad.damage, ad.damage, sstatus->race, sstatus->class_);
 	//battle_do_reflect(BF_MAGIC,&ad, src, target, skill_id, skill_lv); //WIP [lighta] Magic skill has own handler at skill_attack
 	return ad;
 }
@@ -9824,6 +9825,46 @@ void battle_drain(map_session_data *sd, struct block_list *tbl, int64 rdamage, i
 	//if (rhp || rsp)
 	//	status_zap(tbl, rhp, rsp);
 }
+
+/*===========================================
+ * Perform battle drain effects (HP/SP loss)
+ *-------------------------------------------*/
+void magic_battle_drain(map_session_data *sd, struct block_list *tbl, int64 rdamage, int64 ldamage, int race, int class_)
+{
+	int64 *damage;
+	int thp = 0, // HP gained
+		tsp = 0, // SP gained
+		//rhp = 0, // HP reduced from target
+		//rsp = 0, // SP reduced from target
+		hp = 0, sp = 0;
+
+	damage = &rdamage;
+	if (!CHK_RACE(race) && !CHK_CLASS(class_))
+		return;
+	
+		
+	hp += battle_calc_drain(*damage, sd->bonus.mhp_drain_rate, sd->bonus.mhp_drain_per);
+	sp += battle_calc_drain(*damage, sd->bonus.msp_drain_rate, sd->bonus.msp_drain_per);
+	//ShowDebug("Debug Test Rate:%d , Val:%d \n", sd->bonus.mhp_drain_rate,sd->bonus.mhp_drain_per);
+		
+	if( hp ) {
+		//rhp += hp;
+		thp += hp;
+	}
+	if( sp ) {
+		//rsp += sp;
+		tsp += sp;
+	}
+
+	if (!thp && !tsp)
+		return;
+
+	status_heal(&sd->bl, thp, tsp, battle_config.show_hp_sp_drain?3:1);
+
+	//if (rhp || rsp)
+	//	status_zap(tbl, rhp, rsp);
+}
+
 /*===========================================
  * Deals the same damage to targets in area.
  *-------------------------------------------

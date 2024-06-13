@@ -70,3 +70,187 @@
 Header:
   Type: ITEM_ENCHANT_DB
   Version: 1
+
+Body:
+  - Id: 301
+    TargetItems:
+      Sha_lalalunla_wing: true
+    MinimumRefine: 9
+    Reset:
+      Chance: 100000
+      Price: 10000000
+      Materials:
+        - Material: Nyangvine_Fruit
+          Amount: 20
+    Order:
+      - Slot: 3
+      - Slot: 2
+      - Slot: 1
+    Slots:
+      - Slot: 3
+        Price: 1000000
+        Materials:
+          - Material: Nyangvine_Fruit
+            Amount: 5
+        Enchants:
+          - Enchantgrade: 0
+            Items:
+              - Item: Wolf_Orb_Str_1
+                Chance: 13666
+              - Item: Wolf_Orb_Dex_1
+                Chance: 13667
+              - Item: Wolf_Orb_Agi_1
+                Chance: 13667
+              - Item: Wolf_Orb_Int_1
+                Chance: 13666
+              - Item: Wolf_Orb_Vit_1
+                Chance: 13667
+              - Item: Wolf_Orb_luk_1
+                Chance: 13667
+              - Item: Wolf_Orb_Str_2
+                Chance: 2500
+              - Item: Wolf_Orb_Dex_2
+                Chance: 2500
+              - Item: Wolf_Orb_Agi_2
+                Chance: 2500
+              - Item: Wolf_Orb_Int_2
+                Chance: 2500
+              - Item: Wolf_Orb_Vit_2
+                Chance: 2500
+              - Item: Wolf_Orb_luk_2
+                Chance: 2500
+              - Item: Wolf_Orb_Str_3
+                Chance: 500
+              - Item: Wolf_Orb_Dex_3
+                Chance: 500
+              - Item: Wolf_Orb_Agi_3
+                Chance: 500
+              - Item: Wolf_Orb_Int_3
+                Chance: 500
+              - Item: Wolf_Orb_Vit_3
+                Chance: 500
+              - Item: Wolf_Orb_luk_3
+                Chance: 500
+      - Slot: 2
+        Price: 1500000
+        Materials:
+          - Material: Nyangvine_Fruit
+            Amount: 10
+        Enchants:
+          - Enchantgrade: 0
+            Items:
+              - Item: Wolf_Orb_Speed_1
+                Chance: 20000
+              - Item: Wolf_Orb_Caster_1
+                Chance: 20000
+              - Item: Wolf_Orb_Critical_1
+                Chance: 20000
+              - Item: Wolf_Orb_Guide_1
+                Chance: 20000
+              - Item: Wolf_Orb_Speed_2
+                Chance: 4500
+              - Item: Wolf_Orb_Caster_2
+                Chance: 4500
+              - Item: Wolf_Orb_Critical_2
+                Chance: 4500
+              - Item: Wolf_Orb_Guide_2
+                Chance: 4500
+              - Item: Wolf_Orb_Speed_3
+                Chance: 500
+              - Item: Wolf_Orb_Caster_3
+                Chance: 500
+              - Item: Wolf_Orb_Critical_3
+                Chance: 500
+              - Item: Wolf_Orb_Guide_3
+                Chance: 500
+      - Slot: 1
+        Price: 2000000
+        Materials:
+          - Material: Nyangvine_Fruit
+            Amount: 20
+        Enchants:
+          - Enchantgrade: 0
+            Items:
+              - Item: Wolf_Orb_Above_1
+                Chance: 28033
+              - Item: Wolf_Orb_Above_2
+                Chance: 3000
+              - Item: Wolf_Orb_Above_3
+                Chance: 300
+              - Item: Wolf_Orb_P_Full_1
+                Chance: 28034
+              - Item: Wolf_Orb_P_Full_2
+                Chance: 3000
+              - Item: Wolf_Orb_P_Full_3
+                Chance: 300
+              - Item: Wolf_Orb_M_Counter_1
+                Chance: 28033
+              - Item: Wolf_Orb_M_Counter_2
+                Chance: 3000
+              - Item: Wolf_Orb_M_Counter_3
+                Chance: 300
+              - Item: Shark_St_Str
+                Chance: 1000
+              - Item: Shark_St_Agi
+                Chance: 1000
+              - Item: Shark_St_Vit
+                Chance: 1000
+              - Item: Shark_St_Int
+                Chance: 1000
+              - Item: Shark_St_Dex
+                Chance: 1000
+              - Item: Shark_St_Luk
+                Chance: 1000
+#        Upgrades:
+#          - Enchant: Spring_Energy_1
+#            Upgrade: Spring_Energy_2
+#            Price: 10000
+#            Materials:
+#              - Material: Small_Spray_Of_Flowers
+#                Amount: 10
+        PerfectEnchants:
+          - Item: Wolf_Orb_Above_3
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250
+          - Item: Wolf_Orb_P_Full_3
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250
+          - Item: Wolf_Orb_M_Counter_3
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250
+          - Item: Shark_St_Str
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250
+          - Item: Shark_St_Agi
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250
+          - Item: Shark_St_Vit
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250
+          - Item: Shark_St_Int
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250
+          - Item: Shark_St_Dex
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250
+          - Item: Shark_St_Luk
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250

@@ -687,6 +687,10 @@ public:
 		int capdamage_nm_chance;
 		int capdamage_sk_chance;
 		int supplementary;
+		short mhp_drain_rate; 
+		short mhp_drain_per; 
+		short msp_drain_rate; 
+		short msp_drain_per; 
 	} bonus;
 	// zeroed vars end here.
 

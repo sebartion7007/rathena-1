@@ -4587,6 +4587,22 @@ void pc_bonus2(map_session_data *sd,int type,int type2,int val)
 			sd->left_weapon.sp_drain_rate.per += val;
 		}
 		break;
+		
+		// Magic Drain
+	case SP_MAGIC_HP_DRAIN_RATE: // bonus2 bMHPDrainRate,x,n;
+		if(sd->state.lr_flag != 2) {
+			sd->bonus.mhp_drain_rate += type2;
+			sd->bonus.mhp_drain_per += val;
+		}
+		break;
+	case SP_MAGIC_SP_DRAIN_RATE: // bonus2 bMSPDrainRate,x,n;
+		if(sd->state.lr_flag != 2) {
+			sd->bonus.msp_drain_rate += type2;
+			sd->bonus.msp_drain_per += val;
+		}
+		break;
+		//End Magic Drain
+		
 	case SP_SP_VANISH_RATE: // bonus2 bSPVanishRate,x,n;
 		if(sd->state.lr_flag != 2) {
 			pc_bonus_addvanish(sd->sp_vanish, type2, val, BF_NORMAL);

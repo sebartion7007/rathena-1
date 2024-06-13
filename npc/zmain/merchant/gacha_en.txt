@@ -1,0 +1,15 @@
+falserealm,142,172,6	script	Professional#gacha_en	4_EP18_BAGOT,{
+	.@menu$ = "";
+	mes "List Item:";
+	for(.@i=1;.@i < getarraysize(.itemlist);.@i+=2) {
+		mes  "<ITEM>"+getitemname(.itemlist[.@i])+"<INFO>"+.itemlist[.@i]+"</INFO></ITEM>";
+		.@menu$ = .@menu$ + " > "+getitemname(.itemlist[.@i])+":";
+	}
+	.@select = select(.@menu$)*2;
+	item_enchant(.itemlist[.@select]);
+	close;
+Oninit:
+	setarray .itemlist[1],176003,301;
+	setunittitle(getnpcid(0), "<Enchant Gacha Equipment>");
+	end;
+}
