@@ -136,35 +136,35 @@ Body:
       - Option: VAR_ATKPERCENT
         MinValue: 1
         MaxValue: 5
-        Chance: 1000
+        Chance: 5000
       - Option: DEC_SP_CONSUMPTION
         MinValue: 1
         MaxValue: 5
-        Chance: 1000
+        Chance: 5000
       - Option: DEC_SPELL_DELAY_TIME
         MinValue: 1
         MaxValue: 5
-        Chance: 1000
+        Chance: 5000
       - Option: DEC_SPELL_CAST_TIME
         MinValue: 1
         MaxValue: 5
-        Chance: 1000
+        Chance: 5000
       - Option: DAMAGE_CRI_TARGET
         MinValue: 1
         MaxValue: 5
-        Chance: 1000
+        Chance: 5000
       - Option: RANGE_ATTACK_DAMAGE_TARGET
         MinValue: 1
         MaxValue: 5
-        Chance: 1000
+        Chance: 5000
       - Option: MELEE_ATTACK_DAMAGE_TARGET
         MinValue: 1
         MaxValue: 5
-        Chance: 1000
+        Chance: 5000
       - Option: ADDEXPPERCENT_KILLRACE_ALL
         MinValue: 1
         MaxValue: 10
-        Chance: 1000
+        Chance: 5000
   - Id: 1602
     Group: instance_drop
     Slots:
@@ -246,32 +246,32 @@ Body:
           - Option: VAR_ATKPERCENT
             MinValue: 1
             MaxValue: 5
-            Chance: 1000
+            Chance: 5000
           - Option: DEC_SP_CONSUMPTION
             MinValue: 1
             MaxValue: 5
-            Chance: 1000
+            Chance: 5000
           - Option: DEC_SPELL_DELAY_TIME
             MinValue: 1
             MaxValue: 5
-            Chance: 1000
+            Chance: 5000
           - Option: DEC_SPELL_CAST_TIME
             MinValue: 1
             MaxValue: 5
-            Chance: 1000
+            Chance: 5000
           - Option: DAMAGE_CRI_TARGET
             MinValue: 1
             MaxValue: 5
-            Chance: 1000
+            Chance: 5000
           - Option: RANGE_ATTACK_DAMAGE_TARGET
             MinValue: 1
             MaxValue: 5
-            Chance: 1000
+            Chance: 5000
           - Option: MELEE_ATTACK_DAMAGE_TARGET
             MinValue: 1
             MaxValue: 5
-            Chance: 1000
+            Chance: 5000
           - Option: ADDEXPPERCENT_KILLRACE_ALL
             MinValue: 1
             MaxValue: 10
-            Chance: 1000
+            Chance: 5000

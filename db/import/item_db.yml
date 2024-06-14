@@ -209,15 +209,6 @@ Body:
     Flags:
       BuyingStore: true
       DropEffect: CLIENT
-    Trade:
-      Override: 100
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       .@r = getrefine();
       bonus2 bSkillAtk,"KN_PIERCE",15 + (2 * .@r);
