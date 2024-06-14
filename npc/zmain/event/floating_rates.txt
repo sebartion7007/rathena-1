@@ -17,21 +17,21 @@
 
 -	script	FloatingRates	-1,{
 OnInit:
-	bindatcmd "@koonexp",strnpcinfo(0)+"::ForceStartEvent",99,99;
+	bindatcmd "@koonexp",strnpcinfo(0)+"::OnForceStartEvent",99,99;
 	end;
 //add any other HOURS
+OnHour12:
 OnHour23:
 //------------------- Weekend
-	if(gettime(DT_DAYOFWEEK) == FRIDAY) {
-ForceStartEvent:
+	if( (gettime(DT_DAYOFWEEK) == FRIDAY) && (gettime(DT_HOUR)==23) ) {
+OnForceStartEvent:
 		set $@brate,642;
 		set $@jrate,189;
 		set $@drate,200;
 		set $@weekend,1;
 	}
 //------------------- Normal
-OnHour12:
-	else if (gettime(DT_DAYOFWEEK) == MONDAY) {
+	else if ( (gettime(DT_DAYOFWEEK) == MONDAY) && (gettime(DT_HOUR)==12)) {
 		set $@brate,321;
 		set $@jrate,99;
 		set $@drate,100;
