@@ -1,4 +1,4 @@
-function	script	F_gacha_box	{
+function	script	F_allow_box	{
 	switch(getarg(0)) {
 	case 1:	// Boss Box
 		//.@boxid = 34001;
