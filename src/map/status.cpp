@@ -7632,7 +7632,8 @@ static signed short status_calc_flee(struct block_list *bl, status_change *sc, i
 	if(sc->getSCE(SC_INCFLEERATE))
 		flee += flee * sc->getSCE(SC_INCFLEERATE)->val1/100;
 	if (sc->getSCE(SC_AGIUP))
-		flee += flee * sc->getSCE(SC_AGIUP)->val2 / 100;
+		//flee += flee * sc->getSCE(SC_AGIUP)->val2 / 100;
+		flee += 0;
 	if(sc->getSCE(SC_SPIDERWEB) || sc->getSCE(SC_WIDEWEB))
 		flee -= flee * 50/100;
 	if(sc->getSCE(SC_BERSERK))

@@ -96,6 +96,61 @@ Body:
     Weight: 10
     Flags:
       BuyingStore: true
+  - Id: 33001
+    AegisName: CASH_SHARKY_CC_F_R
+    Name: Cash Coin
+    Type: Usable
+    Buy: 10
+    Flags:
+      NoConsume: true
+    Trade:
+      Override: 100
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@num = countitem(34001);
+      #KAFRAPOINTS += (10 * .@num);
+      delitem 34001,countitem(34001);
+      dispbottom "Get "+(10 * .@num)+" Points Now Have: "+#KAFRAPOINTS+" Freecash";
+  - Id: 33002
+    AegisName: YEE_Bubble_Gum
+    Name: YEE Bubble Gum
+    Type: Usable
+    Buy: 2
+    Weight: 10
+    Trade:
+      Override: 100
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      sc_start SC_ITEMBOOST,120000,888;
+  - Id: 33003
+    AegisName: HE_Bubble_Gum_NT
+    Name: HE Bubble Gum
+    Type: Usable
+    Buy: 2
+    Weight: 10
+    Trade:
+      Override: 100
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      sc_start SC_ITEMBOOST,900000,200;
   - Id: 34001
     AegisName: CASH_SHARKY_CC_F
     Name: Cash Coin
@@ -775,6 +830,40 @@ Body:
     EquipLevelMin: 20
     Script: |
       bonus bMatkRate,7;
+  - Id: 180001
+    AegisName: AllRounder_Rideword_Hat
+    Name: AllRounder Rideword Hat
+    Type: Armor
+    View: 262
+    Buy: 20
+    Weight: 500
+    Defense: 10
+    Slots: 1
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 40
+    Refineable: true
+    Script: |
+      bonus2 bMHPDrainRate,120,8;
+      bonus2 bMSPDrainRate,30,4;
+      bonus2 bHPDrainRate,120,8;
+      bonus2 bSPDrainRate,30,4;
+  - Id: 180002
+    AegisName: Glastheim_Parrot
+    Name: Glastheim Parrot
+    Type: Armor
+    View: 1116
+    Weight: 100
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 80
+    Script: |
+      bonus bMatkRate,BaseLevel/10;
+      bonus bVariableCastrate,-readparam(bInt)/5;
+      bonus bAtkRate,BaseLevel/10;
+      bonus bDelayrate,-readparam(bDex)/5;
   - Id: 317001
     AegisName: Shark_St_Str
     Name: Sharky Stonk (Str)

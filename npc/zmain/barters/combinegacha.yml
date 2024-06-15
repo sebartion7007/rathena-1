@@ -1,0 +1,38 @@
+Header:
+  Type: BARTER_DB
+  Version: 1
+
+Body:
+  - Name: Jormungandr Remnants
+    Map: falserealm
+    X: 128
+    Y: 137
+    Direction: East
+    Sprite: 4_EP20_NYAR
+    Items:
+      - Index: 0
+        Item: AllRounder_Rideword_Hat
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Mystic_Rideword_Hat
+            Amount: 1
+          - Index: 1
+            Item: Rideword_Hat
+            Amount: 1
+          - Index: 2
+            Item: Patriotism_Marks
+            Amount: 3
+      - Index: 1
+        Item: Glastheim_Parrot
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Chatty_Parrot
+            Amount: 1
+          - Index: 1
+            Item: Glastheim_Onlooker
+            Amount: 1
+          - Index: 2
+            Item: Patriotism_Marks
+            Amount: 3

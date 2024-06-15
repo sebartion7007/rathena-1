@@ -1,0 +1,31 @@
+
+//=============================================================
+-	script	#Secret_ItemCmd3	-1,{
+
+    OnInit:
+        bindatcmd "itemmap",strnpcinfo(3)+"::OnItemMap",99,99;
+    end;
+
+    OnItemMap:
+		if(.@atcmd_numparameters != 3 ) {
+			dispbottom "วิธีใช้ @itemmap เลขของ จำนวนของ จำนวนเงิน";
+			dispbottom "ของจะแจกผ่านทางจดหมายครับ";
+			end;
+		}
+		.@itemreward = .@atcmd_parameters$[0];
+		.@itemamount = .@atcmd_parameters$[1];
+		.@zeny = .@atcmd_parameters$[2];
+        message strcharinfo(0),"ท่านได้มอบ "+getitemname(.@itemreward)+" ให้แก่ผู้เล่นจำนวน "+.@itemamount+" ea พร้อมเงิน "+callfunc("F_InsertComma",.@zeny)+" zeny";
+        if(select("- ^FF0000No^000000 :- ^00FF00Yes^000000") - 2) end;
+        addrid(1);
+		.@charid = getcharid(0);
+		.@sender$ = "GM Meow Meow";
+		.@title$ = "Event Map Meow";
+		.@body$ = "Event Times Reward from Meow.";
+		mail .@charid, .@sender$, .@title$, .@body$, .@zeny, .@itemreward, .@itemamount;
+		 message strcharinfo(0),"ท่านได้รับของขวัญจากท่านผู้กรุณาแล้ว เมี๊ยว.";
+        end;
+
+    close;
+}
+//=============================================================
