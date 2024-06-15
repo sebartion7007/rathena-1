@@ -13,11 +13,14 @@
 			end;
 		}
 		for(.@i=1;.@i < .@atcmd_numparameters; .@i+= 2) {
-		.@itemreward[.@i/2] = .@atcmd_parameters$[.@i];
-		.@itemamount[.@i/2] = .@atcmd_parameters$[.@i+1];
+			.@itemreward[.@i/2] = .@atcmd_parameters$[.@i];
+			.@itemamount[.@i/2] = .@atcmd_parameters$[.@i+1];
 		}
 		.@zeny = .@atcmd_parameters$[0];
-        message strcharinfo(0),"ท่านได้มอบ "+getitemname(.@itemreward)+" ให้แก่ผู้เล่นจำนวน "+.@itemamount+" ea พร้อมเงิน "+callfunc("F_InsertComma",.@zeny)+" zeny";
+			mes "เงิน "+callfunc("F_InsertComma",.@zeny)";
+		for(.@i=1;.@i < .@atcmd_numparameters; .@i+= 2) {
+			mes ""+getitemname(.@itemreward[.@i])+" จำนวน "+.@itemamount[.@i+1]+" ea";
+			mes "ยืนยันไหม คิดดีๆ...";
         if(select("- ^FF0000No^000000 :- ^00FF00Yes^000000") - 2) end;
         addrid(1);
 		.@charid = getcharid(0);
