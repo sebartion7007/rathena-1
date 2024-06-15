@@ -7,14 +7,16 @@
     end;
 
     OnItemMap:
-		if(.@atcmd_numparameters != 3 ) {
-			dispbottom "วิธีใช้ @itemmap เลขของ จำนวนของ จำนวนเงิน";
+		if( (.@atcmd_numparameters < 3) || (.@atcmd_numparameters%3 || .@atcmd_numparameters > 11) ) {
+			dispbottom "วิธีใช้ @itemmap จำนวนเงิน เลขของ จำนวนของ {เลขของ จำนวนของ ...}";
 			dispbottom "ของจะแจกผ่านทางจดหมายครับ";
 			end;
 		}
-		.@itemreward = .@atcmd_parameters$[0];
-		.@itemamount = .@atcmd_parameters$[1];
-		.@zeny = .@atcmd_parameters$[2];
+		for(.@i=1;.@i < .@atcmd_numparameters; .@i+= 2) {
+		.@itemreward[.@i/2] = .@atcmd_parameters$[.@i];
+		.@itemamount[.@i/2] = .@atcmd_parameters$[.@i+1];
+		}
+		.@zeny = .@atcmd_parameters$[0];
         message strcharinfo(0),"ท่านได้มอบ "+getitemname(.@itemreward)+" ให้แก่ผู้เล่นจำนวน "+.@itemamount+" ea พร้อมเงิน "+callfunc("F_InsertComma",.@zeny)+" zeny";
         if(select("- ^FF0000No^000000 :- ^00FF00Yes^000000") - 2) end;
         addrid(1);
