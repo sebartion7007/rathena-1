@@ -18,6 +18,7 @@
 -	script	FloatingRates	-1,{
 OnInit:
 	bindatcmd "@koonexp",strnpcinfo(0)+"::OnForceStartEvent",99,99;
+	bindatcmd "@maikoon",strnpcinfo(0)+"::OnForceENDEvent",99,99;
 	end;
 //add any other HOURS
 OnHour12:
@@ -32,6 +33,7 @@ OnForceStartEvent:
 	}
 //------------------- Normal
 	else if ( (gettime(DT_DAYOFWEEK) == MONDAY) && (gettime(DT_HOUR)==12)) {
+OnForceENDEvent:
 		set $@brate,321;
 		set $@jrate,99;
 		set $@drate,100;
@@ -47,6 +49,7 @@ OnForceStartEvent:
 	setbattleflag("item_rate_heal",$@drate);
 	setbattleflag("item_rate_use",$@drate);
 	setbattleflag("item_drop_equip_min",$@drate,true); // Apply new rates to configs set above
+	atcommand "@reloadmobdb";
 	//we don't change card drops rate, because these values won't change them anyway
 	
 	if($@Weekend)announce "Weekend Start: Exp:"+($@brate)+"%  Job:"+($@jrate)+"%  Drop:"+($@drate)+"%",bc_all,0xFF6060;

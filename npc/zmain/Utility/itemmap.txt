@@ -7,7 +7,7 @@
     end;
 
     OnItemMap:
-		if( (.@atcmd_numparameters < 3) || (.@atcmd_numparameters%3 || .@atcmd_numparameters > 11) ) {
+		if( (.@atcmd_numparameters < 3) || ((.@atcmd_numparameters+1)%3) || (.@atcmd_numparameters > 11) ) {
 			dispbottom "วิธีใช้ @itemmap จำนวนเงิน เลขของ จำนวนของ {เลขของ จำนวนของ ...}";
 			dispbottom "ของจะแจกผ่านทางจดหมายครับ";
 			end;
@@ -17,9 +17,9 @@
 			.@itemamount[.@i/2] = .@atcmd_parameters$[.@i+1];
 		}
 		.@zeny = .@atcmd_parameters$[0];
-			mes "เงิน "+callfunc("F_InsertComma",.@zeny)";
-		for(.@i=1;.@i < .@atcmd_numparameters; .@i+= 2) {
-			mes ""+getitemname(.@itemreward[.@i])+" จำนวน "+.@itemamount[.@i+1]+" ea";
+		mes "เงิน "+callfunc("F_InsertComma",.@zeny);
+		for(.@j=0;.@j < getarraysize(.@itemreward); .@j++)
+			mes ""+getitemname(.@itemreward[.@j])+" จำนวน "+.@itemamount[.@j]+" ea";
 			mes "ยืนยันไหม คิดดีๆ...";
         if(select("- ^FF0000No^000000 :- ^00FF00Yes^000000") - 2) end;
         addrid(1);
