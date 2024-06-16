@@ -7234,6 +7234,7 @@ Body:
     TargetType: Self
     DamageFlags:
       IgnoreDefense: true
+      SimpleDefense: true
     Range: 9
     Hit: Single
     HitCount: 1
@@ -7663,6 +7664,7 @@ Body:
     TargetType: Attack
     DamageFlags:
       IgnoreFlee: true
+      SimpleDefense: true
     Flags:
       TargetTrap: true
     Range: -2
@@ -9451,6 +9453,7 @@ Body:
     DamageFlags:
       IgnoreAtkCard: true
       IgnoreFlee: true
+      SimpleDefense: true
     Flags:
       IsNpc: true
       TargetSelf: true
@@ -19109,6 +19112,7 @@ Body:
     DamageFlags:
       Splash: true
       IgnoreFlee: true
+      SimpleDefense: true
     Flags:
       TargetTrap: true
     Range: 9
@@ -22654,6 +22658,7 @@ Body:
     DamageFlags:
       Splash: true
       IgnoreFlee: true
+      SimpleDefense: true
     Flags:
       AllowOnMado: true
     Range: 9
@@ -28788,6 +28793,7 @@ Body:
     DamageFlags:
       Splash: true
       IgnoreFlee: true
+      SimpleDefense: true
     Range:
       - Level: 1
         Size: 7
@@ -33144,6 +33150,7 @@ Body:
     DamageFlags:
       Splash: true
       IgnoreFlee: true
+      SimpleDefense: true
     Flags:
       TargetTrap: true
     Range: 9

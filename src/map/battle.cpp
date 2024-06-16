@@ -3471,8 +3471,13 @@ static int battle_calc_equip_attack(struct block_list *src, int skill_id)
 		struct status_data *status = status_get_status_data(src);
 		map_session_data *sd = BL_CAST(BL_PC, src);
 
-		if (sd) // add arrow atk if using an applicable skill
-			eatk += (is_skill_using_arrow(src, skill_id) ? sd->bonus.arrow_atk : 0);
+		// Add arrow atk if using an applicable skill
+		if (sd != nullptr && is_skill_using_arrow(src, skill_id)) {
+			int16 ammo_idx = sd->equip_index[EQI_AMMO];
+			// Attack of cannon balls is not added to equip attack, it needs to be added by the skills that use them
+			if (ammo_idx >= 0 && sd->inventory_data[ammo_idx] != nullptr && sd->inventory_data[ammo_idx]->subtype != AMMO_CANNONBALL)
+				eatk += sd->bonus.arrow_atk;
+		}
 
 		return eatk + status->eatk;
 	}
@@ -3954,6 +3959,16 @@ static void battle_calc_attack_masteries(struct Damage* wd, struct block_list *s
 #endif
 				}
 				break;
+#ifdef RENEWAL
+			case GN_CARTCANNON:
+			case NC_ARMSCANNON:
+				// Arrow attack of these skills is not influenced by P.ATK so we add it as mastery attack
+				if (sd != nullptr) {
+					struct status_data* tstatus = status_get_status_data(target);
+					ATK_ADD(wd->masteryAtk, wd->masteryAtk2, battle_attr_fix(src, target, sd->bonus.arrow_atk, sd->bonus.arrow_ele, tstatus->def_ele, tstatus->ele_lv));
+				}
+				break;
+#endif
 		}
 
 		if (sc) { // Status change considered as masteries
@@ -6717,42 +6732,31 @@ static void battle_calc_defense_reduction(struct Damage* wd, struct block_list *
 	}
 
 #ifdef RENEWAL
-	switch(skill_id) {
-		case RK_DRAGONBREATH:
-		case RK_DRAGONBREATH_WATER:
-		case NC_ARMSCANNON:
-		case GN_CARTCANNON:
-		case MO_EXTREMITYFIST:
-			if (attack_ignores_def(wd, src, target, skill_id, skill_lv, EQI_HAND_R) || attack_ignores_def(wd, src, target, skill_id, skill_lv, EQI_HAND_L))
-				return;
-			if (is_attack_piercing(wd, src, target, skill_id, skill_lv, EQI_HAND_R) || is_attack_piercing(wd, src, target, skill_id, skill_lv, EQI_HAND_L))
-				return;
-			[[fallthrough]];
-		case CR_GRANDCROSS: // Grand Cross is marked as "IgnoreDefense" in renewal as it's applied at the end after already combining ATK and MATK
-		case NPC_GRANDDARKNESS:
-			// Defense reduction by flat value.
-			// This completely bypasses the normal RE DEF Reduction formula.
-			wd->damage -= (def1 + vit_def);
-			if (is_attack_left_handed(src, skill_id))
-				wd->damage2 -= (def1 + vit_def);
-			break;
+	std::bitset<NK_MAX> nk = battle_skill_get_damage_properties(skill_id, wd->miscflag);
+
+	if (nk[NK_SIMPLEDEFENSE]) {
+		// Defense reduction by flat value.
+		// This completely bypasses the normal RE DEF Reduction formula.
+		wd->damage -= (def1 + vit_def);
+		if (is_attack_left_handed(src, skill_id))
+			wd->damage2 -= (def1 + vit_def);
+	}
+	else {
 		/**
 		 * RE DEF Reduction
 		 * Damage = Attack * (4000+eDEF)/(4000+eDEF*10) - sDEF
 		 * Pierce defence gains 1 atk per def/2
 		 */
-		default:
-			if( def1 == -400 ) /* -400 creates a division by 0 and subsequently crashes */
-				def1 = -399;
-			ATK_ADD2(wd->damage, wd->damage2,
-				is_attack_piercing(wd, src, target, skill_id, skill_lv, EQI_HAND_R) ? (def1*battle_calc_attack_skill_ratio(wd, src, target, skill_id, skill_lv))/200 : 0,
-				is_attack_piercing(wd, src, target, skill_id, skill_lv, EQI_HAND_L) ? (def1*battle_calc_attack_skill_ratio(wd, src, target, skill_id, skill_lv))/200 : 0
-			);
-			if( !attack_ignores_def(wd, src, target, skill_id, skill_lv, EQI_HAND_R) && !is_attack_piercing(wd, src, target, skill_id, skill_lv, EQI_HAND_R) )
-				wd->damage = wd->damage * (4000+def1) / (4000+10*def1) - vit_def;
-			if( is_attack_left_handed(src, skill_id) && !attack_ignores_def(wd, src, target, skill_id, skill_lv, EQI_HAND_L) && !is_attack_piercing(wd, src, target, skill_id, skill_lv, EQI_HAND_L) )
-				wd->damage2 = wd->damage2 * (4000+def1) / (4000+10*def1) - vit_def;
-			break;
+		if (def1 == -400) /* -400 creates a division by 0 and subsequently crashes */
+			def1 = -399;
+		ATK_ADD2(wd->damage, wd->damage2,
+			is_attack_piercing(wd, src, target, skill_id, skill_lv, EQI_HAND_R) ? (def1 * battle_calc_attack_skill_ratio(wd, src, target, skill_id, skill_lv)) / 200 : 0,
+			is_attack_piercing(wd, src, target, skill_id, skill_lv, EQI_HAND_L) ? (def1 * battle_calc_attack_skill_ratio(wd, src, target, skill_id, skill_lv)) / 200 : 0
+		);
+		if (!attack_ignores_def(wd, src, target, skill_id, skill_lv, EQI_HAND_R) && !is_attack_piercing(wd, src, target, skill_id, skill_lv, EQI_HAND_R))
+			wd->damage = wd->damage * (4000 + def1) / (4000 + 10 * def1) - vit_def;
+		if (is_attack_left_handed(src, skill_id) && !attack_ignores_def(wd, src, target, skill_id, skill_lv, EQI_HAND_L) && !is_attack_piercing(wd, src, target, skill_id, skill_lv, EQI_HAND_L))
+			wd->damage2 = wd->damage2 * (4000 + def1) / (4000 + 10 * def1) - vit_def;
 	}
 #else
 		if (def1 > 100) def1 = 100;
@@ -7529,7 +7533,7 @@ static struct Damage battle_calc_weapon_attack(struct block_list *src, struct bl
 			if( is_attack_left_handed( src, skill_id ) ){
 				wd.damage2 = wd.statusAtk2 + wd.weaponAtk2 + wd.equipAtk2 + wd.percentAtk2;
 			}
-			// Apply PATK mod
+			// Apply P.ATK mod
 			// But for Dragonbreaths it only applies if Dragonic Aura is skilled
 			if( ( skill_id != RK_DRAGONBREATH && skill_id != RK_DRAGONBREATH_WATER ) || pc_checkskill( sd, DK_DRAGONIC_AURA ) > 0 ){
 				wd.damage = (int64)floor( (float)( wd.damage * ( 100 + sstatus->patk ) / 100 ) );
@@ -7579,8 +7583,9 @@ static struct Damage battle_calc_weapon_attack(struct block_list *src, struct bl
 
 		// Res reduces physical damage by a percentage and
 		// is calculated before DEF and other reductions.
-		// This should be the official formula. [Rytech]
-		if ((wd.damage + wd.damage2) && tstatus->res > 0 && skill_id != MO_EXTREMITYFIST) {
+		// All skills that use the simple defense formula (damage substracted by DEF+DEF2) ignore Res
+		// TODO: Res formula probably should be: (2000+x)/(2000+5x), but with the reduction rounded down
+		if ((wd.damage + wd.damage2) && tstatus->res > 0 && !nk[NK_SIMPLEDEFENSE]) {
 			short res = tstatus->res;
 			short ignore_res = 0;// Value used as a percentage.
 
@@ -8836,7 +8841,7 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 						skillratio += 25;
 				}
 #ifdef RENEWAL
-				// SMATK needs to be applied before the skill ratio to prevent rounding issues
+				// S.MATK needs to be applied before the skill ratio to prevent rounding issues
 				if (sd && sstatus->smatk > 0)
 					ad.damage += ad.damage * sstatus->smatk / 100;
 #endif
@@ -8872,7 +8877,7 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 #ifdef RENEWAL
 		// MRes reduces magical damage by a percentage and
 		// is calculated before MDEF and other reductions.
-		// This should be the official formula. [Rytech]
+		// TODO: MRes formula probably should be: (2000+x)/(2000+5x), but with the reduction rounded down
 		if (ad.damage && tstatus->mres > 0) {
 			short mres = tstatus->mres;
 			short ignore_mres = 0;// Value used as percentage.
@@ -11642,6 +11647,10 @@ static const struct _battle_data {
 	{ "pet_legacy_formula",                 &battle_config.pet_legacy_formula,              0,      0,      1,              },
 	{ "pet_distance_check",                 &battle_config.pet_distance_check,              5,      0,      50,             },
 	{ "pet_hide_check",                     &battle_config.pet_hide_check,                  1,      0,      1,              },
+	{ "instance_block_leave",               &battle_config.instance_block_leave,            1,      0,      1,              },
+	{ "instance_block_leaderchange",        &battle_config.instance_block_leaderchange,     1,      0,      1,              },
+	{ "instance_block_invite",              &battle_config.instance_block_invite,           1,      0,      1,              },
+	{ "instance_block_expulsion",           &battle_config.instance_block_expulsion,        1,      0,      1,              },
 
 	// 4th Job Stuff
 	{ "use_traitpoint_table",               &battle_config.use_traitpoint_table,            1,      0,      1,              },
