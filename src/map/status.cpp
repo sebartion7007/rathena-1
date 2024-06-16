@@ -4411,9 +4411,9 @@ int status_calc_pc_sub(map_session_data* sd, uint8 opt)
 	}
 	if(sd->status.weapon >= W_REVOLVER && sd->status.weapon <= W_GRENADE) {
 		if((skill=pc_checkskill(sd,GS_SINGLEACTION))>0)
-			base_status->hit += 2*skill;
+			base_status->hit += 20*skill;
 		if((skill=pc_checkskill(sd,GS_SNAKEEYE))>0) {
-			base_status->hit += skill;
+			base_status->hit += 20*skill;
 			base_status->rhw.range += skill;
 		}
 	}
@@ -11525,8 +11525,8 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 		// gs_something1 [Vicious]
 		case SC_GATLINGFEVER:
 			val2 = 20*val1; // Aspd increase
-			val3 = 300*val1; // Atk increase
-			val4 = 5*val1; // Flee decrease
+			val3 = 3000*val1; // Atk increase
+			val4 = 50*val1; // Flee decrease
 			break;
 
 		case SC_FLING:

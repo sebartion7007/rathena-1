@@ -2036,12 +2036,13 @@ int64 battle_calc_damage(struct block_list *src,struct block_list *bl,struct Dam
 		}
 		switch (skill_id) {
 			case MO_EXTREMITYFIST:
-				maxcap *= 3;
+			case GS_TRACKING:
+			case NJ_ISSEN:
+				maxcap = INT_MAX;
 				break;
 			default:
 				break;
 		}
-		maxcap = cap_value(maxcap, INT_MIN, INT_MAX);
 		
 		damage = cap_value(damage, INT_MIN, maxcap);
 		
@@ -5067,7 +5068,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 				skillratio += 400;
 			break;
 		case GS_TRACKING:
-			skillratio += 100 * pow(skill_lv,2);
+			skillratio += 100 * pow(skill_lv,3);
 			break;
 		case GS_PIERCINGSHOT:
 #ifdef RENEWAL
@@ -5080,29 +5081,29 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 #endif
 			break;
 		case GS_RAPIDSHOWER:
-			skillratio += 400 + 50 * skill_lv;
+			skillratio += -100 + 1000 * skill_lv;
 			break;
 		case GS_DESPERADO:
-			skillratio += 50 * (skill_lv - 1);
+			skillratio += 900 * skill_lv;
 			if (sc && sc->getSCE(SC_FALLEN_ANGEL))
 				skillratio *= 2;
 			break;
 		case GS_DUST:
-			skillratio += 200 * skill_lv;
+			skillratio += 900 * skill_lv;
 			break;
 		case GS_FULLBUSTER:
-			skillratio += 400 * skill_lv;
+			skillratio += 1500 * skill_lv;
 			break;
 		case GS_SPREADATTACK:
 #ifdef RENEWAL
-			skillratio += 150 * skill_lv;
+			skillratio += 1100 * skill_lv;
 #else
 			skillratio += 20 * (skill_lv - 1);
 #endif
 			break;
 #ifdef RENEWAL
 		case GS_GROUNDDRIFT:
-			skillratio += 100 + 20 * skill_lv;
+			skillratio += 100 + 5000 * skill_lv;
 			break;
 #endif
 		case NJ_HUUMA:

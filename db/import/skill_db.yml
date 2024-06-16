@@ -14933,7 +14933,7 @@ Body:
     HitCount: 1
     Element: Weapon
     CastCancel: true
-    AfterCastActDelay: 1500
+    AfterCastActDelay: 2000
     CastTimeFlags:
       IgnoreDex: true
       IgnoreStatus: true
