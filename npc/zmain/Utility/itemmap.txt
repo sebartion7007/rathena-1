@@ -7,9 +7,12 @@
     end;
 
     OnItemMap:
-		if( (.@atcmd_numparameters < 3) || ((.@atcmd_numparameters+1)%3) || (.@atcmd_numparameters > 11) ) {
+		if( (.@atcmd_numparameters < 3) || ((.@atcmd_numparameters-1)%2) || (.@atcmd_numparameters > 11) ) {
 			dispbottom "วิธีใช้ @itemmap จำนวนเงิน เลขของ จำนวนของ {เลขของ จำนวนของ ...}";
 			dispbottom "ของจะแจกผ่านทางจดหมายครับ";
+			dispbottom ""+.@atcmd_numparameters;
+			for(.@a=0;.@a<.@atcmd_numparameters;.@a++)
+				dispbottom .@a+" : "+.@atcmd_parameters$[.@a];
 			end;
 		}
 		for(.@i=1;.@i < .@atcmd_numparameters; .@i+= 2) {
