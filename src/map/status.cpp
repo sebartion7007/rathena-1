@@ -5297,7 +5297,7 @@ void status_calc_regen(struct block_list *bl, struct status_data *status, struct
 		if( (skill=pc_checkskill(sd,MG_SRECOVERY)) > 0 )
 			val += skill*20 + skill*status->max_sp/500;
 		if( (skill=pc_checkskill(sd,NJ_NINPOU)) > 0 )
-			val += skill*3 + skill*status->max_sp/500;
+			val += skill*20 + skill*status->max_sp/500;
 		if( (skill=pc_checkskill(sd,WM_LESSON)) > 0 )
 			val += 3 + 3 * skill;
 
@@ -6157,6 +6157,10 @@ void status_calc_bl_main(struct block_list *bl, std::bitset<SCB_MAX> flag)
 				(sd && pc_checkskill(sd, HT_FALCON) >= 5)
 			)
 				max_aspd -= 10;
+			if ( sd &&
+				(sc && sc->getSCE(SC_ADRENALINE)) 
+			)
+				max_aspd -= 10;
 			if (sd && sd->bonus.aspd_add) {
 				max_aspd += sd->bonus.aspd_add;
 				max_aspd = status_calc_fix_aspd(bl, sc, max_aspd);
@@ -6531,7 +6535,7 @@ static unsigned short status_calc_str(struct block_list *bl, status_change *sc, 
 	if(sc->getSCE(SC_TRUESIGHT))
 		str += 5;
 	if(sc->getSCE(SC_SPURT))
-		str += 10;
+		str += 30;
 	if(sc->getSCE(SC_NEN))
 		str += sc->getSCE(SC_NEN)->val1;
 	if(sc->getSCE(SC_BLESSING)) {
@@ -7490,7 +7494,7 @@ static signed short status_calc_hit(struct block_list *bl, status_change *sc, in
 {
 	if(!sc || !sc->count)
 		return cap_value(hit,1,SHRT_MAX);
-
+	
 	if(sc->getSCE(SC_INCHIT))
 		hit += sc->getSCE(SC_INCHIT)->val1;
 	if(sc->getSCE(SC_HITFOOD))
@@ -7555,6 +7559,10 @@ static signed short status_calc_hit(struct block_list *bl, status_change *sc, in
 		hit += 5;
 	if (sc->getSCE(SC_INTENSIVE_AIM))
 		hit += 250;
+	if (sc->getSCE(SC_SPURT))
+		hit += 200;
+	if(sc->getSCE(SC_GATLINGFEVER))
+		hit += sc->getSCE(SC_GATLINGFEVER)->val4*2;
 
 	return (short)cap_value(hit,1,SHRT_MAX);
 }
@@ -11517,7 +11525,7 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 		// gs_something1 [Vicious]
 		case SC_GATLINGFEVER:
 			val2 = 20*val1; // Aspd increase
-			val3 = 20+10*val1; // Atk increase
+			val3 = 300*val1; // Atk increase
 			val4 = 5*val1; // Flee decrease
 			break;
 
@@ -13157,6 +13165,7 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 			}
 			break;
 		case SC_COMBO:
+			/*
 			switch(sce->val1) {
 			case TK_STORMKICK:
 				skill_combo_toggle_inf(bl, TK_JUMPKICK, 0);
@@ -13178,6 +13187,7 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 				skill_combo_toggle_inf(bl,sce->val1,INF_SELF_SKILL);
 				break;
 			}
+			*/
 			break;
 		case SC_C_MARKER:
 			//Send mini-map, don't wait for first timer triggered

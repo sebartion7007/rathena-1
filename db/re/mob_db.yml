@@ -55442,8 +55442,8 @@ Body:
     Name: Knight Seyren
     Level: 98
     Hp: 13260
-    BaseExp: 1475
-    JobExp: 987
+    BaseExp: 3475
+    JobExp: 1987
     Attack: 827
     Attack2: 285
     Defense: 149
@@ -55464,7 +55464,6 @@ Body:
     WalkSpeed: 150
     AttackDelay: 432
     AttackMotion: 400
-    ClientAttackMotion: 672
     DamageMotion: 288
     Ai: 04
     Drops:
@@ -55487,8 +55486,8 @@ Body:
     Name: Assassin Eremes
     Level: 98
     Hp: 9029
-    BaseExp: 1575
-    JobExp: 742
+    BaseExp: 3575
+    JobExp: 1742
     Attack: 739
     Attack2: 153
     Defense: 109
@@ -55509,7 +55508,6 @@ Body:
     WalkSpeed: 160
     AttackDelay: 432
     AttackMotion: 400
-    ClientAttackMotion: 576
     DamageMotion: 288
     Ai: 04
     Drops:
@@ -55533,8 +55531,8 @@ Body:
     JapaneseName: Blacksmith Harword
     Level: 98
     Hp: 11803
-    BaseExp: 1375
-    JobExp: 820
+    BaseExp: 3375
+    JobExp: 1820
     Attack: 782
     Attack2: 253
     Defense: 117
@@ -55555,7 +55553,6 @@ Body:
     WalkSpeed: 160
     AttackDelay: 432
     AttackMotion: 400
-    ClientAttackMotion: 576
     DamageMotion: 288
     Ai: 04
     Drops:
@@ -55579,8 +55576,8 @@ Body:
     JapaneseName: Hunter Shecil
     Level: 98
     Hp: 8835
-    BaseExp: 1375
-    JobExp: 834
+    BaseExp: 3375
+    JobExp: 1834
     Attack: 574
     Attack2: 223
     Defense: 68
@@ -55601,7 +55598,6 @@ Body:
     WalkSpeed: 160
     AttackDelay: 432
     AttackMotion: 400
-    ClientAttackMotion: 576
     DamageMotion: 288
     Ai: 04
     Drops:
@@ -55625,8 +55621,8 @@ Body:
     JapaneseName: Wizard Katrinn
     Level: 98
     Hp: 7092
-    BaseExp: 1375
-    JobExp: 967
+    BaseExp: 3375
+    JobExp: 1967
     Attack: 512
     Attack2: 650
     Defense: 69
@@ -55647,7 +55643,6 @@ Body:
     WalkSpeed: 130
     AttackDelay: 864
     AttackMotion: 400
-    ClientAttackMotion: 576
     DamageMotion: 288
     Ai: 04
     Drops:
@@ -55671,8 +55666,8 @@ Body:
     JapaneseName: Prist Magaleta
     Level: 98
     Hp: 9192
-    BaseExp: 1075
-    JobExp: 817
+    BaseExp: 3075
+    JobExp: 1817
     Attack: 644
     Attack2: 498
     Defense: 97
@@ -55693,7 +55688,6 @@ Body:
     WalkSpeed: 160
     AttackDelay: 864
     AttackMotion: 400
-    ClientAttackMotion: 672
     DamageMotion: 288
     Ai: 04
     Drops:
@@ -55717,8 +55711,8 @@ Body:
     JapaneseName: Crusader Ygnizem
     Level: 98
     Hp: 13440
-    BaseExp: 948
-    JobExp: 1464
+    BaseExp: 2948
+    JobExp: 2464
     Attack: 852
     Attack2: 342
     Defense: 136
@@ -55739,7 +55733,6 @@ Body:
     WalkSpeed: 155
     AttackDelay: 432
     AttackMotion: 400
-    ClientAttackMotion: 672
     DamageMotion: 288
     Ai: 04
     Drops:
@@ -55763,8 +55756,8 @@ Body:
     JapaneseName: Log Whikebain
     Level: 98
     Hp: 11712
-    BaseExp: 870
-    JobExp: 1227
+    BaseExp: 2870
+    JobExp: 2227
     Attack: 545
     Attack2: 216
     Defense: 125
@@ -55785,7 +55778,6 @@ Body:
     WalkSpeed: 130
     AttackDelay: 432
     AttackMotion: 400
-    ClientAttackMotion: 672
     DamageMotion: 288
     Ai: 04
     Drops:
@@ -55809,8 +55801,8 @@ Body:
     JapaneseName: Alchemist Armaia
     Level: 98
     Hp: 11376
-    BaseExp: 907
-    JobExp: 1809
+    BaseExp: 2907
+    JobExp: 2809
     Attack: 537
     Attack2: 232
     Defense: 130
@@ -55831,7 +55823,6 @@ Body:
     WalkSpeed: 130
     AttackDelay: 432
     AttackMotion: 400
-    ClientAttackMotion: 672
     DamageMotion: 288
     Ai: 04
     Drops:
@@ -55855,8 +55846,8 @@ Body:
     JapaneseName: Bard Kavac
     Level: 98
     Hp: 12637
-    BaseExp: 886
-    JobExp: 1582
+    BaseExp: 2886
+    JobExp: 2582
     Attack: 605
     Attack2: 193
     Defense: 94
@@ -55877,7 +55868,6 @@ Body:
     WalkSpeed: 160
     AttackDelay: 432
     AttackMotion: 400
-    ClientAttackMotion: 672
     DamageMotion: 288
     Ai: 04
     Drops:
@@ -55901,8 +55891,8 @@ Body:
     JapaneseName: Dancer Joshepina
     Level: 98
     Hp: 12637
-    BaseExp: 986
-    JobExp: 1582
+    BaseExp: 2986
+    JobExp: 3582
     Attack: 605
     Attack2: 193
     Defense: 94
@@ -55923,7 +55913,6 @@ Body:
     WalkSpeed: 160
     AttackDelay: 432
     AttackMotion: 400
-    ClientAttackMotion: 672
     DamageMotion: 288
     Ai: 04
     Drops:
@@ -55947,8 +55936,8 @@ Body:
     JapaneseName: Sage Rawrel
     Level: 98
     Hp: 9868
-    BaseExp: 940
-    JobExp: 1920
+    BaseExp: 2940
+    JobExp: 3920
     Attack: 247
     Attack2: 648
     Defense: 83
@@ -55969,7 +55958,6 @@ Body:
     WalkSpeed: 160
     AttackDelay: 432
     AttackMotion: 400
-    ClientAttackMotion: 672
     DamageMotion: 288
     Ai: 04
     Drops:
@@ -55993,8 +55981,8 @@ Body:
     JapaneseName: Monk Erend
     Level: 98
     Hp: 11168
-    BaseExp: 905
-    JobExp: 1000
+    BaseExp: 2905
+    JobExp: 2000
     Attack: 972
     Attack2: 483
     Defense: 116
@@ -56015,7 +56003,6 @@ Body:
     WalkSpeed: 140
     AttackDelay: 432
     AttackMotion: 400
-    ClientAttackMotion: 576
     DamageMotion: 288
     Ai: 04
     Drops:

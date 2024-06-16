@@ -1229,6 +1229,7 @@ int skill_additional_effect( struct block_list* src, struct block_list *bl, uint
 	status_data* tstatus = status_get_status_data( bl );
 
 	// Taekwon combos activate on traps, so we need to check them even for targets that don't have status
+	/*
 	if (sd && skill_id == 0 && !(attack_type&BF_SKILL) && sc) {
 		// Chance to trigger Taekwon kicks
 		if (sc->getSCE(SC_READYSTORM) &&
@@ -1258,7 +1259,7 @@ int skill_additional_effect( struct block_list* src, struct block_list *bl, uint
 				; //Stance triggered
 		}
 	}
-
+	*/
 	if (!tsc) //skill additional effect is about adding effects to the target...
 		//So if the target can't be inflicted with statuses, this is pointless.
 		return 0;
@@ -1345,8 +1346,7 @@ int skill_additional_effect( struct block_list* src, struct block_list *bl, uint
 				if( attack_type&BF_SKILL )
 					break; // If a normal attack is a skill, it's splash damage. [Inkfish]
 				if(sd) {
-					int skill;
-
+					int skill;					
 					// Automatic trigger of Blitz Beat
 					if (pc_isfalcon(sd) && sd->status.weapon == W_BOW && (skill = pc_checkskill(sd, HT_BLITZBEAT)) > 0 && rnd() % 1000 <= sstatus->luk * 10 / 6 + 1) {
 						int rate;
@@ -1390,6 +1390,7 @@ int skill_additional_effect( struct block_list* src, struct block_list *bl, uint
 
 				if (sc) {
 					struct status_change_entry *sce;
+					int skill;
 					// Enchant Poison gives a chance to poison attacked enemies
 					if((sce=sc->getSCE(SC_ENCPOISON))) //Don't use sc_start since chance comes in 1/10000 rate.
 						status_change_start(src,bl,SC_POISON,sce->val2, sce->val1,src->id,0,0,
@@ -1400,6 +1401,20 @@ int skill_additional_effect( struct block_list* src, struct block_list *bl, uint
 							skill_get_time2(ASC_EDP,sce->val1));
 					if ((sce = sc->getSCE(SC_LUXANIMA)) && rnd() % 100 < sce->val2)
 						skill_castend_nodamage_id(src, bl, RK_STORMBLAST, 1, tick, 0);
+					
+					// Automatic trigger Taekwon
+					if ( (sce = sc->getSCE(SC_READYSTORM)) && (skill = pc_checkskill(sd, TK_STORMKICK)) > 0 && rnd() % 100 < 15 ) {
+						skill_castend_damage_id(src, bl, TK_STORMKICK, skill, tick, SD_LEVEL);
+					}
+					if ( (sce = sc->getSCE(SC_READYDOWN)) && (skill = pc_checkskill(sd, TK_DOWNKICK)) > 0 && rnd() % 100 < 15 ) {
+						skill_castend_damage_id(src, bl, TK_DOWNKICK, skill, tick, SD_LEVEL);
+					}
+					if ( (sce = sc->getSCE(SC_READYTURN)) && (skill = pc_checkskill(sd, TK_TURNKICK)) > 0 && rnd() % 100 < 15 ) {
+						skill_castend_damage_id(src, bl, TK_TURNKICK, skill, tick, SD_LEVEL);
+					}
+					if ( (sce = sc->getSCE(SC_READYCOUNTER)) && (skill = pc_checkskill(sd, TK_COUNTER)) > 0 && rnd() % 100 < 15 ) {
+						skill_castend_damage_id(src, bl, TK_COUNTER, skill, tick, SD_LEVEL);
+					}
 				}
 			}
 			break;
@@ -1774,7 +1789,7 @@ int skill_additional_effect( struct block_list* src, struct block_list *bl, uint
 		sc_start2(src,bl,SC_BLEEDING,(skill_lv*3),skill_lv,src->id,skill_get_time2(skill_id,skill_lv));
 		break;
 	case NJ_HYOUSYOURAKU:
-		sc_start(src,bl,SC_FREEZE,(10+10*skill_lv),skill_lv,skill_get_time2(skill_id,skill_lv));
+		sc_start(src,bl,SC_FREEZE,(10+5*skill_lv),skill_lv,skill_get_time2(skill_id,skill_lv));
 		break;
 	case GS_FLING:
 		sc_start(src,bl,SC_FLING,100, sd?sd->spiritball_old:5,skill_get_time(skill_id,skill_lv));
@@ -3247,6 +3262,7 @@ void skill_combo(struct block_list* src,struct block_list *dsrc, struct block_li
 
 	if(sc == nullptr) return;
 
+	/*
 	//End previous combo state after skill is invoked
 	if ((sce = sc->getSCE(SC_COMBO)) != nullptr) {
 		switch (skill_id) {
@@ -3269,7 +3285,7 @@ void skill_combo(struct block_list* src,struct block_list *dsrc, struct block_li
 				status_change_end(src, SC_COMBO);
 		}
 	}
-
+	*/
 	//start new combo
 	if (sd) { //player only
 		switch (skill_id) {
@@ -19469,7 +19485,12 @@ int skill_vfcastfix(struct block_list *bl, double time, uint16 skill_id, uint16 
 
 	time = time * (1 - (float)min(reduce_cast_rate, 100) / 100);
 	time = max((int)time, 0) + (1 - (float)min(fixcast_r, 100) / 100) * max(fixed, 0); //Underflow checking/capping
-
+	
+		switch(skill_id) {
+			case GS_TRACKING:
+				time = 100 * skill_lv;
+			break;
+		}
 	return (int)time;
 }
 #endif

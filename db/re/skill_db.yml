@@ -7234,7 +7234,6 @@ Body:
     TargetType: Self
     DamageFlags:
       IgnoreDefense: true
-      SimpleDefense: true
     Range: 9
     Hit: Single
     HitCount: 1
@@ -7664,7 +7663,6 @@ Body:
     TargetType: Attack
     DamageFlags:
       IgnoreFlee: true
-      SimpleDefense: true
     Flags:
       TargetTrap: true
     Range: -2
@@ -9453,7 +9451,6 @@ Body:
     DamageFlags:
       IgnoreAtkCard: true
       IgnoreFlee: true
-      SimpleDefense: true
     Flags:
       IsNpc: true
       TargetSelf: true
@@ -14262,7 +14259,7 @@ Body:
     Hit: Multi_Hit
     HitCount: -5
     Element: Weapon
-    AfterCastActDelay: 1500
+    AfterCastActDelay: 200
     Requires:
       SpCost:
         - Level: 1
@@ -14693,7 +14690,7 @@ Body:
   - Id: 525
     Name: NJ_HUUMA
     Description: Throw Huuma Shuriken
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Weapon
     TargetType: Attack
     DamageFlags:
@@ -19112,7 +19109,6 @@ Body:
     DamageFlags:
       Splash: true
       IgnoreFlee: true
-      SimpleDefense: true
     Flags:
       TargetTrap: true
     Range: 9
@@ -22658,7 +22654,6 @@ Body:
     DamageFlags:
       Splash: true
       IgnoreFlee: true
-      SimpleDefense: true
     Flags:
       AllowOnMado: true
     Range: 9
@@ -28793,7 +28788,6 @@ Body:
     DamageFlags:
       Splash: true
       IgnoreFlee: true
-      SimpleDefense: true
     Range:
       - Level: 1
         Size: 7
@@ -33150,7 +33144,6 @@ Body:
     DamageFlags:
       Splash: true
       IgnoreFlee: true
-      SimpleDefense: true
     Flags:
       TargetTrap: true
     Range: 9

@@ -1782,7 +1782,7 @@ Body:
           - Name: GS_SINGLEACTION
             Level: 1
       - Name: GS_TRACKING
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: GS_SINGLEACTION
             Level: 5
@@ -1792,7 +1792,7 @@ Body:
           - Name: GS_TRACKING
             Level: 7
       - Name: GS_PIERCINGSHOT
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: GS_TRACKING
             Level: 5
@@ -1819,7 +1819,7 @@ Body:
           - Name: GS_SINGLEACTION
             Level: 5
       - Name: GS_FULLBUSTER
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: GS_DUST
             Level: 3
@@ -1850,18 +1850,11 @@ Body:
           - Name: NJ_SYURIKEN
             Level: 5
       - Name: NJ_HUUMA
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: NJ_TOBIDOUGU
             Level: 5
           - Name: NJ_KUNAI
-            Level: 5
-      - Name: NJ_ZENYNAGE
-        MaxLevel: 10
-        Requires:
-          - Name: NJ_TOBIDOUGU
-            Level: 10
-          - Name: NJ_HUUMA
             Level: 5
       - Name: NJ_TATAMIGAESHI
         MaxLevel: 5
@@ -1907,7 +1900,7 @@ Body:
           - Name: NJ_KOUENKA
             Level: 5
       - Name: NJ_BAKUENRYU
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: NJ_NINPOU
             Level: 10
@@ -1924,7 +1917,7 @@ Body:
           - Name: NJ_HYOUSENSOU
             Level: 5
       - Name: NJ_HYOUSYOURAKU
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: NJ_NINPOU
             Level: 10
@@ -1941,7 +1934,7 @@ Body:
           - Name: NJ_HUUJIN
             Level: 5
       - Name: NJ_KAMAITACHI
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: NJ_NINPOU
             Level: 10
@@ -1953,7 +1946,7 @@ Body:
           - Name: NJ_NINPOU
             Level: 5
       - Name: NJ_ISSEN
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: NJ_TOBIDOUGU
             Level: 7
@@ -2971,28 +2964,28 @@ Body:
           - Name: TK_STORMKICK
             Level: 1
       - Name: TK_STORMKICK
-        MaxLevel: 7
+        MaxLevel: 14
       - Name: TK_READYDOWN
         MaxLevel: 1
         Requires:
           - Name: TK_DOWNKICK
             Level: 1
       - Name: TK_DOWNKICK
-        MaxLevel: 7
+        MaxLevel: 14
       - Name: TK_READYTURN
         MaxLevel: 1
         Requires:
           - Name: TK_TURNKICK
             Level: 1
       - Name: TK_TURNKICK
-        MaxLevel: 7
+        MaxLevel: 14
       - Name: TK_READYCOUNTER
         MaxLevel: 1
         Requires:
           - Name: TK_COUNTER
             Level: 1
       - Name: TK_COUNTER
-        MaxLevel: 7
+        MaxLevel: 14
       - Name: TK_DODGE
         MaxLevel: 1
         Requires:
@@ -3017,8 +3010,6 @@ Body:
             Level: 5
       - Name: TK_HIGHJUMP
         MaxLevel: 5
-      - Name: TK_MISSION
-        MaxLevel: 1
         Requires:
           - Name: TK_POWER
             Level: 5
@@ -5855,9 +5846,6 @@ Body:
             Level: 5
       - Name: KO_MAKIBISHI
         MaxLevel: 5
-        Requires:
-          - Name: NJ_ZENYNAGE
-            Level: 1
       - Name: KO_MEIKYOUSISUI
         MaxLevel: 5
         Requires:
@@ -5975,9 +5963,6 @@ Body:
             Level: 5
       - Name: KO_MAKIBISHI
         MaxLevel: 5
-        Requires:
-          - Name: NJ_ZENYNAGE
-            Level: 1
       - Name: KO_MEIKYOUSISUI
         MaxLevel: 5
         Requires:

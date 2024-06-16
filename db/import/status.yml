@@ -43,3 +43,28 @@
 Header:
   Type: STATUS_DB
   Version: 3
+
+Body:
+  - Status: Spurt
+    Icon: EFST_STRUP
+    DurationLookup: TK_RUN
+    CalcFlags:
+      Str: true
+      Hit: true
+    Flags:
+      NoSave: true
+      NoClearance: true
+      RemoveOnHermode: true
+      RequireNoWeapon: true
+  - Status: Gatlingfever
+    Icon: EFST_GS_GATLINGFEVER
+    DurationLookup: GS_GATLINGFEVER
+    CalcFlags:
+      Flee: true
+      Speed: true
+      Aspd: true
+      Hit: true
+    Flags:
+      NoDispell: true
+      NoBanishingBuster: true
+      RequireWeapon: true
