@@ -16,13 +16,13 @@
 			end;
 		}
 		for(.@i=1;.@i < .@atcmd_numparameters; .@i+= 2) {
-			.@itemreward[.@i/2] = .@atcmd_parameters$[.@i];
-			.@itemamount[.@i/2] = .@atcmd_parameters$[.@i+1];
+			$@itemreward[.@i/2] = .@atcmd_parameters$[.@i];
+			$@itemamount[.@i/2] = .@atcmd_parameters$[.@i+1];
 		}
-		.@zeny = .@atcmd_parameters$[0];
-		mes "เงิน "+callfunc("F_InsertComma",.@zeny);
-		for(.@j=0;.@j < getarraysize(.@itemreward); .@j++)
-			mes ""+getitemname(.@itemreward[.@j])+" จำนวน "+.@itemamount[.@j]+" ea";
+		$@zeny = .@atcmd_parameters$[0];
+		mes "เงิน "+callfunc("F_InsertComma",$@zeny);
+		for(.@j=0;.@j < getarraysize($@itemreward); .@j++)
+			mes ""+getitemname($@itemreward[.@j])+" จำนวน "+$@itemamount[.@j]+" ea";
 			mes "ยืนยันไหม คิดดีๆ...";
         if(select("- ^FF0000No^000000 :- ^00FF00Yes^000000") - 2) end;
         addrid(1);
@@ -30,7 +30,7 @@
 		.@sender$ = "GM Meow Meow";
 		.@title$ = "Event Map Meow";
 		.@body$ = "Event Times Reward from Meow.";
-		mail .@charid, .@sender$, .@title$, .@body$, .@zeny, .@itemreward, .@itemamount;
+		mail .@charid, .@sender$, .@title$, .@body$, $@zeny, $@itemreward, $@itemamount;
 		 message strcharinfo(0),"ท่านได้รับของขวัญจากท่านผู้กรุณาแล้ว เมี๊ยว.";
         end;
 
