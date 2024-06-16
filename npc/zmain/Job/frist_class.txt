@@ -14,7 +14,7 @@ iz_int,26,29,0	script	Part Finder#False	2_F_SIGN1,{
 		default:
 	}
 	warp  "falserealm",150,143;
-	savepoint "falserealm",150,143;
+	savepoint "falserealm",150,143,3,0;
 	end;
 Oninit:
 	setunittitle(getnpcid(0),"<Part of Fate>");
