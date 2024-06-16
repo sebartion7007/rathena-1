@@ -19488,9 +19488,17 @@ int skill_vfcastfix(struct block_list *bl, double time, uint16 skill_id, uint16 
 	
 		switch(skill_id) {
 			case GS_TRACKING:
-				time = 100 * skill_lv;
+				time += 100 * skill_lv;
 			break;
 		}
+	/* Ready for new bonuscasttime
+	for (const auto &it : sd->skillfixcast) {
+		if (it.id == skill_id) { // bonus2 bSkillFixedCast
+			time -= it.val;
+			break;
+		}
+	}
+	*/
 	return (int)time;
 }
 #endif

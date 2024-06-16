@@ -1783,6 +1783,7 @@ Body:
             Level: 1
       - Name: GS_TRACKING
         MaxLevel: 15
+        JobLevel: 50
         Requires:
           - Name: GS_SINGLEACTION
             Level: 5
