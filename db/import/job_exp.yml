@@ -104,9 +104,6 @@ Body:
       Bard: true
       Dancer: true
       Crusader2: true
-      Super_Novice: true
-      Gunslinger: true
-      Ninja: true
       Baby: true
       Baby_Swordman: true
       Baby_Mage: true
@@ -131,9 +128,6 @@ Body:
       Baby_Crusader2: true
       Super_Baby: true
       Taekwon: true
-      Star_Gladiator: true
-      Star_Gladiator2: true
-      Soul_Linker: true
       Baby_Ninja: true
       Baby_Taekwon: true
       Baby_Star_Gladiator: true
@@ -340,7 +334,7 @@ Body:
         Exp: 1252761
       - Level: 99
         Exp: 99999999
-  - Jobs:
+  - Jobs: #Hiclass
       Novice_High: true
       Swordman_High: true
       Mage_High: true
@@ -363,7 +357,13 @@ Body:
       Clown: true
       Gypsy: true
       Paladin2: true
-    MaxBaseLevel: 99
+      Super_Novice: true
+      Gunslinger: true
+      Ninja: true
+      Star_Gladiator: true
+      Star_Gladiator2: true
+      Soul_Linker: true
+    MaxBaseLevel: 120
     BaseExp:
       - Level: 1
         Exp: 658
@@ -562,7 +562,50 @@ Body:
       - Level: 98
         Exp: 1258714
       - Level: 99
-        Exp: 99999999
+      - Level: 99
+        Exp: 1272747
+      - Level: 100
+        Exp: 1354202
+      - Level: 101
+        Exp: 1440870
+      - Level: 102
+        Exp: 1533085
+      - Level: 103
+        Exp: 1631202
+      - Level: 104
+        Exp: 1735598
+      - Level: 105
+        Exp: 1846676
+      - Level: 106
+        Exp: 1964863
+      - Level: 107
+        Exp: 2090614
+      - Level: 108
+        Exp: 2224413
+      - Level: 109
+        Exp: 2366775
+      - Level: 110
+        Exp: 2518248
+      - Level: 111
+        Exp: 2679415
+      - Level: 112
+        Exp: 2850897
+      - Level: 113
+        Exp: 3033354
+      - Level: 114
+        Exp: 3227488
+      - Level: 115
+        Exp: 3434047
+      - Level: 116
+        Exp: 3653826
+      - Level: 117
+        Exp: 3887670
+      - Level: 118
+        Exp: 4136480
+      - Level: 119
+        Exp: 4401214
+      - Level: 120
+        Exp: 4755467
   - Jobs:
       Super_Novice_E: true
       Super_Baby_E: true

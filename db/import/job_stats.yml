@@ -283,6 +283,48 @@ Body:
         Hp: 7824
       - Level: 99
         Hp: 7978
+      - Level: 100
+        Hp: 8133
+      - Level: 101
+        Hp: 8242
+      - Level: 102
+        Hp: 8352
+      - Level: 103
+        Hp: 8464
+      - Level: 104
+        Hp: 8576
+      - Level: 105
+        Hp: 8690
+      - Level: 106
+        Hp: 8804
+      - Level: 107
+        Hp: 8920
+      - Level: 108
+        Hp: 9036
+      - Level: 109
+        Hp: 9154
+      - Level: 110
+        Hp: 9273
+      - Level: 111
+        Hp: 9393
+      - Level: 112
+        Hp: 9514
+      - Level: 113
+        Hp: 9636
+      - Level: 114
+        Hp: 9759
+      - Level: 115
+        Hp: 9883
+      - Level: 116
+        Hp: 10008
+      - Level: 117
+        Hp: 10134
+      - Level: 118
+        Hp: 10261
+      - Level: 119
+        Hp: 10389
+      - Level: 120
+        Hp: 10518
     BaseSp:
       - Level: 1
         Sp: 18
@@ -482,3 +524,45 @@ Body:
         Sp: 794
       - Level: 99
         Sp: 802
+      - Level: 100
+        Sp: 810
+      - Level: 101
+        Sp: 818
+      - Level: 102
+        Sp: 826
+      - Level: 103
+        Sp: 834
+      - Level: 104
+        Sp: 842
+      - Level: 105
+        Sp: 850
+      - Level: 106
+        Sp: 858
+      - Level: 107
+        Sp: 866
+      - Level: 108
+        Sp: 874
+      - Level: 109
+        Sp: 882
+      - Level: 110
+        Sp: 890
+      - Level: 111
+        Sp: 898
+      - Level: 112
+        Sp: 906
+      - Level: 113
+        Sp: 914
+      - Level: 114
+        Sp: 922
+      - Level: 115
+        Sp: 930
+      - Level: 116
+        Sp: 938
+      - Level: 117
+        Sp: 946
+      - Level: 118
+        Sp: 954
+      - Level: 119
+        Sp: 962
+      - Level: 120
+        Sp: 970

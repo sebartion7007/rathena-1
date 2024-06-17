@@ -1,2 +1,8 @@
 1@poring	mapflag	noicewall
 2@poring	mapflag	noicewall
+
+
+fclone01	mapflag	noicewall
+fclone02	mapflag	noicewall
+fclone03	mapflag	noicewall
+fclone04	mapflag	noicewall

@@ -1,2 +1,7 @@
 1@poring	mapflag	nomemo
 2@poring	mapflag	nomemo
+
+fclone01	mapflag	nomemo
+fclone02	mapflag	nomemo
+fclone03	mapflag	nomemo
+fclone04	mapflag	nomemo

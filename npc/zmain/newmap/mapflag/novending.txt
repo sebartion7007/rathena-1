@@ -4,3 +4,4 @@ Oninit:
 	setcell "flaserealm2",134,168,171,126,novending,1;
 	end;
 }
+

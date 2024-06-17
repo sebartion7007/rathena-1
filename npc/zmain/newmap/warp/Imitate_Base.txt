@@ -1,0 +1,20 @@
+falserealm2,149,267,0	warp	fclone_en1	1,1,fclone01,149,286
+fclone01,149,291,0	warp	fclone_dun1-1	1,1,falserealm2,149,261
+fclone01,281,150,0	warp	fclone_dun2-1	1,1,fclone02,282,153
+fclone02,282,161,0	warp	fclone_dun2-2	1,1,fclone01,281,154
+fclone01,149,9,0	warp	fclone_dun3-1	1,1,fclone02,153,19
+fclone02,146,19,0	warp	fclone_dun3-2	1,1,fclone01,144,9
+fclone01,18,145,0	warp	fclone_dun4-1	1,1,fclone02,17,150
+fclone02,17,156,0	warp	fclone_dun4-2	1,1,fclone01,18,150
+
+fclone02,149,149,4	script	fclone_dun5-1	45,2,2,{
+OnTouch_:
+	if ((Upper != 1 && BaseLevel<199) || (Upper == 1 && BaseLevel<199)) {
+		warp "fclone02",145,149;
+	}
+	else {
+		warp "fclone03",140,133;
+	}
+	end;
+}
+fclone03,139,137,0	warp	fclone_dun5-2	1,1,fclone02,149,142

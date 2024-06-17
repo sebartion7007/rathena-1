@@ -2706,6 +2706,222 @@ Body:
     AttackMotion: 576
     DamageMotion: 504
     Ai: 10
+  - Id: 29901
+    AegisName: YGNIZEM_F
+    Name: Swordman
+    Level: 160
+    Hp: 14140327
+    BaseExp: 23699
+    JobExp: 13603
+    Attack: 31985
+    Attack2: 10328
+    Defense: 6224
+    MagicDefense: 408
+    Str: 761
+    Agi: 392
+    Vit: 986
+    Int: 69
+    Dex: 519
+    Luk: 268
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    RaceGroups:
+      Biolab: true
+    Element: Fire
+    ElementLevel: 2
+    WalkSpeed: 100
+    AttackDelay: 276
+    AttackMotion: 432
+    DamageMotion: 288
+    DamageTaken: 50
+    Ai: 04
+    Drops:
+      - Item: Initiative_Swordman_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 29902
+    AegisName: WHIKEBAIN_F
+    Name: Thief
+    Level: 160
+    Hp: 9943191
+    BaseExp: 23311
+    JobExp: 13115
+    Attack: 31414
+    Attack2: 10144
+    Defense: 4114
+    MagicDefense: 366
+    Str: 714
+    Agi: 691
+    Vit: 569
+    Int: 142
+    Dex: 428
+    Luk: 355
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    RaceGroups:
+      Biolab: true
+    Element: Poison
+    ElementLevel: 3
+    WalkSpeed: 90
+    AttackDelay: 156
+    AttackMotion: 432
+    DamageMotion: 288
+    DamageTaken: 50
+    Ai: 04
+    Drops:
+      - Item: Initiative_Thief_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 29903
+    AegisName: ARMAIA_F
+    Name: Merchant
+    Level: 160
+    Hp: 1146878
+    BaseExp: 23182
+    JobExp: 13898
+    Attack: 31390
+    Attack2: 10155
+    Defense: 5199
+    MagicDefense: 874
+    Str: 923
+    Agi: 259
+    Vit: 785
+    Int: 265
+    Dex: 544
+    Luk: 162
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    RaceGroups:
+      Biolab: true
+    Element: Earth
+    ElementLevel: 3
+    WalkSpeed: 100
+    AttackDelay: 276
+    AttackMotion: 432
+    DamageMotion: 288
+    DamageTaken: 50
+    Ai: 04
+    Drops:
+      - Item: Initiative_Merchant_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 29904
+    AegisName: EREND_F
+    Name: Acolyte
+    Level: 160
+    Hp: 1542764
+    BaseExp: 23159
+    JobExp: 12998
+    Attack: 25937
+    Attack2: 20552
+    Defense: 5106
+    MagicDefense: 1099
+    Str: 577
+    Agi: 366
+    Vit: 890
+    Int: 1145
+    Dex: 731
+    Luk: 62
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    RaceGroups:
+      Biolab: true
+    Element: Holy
+    ElementLevel: 2
+    WalkSpeed: 100
+    AttackDelay: 276
+    AttackMotion: 432
+    DamageMotion: 288
+    DamageTaken: 50
+    Ai: 04
+    Drops:
+      - Item: Initiative_Acolyte_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 29905
+    AegisName: KAVAC_F
+    Name: Archer
+    Level: 160
+    Hp: 9843079
+    BaseExp: 23467
+    JobExp: 13481
+    Attack: 31195
+    Attack2: 10129
+    Defense: 3386
+    MagicDefense: 248
+    Str: 1103
+    Agi: 709
+    Vit: 362
+    Int: 150
+    Dex: 1274
+    Luk: 48
+    AttackRange: 9
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    RaceGroups:
+      Biolab: true
+    Element: Wind
+    ElementLevel: 2
+    WalkSpeed: 120
+    AttackDelay: 276
+    AttackMotion: 432
+    DamageMotion: 288
+    DamageTaken: 50
+    Ai: 04
+    Drops:
+      - Item: Initiative_Archer_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 29906
+    AegisName: RAWREL_F
+    Name: Mage
+    Level: 160
+    Hp: 8840282
+    BaseExp: 22925
+    JobExp: 23613
+    Attack: 20668
+    Attack2: 32032
+    Defense: 2976
+    MagicDefense: 1180
+    Str: 267
+    Agi: 279
+    Vit: 465
+    Int: 1762
+    Dex: 968
+    Luk: 57
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    RaceGroups:
+      Biolab: true
+    Element: Ghost
+    ElementLevel: 2
+    WalkSpeed: 120
+    AttackDelay: 276
+    AttackMotion: 432
+    DamageMotion: 288
+    DamageTaken: 50
+    Ai: 04
+    Drops:
+      - Item: Initiative_Mage_Card
+        Rate: 1
+        StealProtected: true
   - Id: 30001
     AegisName: ORC_WARRIOR_PARADOX
     Name: Orc Warrior Paradox

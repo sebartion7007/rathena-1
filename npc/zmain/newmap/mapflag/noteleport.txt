@@ -1,2 +1,8 @@
 1@poring	mapflag	noteleport
 2@poring	mapflag	noteleport
+
+
+fclone01	mapflag	noteleport
+fclone02	mapflag	noteleport
+fclone03	mapflag	noteleport
+fclone04	mapflag	noteleport

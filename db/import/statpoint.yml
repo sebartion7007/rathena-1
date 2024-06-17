@@ -30,3 +30,265 @@
 Header:
   Type: STATPOINT_DB
   Version: 2
+
+Body:
+  - Level: 1
+    Points: 27
+  - Level: 2
+    Points: 30
+  - Level: 3
+    Points: 33
+  - Level: 4
+    Points: 36
+  - Level: 5
+    Points: 39
+  - Level: 6
+    Points: 42
+  - Level: 7
+    Points: 45
+  - Level: 8
+    Points: 48
+  - Level: 9
+    Points: 51
+  - Level: 10
+    Points: 54
+  - Level: 11
+    Points: 57
+  - Level: 12
+    Points: 60
+  - Level: 13
+    Points: 63
+  - Level: 14
+    Points: 66
+  - Level: 15
+    Points: 69
+  - Level: 16
+    Points: 72
+  - Level: 17
+    Points: 75
+  - Level: 18
+    Points: 78
+  - Level: 19
+    Points: 81
+  - Level: 20
+    Points: 84
+  - Level: 21
+    Points: 87
+  - Level: 22
+    Points: 90
+  - Level: 23
+    Points: 93
+  - Level: 24
+    Points: 96
+  - Level: 25
+    Points: 99
+  - Level: 26
+    Points: 102
+  - Level: 27
+    Points: 105
+  - Level: 28
+    Points: 108
+  - Level: 29
+    Points: 112
+  - Level: 30
+    Points: 115
+  - Level: 31
+    Points: 118
+  - Level: 32
+    Points: 121
+  - Level: 33
+    Points: 124
+  - Level: 34
+    Points: 127
+  - Level: 35
+    Points: 130
+  - Level: 36
+    Points: 133
+  - Level: 37
+    Points: 136
+  - Level: 38
+    Points: 139
+  - Level: 39
+    Points: 142
+  - Level: 40
+    Points: 145
+  - Level: 41
+    Points: 148
+  - Level: 42
+    Points: 151
+  - Level: 43
+    Points: 154
+  - Level: 44
+    Points: 157
+  - Level: 45
+    Points: 160
+  - Level: 46
+    Points: 163
+  - Level: 47
+    Points: 166
+  - Level: 48
+    Points: 169
+  - Level: 49
+    Points: 172
+  - Level: 50
+    Points: 175
+  - Level: 51
+    Points: 179
+  - Level: 52
+    Points: 183
+  - Level: 53
+    Points: 187
+  - Level: 54
+    Points: 191
+  - Level: 55
+    Points: 195
+  - Level: 56
+    Points: 199
+  - Level: 57
+    Points: 203
+  - Level: 58
+    Points: 207
+  - Level: 59
+    Points: 211
+  - Level: 60
+    Points: 215
+  - Level: 61
+    Points: 219
+  - Level: 62
+    Points: 223
+  - Level: 63
+    Points: 227
+  - Level: 64
+    Points: 231
+  - Level: 65
+    Points: 235
+  - Level: 66
+    Points: 239
+  - Level: 67
+    Points: 243
+  - Level: 68
+    Points: 247
+  - Level: 69
+    Points: 251
+  - Level: 70
+    Points: 255
+  - Level: 71
+    Points: 259
+  - Level: 72
+    Points: 263
+  - Level: 73
+    Points: 267
+  - Level: 74
+    Points: 271
+  - Level: 75
+    Points: 275
+  - Level: 76
+    Points: 279
+  - Level: 77
+    Points: 283
+  - Level: 78
+    Points: 287
+  - Level: 79
+    Points: 291
+  - Level: 80
+    Points: 295
+  - Level: 81
+    Points: 299
+  - Level: 82
+    Points: 303
+  - Level: 83
+    Points: 307
+  - Level: 84
+    Points: 311
+  - Level: 85
+    Points: 315
+  - Level: 86
+    Points: 319
+  - Level: 87
+    Points: 323
+  - Level: 88
+    Points: 327
+  - Level: 89
+    Points: 331
+  - Level: 90
+    Points: 335
+  - Level: 91
+    Points: 339
+  - Level: 92
+    Points: 343
+  - Level: 93
+    Points: 347
+  - Level: 94
+    Points: 351
+  - Level: 95
+    Points: 355
+  - Level: 96
+    Points: 359
+  - Level: 97
+    Points: 363
+  - Level: 98
+    Points: 367
+  - Level: 99
+    Points: 390
+  - Level: 100
+    Points: 400
+  - Level: 101
+    Points: 405
+    TraitPoints: 1
+  - Level: 102
+    Points: 410
+    TraitPoints: 2
+  - Level: 103
+    Points: 415
+    TraitPoints: 3
+  - Level: 104
+    Points: 420
+    TraitPoints: 4
+  - Level: 105
+    Points: 425
+    TraitPoints: 5
+  - Level: 106
+    Points: 430
+    TraitPoints: 6
+  - Level: 107
+    Points: 435
+    TraitPoints: 7
+  - Level: 108
+    Points: 440
+    TraitPoints: 8
+  - Level: 109
+    Points: 445
+    TraitPoints: 9
+  - Level: 110
+    Points: 450
+    TraitPoints: 10
+  - Level: 111
+    Points: 455
+    TraitPoints: 11
+  - Level: 112
+    Points: 460
+    TraitPoints: 12
+  - Level: 113
+    Points: 465
+    TraitPoints: 13
+  - Level: 114
+    Points: 470
+    TraitPoints: 14
+  - Level: 115
+    Points: 475
+    TraitPoints: 15
+  - Level: 116
+    Points: 480
+    TraitPoints: 16
+  - Level: 117
+    Points: 485
+    TraitPoints: 17
+  - Level: 118
+    Points: 490
+    TraitPoints: 18
+  - Level: 119
+    Points: 495
+    TraitPoints: 19
+  - Level: 120
+    Points: 500
+    TraitPoints: 20

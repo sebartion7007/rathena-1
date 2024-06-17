@@ -1,3 +1,7 @@
 jor_dback1	mapflag	nosave
 jor_dback2	mapflag	nosave
 jor_dback3	mapflag	nosave
+fclone01	mapflag	nosave
+fclone02	mapflag	nosave
+fclone03	mapflag	nosave
+fclone04	mapflag	nosave

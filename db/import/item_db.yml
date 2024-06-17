@@ -245,6 +245,159 @@ Body:
     Type: Etc
     Buy: 10
     Weight: 100
+  - Id: 39901
+    AegisName: Initiative_Swordman_Card
+    Name: Initiative Swordman Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      if(BaseClass == Job_Swordman) {
+        if (Class == Job_Swordman) {
+          .@val1 = 100;
+          .@val2 = 20;
+        }
+        else {
+          .@val1 = 25;
+          .@val2 = 5;
+        }
+        bonus2 bAmplify,Type_Attack,.@val1;
+        bonus bAtkrate,5*.@val2;
+        bonus2 bAddClass,CLASS_ALL,5*.@val2;
+      }
+  - Id: 39902
+    AegisName: Initiative_Thief_Card
+    Name: Initiative Thief Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      if(BaseClass == Job_Swordman) {
+        if (Class == Job_Swordman) {
+          .@val1 = 100;
+          .@val2 = 20;
+        }
+        else {
+          .@val1 = 25;
+          .@val2 = 5;
+        }
+        bonus2 bAmplify,Type_Attack,.@val1;
+        bonus bAtkrate,5*.@val2;
+        bonus2 bAddClass,CLASS_ALL,5*.@val2;
+      }
+  - Id: 39903
+    AegisName: Initiative_Merchant_Card
+    Name: Initiative Merchant Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      if(BaseClass == Job_Swordman) {
+        if (Class == Job_Swordman) {
+          .@val1 = 100;
+          .@val2 = 20;
+        }
+        else {
+          .@val1 = 25;
+          .@val2 = 5;
+        }
+        bonus2 bAmplify,Type_Attack,.@val1;
+        bonus bAtkrate,5*.@val2;
+        bonus2 bAddClass,CLASS_ALL,5*.@val2;
+      }
+  - Id: 39904
+    AegisName: Initiative_Acolyte_Card
+    Name: Initiative Acolyte Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      if(BaseClass == Job_Swordman) {
+        if (Class == Job_Swordman) {
+          .@val1 = 100;
+          .@val2 = 20;
+        }
+        else {
+          .@val1 = 25;
+          .@val2 = 5;
+        }
+        bonus2 bAmplify,Type_Magic,.@val1;
+        bonus2 bAmplify,Type_Attack,.@val1;
+        bonus bAtkrate,5*.@val2;
+        bonus bMatkRate,5*.@val2;
+        bonus2 bAddClass,CLASS_ALL,5*.@val2;
+        bonus2 bMagicAddClass,CLASS_ALL,5*.@val2;
+      }
+  - Id: 39905
+    AegisName: Initiative_Archer_Card
+    Name: Initiative Archer Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      if(BaseClass == Job_Swordman) {
+        if (Class == Job_Swordman) {
+          .@val1 = 100;
+          .@val2 = 20;
+        }
+        else {
+          .@val1 = 25;
+          .@val2 = 5;
+        }
+        bonus2 bAmplify,Type_Attack,.@val1;
+        bonus bAtkrate,5*.@val2;
+        bonus2 bAddClass,CLASS_ALL,5*.@val2;
+      }
+  - Id: 39906
+    AegisName: Initiative_Mage_Card
+    Name: Initiative Mage Card
+    Type: Card
+    Buy: 20
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      if(BaseClass == Job_Swordman) {
+        if (Class == Job_Swordman) {
+          .@val1 = 100;
+          .@val2 = 20;
+        }
+        else {
+          .@val1 = 25;
+          .@val2 = 5;
+        }
+        bonus2 bAmplify,Type_Magic,.@val1;
+        bonus bMAtkrate,5*.@val2;
+        bonus2 bMagicAddClass,CLASS_ALL,5*.@val2;
+      }
   - Id: 40000
     AegisName: Salty_old
     Name: Salty

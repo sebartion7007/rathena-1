@@ -14,6 +14,9 @@
 //============================================================
 
 prontera,169,181,1	script	Stylist#custom_stylist	122,{
+	openstylist;
+	end;
+/*
 	setarray .@Styles[1],
 		getbattleflag("max_cloth_color"),
 		getbattleflag("max_hair_style"),
@@ -52,5 +55,6 @@ prontera,169,181,1	script	Stylist#custom_stylist	122,{
 	Oninit:
 	setunittitle(getnpcid(0), "<Change Color>");
 	end;
+*/
 }
 falserealm,165,156,3	duplicate(Stylist#custom_stylist)	Stylist#false	122
