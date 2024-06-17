@@ -2,9 +2,3 @@ fclone01	mapflag	nowarp
 fclone02	mapflag	nowarp
 fclone03	mapflag	nowarp
 fclone04	mapflag	nowarp
-
-
-fclone01	mapflag	pvp
-fclone02	mapflag	pvp
-fclone03	mapflag	pvp
-fclone04	mapflag	pvp
