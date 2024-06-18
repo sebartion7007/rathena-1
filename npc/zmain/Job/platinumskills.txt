@@ -1,0 +1,128 @@
+falserealm,135,263,6	script	Father John#holy_light_1	1_M_PASTOR,{
+	.@npcname$ = "[ John ]";
+	if( BaseClass != Job_Acolyte) {
+		mes .@npcname$;
+		mes "โฮ๊ะๆ โฮ่";
+		close;
+	}
+	if( !holylightquest ) {
+		mes .@npcname$;
+		mes "เจ้าคงเป็น "+jobname(class)+" ตัวน้อยๆสินะ";
+		mes "อยากจะรู้รึเปล่าทำยังไงถึงจะเรียกแสงศักดิ์สิทธิ์ได้";
+		mes "แต่มาถามแบบนี้ ก็คงอยากจะรู้จริงๆนั่นแหละนะ";
+		next;
+		mes .@npcname$;
+		mes "พอดีหลวงพ่ออยากจะอาบน้ำมนต์ซักหน่อย";
+		mes "ช่วยหลวงพ่อหน่อยละกันนะ";
+		set holylightquest,1;
+		end;
+	}
+	else if ( holylightquest == 1 ) {
+		if( countitem(523) < 50 ) {
+			mes .@npcname$;
+			mes "ข้าอยากอาบน้ำมนต์";
+			mes "เอาน้ำมนต์มาให้ข้า 50 แก้วหน่อยสิ";
+		}
+		else {
+			mes .@npcname$;
+			mes "อ๊าา...สดชื่นนน!!!.";
+			delitem 523,50;
+			set holylightquest,2;
+		}
+		end;
+	}
+	else if ( holylightquest == 2 ) {
+		mes .@npcname$;
+		mes "เป็นน้ำมนต์ที่ดีเลย";
+		mes "หลวงพ่อ Smith ที่หน้าโบสพรอนเขาอยากจะพบหนะ";
+		mes "ไปหาเขาหน่อยสิ";
+	}
+	else {
+		mes .@npcname$;
+		mes "โฮ๊ะๆ โฮ่";
+	}
+	end;
+}
+prontera,237,313,6	script	Father Smith#holy_light_2	1_M_PASTOR,{
+OnTouch:
+	.@npcname$ = "[ Smith ]";
+	if( BaseClass != Job_Acolyte) {
+		mes .@npcname$;
+		mes "อืมมม.";
+		close;
+	}
+	if ( holylightquest == 2 ) {
+		mes .@npcname$;
+		mes "ว่าไงนะ หลวงพ่อ John ส่งมา";
+		mes "แถมยังได้อาบน้ำมนต์ด้วยงั้นหรอ ข้ายอมไม่ได้";
+		next;
+		mes .@npcname$;
+		mes "เจ้าไปนำน้ำมนต์มาให้ข้าอาบด้วยเดี๋ยวนี้เลย";
+		set holylightquest,3;
+		end;
+	}
+	else if ( holylightquest == 3 ) {
+		if( countitem(523) < 100 ) {
+			mes .@npcname$;
+			mes "เอาน้ำมนต์มาให้ข้า!!!!";
+			mes "ข้าต้องการแค่ 100 แก้วเอง ไปเอามา.";
+		}
+		else {
+			mes .@npcname$;
+			mes "นี้แหละสวรรค์";
+			delitem 523,100;
+			set holylightquest,4;
+		}
+		end;
+	}
+	else if ( holylightquest == 4 ) {
+		mes .@npcname$;
+		mes "หลวงพ่อนั้นชอบอาบน้ำมนต์มากๆเลย";
+		mes "แต่คนที่จะสอนเจ้าได้จริงๆคือหลวงพ่อ Micle นะ";
+		mes "เขาอยู่ที่สุสานในโบสเก่า ขวาเมือง Prontera";
+		mes "ลองไปหาเขาดูสิ";
+	}
+	else {
+		mes .@npcname$;
+		mes "เฮ้อ อยากอาบน้ำมนต์อีกจังเลยนะ";
+	}
+	end;
+}
+prt_monk,240,246,1	script	Father Micle#holy_light_3	1_M_PASTOR,{
+OnTouch:
+	.@npcname$ = "[ Micle ]";
+	if( BaseClass != Job_Acolyte) {
+		mes .@npcname$;
+		mes "เอเมน.";
+		close;
+	}
+	if ( holylightquest == 4 ) {
+		mes .@npcname$;
+		mes "งั้นหรอ อยากเรียนแสงศักดิ์สิทธิ์งั้นหรอ";
+		mes "งั้นช่วยงานหลวงพ่อทีสิ หลุมศพพวกนี้ต้องการคนกรวดน้ำเล็กน้อย";
+		next;
+		mes .@npcname$;
+		mes "หลวงพ่ออยากจะนำน้ำมนต์มากรวดให้เหล่าหลุมศพเหล่านี้นะ";
+		set holylightquest,5;
+		end;
+	}
+	else if ( holylightquest == 5 ) {
+		if( countitem(523) < 250 ) {
+			mes .@npcname$;
+			mes "หลวงพ่อขอน้ำมนต์แค่ 250 แก้วพอนะ.";
+		}
+		else {
+			mes .@npcname$;
+			mes "ขอบคุณมาก นี่วิธีกการใช้";
+			delitem 523,250;
+			set holylightquest,6;
+			skill "AL_HOLYLIGHT",1,SKILL_PERM;
+		}
+		end;
+	}
+	else {
+		mes .@npcname$;
+		mes "หลวงพ่อดูแลหลุมศพพวกนี้มานานมากแล้ว";
+	}
+	end;
+}
