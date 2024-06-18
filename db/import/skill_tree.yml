@@ -3208,7 +3208,7 @@ Body:
           - Name: SL_WIZARD
             Level: 1
       - Name: SL_SMA
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: SL_STIN
             Level: 7

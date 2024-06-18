@@ -6061,6 +6061,8 @@ Body:
     MaxLevel: 1
     Type: Magic
     TargetType: Attack
+    DamageFlags:
+      Splash: true
     Flags:
       IsQuest: true
     Range: 9
@@ -13802,9 +13804,11 @@ Body:
   - Id: 469
     Name: SL_SMA
     Description: Esma
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Magic
     TargetType: Attack
+    DamageFlags:
+      Splash: true
     Range: 9
     Hit: Multi_Hit
     HitCount:
@@ -13828,7 +13832,48 @@ Body:
         Count: 9
       - Level: 10
         Count: 10
+      - Level: 11
+        Count: 11
+      - Level: 12
+        Count: 12
+      - Level: 13
+        Count: 13
+      - Level: 14
+        Count: 14
+      - Level: 15
+        Count: 15
     Element: Endowed
+    SplashArea:
+      - Level: 1
+        Area: 1
+      - Level: 2
+        Area: 1
+      - Level: 3
+        Area: 1
+      - Level: 4
+        Area: 1
+      - Level: 5
+        Area: 1
+      - Level: 6
+        Area: 1
+      - Level: 7
+        Area: 1
+      - Level: 8
+        Area: 1
+      - Level: 9
+        Area: 1
+      - Level: 10
+        Area: 2
+      - Level: 11
+        Area: 2
+      - Level: 12
+        Area: 2
+      - Level: 13
+        Area: 2
+      - Level: 14
+        Area: 3
+      - Level: 15
+        Area: 3
     CastCancel: true
     CastTime: 1600
     AfterCastActDelay: 500
@@ -13856,7 +13901,16 @@ Body:
           Amount: 72
         - Level: 10
           Amount: 80
-    Status: Sma
+        - Level: 11
+          Amount: 88
+        - Level: 12
+          Amount: 96
+        - Level: 13
+          Amount: 104
+        - Level: 14
+          Amount: 112
+        - Level: 15
+          Amount: 120
   - Id: 470
     Name: SL_SWOO
     Description: Eswoo

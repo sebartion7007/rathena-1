@@ -290,7 +290,7 @@ Body:
   - Look: Clothes_Color
     Options:
       - Index: 1
-        Value: 0
+        Value: 1
         CostsHuman:
             Price: 1000000
         CostsDoram:

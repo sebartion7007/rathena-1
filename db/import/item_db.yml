@@ -244,7 +244,7 @@ Body:
     Name: Costume Ticker Sharky
     Type: Etc
     Buy: 10
-    Weight: 100
+    Weight: 10
   - Id: 39901
     AegisName: Initiative_Swordman_Card
     Name: Initiative Swordman Card
@@ -282,8 +282,8 @@ Body:
       BuyingStore: true
       DropEffect: CLIENT
     Script: |
-      if(BaseClass == Job_Swordman) {
-        if (Class == Job_Swordman) {
+      if(BaseClass == Job_Thief ) {
+        if (Class == Job_Thief ) {
           .@val1 = 100;
           .@val2 = 20;
         }
@@ -307,8 +307,8 @@ Body:
       BuyingStore: true
       DropEffect: CLIENT
     Script: |
-      if(BaseClass == Job_Swordman) {
-        if (Class == Job_Swordman) {
+      if(BaseClass == Job_Merchant ) {
+        if (Class == Job_Merchant ) {
           .@val1 = 100;
           .@val2 = 20;
         }
@@ -332,8 +332,8 @@ Body:
       BuyingStore: true
       DropEffect: CLIENT
     Script: |
-      if(BaseClass == Job_Swordman) {
-        if (Class == Job_Swordman) {
+      if(BaseClass == Job_Swordman ) {
+        if (Class == Job_Ac ) {
           .@val1 = 100;
           .@val2 = 20;
         }
@@ -360,8 +360,8 @@ Body:
       BuyingStore: true
       DropEffect: CLIENT
     Script: |
-      if(BaseClass == Job_Swordman) {
-        if (Class == Job_Swordman) {
+      if(BaseClass == Job_Archer ) {
+        if (Class == Job_Archer ) {
           .@val1 = 100;
           .@val2 = 20;
         }
@@ -385,8 +385,8 @@ Body:
       BuyingStore: true
       DropEffect: CLIENT
     Script: |
-      if(BaseClass == Job_Swordman) {
-        if (Class == Job_Swordman) {
+      if(BaseClass == Job_Mage ) {
+        if (Class == Job_Mage ) {
           .@val1 = 100;
           .@val2 = 20;
         }

@@ -5749,6 +5749,8 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 	case IG_GRAND_JUDGEMENT:
 	case HN_JUPITEL_THUNDER_STORM:
 	case AL_CRUCIS:
+	case SL_SMA:
+	case AL_HOLYLIGHT:
 		if( flag&1 ) {//Recursive invocation
 			int sflag = skill_area_temp[0] & 0xFFF;
 			int heal = 0;
@@ -5780,6 +5782,10 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 			heal = (int)skill_attack(skill_get_type(skill_id), src, src, bl, skill_id, skill_lv, tick, sflag);
 
 			switch (skill_id) {
+				case SL_SMA:
+					status_change_end(src, SC_SMA);
+					[[fallthrough]];
+					break;
 				case NPC_VAMPIRE_GIFT:
 					if (heal > 0) {
 						clif_skill_nodamage(nullptr, src, AL_HEAL, heal, 1);
@@ -5818,6 +5824,12 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 				status_change_end(src, SC_USE_SKILL_SP_SPA);
 
 			switch ( skill_id ) {
+				case AL_HOLYLIGHT:
+					status_change_end(bl, SC_P_ALTER);
+					[[fallthrough]];
+					if (sd && sd->sc.getSCE(SC_SPIRIT) && sd->sc.getSCE(SC_SPIRIT)->val2 == SL_PRIEST)
+						splash_size = 3;
+					break;
 				case LG_EARTHDRIVE:
 				case GN_CARTCANNON:
 				case SU_SCRATCH:
@@ -6010,7 +6022,6 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 			skill_attack(skill_get_type(skill_id), src, src, bl, skill_id, skill_lv, tick, flag|SD_ANIMATION|(sd?distance_bl(src, bl):0));
 		}
 		break;
-
 #ifdef RENEWAL
 	case KN_BRANDISHSPEAR:
 		skill_attack(skill_get_type(skill_id), src, src, bl, skill_id, skill_lv, tick, flag);
@@ -6160,10 +6171,13 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 			break;
 		skill_attack(BF_MAGIC,src,src,bl,skill_id,skill_lv,tick,flag);
 		break;
-
+	/*
 	case AL_HOLYLIGHT:
+		skill_attack(BF_MAGIC,src,src,bl,skill_id,skill_lv,tick,flag); // No AOE
+		if(sc && sc->getSCE(SC_SPIRIT) && sc->getSCE(SC_SPIRIT)->val2 == SL_PRIEST)
 		status_change_end(bl, SC_P_ALTER);
 		[[fallthrough]];
+	*/
 	case MG_SOULSTRIKE:
 	case NPC_DARKSTRIKE:
 	case MG_COLDBOLT:
@@ -6264,10 +6278,11 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 
 		skill_attack(BF_MISC, src, src, bl, skill_id, skill_lv, tick, flag);
 		break;
-
+	/*
 	case SL_SMA:
 		status_change_end(src, SC_SMA);
 		[[fallthrough]];
+	*/
 	case SL_STIN:
 	case SL_STUN:
 	case SP_SPA:
@@ -17736,10 +17751,12 @@ bool skill_check_condition_castbegin( map_session_data& sd, uint16 skill_id, uin
 				return false;
 			}
 			break;
+			/*
 		case SL_SMA:
 			if(!sc || !(sc->getSCE(SC_SMA) || sc->getSCE(SC_USE_SKILL_SP_SHA)))
 				return false;
 			break;
+			*/
 		case HT_POWER:
 			if(!(sc && sc->getSCE(SC_COMBO) && sc->getSCE(SC_COMBO)->val1 == AC_DOUBLE))
 				return false;
