@@ -1851,7 +1851,7 @@ Body:
           - Name: NJ_SYURIKEN
             Level: 5
       - Name: NJ_HUUMA
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: NJ_TOBIDOUGU
             Level: 5
@@ -1901,7 +1901,7 @@ Body:
           - Name: NJ_KOUENKA
             Level: 5
       - Name: NJ_BAKUENRYU
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: NJ_NINPOU
             Level: 10
@@ -1918,7 +1918,7 @@ Body:
           - Name: NJ_HYOUSENSOU
             Level: 5
       - Name: NJ_HYOUSYOURAKU
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: NJ_NINPOU
             Level: 10
@@ -1935,14 +1935,14 @@ Body:
           - Name: NJ_HUUJIN
             Level: 5
       - Name: NJ_KAMAITACHI
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: NJ_NINPOU
             Level: 10
           - Name: NJ_RAIGEKISAI
             Level: 5
       - Name: NJ_NEN
-        MaxLevel: 5
+        MaxLevel: 15
         Requires:
           - Name: NJ_NINPOU
             Level: 5
@@ -1993,7 +1993,7 @@ Body:
       Knight: true
     Tree:
       - Name: LK_AURABLADE
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: SM_MAGNUM
             Level: 5
@@ -2030,7 +2030,7 @@ Body:
         MaxLevel: 1
         JobLevel: 50
       - Name: LK_SPIRALPIERCE
-        MaxLevel: 5
+        MaxLevel: 15
         Requires:
           - Name: KN_SPEARMASTERY
             Level: 5
@@ -2063,7 +2063,7 @@ Body:
       - Name: PR_SLOWPOISON
         MaxLevel: 4
       - Name: HP_ASSUMPTIO
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: AL_ANGELUS
             Level: 1
@@ -2081,7 +2081,7 @@ Body:
           - Name: PR_KYRIE
             Level: 3
       - Name: HP_MEDITATIO
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: PR_ASPERSIO
             Level: 3
@@ -2110,14 +2110,14 @@ Body:
           - Name: MG_SOULSTRIKE
             Level: 7
       - Name: HW_MAGICCRASHER
-        MaxLevel: 1
+        MaxLevel: 15
         Requires:
           - Name: MG_SRECOVERY
             Level: 1
       - Name: HW_MAGICPOWER
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: HW_NAPALMVULCAN
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: MG_NAPALMBEAT
             Level: 5
@@ -2129,7 +2129,7 @@ Body:
           - Name: WZ_ICEWALL
             Level: 1
       - Name: HW_GRAVITATION
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: HW_MAGICCRASHER
             Level: 1

@@ -550,7 +550,8 @@ int skill_calc_heal(struct block_list *src, struct block_list *target, uint16 sk
 			hp = ((status_get_int(src) + status_get_lv(src)) / 5) * 30;
 
 			if (sd && ((skill = pc_checkskill(sd, HP_MEDITATIO)) > 0))
-				hp_bonus += skill * 2;
+				//hp_bonus += skill * 2;
+				hp_bonus = pow(skill,2);
 #else
 			hp = ((status_get_lv(src) + status_get_int(src)) / 8) * (4 + ((sd ? pc_checkskill(sd, AL_HEAL) : 1) * 8));
 			hp = (hp * (17 + 3 * skill_lv)) / 10;
@@ -568,7 +569,8 @@ int skill_calc_heal(struct block_list *src, struct block_list *target, uint16 sk
 			hp = (status_get_lv(src) + status_get_int(src)) / 5 * 30;
 #ifdef RENEWAL
 			if (sd && ((skill = pc_checkskill(sd, HP_MEDITATIO)) > 0))
-				hp_bonus += skill * 2;
+				//hp_bonus += skill * 2;
+				hp_bonus = pow(skill,2);
 #endif
 			break;
 		default:
@@ -586,7 +588,8 @@ int skill_calc_heal(struct block_list *src, struct block_list *target, uint16 sk
 
 			if (sd && ((skill = pc_checkskill(sd, HP_MEDITATIO)) > 0))
 #ifdef RENEWAL
-				hp_bonus += skill * 2;
+				//hp_bonus += skill * 2;
+				hp_bonus = pow(skill,2);
 #else
 				hp += hp * skill * 2 / 100;
 #endif
@@ -706,7 +709,7 @@ int skill_calc_heal(struct block_list *src, struct block_list *target, uint16 sk
 
 #ifdef RENEWAL
 	if (hp_bonus)
-		hp += hp * hp_bonus / 100;
+		hp += hp * hp_bonus / 25;
 
 	// MATK part of the RE heal formula [malufett]
 	// Note: in this part matk bonuses from items or skills are not applied
@@ -4147,6 +4150,18 @@ int64 skill_attack (int attack_type, struct block_list* src, struct block_list *
 			case SU_PICKYPECK:
 				if (status_get_lv(src) > 29 && rnd() % 100 < 10 * status_get_lv(src) / 30)
 					skill_addtimerskill(src, tick + dmg.amotion + skill_get_delay(skill_id, skill_lv), bl->id, 0, 0, skill_id, skill_lv, attack_type, flag|2);
+				break;
+			case WZ_FROSTNOVA:
+			case WZ_JUPITEL:
+			case WZ_VERMILION:
+			case WZ_EARTHSPIKE:
+			case WZ_HEAVENDRIVE:
+			case WZ_QUAGMIRE:
+			case HW_GRAVITATION:
+			case HW_MAGICCRASHER:
+			case HW_NAPALMVULCAN:
+				if (sc && sc->getSCE(SC_MAGICPOWER) && rnd() % 100 < 30)
+					skill_addtimerskill(src, tick + dmg.amotion, bl->id, 0, 0, skill_id, skill_lv, attack_type, flag|2);
 				break;
 		}
 	}
@@ -19487,6 +19502,10 @@ int skill_vfcastfix(struct block_list *bl, double time, uint16 skill_id, uint16 
 			fixed += skill_lv * 500;
 		if (sc->getSCE(SC_2011RWC_SCROLL))
 			VARCAST_REDUCTION(5);
+		if (sc->getSCE(SC_MAGICPOWER)) {
+			VARCAST_REDUCTION(sc->getSCE(SC_MAGICPOWER)->val1 * 2);
+			fixcast_r -= sc->getSCE(SC_MAGICPOWER)->val2 * 2;
+		}
 	}
 	if (sc && sc->getSCE(SC_SECRAMENT) && skill_id == HW_MAGICPOWER && (flag&2)) // Sacrament lowers Mystical Amplification cast time
 		fixcast_r = max(fixcast_r, sc->getSCE(SC_SECRAMENT)->val2);
@@ -19505,7 +19524,7 @@ int skill_vfcastfix(struct block_list *bl, double time, uint16 skill_id, uint16 
 	
 		switch(skill_id) {
 			case GS_TRACKING:
-				time += 100 * skill_lv;
+				time += min(2000,200 * skill_lv);
 			break;
 		}
 	/* Ready for new bonuscasttime

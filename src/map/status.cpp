@@ -2580,12 +2580,12 @@ void status_calc_misc(struct block_list *bl, struct status_data *status, int lev
 		// Hit
 		stat = status->hit;
 		stat += status->dex * (bl->type == BL_MOB ? (level > 150 ? 2 : 1 ) : 3) + (level * (bl->type == BL_MOB ? (level > 100 ? 5 + (1 + (level - 100 )/100 ) : 5 ) : 3) ) + 175; //base level + ( every 1 dex = +1 hit ) + (every 3 luk = +1 hit) + 175
-		stat += 11 * status->con;
+		stat += 3 * status->con;
 		status->hit = cap_value(stat, 1, SHRT_MAX);
 		// Flee
 		stat = status->flee;
 		stat += status->agi * (bl->type == BL_MOB ? (level > 150 ? 2 : 1 ) : 4) + ( level * (bl->type == BL_MOB ? (level < 100 ? 3 : 5) : 3 ) ) + 100; //base level + ( every 1 agi = +1 flee ) + (every 5 luk = +1 flee) + 100
-		stat += 11 * status->con;
+		stat += 1 * status->con;
 		status->flee = cap_value(stat, 1, SHRT_MAX);
 		// Def2
 		if (bl->type == BL_MER)
@@ -2615,10 +2615,12 @@ void status_calc_misc(struct block_list *bl, struct status_data *status, int lev
 		// Res
 		stat = status->res;
 		stat += status->sta + status->sta / 3 * 5;
+		stat *= 2;
 		status->res = cap_value(stat, 0, SHRT_MAX);
 		// Mres
 		stat = status->mres;
 		stat += status->wis + status->wis / 3 * 5;
+		stat *= 2;
 		status->mres = cap_value(stat, 0, SHRT_MAX);
 		// HPlus
 		stat = status->hplus;
@@ -7749,7 +7751,7 @@ static defType status_calc_def(struct block_list *bl, status_change *sc, int def
 		def += sc->getSCE(SC_DRUMBATTLE)->val3;
 #ifdef RENEWAL
 	if (sc->getSCE(SC_ASSUMPTIO))
-		def += sc->getSCE(SC_ASSUMPTIO)->val1 * 50;
+		def += sc->getSCE(SC_ASSUMPTIO)->val1 * 100;
 #else
 	if(sc->getSCE(SC_DEFENCE))
 		def += sc->getSCE(SC_DEFENCE)->val2;

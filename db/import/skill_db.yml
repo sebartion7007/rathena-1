@@ -3228,10 +3228,9 @@ Body:
       Id: Magnus
       Layout: -1
       Range: 1
-      Interval: 3000
+      Interval: 2000
       Target: Enemy
       Flag:
-        NoOverlap: true
         PathCheck: true
         RemovedByFireRain: true
   - Id: 80
@@ -10610,7 +10609,7 @@ Body:
   - Id: 355
     Name: LK_AURABLADE
     Description: Aura Blade
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Weapon
     TargetType: Self
     DamageFlags:
@@ -10777,7 +10776,7 @@ Body:
   - Id: 361
     Name: HP_ASSUMPTIO
     Description: Assumptio
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Magic
     TargetType: Support
     DamageFlags:
@@ -10820,6 +10819,16 @@ Body:
         Time: 80000
       - Level: 5
         Time: 100000
+      - Level: 6
+        Time: 120000
+      - Level: 7
+        Time: 140000
+      - Level: 8
+        Time: 160000
+      - Level: 9
+        Time: 180000
+      - Level: 10
+        Time: 200000
     FixedCastTime:
       - Level: 1
         Time: 200
@@ -10843,6 +10852,16 @@ Body:
           Amount: 50
         - Level: 5
           Amount: 60
+        - Level: 6
+          Amount: 70
+        - Level: 7
+          Amount: 80
+        - Level: 8
+          Amount: 90
+        - Level: 9
+          Amount: 100
+        - Level: 10
+          Amount: 110
     Status: Assumptio
   - Id: 362
     Name: HP_BASILICA
@@ -10906,7 +10925,7 @@ Body:
   - Id: 363
     Name: HP_MEDITATIO
     Description: Meditatio
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Magic
   - Id: 364
     Name: HW_SOULDRAIN
@@ -10917,7 +10936,7 @@ Body:
   - Id: 365
     Name: HW_MAGICCRASHER
     Description: Stave Crasher
-    MaxLevel: 1
+    MaxLevel: 15
     Type: Weapon
     TargetType: Attack
     Range: 9
@@ -10933,7 +10952,7 @@ Body:
   - Id: 366
     Name: HW_MAGICPOWER
     Description: Mystical Amplification
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Magic
     TargetType: Self
     DamageFlags:
@@ -10941,9 +10960,10 @@ Body:
     Hit: Single
     HitCount: 1
     Duration1: 60000
-    FixedCastTime: 700
+    FixedCastTime: 2000
     CastTimeFlags:
       IgnoreDex: true
+      IgnoreStatus: true
       IgnoreItemBonus: true
     Requires:
       SpCost:
@@ -10967,6 +10987,16 @@ Body:
           Amount: 75
         - Level: 10
           Amount: 80
+        - Level: 11
+          Amount: 85
+        - Level: 12
+          Amount: 90
+        - Level: 13
+          Amount: 95
+        - Level: 14
+          Amount: 100
+        - Level: 15
+          Amount: 105
     Status: MagicPower
   - Id: 367
     Name: PA_PRESSURE
@@ -11915,7 +11945,7 @@ Body:
   - Id: 397
     Name: LK_SPIRALPIERCE
     Description: Spiral Pierce
-    MaxLevel: 5
+    MaxLevel: 15
     Type: Weapon
     TargetType: Attack
     Flags:
@@ -11946,6 +11976,26 @@ Body:
         Time: 1800
       - Level: 5
         Time: 2000
+      - Level: 6
+        Time: 2000
+      - Level: 7
+        Time: 2000
+      - Level: 8
+        Time: 2000
+      - Level: 9
+        Time: 2000
+      - Level: 10
+        Time: 2000
+      - Level: 11
+        Time: 2000
+      - Level: 12
+        Time: 2000
+      - Level: 13
+        Time: 2000
+      - Level: 14
+        Time: 2000
+      - Level: 15
+        Time: 2000
     Duration2: 1000
     FixedCastTime:
       - Level: 1
@@ -11970,6 +12020,26 @@ Body:
           Amount: 27
         - Level: 5
           Amount: 30
+        - Level: 6
+          Amount: 33
+        - Level: 7
+          Amount: 36
+        - Level: 8
+          Amount: 39
+        - Level: 9
+          Amount: 42
+        - Level: 10
+          Amount: 45
+        - Level: 11
+          Amount: 48
+        - Level: 12
+          Amount: 51
+        - Level: 13
+          Amount: 54
+        - Level: 14
+          Amount: 57
+        - Level: 15
+          Amount: 60
       Weapon:
         1hSword: true
         2hSword: true
@@ -12042,7 +12112,7 @@ Body:
   - Id: 400
     Name: HW_NAPALMVULCAN
     Description: Napalm Vulcan
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Magic
     TargetType: Attack
     DamageFlags:
@@ -12055,12 +12125,22 @@ Body:
       - Level: 1
         Count: 1
       - Level: 2
-        Count: 2
+        Count: 1
       - Level: 3
-        Count: 3
+        Count: 2
       - Level: 4
-        Count: 4
+        Count: 2
       - Level: 5
+        Count: 3
+      - Level: 6
+        Count: 3
+      - Level: 7
+        Count: 4
+      - Level: 8
+        Count: 4
+      - Level: 9
+        Count: 5
+      - Level: 10
         Count: 5
     Element: Ghost
     SplashArea: 1
@@ -12082,6 +12162,16 @@ Body:
           Amount: 60
         - Level: 5
           Amount: 70
+        - Level: 6
+          Amount: 80
+        - Level: 7
+          Amount: 90
+        - Level: 8
+          Amount: 100
+        - Level: 9
+          Amount: 110
+        - Level: 10
+          Amount: 120
     Status: Curse
   - Id: 401
     Name: CH_SOULCOLLECT
@@ -14297,7 +14387,7 @@ Body:
   - Id: 484
     Name: HW_GRAVITATION
     Description: Gravitation Field
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Magic
     TargetType: Ground
     Flags:
@@ -14308,14 +14398,24 @@ Body:
     Hit: Multi_Hit
     HitCount:
       - Level: 1
-        Count: 2
+        Count: 1
       - Level: 2
-        Count: 4
+        Count: 2
       - Level: 3
-        Count: 6
+        Count: 3
       - Level: 4
-        Count: 8
+        Count: 4
       - Level: 5
+        Count: 5
+      - Level: 6
+        Count: 6
+      - Level: 7
+        Count: 7
+      - Level: 8
+        Count: 8
+      - Level: 9
+        Count: 9
+      - Level: 10
         Count: 10
     CastCancel: true
     CastTime: 5000
@@ -14335,10 +14435,20 @@ Body:
           Amount: 90
         - Level: 5
           Amount: 100
+        - Level: 6
+          Amount: 110
+        - Level: 7
+          Amount: 120
+        - Level: 8
+          Amount: 130
+        - Level: 9
+          Amount: 140
+        - Level: 10
+          Amount: 150
     Unit:
       Id: Gravitation
       Range: 2
-      Interval: 5100 #Using 5s causes a rare bug where another hit occurs at the end
+      Interval: 5100
       Target: Enemy
       Flag:
         PathCheck: true
@@ -14991,6 +15101,7 @@ Body:
     CastTimeFlags:
       IgnoreDex: true
       IgnoreStatus: true
+      IgnoreItemBonus: true
     Requires:
       SpCost:
         - Level: 1
@@ -15549,7 +15660,7 @@ Body:
   - Id: 525
     Name: NJ_HUUMA
     Description: Throw Huuma Shuriken
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
     TargetType: Attack
     DamageFlags:
@@ -15581,6 +15692,16 @@ Body:
         Area: 2
       - Level: 10
         Area: 3
+      - Level: 11
+        Area: 3
+      - Level: 12
+        Area: 3
+      - Level: 13
+        Area: 3
+      - Level: 14
+        Area: 3
+      - Level: 15
+        Area: 4
     CastTime: 500
     AfterCastActDelay: 500
     Duration1: 100
@@ -16109,7 +16230,7 @@ Body:
   - Id: 536
     Name: NJ_BAKUENRYU
     Description: Raging Fire Dragon
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Magic
     TargetType: Attack
     Range: 9
@@ -16147,7 +16268,17 @@ Body:
         - Level: 9
           Amount: 60
         - Level: 10
-          Amount: 55
+          Amount: 65
+        - Level: 11
+          Amount: 70
+        - Level: 12
+          Amount: 75
+        - Level: 13
+          Amount: 80
+        - Level: 14
+          Amount: 85
+        - Level: 15
+          Amount: 90
       ItemCost:
         - Item: Flame_Stone
           Amount: 1
@@ -16373,7 +16504,7 @@ Body:
   - Id: 539
     Name: NJ_HYOUSYOURAKU
     Description: Ice Meteor
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Magic
     TargetType: Self
     Hit: Single
@@ -16422,6 +16553,16 @@ Body:
           Amount: 80
         - Level: 10
           Amount: 85
+        - Level: 11
+          Amount: 90
+        - Level: 12
+          Amount: 95
+        - Level: 13
+          Amount: 100
+        - Level: 14
+          Amount: 100
+        - Level: 15
+          Amount: 100
       ItemCost:
         - Item: Ice_Stone
           Amount: 1
@@ -16584,7 +16725,7 @@ Body:
   - Id: 542
     Name: NJ_KAMAITACHI
     Description: Kamaitachi
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Magic
     TargetType: Attack
     Flags:
@@ -16644,30 +16785,30 @@ Body:
           Amount: 56
         - Level: 10
           Amount: 60
+        - Level: 11
+          Amount: 70
+        - Level: 12
+          Amount: 80
+        - Level: 13
+          Amount: 90
+        - Level: 14
+          Amount: 100
+        - Level: 15
+          Amount: 100
       ItemCost:
         - Item: Wind_Stone
           Amount: 1
   - Id: 543
     Name: NJ_NEN
     Description: Soul
-    MaxLevel: 5
+    MaxLevel: 15
     TargetType: Self
     DamageFlags:
       NoDamage: true
     Hit: Single
     HitCount: 1
     CastCancel: true
-    CastTime:
-      - Level: 1
-        Time: 4000
-      - Level: 2
-        Time: 3200
-      - Level: 3
-        Time: 2400
-      - Level: 4
-        Time: 1600
-      - Level: 5
-        Time: 800
+    CastTime: 800
     Duration1:
       - Level: 1
         Time: 30000
@@ -16679,17 +16820,27 @@ Body:
         Time: 75000
       - Level: 5
         Time: 90000
-    FixedCastTime:
-      - Level: 1
-        Time: 1000
-      - Level: 2
-        Time: 800
-      - Level: 3
-        Time: 600
-      - Level: 4
-        Time: 400
-      - Level: 5
-        Time: 200
+      - Level: 6
+        Time: 90000
+      - Level: 7
+        Time: 90000
+      - Level: 8
+        Time: 90000
+      - Level: 9
+        Time: 120000
+      - Level: 10
+        Time: 150000
+      - Level: 11
+        Time: 180000
+      - Level: 12
+        Time: 210000
+      - Level: 13
+        Time: 240000
+      - Level: 14
+        Time: 270000
+      - Level: 15
+        Time: 300000
+    FixedCastTime: 200
     Requires:
       SpCost:
         - Level: 1

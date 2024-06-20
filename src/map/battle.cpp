@@ -4124,7 +4124,7 @@ static void battle_calc_skill_base_damage(struct Damage* wd, struct block_list *
 				if (index >= 0 &&
 					sd->inventory_data[index] &&
 					sd->inventory_data[index]->type == IT_WEAPON)
-					wd->equipAtk += sd->inventory_data[index]->weight / 10;
+					wd->equipAtk += sd->inventory_data[index]->weight;
 
 				// 70% damage modifier is applied to base attack + weight
 				ATK_RATE(wd->equipAtk, wd->equipAtk2, 70);
@@ -4629,6 +4629,9 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 	}
 
 	switch(skill_id) {
+		case HW_MAGICCRASHER:
+			skillratio += -100 + 999 * skill_lv;
+			break;
 		case SM_BASH:
 		case MS_BASH:
 			if(skill_lv <= 10 )
@@ -4713,6 +4716,8 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 		case KN_BOWLINGBASH:
 		case MS_BOWLINGBASH:
 			skillratio += 100 * skill_lv;
+			if (sd && status_get_lv(src) > 100)
+				skillratio *= 2;
 			break;
 		case AS_GRIMTOOTH:
 			skillratio += 20 * skill_lv;
@@ -4932,7 +4937,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 #ifdef RENEWAL
 		// Renewal: skill ratio applies to entire damage [helvetica]
 		case LK_SPIRALPIERCE:
-			skillratio += 50 + 50 * skill_lv;
+			skillratio += 200 * skill_lv;
 			RE_LVL_DMOD(100);
 			if (sc && sc->getSCE(SC_CHARGINGPIERCE_COUNT) && sc->getSCE(SC_CHARGINGPIERCE_COUNT)->val1 >= 10)
 				skillratio *= 2;
@@ -5108,7 +5113,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 #endif
 		case NJ_HUUMA:
 #ifdef RENEWAL
-			skillratio += -250 + 300 * skill_lv;
+			skillratio += 400 + 300 * skill_lv;
 #else
 			skillratio += 50 + 150 * skill_lv;
 #endif
@@ -6811,7 +6816,7 @@ static void battle_calc_attack_post_defense(struct Damage* wd, struct block_list
 #endif
 			) {
 #ifdef RENEWAL
-			ATK_ADD(wd->damage, wd->damage2, (3 + sc->getSCE(SC_AURABLADE)->val1) * status_get_lv(src)); // !TODO: Confirm formula
+			ATK_ADD(wd->damage, wd->damage2, (3 * sc->getSCE(SC_AURABLADE)->val1) * status_get_lv(src)); // !TODO: Confirm formula
 #else
 			ATK_ADD(wd->damage, wd->damage2, 20 * sc->getSCE(SC_AURABLADE)->val1);
 #endif
@@ -7242,14 +7247,8 @@ static struct Damage initialize_weapon_data(struct block_list *src, struct block
 				break;
 #ifdef RENEWAL
 			case KN_BOWLINGBASH:
-				/*
-				if (sd && sd->status.weapon == W_2HSWORD) {
-					if (wd.miscflag >= 2 && wd.miscflag <= 3)
-						wd.div_ = 3;
-					else if (wd.miscflag >= 4)
-						wd.div_ = 4;
-				}
-				*/
+				if (sd && status_get_lv(src) > 100)
+					wd.div_ += 2;
 				break;
 #endif
 			case KN_AUTOCOUNTER:
@@ -8103,11 +8102,14 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 #endif
 					case HW_NAPALMVULCAN:
 #ifdef RENEWAL
-						skillratio += -100 + 70 * skill_lv;
+						skillratio += 100 * skill_lv;
 						RE_LVL_DMOD(100);
 #else
 						skillratio += 25;
 #endif
+						break;
+					case HW_MAGICCRASHER:
+						skillratio += -100 + 999 * skill_lv;
 						break;
 					case SL_STIN: //Target size must be small (0) for full damage
 						skillratio += (tstatus->size != SZ_SMALL ? -99 : 10 * skill_lv);
@@ -8131,7 +8133,7 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 							skillratio += 200 * sd->spiritcharm;
 						break;
 					case NJ_BAKUENRYU:
-						skillratio += 50 + 550 * skill_lv;
+						skillratio += 50 + 550 * skill_lv + (550 * (skill_lv > 10 ? (skill_lv - 10) : 0 ) );
 						if(sd && sd->spiritcharm_type == CHARM_TYPE_FIRE && sd->spiritcharm > 0)
 							skillratio += 1000 * sd->spiritcharm;
 						break;
@@ -8145,7 +8147,7 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 							skillratio += 20 * sd->spiritcharm;
 						break;
 					case NJ_HYOUSYOURAKU:
-						skillratio += 200 + 300 * skill_lv;
+						skillratio += 200 + 300 * skill_lv + (300 * (skill_lv > 10 ? (skill_lv - 10) : 0 ) );
 						if(sd && sd->spiritcharm_type == CHARM_TYPE_WATER && sd->spiritcharm > 0)
 							skillratio += 100 * sd->spiritcharm;
 						break;
@@ -8159,7 +8161,7 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 							skillratio += 20 * sd->spiritcharm;
 						break;
 					case NJ_KAMAITACHI:
-						skillratio += 400 * skill_lv;
+						skillratio += 400 * skill_lv + (400 * (skill_lv > 10 ? (skill_lv - 10) : 0 ) );
 						if(sd && sd->spiritcharm_type == CHARM_TYPE_WIND && sd->spiritcharm > 0)
 							skillratio += 100 * sd->spiritcharm;
 						break;
@@ -8193,6 +8195,8 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 					case PR_MAGNUS:
 						if (battle_check_undead(tstatus->race, tstatus->def_ele) || tstatus->race == RC_DEMON)
 							skillratio += 30;
+						if (sd && status_get_lv(src) > 100)
+							skillratio *= 4;
 						break;
 					case BA_DISSONANCE:
 						skillratio += skill_lv * 10;
@@ -8200,7 +8204,7 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 							skillratio += 3 * pc_checkskill(sd, BA_MUSICALLESSON);
 						break;
 					case HW_GRAVITATION:
-						skillratio += -100 + 100 * skill_lv;
+						skillratio += -100 + 200 * skill_lv;
 						RE_LVL_DMOD(100);
 						break;
 					case PA_PRESSURE:
