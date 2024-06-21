@@ -1349,7 +1349,7 @@ int skill_additional_effect( struct block_list* src, struct block_list *bl, uint
 				if( attack_type&BF_SKILL )
 					break; // If a normal attack is a skill, it's splash damage. [Inkfish]
 				if(sd) {
-					int skill;					
+					int skill, skill2;					
 					// Automatic trigger of Blitz Beat
 					if (pc_isfalcon(sd) && sd->status.weapon == W_BOW && (skill = pc_checkskill(sd, HT_BLITZBEAT)) > 0 && rnd() % 1000 <= sstatus->luk * 10 / 6 + 1) {
 						int rate;
@@ -1360,6 +1360,9 @@ int skill_additional_effect( struct block_list* src, struct block_list *bl, uint
 							rate = (sd->status.job_level + 9) / 10;
 
 						skill_castend_damage_id(src, bl, HT_BLITZBEAT, (skill < rate) ? skill : rate, tick, SD_LEVEL);
+						if ( (skill2 = pc_checkskill(sd, SN_FALCONASSAULT)) > 0 && rnd() % 1000 <= sstatus->luk * 10 / 3 + 1) {
+							skill_castend_damage_id(src, bl, SN_FALCONASSAULT, skill2 , tick, SD_LEVEL);
+						}
 					}
 					// Automatic trigger of Warg Strike
 					if (pc_iswug(sd) && (skill = pc_checkskill(sd, RA_WUGSTRIKE)) > 0) {
@@ -4155,7 +4158,6 @@ int64 skill_attack (int attack_type, struct block_list* src, struct block_list *
 			case WZ_JUPITEL:
 			case WZ_VERMILION:
 			case WZ_EARTHSPIKE:
-			case WZ_HEAVENDRIVE:
 			case WZ_QUAGMIRE:
 			case HW_GRAVITATION:
 			case HW_MAGICCRASHER:

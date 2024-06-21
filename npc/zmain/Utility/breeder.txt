@@ -11,6 +11,16 @@
 //============================================================
 
 falserealm,134,156,5	script	Universal Rental NPC	726,{
+	
+	switch (BaseClass) {
+	case Job_Merchant:
+		skill "MC_CARTREVOLUTION",1,SKILL_PERM;
+		skill "MC_CHANGECART",1,SKILL_PERM;
+		skill "MC_LOUD",1,SKILL_PERM;
+		if(PACKETVER >= 20150826)
+			skill "MC_CARTDECORATE",1,SKILL_PERM;
+		break;
+	}
 	if (ismounting()) {
 		message strcharinfo(0),"You must first remove your mount.";
 		end;

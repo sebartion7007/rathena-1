@@ -2043,11 +2043,16 @@ int64 battle_calc_damage(struct block_list *src,struct block_list *bl,struct Dam
 			default:
 				break;
 		}
-		
-		damage = cap_value(damage, INT_MIN, maxcap);
-		
 		//SC effects from caster side.
 		status_change* scs = status_get_sc(src);
+		if (scs && scs->count) {
+			if ( scs->getSCE(SC_EDP) ) {
+				maxcap += ( ( scs->getSCE(SC_EDP)->val1 * 5 ) * maxcap) / 100;
+			}
+		} // end if 
+		damage = cap_value(damage, INT_MIN, maxcap);
+		
+		
 		//ShowDebug("Debug Test \n");
 		if (scs && scs->count) {
 			if (scs->getSCE(SC_BLESSING)) {
@@ -3047,7 +3052,7 @@ static bool is_attack_critical(struct Damage* wd, struct block_list *src, struct
 				else
 					cri *= 2;
 				break;
-			case SN_SHARPSHOOTING:
+			//case SN_SHARPSHOOTING:
 			case MA_SHARPSHOOTING:
 #ifdef RENEWAL
 				cri += 300; // !TODO: Confirm new bonus
@@ -3061,6 +3066,7 @@ static bool is_attack_critical(struct Damage* wd, struct block_list *src, struct
 #ifdef RENEWAL
 			case ASC_BREAKER:
 #endif
+			case SN_SHARPSHOOTING:
 			case GC_CROSSIMPACT:
 			case SHC_SAVAGE_IMPACT:
 			case SHC_ETERNAL_SLASH:
@@ -4949,7 +4955,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 #endif
 		case ASC_METEORASSAULT:
 #ifdef RENEWAL
-			skillratio += 100 + 120 * skill_lv;
+			skillratio += -100 + 560 * skill_lv;
 			RE_LVL_DMOD(100);
 #else
 			skillratio += -60 + 40 * skill_lv;
@@ -4966,7 +4972,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			[[fallthrough]];
 		case MA_SHARPSHOOTING:
 #ifdef RENEWAL
-			skillratio += -100 + 300 + 300 * skill_lv;
+			skillratio += -100 + 1000 * skill_lv;
 			RE_LVL_DMOD(100);
 #else
 			skillratio += 100 + 50 * skill_lv;
@@ -5000,7 +5006,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			break;
 		case ASC_BREAKER:
 #ifdef RENEWAL
-			skillratio += -100 + 150 * skill_lv + sstatus->str + sstatus->int_; // !TODO: Confirm stat modifier
+			skillratio += -100 + 700 * skill_lv + (sstatus->str * 3) + (sstatus->int_ * 5); // !TODO: Confirm stat modifier
 			RE_LVL_DMOD(100);
 #else
 			// Pre-Renewal: skill ratio for weapon part of damage [helvetica]
@@ -5040,7 +5046,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			if (i < 1) i = 1;
 			//Preserve damage ratio when max cart weight is changed.
 			if (sd && sd->cart_weight)
-				skillratio += sd->cart_weight / i * 80000 / battle_config.max_cart_weight - 100;
+				skillratio += (sd->cart_weight + sd->weight) / i * 80000 / battle_config.max_cart_weight - 100;
 			else if (!sd)
 				skillratio += 80000 / i - 100;
 			break;
@@ -6483,19 +6489,20 @@ static void battle_attack_sc_bonus(struct Damage* wd, struct block_list *src, st
 		if (sc->getSCE(SC_EDP)) {
 			switch(skill_id) {
 				// Renewal: Venom Splasher, Meteor Assault, Grimtooth and Venom Knife ignore EDP
-				case TF_SPRINKLESAND:
-				case AS_SPLASHER:
-				case ASC_METEORASSAULT:
-				case AS_GRIMTOOTH:
-				case AS_VENOMKNIFE:
+				//case TF_SPRINKLESAND:
+				//case AS_SPLASHER:
+				//case ASC_METEORASSAULT:
+				//case AS_GRIMTOOTH:
+				//case AS_VENOMKNIFE:
+				  case TF_THROWSTONE:
 					break; // skills above have no effect with EDP
 
 				default: // fall through to apply EDP bonuses
 					// Renewal EDP formula [helvetica]
 					// weapon atk * (2.5 + (edp level * .3))
 					// equip atk * (2.5 + (edp level * .3))
-					ATK_RATE(wd->weaponAtk, wd->weaponAtk2, 250 + (sc->getSCE(SC_EDP)->val1 * 30));
-					ATK_RATE(wd->equipAtk, wd->equipAtk2, 250 + (sc->getSCE(SC_EDP)->val1 * 30));
+					ATK_RATE(wd->weaponAtk, wd->weaponAtk2, 250 + (sc->getSCE(SC_EDP)->val1 * 50));
+					ATK_RATE(wd->equipAtk, wd->equipAtk2, 250 + (sc->getSCE(SC_EDP)->val1 * 50));
 					break;
 			}
 		}

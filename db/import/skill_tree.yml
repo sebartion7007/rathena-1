@@ -2198,7 +2198,7 @@ Body:
           - Name: BS_WEAPONRESEARCH
             Level: 10
       - Name: WS_CARTTERMINATION
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: MC_MAMMONITE
             Level: 10
@@ -2207,7 +2207,7 @@ Body:
           - Name: WS_CARTBOOST
             Level: 1
       - Name: WS_OVERTHRUSTMAX
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: BS_OVERTHRUST
             Level: 5
@@ -2229,7 +2229,7 @@ Body:
           - Name: HT_FALCON
             Level: 1
       - Name: SN_FALCONASSAULT
-        MaxLevel: 5
+        MaxLevel: 10
         Requires:
           - Name: HT_STEELCROW
             Level: 3
@@ -2240,7 +2240,7 @@ Body:
           - Name: HT_FALCON
             Level: 1
       - Name: SN_SHARPSHOOTING
-        MaxLevel: 5
+        MaxLevel: 15
         Requires:
           - Name: AC_CONCENTRATION
             Level: 10
@@ -2270,7 +2270,7 @@ Body:
           - Name: ASC_CDP
             Level: 1
       - Name: ASC_BREAKER
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: TF_DOUBLE
             Level: 5
@@ -2281,7 +2281,7 @@ Body:
           - Name: TF_POISON
             Level: 5
       - Name: ASC_METEORASSAULT
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: AS_RIGHT
             Level: 3

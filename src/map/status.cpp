@@ -8146,7 +8146,7 @@ static unsigned short status_calc_speed(struct block_list *bl, status_change *sc
 		if( sc->getSCE(SC_WINDWALK) )
 			val = max( val, 2 * sc->getSCE(SC_WINDWALK)->val1 );
 		if( sc->getSCE(SC_CARTBOOST) )
-			val = max( val, 20 );
+			val = max( val, 40 );
 		if( sd && (sd->class_&MAPID_UPPERMASK) == MAPID_ASSASSIN && pc_checkskill(sd,TF_MISS) > 0 )
 			val = max( val, 1 * pc_checkskill(sd,TF_MISS) );
 		if( sc->getSCE(SC_CLOAKING) && (sc->getSCE(SC_CLOAKING)->val4&1) == 1 )
