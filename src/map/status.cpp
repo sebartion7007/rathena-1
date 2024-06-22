@@ -10790,7 +10790,7 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 #endif
 			break;
 		case SC_SACRIFICE:
-			val2 = 5; // Lasts 5 hits
+			val2 = 10; // Lasts 5 hits
 			tick = INFINITE_TICK;
 			break;
 		case SC_ENCPOISON:
@@ -11666,7 +11666,7 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 				val1 = 1;
 			break;
 		case SC_DOUBLECAST:
-			val2 = 30+10*val1; // Trigger rate
+			val2 = 5 + 5 * val1; // Trigger rate
 			break;
 		case SC_KAIZEL:
 			val2 = 10*val1; // % of life to be revived with

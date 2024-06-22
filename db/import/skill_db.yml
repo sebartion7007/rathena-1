@@ -7674,6 +7674,8 @@ Body:
     MaxLevel: 5
     Type: Weapon
     TargetType: Attack
+    DamageFlags:
+      IgnoreFlee: true
     Range: 3
     Hit: Single
     HitCount: 1
@@ -7703,6 +7705,8 @@ Body:
     MaxLevel: 5
     Type: Weapon
     TargetType: Attack
+    DamageFlags:
+      IgnoreFlee: true
     Range:
       - Level: 1
         Size: 3
@@ -8516,7 +8520,17 @@ Body:
         Shotgun: true
         Grenade: true
         Huuma: true
-      SpiritSphereCost: 1
+      SpiritSphereCost:
+        - Level: 1
+          Amount: 1
+        - Level: 2
+          Amount: 1
+        - Level: 3
+          Amount: 1
+        - Level: 4
+          Amount: 1
+        - Level: 5
+          Amount: 0
   - Id: 274
     Name: SA_ADVANCEDBOOK
     Description: Study
@@ -11001,7 +11015,7 @@ Body:
   - Id: 367
     Name: PA_PRESSURE
     Description: Gloria Domini
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Magic
     TargetType: Attack
     Range: 9
@@ -11044,10 +11058,20 @@ Body:
           Amount: 45
         - Level: 5
           Amount: 50
+        - Level: 6
+          Amount: 55
+        - Level: 7
+          Amount: 60
+        - Level: 8
+          Amount: 65
+        - Level: 9
+          Amount: 70
+        - Level: 10
+          Amount: 75
   - Id: 368
     Name: PA_SACRIFICE
     Description: Martyr's Reckoning
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Weapon
     TargetType: Self
     DamageFlags:
@@ -11112,7 +11136,7 @@ Body:
   - Id: 370
     Name: CH_PALMSTRIKE
     Description: Raging Palm Strike
-    MaxLevel: 5
+    MaxLevel: 15
     Type: Weapon
     TargetType: Attack
     Range: -2
@@ -11136,12 +11160,32 @@ Body:
           Amount: 8
         - Level: 5
           Amount: 10
+        - Level: 6
+          Amount: 12
+        - Level: 7
+          Amount: 14
+        - Level: 8
+          Amount: 16
+        - Level: 9
+          Amount: 18
+        - Level: 10
+          Amount: 20
+        - Level: 11
+          Amount: 22
+        - Level: 12
+          Amount: 24
+        - Level: 13
+          Amount: 26
+        - Level: 14
+          Amount: 28
+        - Level: 15
+          Amount: 30
       Status:
         Explosionspirits: true
   - Id: 371
     Name: CH_TIGERFIST
     Description: Glacier Fist
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Weapon
     TargetType: Self
     Flags:
@@ -11175,7 +11219,37 @@ Body:
           Amount: 10
         - Level: 5
           Amount: 12
-      SpiritSphereCost: 1
+        - Level: 6
+          Amount: 14
+        - Level: 7
+          Amount: 16
+        - Level: 8
+          Amount: 18
+        - Level: 9
+          Amount: 20
+        - Level: 10
+          Amount: 22
+      SpiritSphereCost:
+        - Level: 1
+          Amount: 1
+        - Level: 2
+          Amount: 1
+        - Level: 3
+          Amount: 1
+        - Level: 4
+          Amount: 1
+        - Level: 5
+          Amount: 1
+        - Level: 6
+          Amount: 1
+        - Level: 7
+          Amount: 1
+        - Level: 8
+          Amount: 1
+        - Level: 9
+          Amount: 1
+        - Level: 10
+          Amount: 0
     Status: Ankle
   - Id: 372
     Name: CH_CHAINCRUSH
@@ -11189,25 +11263,25 @@ Body:
     Hit: Multi_Hit
     HitCount:
       - Level: 1
-        Count: -1
+        Count: 1
       - Level: 2
-        Count: -1
+        Count: 1
       - Level: 3
-        Count: -2
+        Count: 2
       - Level: 4
-        Count: -2
+        Count: 2
       - Level: 5
-        Count: -3
+        Count: 3
       - Level: 6
-        Count: -3
+        Count: 3
       - Level: 7
-        Count: -4
+        Count: 4
       - Level: 8
-        Count: -4
+        Count: 4
       - Level: 9
-        Count: -5
+        Count: 5
       - Level: 10
-        Count: -5
+        Count: 5
     Element: Weapon
     CastDelayFlags:
       IgnoreStatus: true
@@ -11233,7 +11307,27 @@ Body:
           Amount: 20
         - Level: 10
           Amount: 22
-      SpiritSphereCost: 1
+      SpiritSphereCost:
+        - Level: 1
+          Amount: 1
+        - Level: 2
+          Amount: 1
+        - Level: 3
+          Amount: 1
+        - Level: 4
+          Amount: 1
+        - Level: 5
+          Amount: 1
+        - Level: 6
+          Amount: 1
+        - Level: 7
+          Amount: 1
+        - Level: 8
+          Amount: 1
+        - Level: 9
+          Amount: 1
+        - Level: 10
+          Amount: 0
   - Id: 373
     Name: PF_HPCONVERSION
     Description: Indulge
@@ -14359,7 +14453,7 @@ Body:
   - Id: 480
     Name: PA_SHIELDCHAIN
     Description: Shield Chain
-    MaxLevel: 5
+    MaxLevel: 10
     Type: Weapon
     TargetType: Attack
     Range:
@@ -14372,6 +14466,16 @@ Body:
       - Level: 4
         Size: 9
       - Level: 5
+        Size: 11
+      - Level: 6
+        Size: 11
+      - Level: 7
+        Size: 11
+      - Level: 8
+        Size: 11
+      - Level: 9
+        Size: 11
+      - Level: 10
         Size: 11
     Hit: Multi_Hit
     HitCount: 5
@@ -14391,6 +14495,16 @@ Body:
           Amount: 37
         - Level: 5
           Amount: 40
+        - Level: 6
+          Amount: 43
+        - Level: 7
+          Amount: 46
+        - Level: 8
+          Amount: 49
+        - Level: 9
+          Amount: 52
+        - Level: 10
+          Amount: 55
       State: Shield
   - Id: 481
     Name: HP_MANARECHARGE
@@ -14730,7 +14844,7 @@ Body:
   - Id: 490
     Name: CR_ACIDDEMONSTRATION
     Description: Acid Demonstration
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
     TargetType: Attack
     Range: 9
@@ -14756,6 +14870,16 @@ Body:
         Count: 9
       - Level: 10
         Count: 10
+      - Level: 11
+        Count: 11
+      - Level: 12
+        Count: 12
+      - Level: 13
+        Count: 13
+      - Level: 14
+        Count: 14
+      - Level: 15
+        Count: 15
     Element: Weapon
     CastCancel: true
     AfterCastActDelay: 1000

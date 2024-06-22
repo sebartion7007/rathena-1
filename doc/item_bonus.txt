@@ -98,8 +98,8 @@ The format of bonuses listed in this file is as follows:
 bonus bSupplementary,n;					Get Bonus Damage n damage (it's not plus cap but it's ignore cap)
 bonus bCapDamageRate,n;					Capdamage + n%
 bonus bCapDamageVal,n;					Capdamage + n
-bonus bCapDamageOnSkill,n;				Chance to deal damage to Capdamage with all skills in n%
-bonus bCapDamageOnAtk,n;				Chance to deal damage to Capdamage with all attack in n%
+bonus bCapDamageOnSkill,n;				Chance to deal damage to Capdamage with all skills in n/10000 %
+bonus bCapDamageOnAtk,n;				Chance to deal damage to Capdamage with all attack in n/10000 %
 
 bonus2 bSkillSupplement,t,n;             Skill Type T Damage +n					
 bonus2 bSkillRate,t,n;                   Skill Type T Damage +n%

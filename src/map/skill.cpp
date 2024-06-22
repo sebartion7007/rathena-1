@@ -4139,12 +4139,27 @@ int64 skill_attack (int attack_type, struct block_list* src, struct block_list *
 
 	if (!(flag&2)) {
 		switch (skill_id) {
+			case MO_TRIPLEATTACK:
+				if( pc_checkskill( sd, MO_TRIPLEATTACK ) >= 15 && 
+				pc_checkskill( sd, MO_CHAINCOMBO ) >= 5 &&
+				pc_checkskill( sd, MO_COMBOFINISH ) >= 5 &&
+				pc_checkskill( sd, CH_TIGERFIST ) >= 10 &&
+				pc_checkskill( sd, CH_CHAINCRUSH ) >= 10 ) {
+					skill_addtimerskill(src, tick + dmg.amotion, bl->id, 0, 0, MO_CHAINCOMBO, skill_lv, attack_type, flag|2);
+					skill_addtimerskill(src, tick + 2 * dmg.amotion, bl->id, 0, 0, MO_COMBOFINISH, skill_lv, attack_type, flag|2);
+					skill_addtimerskill(src, tick + 3 * dmg.amotion, bl->id, 0, 0, CH_TIGERFIST, skill_lv, attack_type, flag|2);
+					skill_addtimerskill(src, tick + 4 * dmg.amotion, bl->id, 0, 0, CH_CHAINCRUSH, skill_lv, attack_type, flag|2);
+				}
+				break;
 			case MG_COLDBOLT:
 			case MG_FIREBOLT:
 			case MG_LIGHTNINGBOLT:
-				if (sc && sc->getSCE(SC_DOUBLECAST) && rnd() % 100 < sc->getSCE(SC_DOUBLECAST)->val2)
-					//skill_addtimerskill(src, tick + dmg.div_*dmg.amotion, bl->id, 0, 0, skill_id, skill_lv, BF_MAGIC, flag|2);
+				if (sc && sc->getSCE(SC_DOUBLECAST)) {
 					skill_addtimerskill(src, tick + dmg.amotion, bl->id, 0, 0, skill_id, skill_lv, BF_MAGIC, flag|2);
+					if (rnd() % 100 < sc->getSCE(SC_DOUBLECAST)->val2)
+					//skill_addtimerskill(src, tick + dmg.div_*dmg.amotion, bl->id, 0, 0, skill_id, skill_lv, BF_MAGIC, flag|2);
+						skill_addtimerskill(src, tick +(2*dmg.amotion), bl->id, 0, 0, skill_id, skill_lv, BF_MAGIC, flag|2);
+				}
 				break;
 			case SU_BITE:
 			case SU_SCRATCH:
@@ -6380,16 +6395,14 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 
 	// Celest
 	case PF_SOULBURN:
-		if (rnd()%100 < (skill_lv < 5 ? 30 + skill_lv * 10 : 70)) {
+		if (rnd()%100 < (skill_lv * 4 )) {
 			clif_skill_nodamage(src,bl,skill_id,skill_lv,1);
-			if (skill_lv == 5)
-				skill_attack(BF_MAGIC,src,src,bl,skill_id,skill_lv,tick,flag);
-			status_percent_damage(src, bl, 0, 100, false);
+			battle_fix_damage(src, bl, 10000000, 0, skill_id);
+			clif_damage(src, bl, tick, 0, 0, 10000000, 0, DMG_NORMAL, 0, false);
 		} else {
 			clif_skill_nodamage(src,src,skill_id,skill_lv,1);
-			if (skill_lv == 5)
-				skill_attack(BF_MAGIC,src,src,src,skill_id,skill_lv,tick,flag);
-			status_percent_damage(src, src, 0, 100, false);
+			battle_fix_damage(src, src, 10000000, 0, skill_id);
+			clif_damage(src, src, tick, 0, 0, 10000000, 0, DMG_NORMAL, 0, false);
 		}
 		break;
 

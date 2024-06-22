@@ -697,6 +697,13 @@ Body:
     Buy: 10
     Script: |
       callfunc("F_GGachapon",1);
+  - Id: 60002
+    AegisName: Sharky_Gacha_Egg_Vol.2
+    Name: Sharky Gacha Egg Vol.2
+    Type: Usable
+    Buy: 10
+    Script: |
+      callfunc("F_GGachapon",2);
   - Id: 170001
     AegisName: Super_Angel_Wing
     Name: Super Angel Wing

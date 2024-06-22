@@ -2023,21 +2023,12 @@ int64 battle_calc_damage(struct block_list *src,struct block_list *bl,struct Dam
 			maxcap += tsd->bonus.capdamage_val;
 		if (tsd && tsd->bonus.capdamage_rate > 0)
 			maxcap += (tsd->bonus.capdamage_rate * maxcap) / 100;
-		if ((tsd && tsd->bonus.capdamage_nm_chance > 0) || (tsd && tsd->bonus.capdamage_sk_chance > 0)) {
-			if (damage < maxcap)
-				if (skill_id > 0) {
-					if (rand() % 10000 < tsd->bonus.capdamage_sk_chance)
-						damage = maxcap;
-				}
-				else {
-					if (rand() % 10000 < tsd->bonus.capdamage_nm_chance)
-						damage = maxcap;
-				}
-		}
+
 		switch (skill_id) {
 			case MO_EXTREMITYFIST:
 			case GS_TRACKING:
 			case NJ_ISSEN:
+			case PA_SACRIFICE:
 				maxcap = INT_MAX;
 				break;
 			default:
@@ -2049,9 +2040,25 @@ int64 battle_calc_damage(struct block_list *src,struct block_list *bl,struct Dam
 			if ( scs->getSCE(SC_EDP) ) {
 				maxcap += ( ( scs->getSCE(SC_EDP)->val1 * 5 ) * maxcap) / 100;
 			}
+			if ( scs->getSCE(SC_SACRIFICE) && skill_id == PA_SACRIFICE ) {
+				maxcap = INT_MAX;
+			}
 		} // end if 
+		
+		
 		damage = cap_value(damage, INT_MIN, maxcap);
 		
+		if ((tsd && tsd->bonus.capdamage_nm_chance > 0) || (tsd && tsd->bonus.capdamage_sk_chance > 0)) {
+			if (damage < maxcap)
+				if (skill_id > 0) {
+					if (rand() % 10000 < tsd->bonus.capdamage_sk_chance)
+						damage = maxcap;
+				}
+				else {
+					if (rand() % 10000 < tsd->bonus.capdamage_nm_chance)
+						damage = maxcap;
+				}
+		}
 		
 		//ShowDebug("Debug Test \n");
 		if (scs && scs->count) {
@@ -2059,11 +2066,13 @@ int64 battle_calc_damage(struct block_list *src,struct block_list *bl,struct Dam
 				damage += scs->getSCE(SC_BLESSING)->val3*200;
 			}
 		}
-		
-		if (tsd && tsd->bonus.supplementary) damage += tsd->bonus.supplementary;
-		if (skill_id) 
-			damage += get_bonus_skillsupplement(src, skill_id);
+		if(damage < INT_MAX) {
+			if (tsd && tsd->bonus.supplementary) damage += tsd->bonus.supplementary;
+			if (skill_id) 
+				damage += get_bonus_skillsupplement(src, skill_id);
+		}
 	}
+	
 	damage = cap_value(damage, INT_MIN, INT_MAX);
 	return damage;
 }
@@ -4105,7 +4114,7 @@ static void battle_calc_skill_base_damage(struct Damage* wd, struct block_list *
 
 	switch (skill_id) {	//Calc base damage according to skill
 		case PA_SACRIFICE:
-			wd->damage = sstatus->max_hp* 9/100;
+			wd->damage = sstatus->max_hp * 2;
 			wd->damage2 = 0;
 #ifdef RENEWAL
 			wd->weaponAtk = wd->damage;
@@ -4194,7 +4203,7 @@ static void battle_calc_skill_base_damage(struct Damage* wd, struct block_list *
 					ATK_ADD(wd->damage, wd->damage2, sd->inventory_data[index]->weight / 10);
 #ifdef RENEWAL
 					ATK_ADD(wd->weaponAtk, wd->weaponAtk2, 4 * sd->inventory.u.items_inventory[index].refine);
-					ATK_ADD(wd->weaponAtk, wd->weaponAtk2, sd->inventory_data[index]->weight / 10);
+					ATK_ADD(wd->weaponAtk, wd->weaponAtk2, sd->inventory_data[index]->weight * 7);
 #endif
 				}
 #ifndef RENEWAL
@@ -4798,6 +4807,9 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 				else
 					skillratio += 900 + 150 * (skill_lv - 10);
 			}
+			
+			if (sc->getSCE(SC_PRESERVE))
+				skillratio *= 5;
 			break;
 		case RG_RAID:
 #ifdef RENEWAL
@@ -4805,6 +4817,8 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 #else
 			skillratio += 40 * skill_lv;
 #endif
+			if (sc->getSCE(SC_PRESERVE))
+				skillratio *= 4;
 			if (sc->getSCE(SC_HIDING))
 				skillratio *= 2;
 			break;
@@ -4863,12 +4877,12 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 #endif
 			break;
 		case MO_EXTREMITYFIST:
-			skillratio += 10000 + sstatus->sp * 20;
+			skillratio += 10000 + sstatus->sp * 100;
 #ifdef RENEWAL
 			if (wd->miscflag&1)
 				skillratio *= 2; // More than 5 spirit balls active
 #endif
-			skillratio = min(500000,skillratio); //We stop at roughly 50k SP for overflow protection
+			skillratio = min(900000,skillratio); //We stop at roughly 50k SP for overflow protection
 			break;
 		case MO_TRIPLEATTACK:
 			if(skill_lv < 10)
@@ -4926,7 +4940,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			break;
 		case CH_PALMSTRIKE:
 #ifdef RENEWAL
-			skillratio += 100 + 100 * skill_lv + sstatus->str; // !TODO: How does STR play a role?
+			skillratio += 100 + 1500 * skill_lv + sstatus->str; // !TODO: How does STR play a role?
 			RE_LVL_DMOD(100);
 #else
 			skillratio += 100 + 100 * skill_lv;
@@ -5014,7 +5028,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 #endif
 			break;
 		case PA_SACRIFICE:
-			skillratio += -10 + 10 * skill_lv;
+			skillratio +=  10 * skill_lv;
 			break;
 		case PA_SHIELDCHAIN:
 #ifdef RENEWAL
@@ -8041,7 +8055,7 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 					case MG_FIREBOLT:
 					case MG_COLDBOLT:
 					case MG_LIGHTNINGBOLT:
-						skillratio += 2 * skill_lv;
+						skillratio += 10 * skill_lv;
 						if (sc) {
 							if ((skill_id == MG_FIREBOLT && sc->getSCE(SC_FLAMETECHNIC_OPTION)) ||
 								(skill_id == MG_COLDBOLT && sc->getSCE(SC_COLD_FORCE_OPTION)) ||
@@ -8055,6 +8069,8 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 								ad.type = DMG_NORMAL;
 							}
 						}
+						if (sc && sc->getSCE(SC_DOUBLECAST))
+							skillratio *= 30;
 						break;
 					case MG_THUNDERSTORM:
 						// in Renewal Thunder Storm boost is 100% (in pre-re, 80%)
@@ -8215,7 +8231,7 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 						RE_LVL_DMOD(100);
 						break;
 					case PA_PRESSURE:
-						skillratio += -100 + 500 + 150 * skill_lv;
+						skillratio += 2500 * skill_lv;
 						RE_LVL_DMOD(100);
 						break;
 					case WZ_SIGHTBLASTER:
