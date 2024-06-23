@@ -7252,6 +7252,9 @@ int pc_get_skillcooldown(map_session_data *sd, uint16 skill_id, uint16 skill_lv)
 		}
 	}
 
+	status_change* sc = status_get_sc(&sd->bl);
+	if (sc && sc->getSCE(SC_MAGICIAN)) cooldown = 0;
+
 	return max(0, cooldown);
 }
 

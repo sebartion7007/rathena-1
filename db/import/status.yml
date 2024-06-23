@@ -68,3 +68,101 @@ Body:
       NoDispell: true
       NoBanishingBuster: true
       RequireWeapon: true
+  - Status: Fool
+    CalcFlags:
+      All: true
+    Flags:
+      NoDispell: true
+      NoSave: true
+      NoClearance: true
+  - Status: Magician
+    CalcFlags:
+      All: true
+    Flags:
+      NoDispell: true
+      NoSave: true
+      NoClearance: true
+  - Status: Highpriestess
+    CalcFlags:
+      All: true
+    Flags:
+      NoDispell: true
+      NoSave: true
+      NoClearance: true
+  - Status: Chariot
+    CalcFlags:
+      All: true
+    Flags:
+      NoDispell: true
+      NoSave: true
+      NoClearance: true
+  - Status: Strength
+    CalcFlags:
+      All: true
+    Flags:
+      NoDispell: true
+      NoSave: true
+      NoClearance: true
+  - Status: Lovers
+    CalcFlags:
+      All: true
+    Flags:
+      NoDispell: true
+      NoSave: true
+      NoClearance: true
+  - Status: Wheelfortune
+    CalcFlags:
+      All: true
+    Flags:
+      NoDispell: true
+      NoSave: true
+      NoClearance: true
+  - Status: Hangedman
+    CalcFlags:
+      All: true
+    Flags:
+      NoDispell: true
+      NoSave: true
+      NoClearance: true
+  - Status: Death
+    CalcFlags:
+      All: true
+    Flags:
+      NoDispell: true
+      NoSave: true
+      NoClearance: true
+  - Status: Temperance
+    CalcFlags:
+      All: true
+    Flags:
+      NoDispell: true
+      NoSave: true
+      NoClearance: true
+  - Status: Devil
+    CalcFlags:
+      All: true
+    Flags:
+      NoDispell: true
+      NoSave: true
+      NoClearance: true
+  - Status: Tower
+    CalcFlags:
+      All: true
+    Flags:
+      NoDispell: true
+      NoSave: true
+      NoClearance: true
+  - Status: Star
+    CalcFlags:
+      All: true
+    Flags:
+      NoDispell: true
+      NoSave: true
+      NoClearance: true
+  - Status: Sun
+    CalcFlags:
+      All: true
+    Flags:
+      NoDispell: true
+      NoSave: true
+      NoClearance: true

@@ -6584,7 +6584,10 @@ static unsigned short status_calc_str(struct block_list *bl, status_change *sc, 
 		str += sc->getSCE(SC_ULTIMATECOOK)->val1;
 	if (sc->getSCE(SC_ALL_STAT_DOWN))
 		str -= sc->getSCE(SC_ALL_STAT_DOWN)->val2;
-
+	if (sc->getSCE(SC_STRENGTH) )
+		str += 100;
+	if (sc->getSCE(SC_TEMPERANCE) )
+		str += 50;
 	//TODO: Stat points should be able to be decreased below 0
 	return (unsigned short)cap_value(str,0,USHRT_MAX);
 }
@@ -6669,6 +6672,8 @@ static unsigned short status_calc_agi(struct block_list *bl, status_change *sc, 
 		agi += sc->getSCE(SC_ULTIMATECOOK)->val1;
 	if (sc->getSCE(SC_ALL_STAT_DOWN))
 		agi -= sc->getSCE(SC_ALL_STAT_DOWN)->val2;
+	if (sc->getSCE(SC_TEMPERANCE) )
+		agi += 50;
 
 	//TODO: Stat points should be able to be decreased below 0
 	return (unsigned short)cap_value(agi,0,USHRT_MAX);
@@ -6746,6 +6751,8 @@ static unsigned short status_calc_vit(struct block_list *bl, status_change *sc, 
 		vit += 10;
 	if (sc->getSCE(SC_ALL_STAT_DOWN))
 		vit -= sc->getSCE(SC_ALL_STAT_DOWN)->val2;
+	if (sc->getSCE(SC_TEMPERANCE) )
+		vit += 50;
 
 	//TODO: Stat points should be able to be decreased below 0
 	return (unsigned short)cap_value(vit,0,USHRT_MAX);
@@ -6836,6 +6843,8 @@ static unsigned short status_calc_int(struct block_list *bl, status_change *sc, 
 		int_ += sc->getSCE(SC_ULTIMATECOOK)->val1;
 	if (sc->getSCE(SC_ALL_STAT_DOWN))
 		int_ -= sc->getSCE(SC_ALL_STAT_DOWN)->val2;
+	if (sc->getSCE(SC_TEMPERANCE) )
+		int_ += 50;
 
 	//TODO: Stat points should be able to be decreased below 0
 	return (unsigned short)cap_value(int_,0,USHRT_MAX);
@@ -6923,6 +6932,8 @@ static unsigned short status_calc_dex(struct block_list *bl, status_change *sc, 
 		dex += sc->getSCE(SC_ULTIMATECOOK)->val1;
 	if (sc->getSCE(SC_ALL_STAT_DOWN))
 		dex -= sc->getSCE(SC_ALL_STAT_DOWN)->val2;
+	if (sc->getSCE(SC_TEMPERANCE) )
+		dex += 50;
 
 	//TODO: Stat points should be able to be decreased below 0
 	return (unsigned short)cap_value(dex,0,USHRT_MAX);
@@ -6998,6 +7009,8 @@ static unsigned short status_calc_luk(struct block_list *bl, status_change *sc, 
 		luk += 10;
 	if (sc->getSCE(SC_ALL_STAT_DOWN))
 		luk -= sc->getSCE(SC_ALL_STAT_DOWN)->val2;
+	if (sc->getSCE(SC_TEMPERANCE) )
+		luk += 50;
 
 	//TODO: Stat points should be able to be decreased below 0
 	return (unsigned short)cap_value(luk,0,USHRT_MAX);
@@ -7565,7 +7578,9 @@ static signed short status_calc_hit(struct block_list *bl, status_change *sc, in
 		hit += 200;
 	if(sc->getSCE(SC_GATLINGFEVER))
 		hit += sc->getSCE(SC_GATLINGFEVER)->val4*2;
-
+	if(sc->getSCE(SC_STRENGTH))
+		hit += 500;
+	
 	return (short)cap_value(hit,1,SHRT_MAX);
 }
 
@@ -7686,7 +7701,8 @@ static signed short status_calc_flee(struct block_list *bl, status_change *sc, i
 		flee += sc->getSCE(SC_LIMIT_POWER_BOOSTER)->val1;
 	if (sc->getSCE(SC_MYSTICPOWDER))
 		flee += 20;
-
+	if( sc->getSCE(SC_CHARIOT) )
+		flee += 1000;
 	return (short)cap_value(flee,1,SHRT_MAX);
 }
 
@@ -7888,6 +7904,8 @@ static signed short status_calc_def2(struct block_list *bl, status_change *sc, i
 		def2 -= def2 * sc->getSCE(SC_EQC)->val2 / 100;
 	if( sc->getSCE(SC_CAMOUFLAGE) )
 		def2 -= def2 * 5 * sc->getSCE(SC_CAMOUFLAGE)->val3 / 100;
+	if( sc->getSCE(SC_HANGEDMAN) )
+		def2 += 10000;
 
 #ifdef RENEWAL
 	return (short)cap_value(def2,SHRT_MIN,SHRT_MAX);
@@ -7991,7 +8009,9 @@ static signed short status_calc_mdef2(struct block_list *bl, status_change *sc, 
 		mdef2 -= mdef2 * 25 / 100;
 	if(sc->getSCE(SC_ANALYZE))
 		mdef2 -= mdef2 * (14 * sc->getSCE(SC_ANALYZE)->val1) / 100;
-
+	
+	if( sc->getSCE(SC_HANGEDMAN) )
+		mdef2 += 10000;
 #ifdef RENEWAL
 	return (short)cap_value(mdef2,SHRT_MIN,SHRT_MAX);
 #else
@@ -8215,6 +8235,8 @@ static unsigned short status_calc_speed(struct block_list *bl, status_change *sc
 		speed = max(speed, 200);
 	if( sc->getSCE(SC_WALKSPEED) && sc->getSCE(SC_WALKSPEED)->val1 > 0 ) // ChangeSpeed
 		speed = speed * 100 / sc->getSCE(SC_WALKSPEED)->val1;
+	if( sc->getSCE(SC_CHARIOT) )
+		speed = 60;
 
 	return (unsigned short)cap_value(speed, MIN_WALK_SPEED, MAX_WALK_SPEED);
 }
@@ -12750,6 +12772,11 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 			val4 = tick / 2000;
 			tick_time = 2000;
 			break;
+		case SC_LOVERS:
+			val2 = 20;// Heal Rate
+			val4 = tick / 500;
+			tick_time = 500;
+			break;
 		case SC_A_VITA:
 		case SC_A_TELUM:
 			val2 = 5 * val1;// Res/MRes Pierce Percentage
@@ -14980,6 +15007,15 @@ TIMER_FUNC(status_change_timer){
 			clif_specialeffect(bl, 1808, AREA);
 			skill_castend_nodamage_id(bl, bl, CD_MEDIALE_VOTUM, sce->val1, tick, 1);
 			sc_timer_next(2000 + tick);
+			return 0;
+		}
+		break;
+	
+	case SC_LOVERS:
+		if (--(sce->val4) >= 0) {
+			clif_specialeffect(bl, 1808, AREA);
+			skill_castend_nodamage_id(bl, bl, CD_MEDIALE_VOTUM, sce->val1, tick, 1);
+			sc_timer_next(500 + tick);
 			return 0;
 		}
 		break;

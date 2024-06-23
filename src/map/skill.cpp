@@ -5022,21 +5022,25 @@ static int skill_tarotcard(struct block_list* src, struct block_list *target, ui
 	switch (card) {
 	case 1: // THE FOOL - heals SP to 0
 	{
-		status_percent_damage(src, target, 0, 100, false);
+		//status_percent_damage(src, target, 0, 100, false);
+		sc_start(src, src, SC_FOOL, 100, skill_lv, skill_get_time(skill_id, skill_lv));
 		break;
 	}
 	case 2: // THE MAGICIAN - matk halved
 	{
-		sc_start(src, target, SC_INCMATKRATE, 100, -50, skill_get_time2(skill_id, skill_lv));
+		//sc_start(src, target, SC_INCMATKRATE, 100, -50, skill_get_time2(skill_id, skill_lv));
+		sc_start(src, src, SC_MAGICIAN, 100, skill_lv, skill_get_time(skill_id, skill_lv));
 		break;
 	}
 	case 3: // THE HIGH PRIESTESS - all buffs removed
 	{
-		status_change_clear_buffs(target, SCCB_BUFFS | SCCB_CHEM_PROTECT);
+		//status_change_clear_buffs(target, SCCB_BUFFS | SCCB_CHEM_PROTECT);
+		sc_start(src, src, SC_HIGHPRIESTESS, 100, skill_lv, skill_get_time(skill_id, skill_lv));
 		break;
 	}
 	case 4: // THE CHARIOT - 1000 damage, random armor destroyed
 	{
+		/*
 		battle_fix_damage(src, target, 1000, 0, skill_id);
 		clif_damage(src, target, tick, 0, 0, 1000, 0, DMG_NORMAL, 0, false);
 		if (!status_isdead(target))
@@ -5044,18 +5048,24 @@ static int skill_tarotcard(struct block_list* src, struct block_list *target, ui
 			unsigned short where[] = { EQP_ARMOR, EQP_SHIELD, EQP_HELM };
 			skill_break_equip(src, target, where[rnd() % 3], 10000, BCT_ENEMY);
 		}
+		*/
+		sc_start(src, src, SC_CHARIOT, 100, skill_lv, skill_get_time(skill_id, skill_lv));
 		break;
 	}
 	case 5: // STRENGTH - atk halved
 	{
-		sc_start(src, target, SC_INCATKRATE, 100, -50, skill_get_time2(skill_id, skill_lv));
+		//sc_start(src, target, SC_INCATKRATE, 100, -50, skill_get_time2(skill_id, skill_lv));
+		sc_start(src, src, SC_STRENGTH, 100, skill_lv, skill_get_time(skill_id, skill_lv));
 		break;
 	}
 	case 6: // THE LOVERS - 2000HP heal, random teleported
 	{
+		/*
 		status_heal(target, 2000, 0, 0);
 		if (!map_flag_vs(target->m))
 			unit_warp(target, -1, -1, -1, CLR_TELEPORT);
+		*/
+		sc_start(src, src, SC_LOVERS, 100, skill_lv, skill_get_time(skill_id, skill_lv));
 		break;
 	}
 	case 7: // WHEEL OF FORTUNE - random 2 other effects
@@ -5067,6 +5077,7 @@ static int skill_tarotcard(struct block_list* src, struct block_list *target, ui
 	}
 	case 8: // THE HANGED MAN - ankle, freeze or stoned
 	{
+		/*
 		enum sc_type sc[] = { SC_ANKLE, SC_FREEZE, SC_STONEWAIT };
 		uint8 rand_eff = rnd() % 3;
 		int time = ((rand_eff == 0) ? skill_get_time2(skill_id, skill_lv) : skill_get_time2(status_db.getSkill(sc[rand_eff]), 1));
@@ -5075,54 +5086,79 @@ static int skill_tarotcard(struct block_list* src, struct block_list *target, ui
 			sc_start2(src, target, SC_STONEWAIT, 100, skill_lv, src->id, time, skill_get_time(status_db.getSkill(SC_STONEWAIT), 1));
 		else
 			sc_start(src, target, sc[rand_eff], 100, skill_lv, time);
+		*/
+		sc_start(src, src, SC_HANGEDMAN, 100, skill_lv, skill_get_time(skill_id, skill_lv));
 		break;
 	}
 	case 9: // DEATH - curse, coma and poison
 	{
+		/*
 		status_change_start(src, target, SC_COMA, 10000, skill_lv, 0, src->id, 0, 0, SCSTART_NONE);
 		sc_start(src, target, SC_CURSE, 100, skill_lv, skill_get_time2(status_db.getSkill(SC_CURSE), 1));
 		sc_start2(src, target, SC_POISON, 100, skill_lv, src->id, skill_get_time2(status_db.getSkill(SC_POISON), 1));
+		*/
+		struct status_data *status; status = status_get_status_data(src);
+		battle_fix_damage(src, target, status->max_hp * 2, 0, skill_id);
+		clif_damage(src, target, tick, 0, 0, status->max_hp * 2, 0, DMG_NORMAL, 0, false);
+		sc_start(src, src, SC_DEATH, 100, skill_lv, skill_get_time(skill_id, skill_lv));
 		break;
 	}
 	case 10: // TEMPERANCE - confusion
 	{
-		sc_start(src, target, SC_CONFUSION, 100, skill_lv, skill_get_time2(skill_id, skill_lv));
+		//sc_start(src, target, SC_CONFUSION, 100, skill_lv, skill_get_time2(skill_id, skill_lv));
+		sc_start(src, src, SC_TEMPERANCE, 100, skill_lv, skill_get_time(skill_id, skill_lv));
 		break;
 	}
 	case 11: // THE DEVIL - 6666 damage, atk and matk halved, cursed
 	{
+		/*
 		battle_fix_damage(src, target, 6666, 0, skill_id);
 		clif_damage(src, target, tick, 0, 0, 6666, 0, DMG_NORMAL, 0, false);
 		sc_start(src, target, SC_INCATKRATE, 100, -50, skill_get_time2(skill_id, skill_lv));
 		sc_start(src, target, SC_INCMATKRATE, 100, -50, skill_get_time2(skill_id, skill_lv));
 		sc_start(src, target, SC_CURSE, skill_lv, 100, skill_get_time2(status_db.getSkill(SC_CURSE), 1));
+		*/
+		sc_start(src, src, SC_DEVIL, 100, skill_lv, skill_get_time(skill_id, skill_lv));
 		break;
 	}
 	case 12: // THE TOWER - 4444 damage
 	{
+		/*
 		battle_fix_damage(src, target, 4444, 0, skill_id);
 		clif_damage(src, target, tick, 0, 0, 4444, 0, DMG_NORMAL, 0, false);
+		*/
+		sc_start(src, src, SC_INCATKRATE, 100, -50, skill_get_time2(skill_id, skill_lv));
+		sc_start(src, src, SC_INCMATKRATE, 100, -50, skill_get_time2(skill_id, skill_lv));
+		sc_start(src, src, SC_TOWER, 100, skill_lv, skill_get_time(skill_id, skill_lv));
 		break;
 	}
 	case 13: // THE STAR - stun
 	{
+		/*
 		sc_start(src, target, SC_STUN, 100, skill_lv, skill_get_time2(status_db.getSkill(SC_STUN), 1));
+		*/
+		sc_start(src, src, SC_STAR, 100, skill_lv, skill_get_time(skill_id, skill_lv));
 		break;
 	}
 	default: // THE SUN - atk, matk, hit, flee and def reduced, immune to more tarot card effects
 	{
+	/*
 #ifdef RENEWAL
 		//In renewal, this card gives the SC_TAROTCARD status change which makes you immune to other cards
-		sc_start(src, target, SC_TAROTCARD, 100, skill_lv, skill_get_time2(skill_id, skill_lv));
+		//sc_start(src, target, SC_TAROTCARD, 100, skill_lv, skill_get_time2(skill_id, skill_lv));		
 #endif
 		sc_start(src, target, SC_INCATKRATE, 100, -20, skill_get_time2(skill_id, skill_lv));
 		sc_start(src, target, SC_INCMATKRATE, 100, -20, skill_get_time2(skill_id, skill_lv));
 		sc_start(src, target, SC_INCHITRATE, 100, -20, skill_get_time2(skill_id, skill_lv));
 		sc_start(src, target, SC_INCFLEERATE, 100, -20, skill_get_time2(skill_id, skill_lv));
 		sc_start(src, target, SC_INCDEFRATE, 100, -20, skill_get_time2(skill_id, skill_lv));
+		*/
+		sc_start(src, src, SC_SUN, 100, skill_lv, skill_get_time(skill_id, skill_lv));
+		sc_start(src, src, SC_TAROTCARD, 100, skill_lv, skill_get_time(skill_id, skill_lv));
 		return 14; //To make sure a valid number is returned
 	}
-	}
+	sc_start(src, src, SC_TAROTCARD, 100, skill_lv, skill_get_time(skill_id, skill_lv));
+	} // End switch card.
 
 	return card;
 }
@@ -10474,11 +10510,12 @@ int skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, ui
 	case CG_TAROTCARD:
 		{
 			int card = -1;
-			if (tsc && tsc->getSCE(SC_TAROTCARD)) {
+			if (sd && sc && sd->sc.getSCE(SC_TAROTCARD)) {
 				//Target currently has the SUN tarot card effect and is immune to any other effect
 				map_freeblock_unlock();
 				return 0;
 			}
+			/*
 			if( rnd() % 100 > skill_lv * 8 ||
 #ifndef RENEWAL
 			(tsc && tsc->getSCE(SC_BASILICA)) ||
@@ -10490,6 +10527,7 @@ int skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, ui
 				map_freeblock_unlock();
 				return 0;
 			}
+			*/
 			status_zap(src,0,skill_get_sp(skill_id,skill_lv)); // consume sp only if succeeded [Inkfish]
 			card = skill_tarotcard(src, bl, skill_id, skill_lv, tick); // actual effect is executed here
 			clif_specialeffect((card == 6) ? src : bl, EF_TAROTCARD1 + card - 1, AREA);
@@ -18959,6 +18997,9 @@ struct s_skill_condition skill_get_requirement(map_session_data* sd, uint16 skil
 			req.sp += req.sp * (skill_lv * 10) / 100;
 		if (sc->getSCE(SC_CRESCIVEBOLT))
 			req.sp += req.sp * (20 * sc->getSCE(SC_CRESCIVEBOLT)->val1) / 100;
+		if (sc->getSCE(SC_STAR))
+			req.sp = 0;
+	
 	}
 
 	req.ap = skill->require.ap[skill_lv - 1];
@@ -19651,7 +19692,11 @@ int skill_delayfix(struct block_list *bl, uint16 skill_id, uint16 skill_lv)
 		time = time * battle_config.delay_rate / 100;
 
 	//ShowInfo("Delay delayfix = %f\n",time);
-
+	if (sc && sc->count) {
+			if (sc->getSCE(SC_MAGICIAN)) {
+				time = 0;
+			}
+	}
 	return max((int)time,0);
 }
 

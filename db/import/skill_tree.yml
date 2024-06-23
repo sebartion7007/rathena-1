@@ -2436,7 +2436,7 @@ Body:
           - Name: SA_DRAGONOLOGY
             Level: 4
       - Name: PF_DOUBLECASTING
-        MaxLevel: 10
+        MaxLevel: 5
         Requires:
           - Name: SA_AUTOSPELL
             Level: 1
@@ -2520,7 +2520,7 @@ Body:
       Bard: true
     Tree:
       - Name: CG_ARROWVULCAN
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: AC_SHOWER
             Level: 5
@@ -2568,7 +2568,7 @@ Body:
           - Name: BA_MUSICALLESSON
             Level: 10
       - Name: CG_TAROTCARD
-        MaxLevel: 5
+        MaxLevel: 1
         Requires:
           - Name: AC_CONCENTRATION
             Level: 10
@@ -2581,7 +2581,7 @@ Body:
       Dancer: true
     Tree:
       - Name: CG_ARROWVULCAN
-        MaxLevel: 10
+        MaxLevel: 15
         Requires:
           - Name: AC_SHOWER
             Level: 5
@@ -2629,7 +2629,7 @@ Body:
           - Name: DC_DANCINGLESSON
             Level: 10
       - Name: CG_TAROTCARD
-        MaxLevel: 5
+        MaxLevel: 1
         Requires:
           - Name: AC_CONCENTRATION
             Level: 10

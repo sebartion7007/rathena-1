@@ -2043,6 +2043,12 @@ int64 battle_calc_damage(struct block_list *src,struct block_list *bl,struct Dam
 			if ( scs->getSCE(SC_SACRIFICE) && skill_id == PA_SACRIFICE ) {
 				maxcap = INT_MAX;
 			}
+			if (scs->getSCE(SC_DEVIL)) {
+				maxcap /= 2;
+			}
+			else if (scs->getSCE(SC_SUN)) {
+				maxcap = INT_MAX;
+			}
 		} // end if 
 		
 		
@@ -2061,15 +2067,22 @@ int64 battle_calc_damage(struct block_list *src,struct block_list *bl,struct Dam
 		}
 		
 		//ShowDebug("Debug Test \n");
-		if (scs && scs->count) {
-			if (scs->getSCE(SC_BLESSING)) {
-				damage += scs->getSCE(SC_BLESSING)->val3*200;
-			}
-		}
 		if(damage < INT_MAX) {
 			if (tsd && tsd->bonus.supplementary) damage += tsd->bonus.supplementary;
 			if (skill_id) 
 				damage += get_bonus_skillsupplement(src, skill_id);
+		}
+		
+		if (scs && scs->count) {
+			if (scs->getSCE(SC_BLESSING)) {
+				damage += scs->getSCE(SC_BLESSING)->val3*200;
+			}
+			if (scs->getSCE(SC_HIGHPRIESTESS)) {
+				damage += 666666;
+			}
+			if (scs->getSCE(SC_DEVIL)) {
+				damage /= 2;
+			}
 		}
 	}
 	
@@ -5001,7 +5014,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 #endif
 		case CG_ARROWVULCAN:
 #ifdef RENEWAL
-			skillratio += 400 + 100 * skill_lv;
+			skillratio += -100 + 1000 * skill_lv;
 			RE_LVL_DMOD(100);
 #else
 			skillratio += 100 + 100 * skill_lv;
@@ -9567,6 +9580,9 @@ struct Damage battle_calc_attack(int attack_type,struct block_list *bl,struct bl
 			memset(&d,0,sizeof(d));
 			break;
 		}
+		status_change *sc = status_get_sc(bl);
+		if(sc && sc->getSCE(SC_SUN) )
+			d.damage *= 2;
 	if( d.damage + d.damage2 < 1 )
 	{	//Miss/Absorbed
 		//Weapon attacks should go through to cause additional effects.

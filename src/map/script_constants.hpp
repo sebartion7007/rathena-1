@@ -1930,6 +1930,23 @@
 	export_constant(SC_AGIUP);
 	export_constant(SC_PROTECTION);
 
+	// Custom Part Status
+	export_constant(SC_FOOL);
+	export_constant(SC_MAGICIAN);
+	export_constant(SC_HIGHPRIESTESS);
+	export_constant(SC_CHARIOT);
+	export_constant(SC_STRENGTH);
+	export_constant(SC_LOVERS);
+	export_constant(SC_WHEELFORTUNE);
+	export_constant(SC_HANGEDMAN);
+	export_constant(SC_DEATH);
+	export_constant(SC_TEMPERANCE);
+	export_constant(SC_DEVIL);
+	export_constant(SC_TOWER);
+	export_constant(SC_STAR);
+	export_constant(SC_SUN);
+	// End Custom Part Status
+	
 	/* status icons */
 	export_deprecated_constant2("SI_BLANK",-1);
 	export_deprecated_constant2("SI_PROVOKE",0);

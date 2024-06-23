@@ -11948,7 +11948,7 @@ Body:
   - Id: 394
     Name: CG_ARROWVULCAN
     Description: Vulcan Arrow
-    MaxLevel: 10
+    MaxLevel: 15
     Type: Weapon
     TargetType: Attack
     Range: 9
@@ -11978,8 +11978,8 @@ Body:
       - Level: 10
         Time: 1500
     AfterCastActDelay: 500
-    AfterCastWalkDelay: 2000
-    Cooldown: 1500
+    AfterCastWalkDelay: 100
+    Cooldown: 500
     FixedCastTime:
       - Level: 1
         Time: 400
@@ -12025,6 +12025,16 @@ Body:
           Amount: 28
         - Level: 10
           Amount: 30
+        - Level: 11
+          Amount: 32
+        - Level: 12
+          Amount: 34
+        - Level: 13
+          Amount: 36
+        - Level: 14
+          Amount: 38
+        - Level: 15
+          Amount: 40
       Weapon:
         Musical: true
         Whip: true
@@ -14825,21 +14835,21 @@ Body:
   - Id: 489
     Name: CG_TAROTCARD
     Description: Tarot Card of Fate
-    MaxLevel: 5
+    MaxLevel: 1
     Type: Misc
-    TargetType: Attack
+    TargetType: Self
     DamageFlags:
       NoDamage: true
-      IgnoreFlee: true
-    Range: 9
+    Range: 1
     Hit: Single
     HitCount: 1
     CastTime: 500
     AfterCastActDelay: 3000
-    Duration2: 30000
+    Duration1: 10000
+    Cooldown: 10000
     FixedCastTime: 500
     Requires:
-      SpCost: 40
+      SpCost: 300
     Status: TarotCard
   - Id: 490
     Name: CR_ACIDDEMONSTRATION

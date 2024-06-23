@@ -1313,6 +1313,24 @@ enum sc_type : int16 {
 	SC_AGIUP,
 	SC_PROTECTION,
 
+	//Custom Part Stats
+	
+	SC_FOOL,
+	SC_MAGICIAN,
+	SC_HIGHPRIESTESS,
+	SC_CHARIOT,
+	SC_STRENGTH,
+	SC_LOVERS,
+	SC_WHEELFORTUNE,
+	SC_HANGEDMAN,
+	SC_DEATH,
+	SC_TEMPERANCE,
+	SC_DEVIL,
+	SC_TOWER,
+	SC_STAR,
+	SC_SUN,
+	
+	//End Custom Part Stats
 	SC_MAX, //Automatically updated max, used in for's to check we are within bounds.
 };
 
