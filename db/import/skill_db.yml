@@ -14175,6 +14175,7 @@ Body:
           Amount: 112
         - Level: 15
           Amount: 120
+    Status: Sma
   - Id: 470
     Name: SL_SWOO
     Description: Eswoo
@@ -15436,6 +15437,7 @@ Body:
       Ammo:
         Bullet: true
       AmmoAmount: 1
+    Status: Bleeding
   - Id: 515
     Name: GS_RAPIDSHOWER
     Description: Rapid Shower
@@ -16801,6 +16803,7 @@ Body:
       Target: Enemy
       Flag:
         PathCheck: true
+    Status: Freeze
   - Id: 540
     Name: NJ_HUUJIN
     Description: Wind Blade
@@ -19636,6 +19639,43 @@ Body:
     HitCount: 1
     Duration1: 60000
     Status: Relieve_off
+  - Id: 776
+    Name: NPC_DEADLYCURSE
+    Description: Deadly Curse
+    MaxLevel: 1
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IgnoreGtb: true
+      IsNpc: true
+    Range: 1
+    Duration1: 15000
+    Status: Deadly_Defeasance
+  - Id: 779
+    Name: NPC_DEADLYCURSE2
+    Description: Deadly Curse 2
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Flags:
+      IgnoreGtb: true
+      IsNpc: true
+    SplashArea:
+      - Level: 1
+        Area: 2
+      - Level: 2
+        Area: 3
+      - Level: 3
+        Area: 4
+      - Level: 4
+        Area: 5
+      - Level: 5
+        Area: 6
+    Duration2: 30000
+    Status: Deadly_Defeasance
   - Id: 780
     Name: NPC_CANE_OF_EVIL_EYE
     Description: Cane of evil eye
@@ -30963,6 +31003,19 @@ Body:
         - Level: 2
           Amount: 100
     Status: Odins_Power
+  - Id: 2543
+    Name: ALL_RAY_OF_PROTECTION
+    Description: Ray of Protection
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+    Duration1: 60000
+    Status: Protection
   - Id: 2544
     Name: MC_CARTDECORATE
     Description: Decorate Cart
