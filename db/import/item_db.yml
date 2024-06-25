@@ -96,6 +96,29 @@ Body:
     Weight: 10
     Flags:
       BuyingStore: true
+  - Id: 18551
+    AegisName: Galaxy_Circlet
+    Name: Galaxy Circlet
+    Type: Armor
+    View: 725
+    Buy: 20
+    Weight: 1000
+    Defense: 5
+    Slots: 1
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 50
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,100*.@r;
+      bonus bMaxSP,20*.@r;
+      bonus bMdef,5;
+      if(.@r >= 11 ) {
+        skill "RK_WINDCUTTER",5;
+        skill "AB_ADORAMUS",6;
+      }
   - Id: 33001
     AegisName: CASH_SHARKY_CC_F_R
     Name: Cash Coin
@@ -1024,6 +1047,41 @@ Body:
       bonus bVariableCastrate,-readparam(bInt)/5;
       bonus bAtkRate,BaseLevel/10;
       bonus bDelayrate,-readparam(bDex)/5;
+  - Id: 182002
+    AegisName: Where_are_Pigeon_And_Raven
+    Name: Where are Pigeon And Raven?
+    Type: Armor
+    View: 2378
+    Weight: 100
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      bonus bAllStats,5+(BaseLevel/10);
+      skill "AL_RUWACH",1;
+      bonus2 bSkillrate,Type_All,(BaseLevel/10);
+  - Id: 187001
+    AegisName: Shalala_in_the_Morning
+    Name: Shalala in the Morning
+    Type: Armor
+    Buy: 20
+    Weight: 600
+    Defense: 5
+    Slots: 1
+    Locations:
+      Shoes: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus2 bSubEle,Ele_Neutral,10;
+      bonus bMaxHPrate,10+(.@r/2);
+      bonus bMaxSPrate,(.@r/2);
+      bonus bMaxHP,BaseLevel*50;
+      bonus bMaxSP,BaseLevel*2;
+      if(.@r >= 7 ) bonus bDelayrate,-10;
   - Id: 317001
     AegisName: Shark_St_Str
     Name: Sharky Stonk (Str)
@@ -1067,6 +1125,54 @@ Body:
   - Id: 317006
     AegisName: Shark_St_Luk
     Name: Sharky Stonk (Luk)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bLuk,5+getrefine();
+      if(getrefine() >= 13 ) bonus bCritical,10;
+  - Id: 317007
+    AegisName: Sharky_Stink_(Str)
+    Name: Sharky Stink (Str)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bStr,5+getrefine();
+      if(getrefine() >= 13 ) bonus bShortAtkRate,15;
+  - Id: 317008
+    AegisName: Sharky_Stink_(Agi)
+    Name: Sharky Stink (Agi)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bAgi,5+getrefine();
+      if(getrefine() >= 13 ) bonus bAspd,2;
+  - Id: 317009
+    AegisName: Sharky_Stink_(Vit)
+    Name: Sharky Stink (Vit)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bVit,5+getrefine();
+      if(getrefine() >= 13 ) bonus bMaxHPrate,15;
+  - Id: 317010
+    AegisName: Sharky_Stink_(Int)
+    Name: Sharky Stink (Int)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bInt,5+getrefine();
+      if(getrefine() >= 13 ) bonus2 bMagicAddClass,CLASS_ALL,15;
+  - Id: 317011
+    AegisName: Sharky_Stink_(Dex)
+    Name: Sharky Stink (Dex)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bDex,5+getrefine();
+      if(getrefine() >= 13 ) bonus bLongAtkRate,15;
+  - Id: 317012
+    AegisName: Sharky_Stink_(Luk)
+    Name: Sharky Stink (Luk)
     Type: Card
     SubType: Enchant
     Script: |

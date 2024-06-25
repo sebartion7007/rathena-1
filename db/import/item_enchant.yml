@@ -254,3 +254,169 @@ Body:
             Materials:
               - Material: Nyangvine_Fruit
                 Amount: 250
+  - Id: 302
+    TargetItems:
+      Shalala_in_the_Morning: true
+    MinimumRefine: 9
+    Reset:
+      Chance: 100000
+      Price: 10000000
+      Materials:
+        - Material: Nyangvine_Fruit
+          Amount: 20
+    Order:
+      - Slot: 3
+      - Slot: 2
+      - Slot: 1
+    Slots:
+      - Slot: 3
+        Price: 1000000
+        Materials:
+          - Material: Nyangvine_Fruit
+            Amount: 5
+        Enchants:
+          - Enchantgrade: 0
+            Items:
+              - Item: Wolf_Orb_Hp_1
+                Chance: 21500
+              - Item: Wolf_Orb_Sp_1
+                Chance: 21500
+              - Item: Wolf_Orb_Heal_1
+                Chance: 21500
+              - Item: Wolf_Orb_Robust_1
+                Chance: 21500
+              - Item: Wolf_Orb_Hp_2
+                Chance: 3000
+              - Item: Wolf_Orb_Sp_2
+                Chance: 3000
+              - Item: Wolf_Orb_Heal_2
+                Chance: 3000
+              - Item: Wolf_Orb_Robust_2
+                Chance: 3000
+              - Item: Wolf_Orb_Hp_3
+                Chance: 500
+              - Item: Wolf_Orb_Sp_3
+                Chance: 500
+              - Item: Wolf_Orb_Heal_3
+                Chance: 500
+              - Item: Wolf_Orb_Robust_3
+                Chance: 500
+      - Slot: 2
+        Price: 1500000
+        Materials:
+          - Material: Nyangvine_Fruit
+            Amount: 10
+        Enchants:
+          - Enchantgrade: 0
+            Items:
+              - Item: Wolf_Orb_F_Cast_1
+                Chance: 30033
+              - Item: Wolf_Orb_F_Cast_2
+                Chance: 3000
+              - Item: Wolf_Orb_F_Cast_3
+                Chance: 300
+              - Item: Wolf_Orb_M_F_1
+                Chance: 30034
+              - Item: Wolf_Orb_M_F_2
+                Chance: 3000
+              - Item: Wolf_Orb_M_F_3
+                Chance: 300
+              - Item: Wolf_Orb_P_F_1
+                Chance: 30033
+              - Item: Wolf_Orb_P_F_2
+                Chance: 3000
+              - Item: Wolf_Orb_P_F_3
+                Chance: 300
+      - Slot: 1
+        Price: 2000000
+        Materials:
+          - Material: Nyangvine_Fruit
+            Amount: 20
+        Enchants:
+          - Enchantgrade: 0
+            Items:
+              - Item: Wolf_Orb_Un_Vit
+                Chance: 14667
+              - Item: Wolf_Orb_Sp_Int
+                Chance: 14667
+              - Item: Wolf_Orb_Fi_Dex
+                Chance: 14667
+              - Item: Wolf_Orb_Ov_Str
+                Chance: 14667
+              - Item: Wolf_Orb_Fa_Agi
+                Chance: 14666
+              - Item: Wolf_Orb_Lu_Luk
+                Chance: 14666
+              - Item: Sharky_Stink_(Str)
+                Chance: 2000
+              - Item: Sharky_Stink_(Agi)
+                Chance: 2000
+              - Item: Sharky_Stink_(Vit)
+                Chance: 2000
+              - Item: Sharky_Stink_(Int)
+                Chance: 2000
+              - Item: Sharky_Stink_(Dex)
+                Chance: 2000
+              - Item: Sharky_Stink_(Luk)
+                Chance: 2000
+        PerfectEnchants:
+          - Item: Sharky_Stink_(Str)
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250
+          - Item: Sharky_Stink_(Agi)
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250
+          - Item: Sharky_Stink_(Vit)
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250
+          - Item: Sharky_Stink_(Int)
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250
+          - Item: Sharky_Stink_(Dex)
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250
+          - Item: Sharky_Stink_(Luk)
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250
+          - Item: Wolf_Orb_Un_Vit
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250
+          - Item: Wolf_Orb_Sp_Int
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250
+          - Item: Wolf_Orb_Fi_Dex
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250
+          - Item: Wolf_Orb_Ov_Str
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250
+          - Item: Wolf_Orb_Fa_Agi
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250
+          - Item: Wolf_Orb_Lu_Luk
+            Price: 10000000
+            Materials:
+              - Material: Nyangvine_Fruit
+                Amount: 250

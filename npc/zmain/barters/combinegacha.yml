@@ -36,3 +36,22 @@ Body:
           - Index: 2
             Item: Patriotism_Marks
             Amount: 3
+      - Index: 2
+        Item: Where_are_Pigeon_And_Raven
+        Zeny: 10000000
+        RequiredItems:
+          - Index: 0
+            Item: Bell_Pigeon
+            Amount: 1
+          - Index: 1
+            Item: Gossip_Raven
+            Amount: 1
+          - Index: 2
+            Item: Red_Feather
+            Amount: 10
+          - Index: 3
+            Item: Blue_Feather
+            Amount: 10
+          - Index: 4
+            Item: Bat_Cage
+            Amount: 250

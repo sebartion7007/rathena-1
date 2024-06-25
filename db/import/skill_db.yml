@@ -14656,10 +14656,14 @@ Body:
     TargetType: Attack
     Flags:
       AllowOnMado: true
+    DamageFlags:
+      NoDamage: true
     Range: -2
     Hit: Single
     HitCount: 1
     Element: Weapon
+    SplashArea: 2
+    ActiveInstance: 5
     Duration2: 4500
     Requires:
       SpCost: 15
@@ -14845,8 +14849,8 @@ Body:
     HitCount: 1
     CastTime: 500
     AfterCastActDelay: 3000
-    Duration1: 10000
-    Cooldown: 10000
+    Duration1: 45000
+    Cooldown: 60000
     FixedCastTime: 500
     Requires:
       SpCost: 300

@@ -669,6 +669,8 @@ int skill_calc_heal(struct block_list *src, struct block_list *target, uint16 sk
 #ifdef RENEWAL
 		if (sc->getSCE(SC_MEDIALE) && skill_id == CD_MEDIALE_VOTUM)
 			hp_bonus += sc->getSCE(SC_MEDIALE)->val2;
+		if (sc->getSCE(SC_LOVERS) )
+			hp_bonus += sc->getSCE(SC_LOVERS)->val2;
 #endif
 	}
 
@@ -5127,8 +5129,8 @@ static int skill_tarotcard(struct block_list* src, struct block_list *target, ui
 		battle_fix_damage(src, target, 4444, 0, skill_id);
 		clif_damage(src, target, tick, 0, 0, 4444, 0, DMG_NORMAL, 0, false);
 		*/
-		sc_start(src, src, SC_INCATKRATE, 100, -50, skill_get_time2(skill_id, skill_lv));
-		sc_start(src, src, SC_INCMATKRATE, 100, -50, skill_get_time2(skill_id, skill_lv));
+		sc_start(src, src, SC_INCATKRATE, 100, -70, skill_get_time(skill_id, skill_lv));
+		sc_start(src, src, SC_INCMATKRATE, 100, -70, skill_get_time(skill_id, skill_lv));
 		sc_start(src, src, SC_TOWER, 100, skill_lv, skill_get_time(skill_id, skill_lv));
 		break;
 	}
@@ -5157,9 +5159,9 @@ static int skill_tarotcard(struct block_list* src, struct block_list *target, ui
 		sc_start(src, src, SC_TAROTCARD, 100, skill_lv, skill_get_time(skill_id, skill_lv));
 		return 14; //To make sure a valid number is returned
 	}
-	sc_start(src, src, SC_TAROTCARD, 100, skill_lv, skill_get_time(skill_id, skill_lv));
+	
 	} // End switch card.
-
+	sc_start(src, src, SC_TAROTCARD, 100, skill_lv, skill_get_time(skill_id, skill_lv));
 	return card;
 }
 
@@ -5279,7 +5281,7 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 	case CH_TIGERFIST:
 	case PA_SHIELDCHAIN:	// Shield Chain
 	case PA_SACRIFICE:
-	case WS_CARTTERMINATION:	// Cart Termination
+	//case WS_CARTTERMINATION:	// Cart Termination
 	case AS_VENOMKNIFE:
 	case HT_PHANTASMIC:
 	case TK_DOWNKICK:
@@ -6089,6 +6091,7 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 	case KN_BRANDISHSPEAR:
 #endif
 	case ML_BRANDISH:
+	case WS_CARTTERMINATION:
 		//Coded apart for it needs the flag passed to the damage calculation.
 		if (skill_area_temp[1] != bl->id)
 			skill_attack(skill_get_type(skill_id), src, src, bl, skill_id, skill_lv, tick, flag|SD_ANIMATION);
@@ -8885,8 +8888,8 @@ int skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, ui
 	case KN_BRANDISHSPEAR:
 #endif
 	case ML_BRANDISH:
+	case WS_CARTTERMINATION:
 		skill_area_temp[1] = bl->id;
-
 		if(skill_lv >= 10)
 			map_foreachindir(skill_area_sub, src->m, src->x, src->y, bl->x, bl->y,
 				skill_get_splash(skill_id, skill_lv), 1, skill_get_maxcount(skill_id, skill_lv)-1, splash_target(src),

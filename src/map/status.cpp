@@ -12774,8 +12774,8 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 			break;
 		case SC_LOVERS:
 			val2 = 20;// Heal Rate
-			val4 = tick / 500;
-			tick_time = 500;
+			val4 = tick / 1000;
+			tick_time = 1000;
 			break;
 		case SC_A_VITA:
 		case SC_A_TELUM:
@@ -15014,8 +15014,8 @@ TIMER_FUNC(status_change_timer){
 	case SC_LOVERS:
 		if (--(sce->val4) >= 0) {
 			clif_specialeffect(bl, 1808, AREA);
-			skill_castend_nodamage_id(bl, bl, CD_MEDIALE_VOTUM, sce->val1, tick, 1);
-			sc_timer_next(500 + tick);
+			skill_castend_nodamage_id(bl, bl, CD_MEDIALE_VOTUM, 20, tick, 1);
+			sc_timer_next(1000 + tick);
 			return 0;
 		}
 		break;

@@ -59,6 +59,50 @@ Body:
       }
   - Combos:
       - Combo:
+          - Shark_St_Str
+          - Sharky_Stink_(Str)
+    Script: |
+      bonus bStr,30;
+      bonus bAtkRate,15;
+  - Combos:
+      - Combo:
+          - Shark_St_Agi
+          - Sharky_Stink_(Agi)
+    Script: |
+      bonus bAgi,30;
+      bonus bAspdRate,15;
+      bonus bFlee,100;
+  - Combos:
+      - Combo:
+          - Shark_St_Vit
+          - Sharky_Stink_(Vit)
+    Script: |
+      bonus bVit,30;
+      bonus bDef,1000;
+  - Combos:
+      - Combo:
+          - Shark_St_Int
+          - Sharky_Stink_(Int)
+    Script: |
+      bonus bInt,30;
+      bonus bMatkRate,15;
+  - Combos:
+      - Combo:
+          - Shark_St_Dex
+          - Sharky_Stink_(Dex)
+    Script: |
+      bonus bDex,30;
+      bonus bHit,100;
+      bonus bPerfectHitRate,45;
+  - Combos:
+      - Combo:
+          - Shark_St_Luk
+          - Sharky_Stink_(Luk)
+    Script: |
+      bonus bLuk,30;
+      bonus bCritAtkRate,35;
+  - Combos:
+      - Combo:
           - Wind_Paradox_Ghost_Card
           - Banshee_Paradox_Card
     Script: |

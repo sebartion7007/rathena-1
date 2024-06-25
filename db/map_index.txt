@@ -1268,6 +1268,7 @@ mbase_in
 falserealm
 falserealm2
 thinkter
+fgt_san
 //=================================== Final Clone Map 260/55 ======================================
 fclone01
 fclone02

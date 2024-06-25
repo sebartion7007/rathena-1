@@ -49,3 +49,21 @@ falserealm,136,127,5	script	ทางไปห้องเทสดาเมจ	800,{
 OnInit:
 	setunittitle(getnpcid(0), "<Damage Test Room>");
 }
+
+//1x1
+falserealm,150,111	monster	"Test Damage Area"	21067,1,5000
+//3x3
+falserealm,151,111	monster	"Test Damage Area"	21067,1,5000
+falserealm,150,112	monster	"Test Damage Area"	21067,1,5000
+falserealm,149,111	monster	"Test Damage Area"	21067,1,5000
+falserealm,150,110	monster	"Test Damage Area"	21067,1,5000
+//5x5
+falserealm,152,113	monster	"Test Damage Area"	21067,1,5000
+falserealm,152,109	monster	"Test Damage Area"	21067,1,5000
+falserealm,148,113	monster	"Test Damage Area"	21067,1,5000
+falserealm,148,109	monster	"Test Damage Area"	21067,1,5000
+//7x7
+falserealm,153,111	monster	"Test Damage Area"	21067,1,5000
+falserealm,150,114	monster	"Test Damage Area"	21067,1,5000
+falserealm,147,111	monster	"Test Damage Area"	21067,1,5000
+falserealm,150,108	monster	"Test Damage Area"	21067,1,5000
