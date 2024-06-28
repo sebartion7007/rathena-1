@@ -6,6 +6,24 @@ falserealm,156,263,4	script	Valkyrie#entrance	811,{
 	warp "valkyrie",49,83;
 	end;
 }
+valkyrie,46,26,5	script	The Angel Nun#Extra	79,{
+	.@npcname$ = "[ Angel Nurse ]";
+	mes .@npcname$;
+	mes "การสารภาพบาปแห่งสวรรค์";
+	mes "ตัวเธอมีอยู่ ^FF0000"+PC_DIE_COUNTER+"^000000 กรรม";
+	mes "หากตัวเธอมีกรรมจนไปต่อไม่ได้จำเป็นต้องล้างกรรมออกก่อน.";
+	next;
+	mes .@npcname$;
+	if(PC_DIE_COUNTER < 10 ) {
+		mes "แต่ดูแล้วเธอคงไม่จำเป็นต้องล้างกรรมที่มีหรอกนะ";
+		end;
+	}
+	mes "การล้างกรรมคือการใช้ Zeny ที่มีอยู่ทั้งหมดของเธอนะ.";
+	mes "ดิฉัน ได้ล้างกรรมให้เธอไปแล้ว ขอให้เธอโชคดี";
+	zeny = 0;
+	PC_DIE_COUNTER = 0;
+	end;
+}
 
 valkyrie,48,8,5	script	Change Job	4_4JOB_SEALSTONE,{
 	
