@@ -5,3 +5,7 @@ fclone01	mapflag	nomemo
 fclone02	mapflag	nomemo
 fclone03	mapflag	nomemo
 fclone04	mapflag	nomemo
+
+//Dungeon
+jor_ite01	mapflag	nomemo
+jor_ite02	mapflag	nomemo

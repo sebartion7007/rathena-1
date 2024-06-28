@@ -657,6 +657,170 @@ Body:
       DropEffect: CLIENT
     Script: |
       bonus bSupplementary,1000*getrefine();
+  - Id: 44018
+    AegisName: Black_Savage_Card
+    Name: Black Savage Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Head_Low: true
+      Head_Mid: true
+      Head_Top: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus bBaseAtk,50;
+      bonus bCritical,2;
+  - Id: 44019
+    AegisName: Blue_Savage_Card
+    Name: Blue Savage Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Shoes: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus2 bAddEle,Ele_Water,20;
+  - Id: 44020
+    AegisName: Brown_Savage_Card
+    Name: Brown Savage Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Left_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus2 bSubSize,Size_Small,35;
+  - Id: 44021
+    AegisName: Cyan_Savage_Card
+    Name: Cyan Savage Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Shoes: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus2 bMagicAddEle,Ele_Water,20;
+  - Id: 44022
+    AegisName: Gold_Savage_Card
+    Name: Gold Savage Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Both_Accessory: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus2 bAddEle,Ele_Neutral,20;
+  - Id: 44023
+    AegisName: Green_Savage_Card
+    Name: Green Savage Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Armor: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus2 bHPRegenRate,100,1000;
+  - Id: 44024
+    AegisName: Orange_Savage_Card
+    Name: Orange Savage Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Armor: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus2 bSPRegenRate,5,1000;
+  - Id: 44025
+    AegisName: Pink_Savage_Card
+    Name: Pink Savage Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Head_Low: true
+      Head_Mid: true
+      Head_Top: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus bAllStats,5;
+  - Id: 44026
+    AegisName: Purple_Savage_Card
+    Name: Purple Savage Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Both_Accessory: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus bAtkRate,7;
+      bonus bBaseAtk,10;
+  - Id: 44027
+    AegisName: Red_Savage_Card
+    Name: Red Savage Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Shoes: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus2 bMagicAtkEle,Ele_Fire,20;
+  - Id: 44028
+    AegisName: Silver_Savage_Card
+    Name: Silver Savage Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Both_Accessory: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus2 bAddEle,Ele_Holy,20;
+      bonus2 bMagicAddEle,Ele_Holy,20;
+  - Id: 44029
+    AegisName: White_Savage_Card
+    Name: White Savage Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus bAtkEle,Ele_Holy;
+  - Id: 44030
+    AegisName: Golden_Savage_Anger_Card
+    Name: Golden Savage Anger Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Garment: true
+    Flags:
+      BuyingStore: true
+      DropEffect: CLIENT
+    Script: |
+      bonus bCapDamageOnAtk,100;
+      bonus bCapdamageVal,100000*(getrefine()/3);
   - Id: 49001
     AegisName: Super_Saiyan_1_Angeling_Card
     Name: Super Saiyan 1 Angeling Card
@@ -713,6 +877,61 @@ Body:
     Weight: 10
     Flags:
       BuyingStore: true
+  - Id: 50004
+    AegisName: Animal's_Skin_Plus
+    Name: Animal Skin Plus
+    Type: Etc
+    Weight: 10
+    Flags:
+      BuyingStore: true
+  - Id: 50005
+    AegisName: Animal_Blood_Positive
+    Name: Animal Gore (Rh+)
+    Type: Etc
+    Buy: 450
+    Weight: 100
+    Flags:
+      BuyingStore: true
+  - Id: 55001
+    AegisName: Headgear_Box_2_1
+    Name: Headgear Box (2-1)
+    Type: Usable
+    Buy: 10
+    Script: |
+      getitem callfunc("F_Rand",170006,170007,170008,170009,170010,170011),1;
+  - Id: 55002
+    AegisName: Headgear_Box_2_2
+    Name: Headgear Box (2-2)
+    Type: Usable
+    Buy: 10
+    Script: |
+      getitem callfunc("F_Rand",170012,170013,170014,170015,170016,170017),1;
+  - Id: 55003
+    AegisName: Headgear_Box_Ex_1
+    Name: Headgear Box (EX-1)
+    Type: Usable
+    Buy: 10
+    Script: |
+      getitem callfunc("F_Rand",170018,170019,170020,170021,170022,170011),1;
+  - Id: 59001
+    AegisName: Hi-Class_Level_Up_Box
+    Name: Hi-Class Level Up Box
+    Type: Usable
+    Buy: 10
+    Script: |
+      getitem 199001,1;
+      getitem 33002,2;
+      getitem 33005,5;
+      getitem 6898,20;
+  - Id: 59002
+    AegisName: Ex-Class_Level_Up_Box
+    Name: Ex-Class Level Up Box
+    Type: Usable
+    Buy: 10
+    Script: |
+      getitem 199001,1;
+      getitem 33005,5;
+      getitem 6898,20;
   - Id: 60001
     AegisName: Sharky_Gacha_Egg_Vol.1
     Name: Sharky Gacha Egg Vol.1
@@ -819,6 +1038,514 @@ Body:
       bonus2 bMHPDrainRate,50,8;
       bonus2 bMSPDrainRate,10,4;
       bonus2 bHPLossRate,1000,5000;
+  - Id: 170006
+    AegisName: Paradox_LK_Helmet
+    Name: Paradox LK Helmet
+    Type: Armor
+    View: 2901
+    Buy: 1000
+    Defense: 10
+    Jobs:
+      Knight: true
+    Classes:
+      All_Upper: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,250*(.@r/2);
+      bonus bMaxSPrate,2*(.@r/3);
+      bonus2 bSkillAtk,"LK_SPIRALPIERCE",10*(.@r/2);
+      bonus2 bSkillAtk,"KN_BOWLINGBASH",15*(.@r/2);
+      bonus bShortAtkRate,5*(.@r/4);
+      if (.@r>=11) {
+        bonus bDelayrate,-5;
+      }
+      if(.@r>=12) {
+        bonus bCapdamagerate,35;
+      }
+  - Id: 170007
+    AegisName: Paradox_HP_Helmet
+    Name: Paradox HP Helmet
+    Type: Armor
+    View: 2902
+    Buy: 1000
+    Defense: 10
+    Jobs:
+      Priest: true
+    Classes:
+      All_Upper: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,500*(.@r/2);
+      bonus bMaxSPrate,3*(.@r/3);
+      bonus2 bSkillAtk,"PR_MAGNUS",25*(.@r/2);
+      bonus bMatkRate,5*(.@r/4);
+      bonus bHealPower,5*(.@r/4);
+      if (.@r>=11) {
+        bonus bDelayrate,-10;
+      }
+      if(.@r>=12) {
+        bonus bCapdamagerate,35;
+      }
+  - Id: 170008
+    AegisName: Paradox_HW_Helmet
+    Name: Paradox HW Helmet
+    Type: Armor
+    View: 2903
+    Buy: 1000
+    Defense: 10
+    Jobs:
+      Wizard: true
+    Classes:
+      All_Upper: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,250*(.@r/2);
+      bonus bMaxSPrate,5*(.@r/3);
+      bonus2 bSkillAtk,"HW_NAPALMVULCAN",10*(.@r/2);
+      bonus2 bSkillAtk,"HW_GRAVITATION",10*(.@r/2);
+      bonus2 bSkillAtk,"WZ_STORMGUST",25*(.@r/2);
+      bonus2 bSkillAtk,"WZ_VERMILION",25*(.@r/2);
+      bonus2 bSkillAtk,"WZ_METEOR",25*(.@r/2);
+      bonus bMatkRate,5*(.@r/4);
+      if (.@r>=11) {
+        bonus bDelayrate,-5;
+      }
+      if(.@r>=12) {
+        bonus bCapdamagerate,35;
+      }
+  - Id: 170009
+    AegisName: Paradox_WS_Helmet
+    Name: Paradox WS Helmet
+    Type: Armor
+    View: 2904
+    Buy: 1000
+    Defense: 10
+    Jobs:
+      Blacksmith: true
+    Classes:
+      All_Upper: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bAddMaxWeight,15000;
+      bonus bMaxHP,250*(.@r/2);
+      bonus bMaxSPrate,2*(.@r/3);
+      bonus2 bSkillAtk,"WS_CARTTERMINATION",10*(.@r/2);
+      bonus2 bSkillAtk,"MC_MAMMONITE",25*(.@r/2);
+      bonus bShortAtkRate,5*(.@r/4);
+      if (.@r>=11) {
+        bonus bDelayrate,-5;
+      }
+      if(.@r>=12) {
+        bonus bCapdamagerate,35;
+      }
+  - Id: 170010
+    AegisName: Paradox_SN_Helmet
+    Name: Paradox SN Helmet
+    Type: Armor
+    View: 2905
+    Buy: 1000
+    Defense: 10
+    Jobs:
+      Hunter: true
+    Classes:
+      All_Upper: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,250*(.@r/2);
+      bonus bMaxSPrate,2*(.@r/3);
+      bonus2 bSkillAtk,"HT_BLITZBEAT",10*(.@r/2);
+      bonus2 bSkillAtk,"SN_FALCONASSAULT",10*(.@r/2);
+      bonus2 bSkillAtk,"SN_SHARPSHOOTING",15*(.@r/2);
+      bonus bCritAtkRate,5*(.@r/4);
+      if (.@r>=11) {
+        bonus bDelayrate,-5;
+      }
+      if(.@r>=12) {
+        bonus bCapdamagerate,35;
+      }
+  - Id: 170011
+    AegisName: Paradox_ASC_Helmet
+    Name: Paradox ASC Helmet
+    Type: Armor
+    View: 2906
+    Buy: 1000
+    Defense: 10
+    Jobs:
+      Assassin: true
+    Classes:
+      All_Upper: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,250*(.@r/2);
+      bonus bMaxSPrate,2*(.@r/3);
+      bonus2 bSkillAtk,"ASC_BREAKER",10*(.@r/2);
+      bonus2 bSkillAtk,"ASC_METEORASSAULT",10*(.@r/2);
+      bonus bCritAtkRate,5*(.@r/4);
+      if (.@r>=11) {
+        bonus bDelayrate,-5;
+      }
+      if(.@r>=12) {
+        bonus bCapdamagerate,35;
+      }
+  - Id: 170012
+    AegisName: Paradox_PA_Helmet
+    Name: Paradox PA Helmet
+    Type: Armor
+    View: 2907
+    Buy: 1000
+    Defense: 10
+    Jobs:
+      Crusader: true
+    Classes:
+      All_Upper: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,250*(.@r/2);
+      bonus bMaxSPrate,2*(.@r/3);
+      bonus2 bSkillAtk,"PA_SACRIFICE",10*(.@r/2);
+      bonus2 bSkillAtk,"PA_SHIELDCHAIN",10*(.@r/2);
+      bonus2 bSkillAtk,"PA_PRESSURE",10*(.@r/2);
+      bonus bShortAtkRate,5*(.@r/4);
+      bonus bLongAtkRate,5*(.@r/4);
+      bonus bMatkRate,5*(.@r/4);
+      if (.@r>=11) {
+        bonus bDelayrate,-5;
+      }
+      if(.@r>=12) {
+        bonus bCapdamagerate,35;
+      }
+  - Id: 170013
+    AegisName: Paradox_CH_Helmet
+    Name: Paradox CH Helmet
+    Type: Armor
+    View: 2908
+    Buy: 1000
+    Defense: 10
+    Jobs:
+      Monk: true
+    Classes:
+      All_Upper: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,250*(.@r/2);
+      bonus bMaxSPrate,4*(.@r/3);
+      bonus2 bSkillAtk,"MO_TRIPLEATTACK",10*(.@r/2);
+      bonus2 bSkillAtk,"MO_CHAINCOMBO",10*(.@r/2);
+      bonus2 bSkillAtk,"MO_COMBOFINISH",10*(.@r/2);
+      bonus2 bSkillAtk,"CH_TIGERFIST ",10*(.@r/2);
+      bonus2 bSkillAtk,"CH_CHAINCRUSH",10*(.@r/2);
+      bonus2 bSkillAtk,"MO_EXTREMITYFIST",33*(.@r/2);
+      bonus bShortAtkRate,5*(.@r/4);
+      if (.@r>=11) {
+        bonus bDelayrate,-5;
+      }
+      if(.@r>=12) {
+        bonus bCapdamagerate,35;
+      }
+  - Id: 170014
+    AegisName: Paradox_SA_Helmet
+    Name: Paradox SA Helmet
+    Type: Armor
+    View: 2909
+    Buy: 1000
+    Defense: 10
+    Jobs:
+      Sage: true
+    Classes:
+      All_Upper: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,250*(.@r/2);
+      bonus bMaxSPrate,2*(.@r/3);
+      bonus2 bSkillAtk,"MG_FIREBOLT",15*(.@r/2);
+      bonus2 bSkillAtk,"MG_COLDBOLT",15*(.@r/2);
+      bonus2 bSkillAtk,"MG_LIGHTNINGBOLT",15*(.@r/2);
+      bonus bMatkRate,5*(.@r/4);
+      if (.@r>=11) {
+        bonus bDelayrate,-5;
+        bonus bAspd,1;
+      }
+      if(.@r>=12) {
+        bonus bCapdamagerate,35;
+      }
+  - Id: 170015
+    AegisName: Paradox_ST_Helmet
+    Name: Paradox ST Helmet
+    Type: Armor
+    View: 2910
+    Buy: 1000
+    Defense: 10
+    Jobs:
+      Rogue: true
+    Classes:
+      All_Upper: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,250*(.@r/2);
+      bonus bMaxSPrate,2*(.@r/3);
+      bonus2 bSkillAtk,"RG_RAID",10*(.@r/2);
+      bonus2 bSkillAtk,"RG_BACKSTAP",10*(.@r/2);
+      bonus bShortAtkRate,5*(.@r/4);
+      if (.@r>=11) {
+        bonus bDelayrate,-5;
+      }
+      if(.@r>=12) {
+        bonus bCapdamagerate,35;
+      }
+  - Id: 170016
+    AegisName: Paradox_CR_Helmet
+    Name: Paradox CR Helmet
+    Type: Armor
+    View: 2911
+    Buy: 1000
+    Defense: 10
+    Jobs:
+      Alchemist: true
+    Classes:
+      All_Upper: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,250*(.@r/2);
+      bonus bMaxSPrate,2*(.@r/3);
+      bonus2 bSkillAtk,"CR_ACIDDEMONSTRATION",15*(.@r/2);
+      bonus bLongAtkRate,5*(.@r/4);
+      if (.@r>=11) {
+        bonus bDelayrate,-15;
+      }
+      if(.@r>=12) {
+        bonus bCapdamagerate,35;
+      }
+  - Id: 170017
+    AegisName: Paradox_CG_Helmet
+    Name: Paradox CG Helmet
+    Type: Armor
+    View: 2912
+    Buy: 1000
+    Defense: 10
+    Jobs:
+      BardDancer: true
+    Classes:
+      All_Upper: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,250*(.@r/2);
+      bonus bMaxSPrate,2*(.@r/3);
+      bonus2 bSkillAtk,"CG_ARROWVULCAN",15*(.@r/2);
+      bonus bLongAtkRate,5*(.@r/4);
+      if (.@r>=11) {
+        bonus bDelayrate,-10;
+      }
+      if(.@r>=12) {
+        bonus bCapdamagerate,35;
+      }
+  - Id: 170018
+    AegisName: Paradox_GS_Helmet
+    Name: Paradox GS Helmet
+    Type: Armor
+    View: 553
+    Buy: 1000
+    Defense: 10
+    Jobs:
+      Gunslinger: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,250*(.@r/2);
+      bonus bMaxSPrate,2*(.@r/3);
+      bonus2 bSkillAtk,"GS_RAPIDSHOWER",10*(.@r/2);
+      bonus2 bSkillAtk,"GS_DUST",10*(.@r/2);
+      bonus2 bSkillAtk,"GS_FULLBUSTER",10*(.@r/2);
+      bonus bLongAtkRate,5*(.@r/4);
+      if (.@r>=11) {
+        bonus bDelayrate,-5;
+      }
+      if(.@r>=12) {
+        bonus bCapdamagerate,35;
+      }
+  - Id: 170019
+    AegisName: Paradox_SG_Helmet
+    Name: Paradox SG Helmet
+    Type: Armor
+    View: 553
+    Buy: 1000
+    Defense: 10
+    Jobs:
+      StarGladiator: true
+      Taekwon: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,250*(.@r/2);
+      bonus bMaxSPrate,2*(.@r/3);
+      bonus2 bSkillAtk,"TK_TURNKICK",15*(.@r/2);
+      bonus2 bSkillAtk,"TK_COUNTER",15*(.@r/2);
+      bonus2 bSkillAtk,"TK_DOWNKICK",15*(.@r/2);
+      bonus2 bSkillAtk,"TK_STORMKICK",15*(.@r/2);
+      bonus bShortAtkRate,5*(.@r/4);
+      if (.@r>=11) {
+        bonus bAspd,2;
+      }
+      if(.@r>=12) {
+        bonus bCapdamagerate,35;
+      }
+  - Id: 170020
+    AegisName: Paradox_SL_Helmet
+    Name: Paradox SL Helmet
+    Type: Armor
+    View: 553
+    Buy: 1000
+    Defense: 10
+    Jobs:
+      SoulLinker: true
+      Taekwon: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,250*(.@r/2);
+      bonus bMaxSPrate,2*(.@r/3);
+      bonus2 bSkillAtk,"SL_SMA",25*(.@r/2);
+      bonus bMatkRate,5*(.@r/4);
+      if (.@r>=11) {
+        bonus bDelayrate,-10;
+      }
+      if(.@r>=12) {
+        bonus bCapdamagerate,35;
+      }
+  - Id: 170021
+    AegisName: Paradox_NJ_Helmet
+    Name: Paradox NJ Helmet
+    Type: Armor
+    View: 553
+    Buy: 1000
+    Defense: 10
+    Jobs:
+      Ninja: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,250*(.@r/2);
+      bonus bMaxSPrate,2*(.@r/3);
+      bonus2 bSkillAtk,"NJ_BAKUENRYU",20*(.@r/2);
+      bonus2 bSkillAtk,"NJ_HYOUSYOURAKU",20*(.@r/2);
+      bonus2 bSkillAtk,"NJ_KAMAITACHI",20*(.@r/2);
+      bonus2 bSkillAtk,"NJ_HUUMA",20*(.@r/2);
+      bonus2 bSkillAtk,"NJ_ISSEN",30*(.@r/2);
+      bonus bShortAtkRate,5*(.@r/4);
+      bonus bLongAtkRate,5*(.@r/4);
+      bonus bMatkRate,5*(.@r/4);
+      if (.@r>=11) {
+        bonus bDelayrate,-5;
+      }
+      if(.@r>=12) {
+        bonus bCapdamagerate,35;
+      }
+  - Id: 170022
+    AegisName: Paradox_NV_Helmet
+    Name: Paradox NV Helmet
+    Type: Armor
+    View: 553
+    Buy: 1000
+    Defense: 10
+    Jobs:
+      Novice: true
+      SuperNovice: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,1000*(.@r/2);
+      bonus bMaxSPrate,2*(.@r/2);
+      bonus2 bSkillRate,Type_All,15*(.@r/2);
+      bonus bShortAtkRate,10*(.@r/3);
+      bonus bLongAtkRate,10*(.@r/3);
+      bonus bMatkRate,10*(.@r/3);
+      if (.@r>=11) {
+        bonus bDelayrate,-20;
+        bonus bAspd,2;
+      }
+      if (.@r>=12) {
+        bonus bCapdamagerate,50;
+        bonus bSupplementary,50000;
+      }
   - Id: 172101
     AegisName: Paradox_Leader_Mask
     Name: Paradox Leader Mask
@@ -1082,6 +1809,31 @@ Body:
       bonus bMaxHP,BaseLevel*50;
       bonus bMaxSP,BaseLevel*2;
       if(.@r >= 7 ) bonus bDelayrate,-10;
+  - Id: 199001
+    AegisName: C_Blue_Strong_Hair_Ultra
+    Name: Costume SSGSS Wig
+    Type: Armor
+    View: 1858
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Trade:
+      Override: 100
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      bonus bAspd,1;
+      bonus bAspdRate,10;
+      bonus bVariableCastrate,-70;
+      bonus bFixedCastrate,-70;
+      bonus bSupplementary,5000;
   - Id: 317001
     AegisName: Shark_St_Str
     Name: Sharky Stonk (Str)

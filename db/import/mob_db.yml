@@ -1874,6 +1874,645 @@ Body:
     Ai: 05
     Modes:
       Detector: true
+  - Id: 30022
+    AegisName: BLACK_SAVAGE_BABE
+    Name: Black Savage Babe
+    Level: 114
+    Hp: 164793
+    BaseExp: 678
+    JobExp: 886
+    Attack: 979
+    Attack2: 226
+    Defense: 22
+    Str: 163
+    Agi: 34
+    Vit: 79
+    Int: 45
+    Dex: 121
+    Luk: 18
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Brute
+    Element: Dark
+    ElementLevel: 2
+    WalkSpeed: 200
+    AttackDelay: 824
+    AttackMotion: 624
+    DamageMotion: 576
+    Ai: 17
+    Modes:
+      Aggressive: true
+      CastSensorChase: true
+      Detector: true
+      StatusImmune: true
+    Drops:
+      - Item: Animal's_Skin_Plus
+        Rate: 600
+      - Item: Black_Savage_Card
+        Rate: 1
+        StealProtected: true
+      - Item: Meat
+        Rate: 6000
+      - Item: Headgear_Box_2_1
+        Rate: 50
+        StealProtected: true
+      - Item: Feather
+        Rate: 425
+      - Item: Sweet_Milk
+        Rate: 2000
+  - Id: 30023
+    AegisName: BLUE_SAVAGE_BABE
+    Name: Blue Savage Babe
+    Level: 114
+    Hp: 164793
+    BaseExp: 678
+    JobExp: 886
+    Attack: 979
+    Attack2: 226
+    Defense: 22
+    Str: 163
+    Agi: 34
+    Vit: 79
+    Int: 45
+    Dex: 121
+    Luk: 18
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Brute
+    Element: Water
+    ElementLevel: 2
+    WalkSpeed: 180
+    AttackDelay: 824
+    AttackMotion: 624
+    DamageMotion: 576
+    Ai: 17
+    Modes:
+      Aggressive: true
+      CastSensorChase: true
+      Detector: true
+      StatusImmune: true
+    Drops:
+      - Item: Animal_Blood_Positive
+        Rate: 600
+      - Item: Blue_Savage_Card
+        Rate: 1
+        StealProtected: true
+      - Item: Meat
+        Rate: 6000
+      - Item: Headgear_Box_2_2
+        Rate: 50
+        StealProtected: true
+      - Item: Feather
+        Rate: 425
+      - Item: Sweet_Milk
+        Rate: 2000
+  - Id: 30024
+    AegisName: BROWN_SAVAGE_BABE
+    Name: Brown Savage Babe
+    Level: 114
+    Hp: 164793
+    BaseExp: 678
+    JobExp: 886
+    Attack: 979
+    Attack2: 226
+    Defense: 22
+    Str: 163
+    Agi: 34
+    Vit: 79
+    Int: 45
+    Dex: 121
+    Luk: 18
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Brute
+    Element: Earth
+    ElementLevel: 2
+    WalkSpeed: 160
+    AttackDelay: 824
+    AttackMotion: 624
+    DamageMotion: 576
+    Ai: 17
+    Modes:
+      Aggressive: true
+      CastSensorChase: true
+      Detector: true
+      StatusImmune: true
+    Drops:
+      - Item: Savage_Meat
+        Rate: 600
+      - Item: Brown_Savage_Card
+        Rate: 1
+        StealProtected: true
+      - Item: Meat
+        Rate: 6000
+      - Item: Headgear_Box_Ex_1
+        Rate: 50
+        StealProtected: true
+      - Item: Feather
+        Rate: 425
+      - Item: Sweet_Milk
+        Rate: 2000
+  - Id: 30025
+    AegisName: CYAN_SAVAGE_BABE
+    Name: Cyan Savage Babe
+    Level: 114
+    Hp: 164793
+    BaseExp: 678
+    JobExp: 886
+    Attack: 979
+    Attack2: 226
+    Defense: 22
+    Str: 163
+    Agi: 34
+    Vit: 79
+    Int: 45
+    Dex: 121
+    Luk: 18
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Brute
+    Element: Water
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 824
+    AttackMotion: 624
+    DamageMotion: 576
+    Ai: 17
+    Modes:
+      Aggressive: true
+      CastSensorChase: true
+      Detector: true
+      StatusImmune: true
+    Drops:
+      - Item: Animal's_Skin_Plus
+        Rate: 600
+      - Item: Cyan_Savage_Card
+        Rate: 1
+        StealProtected: true
+      - Item: Meat
+        Rate: 6000
+      - Item: Headgear_Box_2_1
+        Rate: 50
+        StealProtected: true
+      - Item: Feather
+        Rate: 425
+      - Item: Sweet_Milk
+        Rate: 2000
+  - Id: 30026
+    AegisName: GOLD_SAVAGE_BABE
+    Name: Gold Savage Babe
+    Level: 114
+    Hp: 164793
+    BaseExp: 678
+    JobExp: 886
+    Attack: 979
+    Attack2: 226
+    Defense: 22
+    Str: 163
+    Agi: 34
+    Vit: 79
+    Int: 45
+    Dex: 121
+    Luk: 18
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Brute
+    Element: Ghost
+    ElementLevel: 2
+    WalkSpeed: 120
+    AttackDelay: 824
+    AttackMotion: 624
+    DamageMotion: 576
+    Ai: 17
+    Modes:
+      Aggressive: true
+      CastSensorChase: true
+      Detector: true
+      StatusImmune: true
+    Drops:
+      - Item: Animal_Blood_Positive
+        Rate: 600
+      - Item: Gold_Savage_Card
+        Rate: 1
+        StealProtected: true
+      - Item: Meat
+        Rate: 6000
+      - Item: Headgear_Box_2_2
+        Rate: 50
+        StealProtected: true
+      - Item: Feather
+        Rate: 425
+      - Item: Sweet_Milk
+        Rate: 2000
+  - Id: 30027
+    AegisName: GREEN_SAVAGE_BABE
+    Name: Green Savage Babe
+    Level: 114
+    Hp: 164793
+    BaseExp: 678
+    JobExp: 886
+    Attack: 979
+    Attack2: 226
+    Defense: 22
+    Str: 163
+    Agi: 34
+    Vit: 79
+    Int: 645
+    Dex: 121
+    Luk: 18
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Brute
+    Element: Wind
+    ElementLevel: 2
+    WalkSpeed: 130
+    AttackDelay: 824
+    AttackMotion: 624
+    DamageMotion: 576
+    Ai: 17
+    Modes:
+      Aggressive: true
+      CastSensorChase: true
+      Detector: true
+      StatusImmune: true
+    Drops:
+      - Item: Savage_Meat
+        Rate: 600
+      - Item: Green_Savage_Card
+        Rate: 1
+        StealProtected: true
+      - Item: Meat
+        Rate: 6000
+      - Item: Headgear_Box_Ex_1
+        Rate: 50
+        StealProtected: true
+      - Item: Feather
+        Rate: 425
+      - Item: Sweet_Milk
+        Rate: 2000
+  - Id: 30028
+    AegisName: ORANGE_SAVAGE_BABE
+    Name: Orange Savage Babe
+    Level: 114
+    Hp: 164793
+    BaseExp: 678
+    JobExp: 886
+    Attack: 979
+    Attack2: 226
+    Defense: 22
+    Str: 163
+    Agi: 34
+    Vit: 79
+    Int: 45
+    Dex: 121
+    Luk: 18
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Brute
+    Element: Fire
+    ElementLevel: 2
+    WalkSpeed: 180
+    AttackDelay: 824
+    AttackMotion: 624
+    DamageMotion: 576
+    Ai: 17
+    Modes:
+      Aggressive: true
+      CastSensorChase: true
+      Detector: true
+      StatusImmune: true
+    Drops:
+      - Item: Animal's_Skin_Plus
+        Rate: 600
+      - Item: Orange_Savage_Card
+        Rate: 1
+        StealProtected: true
+      - Item: Meat
+        Rate: 6000
+      - Item: Headgear_Box_2_1
+        Rate: 50
+        StealProtected: true
+      - Item: Feather
+        Rate: 425
+      - Item: Sweet_Milk
+        Rate: 2000
+  - Id: 30029
+    AegisName: PINK_SAVAGE_BABE
+    Name: Pink Savage Babe
+    Level: 114
+    Hp: 164793
+    BaseExp: 678
+    JobExp: 886
+    Attack: 979
+    Attack2: 226
+    Defense: 22
+    Str: 163
+    Agi: 34
+    Vit: 79
+    Int: 45
+    Dex: 121
+    Luk: 18
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Brute
+    Element: Undead
+    ElementLevel: 2
+    WalkSpeed: 250
+    AttackDelay: 824
+    AttackMotion: 624
+    DamageMotion: 576
+    Ai: 17
+    Modes:
+      Aggressive: true
+      CastSensorChase: true
+      Detector: true
+      StatusImmune: true
+    Drops:
+      - Item: Animal_Blood_Positive
+        Rate: 600
+      - Item: Pink_Savage_Card
+        Rate: 1
+        StealProtected: true
+      - Item: Meat
+        Rate: 6000
+      - Item: Headgear_Box_2_2
+        Rate: 50
+        StealProtected: true
+      - Item: Feather
+        Rate: 425
+      - Item: Sweet_Milk
+        Rate: 2000
+  - Id: 30030
+    AegisName: PURPLE_SAVAGE_BABE
+    Name: Purple Savage Babe
+    Level: 114
+    Hp: 164793
+    BaseExp: 678
+    JobExp: 886
+    Attack: 979
+    Attack2: 226
+    Defense: 22
+    Str: 163
+    Agi: 34
+    Vit: 79
+    Int: 45
+    Dex: 121
+    Luk: 18
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Brute
+    Element: Poison
+    ElementLevel: 2
+    WalkSpeed: 200
+    AttackDelay: 824
+    AttackMotion: 624
+    DamageMotion: 576
+    Ai: 17
+    Modes:
+      Aggressive: true
+      CastSensorChase: true
+      Detector: true
+      StatusImmune: true
+    Drops:
+      - Item: Savage_Meat
+        Rate: 600
+      - Item: Purple_Savage_Card
+        Rate: 1
+        StealProtected: true
+      - Item: Meat
+        Rate: 6000
+      - Item: Headgear_Box_Ex_1
+        Rate: 50
+        StealProtected: true
+      - Item: Feather
+        Rate: 425
+      - Item: Sweet_Milk
+        Rate: 2000
+  - Id: 30031
+    AegisName: RED_SAVAGE_BABE
+    Name: Red Savage Babe
+    Level: 114
+    Hp: 164793
+    BaseExp: 678
+    JobExp: 886
+    Attack: 979
+    Attack2: 226
+    Defense: 22
+    Str: 163
+    Agi: 34
+    Vit: 79
+    Int: 45
+    Dex: 121
+    Luk: 18
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Brute
+    Element: Fire
+    ElementLevel: 2
+    WalkSpeed: 160
+    AttackDelay: 824
+    AttackMotion: 624
+    DamageMotion: 576
+    Ai: 17
+    Modes:
+      Aggressive: true
+      CastSensorChase: true
+      Detector: true
+      StatusImmune: true
+    Drops:
+      - Item: Animal's_Skin_Plus
+        Rate: 600
+      - Item: Red_Savage_Card
+        Rate: 1
+        StealProtected: true
+      - Item: Meat
+        Rate: 6000
+      - Item: Headgear_Box_2_1
+        Rate: 50
+        StealProtected: true
+      - Item: Feather
+        Rate: 425
+      - Item: Sweet_Milk
+        Rate: 2000
+  - Id: 30032
+    AegisName: SILVER_SAVAGE_BABE
+    Name: Silver Savage Babe
+    Level: 114
+    Hp: 164793
+    BaseExp: 678
+    JobExp: 886
+    Attack: 979
+    Attack2: 226
+    Defense: 22
+    Str: 163
+    Agi: 34
+    Vit: 79
+    Int: 45
+    Dex: 121
+    Luk: 18
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Brute
+    Element: Ghost
+    ElementLevel: 2
+    WalkSpeed: 120
+    AttackDelay: 824
+    AttackMotion: 624
+    DamageMotion: 576
+    Ai: 17
+    Modes:
+      Aggressive: true
+      CastSensorChase: true
+      Detector: true
+      StatusImmune: true
+    Drops:
+      - Item: Animal_Blood_Positive
+        Rate: 600
+      - Item: Silver_Savage_Card
+        Rate: 1
+        StealProtected: true
+      - Item: Meat
+        Rate: 6000
+      - Item: Headgear_Box_2_2
+        Rate: 50
+        StealProtected: true
+      - Item: Feather
+        Rate: 425
+      - Item: Sweet_Milk
+        Rate: 2000
+  - Id: 30033
+    AegisName: WHITE_SAVAGE_BABE
+    Name: White Savage Babe
+    Level: 114
+    Hp: 164793
+    BaseExp: 678
+    JobExp: 886
+    Attack: 979
+    Attack2: 226
+    Defense: 22
+    Str: 163
+    Agi: 34
+    Vit: 79
+    Int: 45
+    Dex: 121
+    Luk: 18
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Brute
+    Element: Neutral
+    ElementLevel: 2
+    WalkSpeed: 200
+    AttackDelay: 824
+    AttackMotion: 624
+    DamageMotion: 576
+    Ai: 17
+    Modes:
+      Aggressive: true
+      CastSensorChase: true
+      Detector: true
+      StatusImmune: true
+    Drops:
+      - Item: Savage_Meat
+        Rate: 600
+      - Item: White_Savage_Card
+        Rate: 1
+        StealProtected: true
+      - Item: Meat
+        Rate: 6000
+      - Item: Headgear_Box_Ex_1
+        Rate: 50
+        StealProtected: true
+      - Item: Feather
+        Rate: 425
+      - Item: Sweet_Milk
+        Rate: 2000
+  - Id: 30034
+    AegisName: GOLDEN_SAVAGE_ANGER
+    Name: Golden Savage Anger
+    Level: 119
+    Hp: 2164793
+    BaseExp: 4678
+    JobExp: 10886
+    Attack: 2979
+    Attack2: 526
+    Defense: 210
+    MagicDefense: 65
+    Str: 363
+    Agi: 74
+    Vit: 79
+    Int: 145
+    Dex: 171
+    Luk: 58
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Brute
+    Element: Neutral
+    ElementLevel: 4
+    WalkSpeed: 100
+    AttackDelay: 224
+    AttackMotion: 324
+    DamageMotion: 276
+    DamageTaken: 30
+    Ai: 17
+    Class: Boss
+    Modes:
+      Aggressive: true
+      CastSensorChase: true
+      Detector: true
+      StatusImmune: true
+      Mvp: true
+    MvpDrops:
+      - Item: Old_Violet_Box
+        Rate: 9000
+      - Item: Old_Card_Album
+        Rate: 4000
+      - Item: Treasure_Box
+        Rate: 5000
+    Drops:
+      - Item: Animal's_Skin_Plus
+        Rate: 1000
+      - Item: Golden_Savage_Anger_Card
+        Rate: 1
+        StealProtected: true
+      - Item: Animal_Blood_Positive
+        Rate: 1000
+      - Item: Headgear_Box_2_1
+        Rate: 500
+        StealProtected: true
+      - Item: Headgear_Box_2_2
+        Rate: 500
+        StealProtected: true
+      - Item: Headgear_Box_Ex_1
+        Rate: 500
+        StealProtected: true
+      - Item: Savage_Meat
+        Rate: 1000
   - Id: 31001
     AegisName: SUPER_SAIYAN_1_PORING
     Name: Super Saiyan 1 Poring

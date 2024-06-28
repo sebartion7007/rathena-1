@@ -1,0 +1,12 @@
+jor_ite01,113,7,0	script	Guard the door#inside	4_PIGOCTO,{
+	warp "jor_dback2",267,311;
+	end;
+}
+
+jor_dback2,262,315,4	script	Guard the door#ouside	4_PIGOCTO,{
+	if(baselevel > 100 ) warp "jor_ite01",112,22;
+	end;
+}
+
+jor_ite01,9,237,0	warp	#2ite02	2,2,jor_ite02,275,87
+jor_ite02,285,87,0	warp	#2ite01	2,2,jor_ite01,15,236

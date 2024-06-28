@@ -2592,7 +2592,7 @@ void status_calc_misc(struct block_list *bl, struct status_data *status, int lev
 			stat = (int)(status->vit + ((float)level / 10) + ((float)status->vit / 5));
 		else {
 			stat = status->def2;
-			stat += (int)((float)level * 2 ) + (bl->type == BL_PC ? ((float)status->agi * 2 ) : 0) + (bl->type == BL_MOB ? (level > 150 ? (float)level * 11 : 1 )  : 0); //base level + (every 2 vit = +1 def) + (every 5 agi = +1 def)
+			stat += (int)((float)level * 2 ) + (bl->type == BL_PC ? ((float)status->vit * 4 ) : 0) + (bl->type == BL_MOB ? (level > 150 ? (float)level * 11 : 1 )  : 0); //base level + (every 2 vit = +1 def) + (every 5 agi = +1 def)
 		}
 		status->def2 = cap_value(stat, 0, SHRT_MAX);
 		// Mdef2
@@ -3503,7 +3503,7 @@ static unsigned int status_calc_maxhpsp_pc(map_session_data* sd, unsigned int st
 	if (isHP) { //Calculates MaxHP
 		double equip_bonus = 0, item_bonus = 0;
 		dmax = job->base_hp[level-1] * (1 + (umax(stat,1) * 0.01)) * ((sd->class_&JOBL_UPPER)?1.25:(pc_is_taekwon_ranker(sd))?3:1);
-		dmax += stat * 29;
+		dmax += stat * 39;
 		dmax += sd->indexed_bonus.param_equip[PARAM_VIT]; //Vit from equip gives +1 additional HP
 		dmax += status_get_hpbonus(&sd->bl,STATUS_BONUS_FIX);
 		equip_bonus = (dmax * status_get_hpbonus_equip(sd) / 100);

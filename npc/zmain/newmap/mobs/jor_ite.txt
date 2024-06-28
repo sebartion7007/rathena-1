@@ -1,0 +1,17 @@
+//========= jor_ite01 (Map 1)==================
+jor_ite01,0,0	monster	--ja--	30022,30,5000
+jor_ite01,0,0	monster	--ja--	30024,30,5000
+jor_ite01,0,0	monster	--ja--	30026,30,5000
+jor_ite01,0,0	monster	--ja--	30028,30,5000
+jor_ite01,0,0	monster	--ja--	30030,30,5000
+jor_ite01,0,0	monster	--ja--	30032,30,5000
+
+
+//========= jor_ite02 (Map 2)==================
+jor_ite02,0,0	monster	--ja--	30023,30,5000
+jor_ite02,0,0	monster	--ja--	30025,30,5000
+jor_ite02,0,0	monster	--ja--	30027,30,5000
+jor_ite02,0,0	monster	--ja--	30029,30,5000
+jor_ite02,0,0	monster	--ja--	30031,30,5000
+jor_ite02,0,0	monster	--ja--	30033,30,5000
+jor_ite02,0,0	boss_monster	--ja--	30034,1,7200000,600000,1

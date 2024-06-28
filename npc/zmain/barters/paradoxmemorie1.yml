@@ -146,3 +146,31 @@ Body:
           - Index: 4
             Item: Goblin_Bibles
             Amount: 40
+  - Name: Nursery Of Savage
+    Map: jor_dback2
+    X: 270
+    Y: 317
+    Direction: South
+    Sprite: 4_EP19_ZORYARA
+    Items:
+      - Index: 0
+        Item: Headgear_Box_2_1
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Animal's_Skin_Plus
+            Amount: 300
+      - Index: 1
+        Item: Headgear_Box_2_2
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Animal_Blood_Positive
+            Amount: 300
+      - Index: 2
+        Item: Headgear_Box_Ex_1
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Savage_Meat
+            Amount: 300

@@ -1,6 +1,8 @@
 jor_dback1	mapflag	nosave
 jor_dback2	mapflag	nosave
 jor_dback3	mapflag	nosave
+jor_ite01	mapflag	nosave
+jor_ite02	mapflag	nosave
 fclone01	mapflag	nosave
 fclone02	mapflag	nosave
 fclone03	mapflag	nosave

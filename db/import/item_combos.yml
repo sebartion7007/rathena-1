@@ -59,6 +59,12 @@ Body:
       }
   - Combos:
       - Combo:
+          - Shalala_in_the_Morning
+          - Sha_lalalunla_wing
+    Script: |
+      bonus2 bSubRace,RC_ALL,10;
+  - Combos:
+      - Combo:
           - Shark_St_Str
           - Sharky_Stink_(Str)
     Script: |
