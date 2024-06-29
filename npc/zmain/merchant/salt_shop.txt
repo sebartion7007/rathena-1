@@ -1,9 +1,14 @@
 -	itemshop	SaltyShop#1	4_EP18_MERCHANT,9901:no,170005:90,176003:90,5208:90,5972:50,19101:50,18666:50,100906:10,16260:10,16261:10,34006:5
+-	itemshop	SaltyShop#2	4_EP18_MERCHANT,9901:no,187001:90,18551:90,420199:90,18913:50,18912:50,100906:10,16260:10,16261:10,34006:5
 
 falserealm,134,134,7	script	Salty Shop	4_EP18_MERCHANT,{
-	callshop "SaltyShop#"+.season;
+	.@menu$ = "";
+	for(.@i=1; .@i <= .numbershop; .@i++)
+		.@menu$ = .@menu$ + "Salt Vol."+.@i+":";
+	.@season = select(.@menu$);
+	callshop "SaltyShop#"+.@season;
 	end;
 Oninit:
-	.season = 1;
+	.numbershop = 2;
 	end;
 }
