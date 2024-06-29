@@ -8875,6 +8875,7 @@ Body:
     HitCount: 1
     SplashArea: -1
     AfterCastActDelay: 300
+    Duration1: 15000
     Duration2: 27000
     Cooldown: 4000
     Requires:
@@ -9132,6 +9133,7 @@ Body:
     HitCount: 1
     SplashArea: -1
     AfterCastActDelay: 300
+    Duration1: 4500
     Duration2: 4500
     Cooldown: 4000
     Requires:

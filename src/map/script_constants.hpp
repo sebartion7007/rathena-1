@@ -11104,6 +11104,14 @@
 	export_constant(ELEMINFO_GAMEID);
 	export_constant(ELEMINFO_CLASS);
 
+	/* setdialogalign script command */
+	export_constant(DIALOG_ALIGN_LEFT);
+	export_constant(DIALOG_ALIGN_RIGHT);
+	export_constant(DIALOG_ALIGN_CENTER);
+	export_constant(DIALOG_ALIGN_TOP);
+	export_constant(DIALOG_ALIGN_MIDDLE);
+	export_constant(DIALOG_ALIGN_BOTTOM);
+
 	/* refine types */
 	export_constant(REFINE_TYPE_ARMOR);
 	export_constant(REFINE_TYPE_WEAPON);
@@ -11349,6 +11357,11 @@
 	export_constant(MER_DIETER);
 	export_constant(MER_ELEANOR);
 
+	/* searchstore constants */
+	export_constant(SEARCHSTORE_EFFECT_NORMAL);
+	export_constant(SEARCHSTORE_EFFECT_REMOTE);
+
+
 	// Custom Part 
 	export_constant2("Type_Attack",SKILLRATE_TYPE_WEAPON);
 	export_constant2("Type_Magic",SKILLRATE_TYPE_MAGIC);
@@ -11356,7 +11369,6 @@
 	export_constant2("Type_All",SKILLRATE_TYPE_ALL);	
 	export_constant(SKILLRATE_TYPE_MAX);
 	// End Custom Part
-	
 	#undef export_constant
 	#undef export_constant2
 	#undef export_parameter
