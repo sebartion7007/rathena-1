@@ -83,8 +83,8 @@ function	Job_Menu	{
 			}
 		}
 		// Confirm the Class
-		else if (PC_DIE_COUNTER > .diedidntreach) {
-			mes "You Death Count is ^FF0000"+PC_DIE_COUNTER+"^000000 Should didnt reach ^00FF00"+.diedidntreach+"^000000 for change Class";
+		else if (PC_DIE_COUNTER > 10) {
+			mes "You Death Count is ^FF0000"+PC_DIE_COUNTER+"^000000 Should didnt reach ^00FF00 10 ^000000 for change Class";
 			return;
 		}
 		Confirm_Change(.@class, .@opt_cnt > 1);
@@ -127,6 +127,12 @@ function	Confirm_Change	{
 
 }
 
+valkyrie,44,82,4	script	Exit#Heaven	811,{
+	warp "falserealm",150,143;
+	save "falserealm",150,143;
+	end;
+}
+
 valkyrie,48,86,4	script	Valkyrie#	811,{
 	if (ADVJOB != 0) {
 		mes "[Valkyrie]";
@@ -166,8 +172,8 @@ valkyrie,48,86,4	script	Valkyrie#	811,{
 			mes "^FF0000Weight = 0, Zeny > 50,000,000";
 			mes "And no Extra Option.^000000";
 			mes "Now Your Condition are not met you get 1,000 Karma.";
-			mes "^FF0000เนื่องจากเงื่อนไขไม่ตรง ท่านได้รับ 1,000 กรรมจาก Valkyrie^000000";
-			PC_DIE_COUNTER += 1000;
+			mes "^FF0000เนื่องจากเงื่อนไขไม่ตรง ท่านได้รับ 100 กรรมจาก Valkyrie^000000";
+			PC_DIE_COUNTER += 100;
 			close2;
 			warp "falserealm",148,145;
 			end;
@@ -191,8 +197,8 @@ valkyrie,48,86,4	script	Valkyrie#	811,{
 				mes "and bring closure to your present life.";
 				mes "^FF0000Please,Clear Your Skills Points Please.";
 				mes "Now Your Condition are not met you get 1,000 Karma.";
-				mes "^FF0000เนื่องจากเงื่อนไขไม่ตรง ท่านได้รับ 1,000 กรรมจาก Valkyrie^000000";
-				PC_DIE_COUNTER += 1000;
+				mes "^FF0000เนื่องจากเงื่อนไขไม่ตรง ท่านได้รับ 100 กรรมจาก Valkyrie^000000";
+				PC_DIE_COUNTER += 100;
 				close2;
 				warp "falserealm",148,145;
 				end;
@@ -322,9 +328,9 @@ valkyrie,48,86,4	script	Valkyrie#	811,{
 		mes "^^FF0000Should be Level 99 And Job 50 For Change to Upper Class^000000.";
 		close2;
 		mes "Now Your Condition are not met you get 1,000 Karma.";
-		mes "^FF0000เนื่องจากเงื่อนไขไม่ตรง ท่านได้รับ 1,000 กรรมจาก Valkyrie^000000";
+		mes "^FF0000เนื่องจากเงื่อนไขไม่ตรง ท่านได้รับ 100 กรรมจาก Valkyrie^000000";
 		warp "falserealm",148,145;
-		PC_DIE_COUNTER += 1000;
+		PC_DIE_COUNTER += 100;
 		end;
 	}
 }

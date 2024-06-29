@@ -1,4 +1,10 @@
 falserealm,143,263,5	script	The Nun#Decressdiecount	79,{
+	if(!freekarma3) {
+           mes "ท่านได้สิทธิ์ล้างกรรมฟรีค่ะ";
+		PC_DIE_COUNTER =0;
+		freekarma3++;
+		end;
+	}
 	.@npcname$ = "[ Nurse ]";
 	mes .@npcname$;
 	mes "การสารภาพบาป จำเป็นต้องบริจาคเงินเข้าสู่โบสนะค่ะ";
