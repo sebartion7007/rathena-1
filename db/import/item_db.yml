@@ -1280,7 +1280,7 @@ Body:
       bonus2 bSkillAtk,"MO_TRIPLEATTACK",10*(.@r/2);
       bonus2 bSkillAtk,"MO_CHAINCOMBO",10*(.@r/2);
       bonus2 bSkillAtk,"MO_COMBOFINISH",10*(.@r/2);
-      bonus2 bSkillAtk,"CH_TIGERFIST ",10*(.@r/2);
+      bonus2 bSkillAtk,"CH_TIGERFIST",10*(.@r/2);
       bonus2 bSkillAtk,"CH_CHAINCRUSH",10*(.@r/2);
       bonus2 bSkillAtk,"MO_EXTREMITYFIST",33*(.@r/2);
       bonus bShortAtkRate,5*(.@r/4);

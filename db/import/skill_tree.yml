@@ -1664,7 +1664,7 @@ Body:
           - Name: AL_HEAL
             Level: 2
       - Name: MC_INCCARRY
-        MaxLevel: 10
+        MaxLevel: 15
       - Name: MC_DISCOUNT
         MaxLevel: 10
         Requires:

@@ -83,7 +83,9 @@ Header:
 Body:
   - Jobs:
       Super_Novice: true
+      Super_Baby: true
       Super_Novice_E: true
+      Super_Baby_E: true
     BaseHp:
       - Level: 1
         Hp: 40
@@ -284,7 +286,7 @@ Body:
       - Level: 99
         Hp: 7978
       - Level: 100
-        Hp: 8133
+        Hp: 8098
       - Level: 101
         Hp: 8242
       - Level: 102
