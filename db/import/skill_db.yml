@@ -10959,6 +10959,10 @@ Body:
     Element: Weapon
     CastCancel: true
     CastTime: 240
+    CopyFlags:
+      Skill:
+        Plagiarism: true
+        Reproduce: true
     AfterCastActDelay: 300
     FixedCastTime: 60
     Requires:
@@ -11022,6 +11026,10 @@ Body:
     Hit: Multi_Hit
     HitCount: 3
     Element: Holy
+    CopyFlags:
+      Skill:
+        Plagiarism: true
+        Reproduce: true
     CastTime: 1000
     AfterCastActDelay:
       - Level: 1
@@ -11085,6 +11093,10 @@ Body:
     Hit: Single
     HitCount: 1
     CastCancel: true
+    CopyFlags:
+      Skill:
+        Plagiarism: true
+        Reproduce: true
     Requires:
       SpCost: 100
     Status: Sacrifice
@@ -11145,6 +11157,10 @@ Body:
     Element: Weapon
     Knockback: 3
     CastCancel: true
+    CopyFlags:
+      Skill:
+        Plagiarism: true
+        Reproduce: true
     AfterCastActDelay: 300
     CastTimeFlags:
       IgnoreDex: true
@@ -11383,6 +11399,10 @@ Body:
     Hit: Single
     HitCount: 1
     CastCancel: true
+    CopyFlags:
+      Skill:
+        Plagiarism: true
+        Reproduce: true
     Cooldown:
       - Level: 1
         Time: 10000
@@ -11474,6 +11494,10 @@ Body:
     HitCount: 1
     Element: Weapon
     CastCancel: true
+    CopyFlags:
+      Skill:
+        Plagiarism: true
+        Reproduce: true
     CastTime: 250
     AfterCastActDelay: 1000
     Cooldown: 250
@@ -11598,6 +11622,10 @@ Body:
         Area: 3
       - Level: 15
         Area: 3
+    CopyFlags:
+      Skill:
+        Plagiarism: true
+        Reproduce: true
     ActiveInstance: 14
     CastCancel: true
     CastTime: 500
@@ -11956,6 +11984,10 @@ Body:
     HitCount: -9
     Element: Weapon
     CastCancel: true
+    CopyFlags:
+      Skill:
+        Plagiarism: true
+        Reproduce: true
     CastTime:
       - Level: 1
         Time: 1600
@@ -12118,6 +12150,10 @@ Body:
     Hit: Multi_Hit
     HitCount: 5
     Element: Weapon
+    CopyFlags:
+      Skill:
+        Plagiarism: true
+        Reproduce: true
     CastTime:
       - Level: 1
         Time: 150
@@ -12220,6 +12256,10 @@ Body:
     Hit: Single
     HitCount: 1
     Element: Weapon
+    CopyFlags:
+      Skill:
+        Plagiarism: true
+        Reproduce: true
     AfterCastActDelay: 500
     Duration2: 108000
     Requires:
@@ -12235,6 +12275,10 @@ Body:
     Hit: Single
     HitCount: 1
     Element: Weapon
+    CopyFlags:
+      Skill:
+        Plagiarism: true
+        Reproduce: true
     AfterCastActDelay:
       - Level: 1
         Time: 800
@@ -12308,6 +12352,10 @@ Body:
         Count: 5
     Element: Ghost
     SplashArea: 1
+    CopyFlags:
+      Skill:
+        Plagiarism: true
+        Reproduce: true
     CastCancel: true
     CastTime: 800
     AfterCastActDelay: 500
@@ -12473,6 +12521,10 @@ Body:
     HitCount: 1
     Element: Weapon
     SplashArea: 2
+    CopyFlags:
+      Skill:
+        Plagiarism: true
+        Reproduce: true
     CastTime: 250
     Duration2:
       - Level: 1

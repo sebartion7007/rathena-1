@@ -1045,6 +1045,7 @@ Body:
     View: 2901
     Buy: 1000
     Defense: 10
+    Slots: 1
     Jobs:
       Knight: true
     Classes:
@@ -1074,6 +1075,7 @@ Body:
     View: 2902
     Buy: 1000
     Defense: 10
+    Slots: 1
     Jobs:
       Priest: true
     Classes:
@@ -1103,6 +1105,7 @@ Body:
     View: 2903
     Buy: 1000
     Defense: 10
+    Slots: 1
     Jobs:
       Wizard: true
     Classes:
@@ -1135,6 +1138,7 @@ Body:
     View: 2904
     Buy: 1000
     Defense: 10
+    Slots: 1
     Jobs:
       Blacksmith: true
     Classes:
@@ -1165,6 +1169,7 @@ Body:
     View: 2905
     Buy: 1000
     Defense: 10
+    Slots: 1
     Jobs:
       Hunter: true
     Classes:
@@ -1195,6 +1200,7 @@ Body:
     View: 2906
     Buy: 1000
     Defense: 10
+    Slots: 1
     Jobs:
       Assassin: true
     Classes:
@@ -1224,6 +1230,7 @@ Body:
     View: 2907
     Buy: 1000
     Defense: 10
+    Slots: 1
     Jobs:
       Crusader: true
     Classes:
@@ -1256,6 +1263,7 @@ Body:
     View: 2908
     Buy: 1000
     Defense: 10
+    Slots: 1
     Jobs:
       Monk: true
     Classes:
@@ -1289,6 +1297,7 @@ Body:
     View: 2909
     Buy: 1000
     Defense: 10
+    Slots: 1
     Jobs:
       Sage: true
     Classes:
@@ -1320,6 +1329,7 @@ Body:
     View: 2910
     Buy: 1000
     Defense: 10
+    Slots: 1
     Jobs:
       Rogue: true
     Classes:
@@ -1349,6 +1359,7 @@ Body:
     View: 2911
     Buy: 1000
     Defense: 10
+    Slots: 1
     Jobs:
       Alchemist: true
     Classes:
@@ -1377,6 +1388,7 @@ Body:
     View: 2912
     Buy: 1000
     Defense: 10
+    Slots: 1
     Jobs:
       BardDancer: true
     Classes:
@@ -1405,6 +1417,7 @@ Body:
     View: 553
     Buy: 1000
     Defense: 10
+    Slots: 1
     Jobs:
       Gunslinger: true
     Locations:
@@ -1433,6 +1446,7 @@ Body:
     View: 553
     Buy: 1000
     Defense: 10
+    Slots: 1
     Jobs:
       StarGladiator: true
       Taekwon: true
@@ -1463,6 +1477,7 @@ Body:
     View: 553
     Buy: 1000
     Defense: 10
+    Slots: 1
     Jobs:
       SoulLinker: true
       Taekwon: true
@@ -1490,6 +1505,7 @@ Body:
     View: 553
     Buy: 1000
     Defense: 10
+    Slots: 1
     Jobs:
       Ninja: true
     Locations:
@@ -1522,6 +1538,7 @@ Body:
     View: 553
     Buy: 1000
     Defense: 10
+    Slots: 1
     Jobs:
       Novice: true
       SuperNovice: true

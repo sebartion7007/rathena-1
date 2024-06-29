@@ -1830,6 +1830,8 @@ int64 battle_calc_damage(struct block_list *src,struct block_list *bl,struct Dam
 		// Renewal: steel body reduces all incoming damage to 1/10 [helvetica]
 		if( tsc->getSCE(SC_STEELBODY) )
 			damage = damage > 10 ? damage / 10 : 1;
+		if( tsc->getSCE(SC_PARRYING) )
+			damage = damage > 10 ? damage / 5 : 1;
 #endif
 
 		//Finally added to remove the status of immobile when Aimed Bolt is used. [Jobbie]
@@ -4183,7 +4185,7 @@ static void battle_calc_skill_base_damage(struct Damage* wd, struct block_list *
 				if (index >= 0 &&
 					sd->inventory_data[index] &&
 					sd->inventory_data[index]->type == IT_WEAPON)
-					wd->damage = sd->inventory_data[index]->weight*8/100; //80% of weight
+					wd->damage = sd->inventory_data[index]->weight*7; //80% of weight
 
 				ATK_ADDRATE(wd->damage, wd->damage2, 50*skill_lv); //Skill modifier applies to weight only.
 			} else {
@@ -8090,9 +8092,9 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 						skillratio += 10 * skill_lv;
 						break;
 					case AL_HOLYLIGHT:
-						skillratio += 25;
+						skillratio += 1500;
 						if (sd && sd->sc.getSCE(SC_SPIRIT) && sd->sc.getSCE(SC_SPIRIT)->val2 == SL_PRIEST)
-							skillratio *= 300; //Does 5x damage include bonuses from other skills?
+							skillratio *= 5; //Does 5x damage include bonuses from other skills?
 						break;
 					case AL_RUWACH:
 						skillratio += 45;
@@ -9581,6 +9583,8 @@ struct Damage battle_calc_attack(int attack_type,struct block_list *bl,struct bl
 			break;
 		}
 		status_change *sc = status_get_sc(bl);
+		if(sc && sc->getSCE(SC_PRESERVE) )
+			d.damage += d.damage * 30 / 100;
 		if(sc && sc->getSCE(SC_SUN) )
 			d.damage *= 2;
 	if( d.damage + d.damage2 < 1 )
