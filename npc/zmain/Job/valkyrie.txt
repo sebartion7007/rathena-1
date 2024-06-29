@@ -136,42 +136,22 @@ valkyrie,44,82,4	script	Exit#Heaven	811,{
 valkyrie,48,86,4	script	Valkyrie#	811,{
 	if (ADVJOB != 0) {
 		mes "[Valkyrie]";
-		mes "Welcome";
-		mes "to Valhalla,";
-		mes "the Hall of Honor.";
-		next;
-		mes "[Valkyrie]";
-		mes "Please make";
-		mes "yourself comfortable";
-		mes "while you are here.";
-		mes "Honor to the warriors!";
+		mes "ยินดีต้อนรับสู่ Valhala";
+		mes "เราคงไม่ได้มีธุระอะไรกับเธอ.";
 		close;
 	}
 	else if (BaseLevel > 98 && JobLevel > 49 && Class >= Job_Knight && Class <= Job_Crusader2) {
 		mes "[Valkyrie]";
-		mes "Welcome";
-		mes "to Valhalla,";
-		mes "the Hall of Honor.";
-		next;
-		mes "[Valkyrie]";
-		mes "You will now end";
-		mes "your present life and";
-		mes "begin an entirely new life.";
-		mes "Honor to the warriors!";
+		mes "ยินดีต้อนรับสู่ Valhala";
 		next;
 		if (Weight > 0 || Zeny < 50000000 || checkcart() != 0 || checkfalcon() != 0 || checkriding() != 0) {
 			mes "[Valkyrie]";
-			mes "There are a few things you must";
-			mes "do before we start. You must";
-			mes "first empty your mind and body.";
-			mes "Honor comes when you abandon";
-			mes "all your selfish desires...";
-			next;
-			mes "[Valkyrie]";
-			mes "The condition is :";
-			mes "^FF0000Weight = 0, Zeny > 50,000,000";
-			mes "And no Extra Option.^000000";
-			mes "Now Your Condition are not met you get 1,000 Karma.";
+			mes "เงื่อนไขการเปลี่ยนไฮคราสอย่างง่าย";
+			mes "น้ำหนัก = 0 และมีเงินติดตัวไม่ต่ำกว่า 50,000,000 และห้ามรถเข็น นก และสัตว์ขี่ ทุกชนิด";
+			mes "^FF0000Weight = 0, Zeny > 50,000,000 And no Card, Falcon, mount.";
+			mes "ถ้าอ่านเข้าใจแล้วโปรดกดตกลง.";
+			if(select ("ไม่ตกลง:ตกลง") == 1 ) end;
+			mes "Now Your Condition are not met you get 100 Karma.";
 			mes "^FF0000เนื่องจากเงื่อนไขไม่ตรง ท่านได้รับ 100 กรรมจาก Valkyrie^000000";
 			PC_DIE_COUNTER += 100;
 			close2;
@@ -190,13 +170,11 @@ valkyrie,48,86,4	script	Valkyrie#	811,{
 			next;
 			if (SkillPoint) {
 				mes "[Valkyrie]";
-				mes "Hmm... I sense that you have";
-				mes "some lingering attachment or";
-				mes "unfinished business in your";
-				mes "current life. Take care of that,";
-				mes "and bring closure to your present life.";
+				mes "ต้องไม่มีสกิลพ้อยซักพ้อยเลยในการเปลี่ยน Hi-CLass.";
 				mes "^FF0000Please,Clear Your Skills Points Please.";
-				mes "Now Your Condition are not met you get 1,000 Karma.";
+				mes "ถ้าอ่านเข้าใจแล้วโปรดกดตกลง.";
+				if(select ("ไม่ตกลง:ตกลง") == 1 ) end;
+				mes "Now Your Condition are not met you get 100 Karma.";
 				mes "^FF0000เนื่องจากเงื่อนไขไม่ตรง ท่านได้รับ 100 กรรมจาก Valkyrie^000000";
 				PC_DIE_COUNTER += 100;
 				close2;
@@ -319,18 +297,8 @@ valkyrie,48,86,4	script	Valkyrie#	811,{
 	}
 	else {
 		mes "[Valkyrie]";
-		mes "Welcome";
-		mes "to Valhalla,";
-		mes "the Hall of Honor.";
-		next;
-		mes "[Valkyrie]";
-		mes "Unfortunately, you have not yet been invited here. I ask you to leave immediately. Honor to the warriors!";
-		mes "^^FF0000Should be Level 99 And Job 50 For Change to Upper Class^000000.";
-		close2;
-		mes "Now Your Condition are not met you get 1,000 Karma.";
-		mes "^FF0000เนื่องจากเงื่อนไขไม่ตรง ท่านได้รับ 100 กรรมจาก Valkyrie^000000";
+		mes "นี่ไม่ใช่ที่ของเจ้า กลับบ้านไป";
 		warp "falserealm",148,145;
-		PC_DIE_COUNTER += 100;
 		end;
 	}
 }
